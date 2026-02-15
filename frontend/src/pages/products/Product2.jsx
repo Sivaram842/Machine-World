@@ -1,6 +1,6 @@
 import React from 'react'
 import HeroVideo from '../../components/ProductSubPageComponents/HeroVideo'
-import Navbar from '../../components/NAvbar'
+import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import TalkToSalesCTA from '../../components/TalkToSalesCTA'
 import CustomerQuoteSection from '../../components/CustomerStories'

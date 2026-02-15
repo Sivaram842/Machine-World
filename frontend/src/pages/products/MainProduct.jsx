@@ -2,7 +2,7 @@ import React from 'react'
 import HeroVideo from "../../components/ProductPageComponents/HeroVideo";
 import Footer from '../../components/Footer'
 import TalkToSalesCTA from '../../components/TalkToSalesCTA'
-import Navbar from '../../components/NAvbar'
+import Navbar from '../../components/Navbar'
 import DualXR from '../../components/ProductPageComponents/DualXR';
 import NavbarStatic from '../../components/NavbarStatic';
 import ExploreGrid from '../../components/ProductPageComponents/ExploreGrid';

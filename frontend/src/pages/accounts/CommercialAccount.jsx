@@ -33,7 +33,8 @@ export default function CommercialAccount({ setPage }) {
         try {
             const { day, month, year } = dob;
             const dateOfBirth = new Date(`${month} ${day}, ${year}`);
-            const response = await axios.post("http://localhost:5000/api/users/register", {
+           const response = await axios.post(
+  `${import.meta.env.VITE_API_URL}/api/users/register`, {
                 firstName,
                 lastName,
                 country,
