@@ -1,0 +1,6 @@
+node_modules/
+.env
+dist/
+build/backend/src/firebase-service-account.json
+backend/src/firebase-service-account.json
+
