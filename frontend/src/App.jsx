@@ -27,6 +27,7 @@ import Dashboard from "./pages/Dashboard";
 import SignupLayout from "./pages/SignupLayout";
 import Investors from "./pages/Investors";
 import EmailVerify from "./pages/EmailVerify";
+import VerifyNotice from "./pages/VerifyNotice";
 
 const App = () => {
   // stop browser scroll restoration (keep this if you still want it)
@@ -60,6 +61,8 @@ const App = () => {
       <Route path="/products" element={<MainProduct />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/email-verify/:token" element={<EmailVerify/>}/>
+      <Route path="/verify-notice" element={<VerifyNotice />} />
+
       <Route path="/product1" element={<Product1 />} />
       <Route path="/product2" element={<Product2 />} />
       <Route path="/demo" element={<Demo />} />

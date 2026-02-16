@@ -107,7 +107,7 @@ export default function Navbar() {
             ${isWhite ? "text-black" : "text-white"}
           `}
                 >
-                    ANTI WORLD
+                    ANTIWORLD
                 </div>
 
                 {/* RIGHT */}

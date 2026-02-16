@@ -12,89 +12,82 @@ import { sendEmail } from "../utils/sendMail.js";
    REGISTER (SIGN-UP)
 ============================ */
 export const registerUser = async (req, res) => {
-  const {
-    firstName,
-    lastName,
-    country,
-    email,
-    password,
-    updatesConsent,
-    termsAccepted,
-    dateOfBirth,
-  } = req.body;
-
   try {
+    const {
+      firstName,
+      lastName,
+      country,
+      email,
+      password,
+      dateOfBirth,
+      updatesConsent,
+      termsAccepted,
+    } = req.body;
+
     if (!termsAccepted) {
-      return res.status(400).json({ message: "You must accept terms to sign up" });
+      return res.status(400).json({ message: "You must accept terms" });
     }
 
     if (!isValidPassword(password)) {
-      return res.status(400).json({
-        message:
-          "Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.",
-      });
+      return res.status(400).json({ message: "Weak password" });
     }
 
-    const userExists = await User.findOne({ email });
-    if (userExists) {
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
       return res.status(400).json({ message: "User already exists" });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // 🔐 Generate verification token
-    const verificationToken = crypto.randomBytes(32).toString("hex");
-    const hashedToken = crypto
-      .createHash("sha256")
-      .update(verificationToken)
-      .digest("hex");
+    const token = crypto.randomBytes(32).toString("hex");
+    const hashedToken = crypto.createHash("sha256").update(token).digest("hex");
 
-    const user = await User.create({
+    await User.create({
       firstName,
       lastName,
       country,
       email,
       password: hashedPassword,
+      dateOfBirth,
       updatesConsent,
       termsAccepted,
-      dateOfBirth,
       verified: false,
       emailVerificationToken: hashedToken,
-      emailVerificationExpires: Date.now() + 1000 * 60 * 30* 24, 
+      emailVerificationExpires: Date.now() + 1000 * 60 * 60 * 24,
     });
 
-    // 📩 Send verification email
-    const verifyUrl = `http://localhost:5173/email-verify/${verificationToken}`;
-
-    await sendEmail(
-      email,
-      "Verify Your Account",
-      `Click to verify your account: <a href="${verifyUrl}">Verify Email</a>`
-    );
-
+    // ✅ SEND RESPONSE FIRST (CRITICAL)
     res.status(201).json({
-      message: "Signup successful! Please check your email to verify your account.",
-      user: {
-        _id: user._id,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        email: user.email,
-        dateOfBirth: user.dateOfBirth,
-      },
+      success: true,
+      message: "Signup successful. Please verify your email.",
     });
-  } catch (error) {
-    console.error("REGISTER ERROR:", error);
+
+    // ✅ SEND EMAIL AFTER RESPONSE (NON-BLOCKING)
+    const verifyUrl = `${process.env.FRONTEND_URL}/email-verify/${token}`;
+
+    sendEmail(
+      email,
+      "Verify Your Email",
+      `<p>Click below to verify:</p><a href="${verifyUrl}">Verify Email</a>`
+    ).catch(err => {
+      console.error("EMAIL FAILED (ignored):", err.message);
+    });
+
+  } catch (err) {
+    console.error("REGISTER ERROR:", err);
     res.status(500).json({ message: "Registration failed" });
   }
 };
+
+
 
 /* ============================
    LOGIN
 ============================ */
 export const loginUser = async (req, res) => {
-  const { email, password } = req.body;
-
   try {
+    const { email, password } = req.body;
+
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(400).json({ message: "Invalid email or password" });
@@ -119,8 +112,8 @@ export const loginUser = async (req, res) => {
       token: generateToken(user._id),
     });
   } catch (error) {
-    console.error("LOGIN ERROR:", error);
-    res.status(500).json({ message: "Login failed" });
+    console.error("🔥 LOGIN ERROR:", error);
+    return res.status(500).json({ message: "Login failed" });
   }
 };
 
@@ -133,42 +126,36 @@ export const verifyEmail = async (req, res) => {
 
     const { token } = req.params;
     if (!token) {
-      console.log("❌ No token in URL");
+      console.log("❌ Token missing");
       return res.status(400).json({ message: "Token missing" });
     }
 
-    // Hash incoming token
     const hashedToken = crypto
       .createHash("sha256")
       .update(token)
       .digest("hex");
 
-    console.log("🟡 Hashed token:", hashedToken);
-
-    // Find user by token
     const user = await User.findOne({
       emailVerificationToken: hashedToken,
       emailVerificationExpires: { $gt: Date.now() },
     });
 
     if (!user) {
-      console.log("❌ Token invalid or expired");
+      console.log("❌ Invalid or expired token");
       return res
         .status(400)
         .json({ message: "Invalid or expired verification link" });
     }
 
     console.log("🟢 User found:", user.email);
-    console.log("🟠 Verified BEFORE:", user.verified);
 
-    // Update user
     user.verified = true;
     user.emailVerificationToken = undefined;
     user.emailVerificationExpires = undefined;
 
     await user.save();
 
-    console.log("✅ Verified AFTER:", user.verified);
+    console.log("✅ Email verified");
 
     return res.status(200).json({
       success: true,
@@ -180,37 +167,43 @@ export const verifyEmail = async (req, res) => {
   }
 };
 
+/* ============================
+   RESEND VERIFICATION EMAIL
+============================ */
 export const resendVerificationEmail = async (req, res) => {
-  const { email } = req.body;
+  try {
+    const { email } = req.body;
 
-  const user = await User.findOne({ email });
+    const user = await User.findOne({ email });
+    if (!user) return res.status(404).json({ message: "User not found" });
 
-  if (!user) {
-    return res.status(404).json({ message: "User not found" });
+    if (user.verified) {
+      return res.status(400).json({ message: "Email already verified" });
+    }
+
+    const verificationToken = crypto.randomBytes(32).toString("hex");
+    const hashedToken = crypto
+      .createHash("sha256")
+      .update(verificationToken)
+      .digest("hex");
+
+    user.emailVerificationToken = hashedToken;
+    user.emailVerificationExpires = Date.now() + 1000 * 60 * 60 * 24;
+    await user.save();
+
+    const verifyUrl = `${process.env.FRONTEND_URL}/email-verify/${verificationToken}`;
+
+    sendEmail(
+      email,
+      "Verify Your Account",
+      `Click to verify your account: <a href="${verifyUrl}">Verify Email</a>`
+    ).catch((err) => {
+      console.error("⚠️ EMAIL FAILED (ignored):", err.message);
+    });
+
+    return res.json({ message: "Verification email resent" });
+  } catch (error) {
+    console.error("🔥 RESEND ERROR:", error);
+    return res.status(500).json({ message: "Failed to resend email" });
   }
-
-  if (user.verified) {
-    return res.status(400).json({ message: "Email already verified" });
-  }
-
-  const verificationToken = crypto.randomBytes(32).toString("hex");
-  const hashedToken = crypto
-    .createHash("sha256")
-    .update(verificationToken)
-    .digest("hex");
-
-  user.emailVerificationToken = hashedToken;
-  user.emailVerificationExpires = Date.now() + 1000 * 60 * 60 * 24;
-
-  await user.save();
-
-  const verifyUrl = `http://localhost:5173/email-verify/${verificationToken}`;
-
-  await sendEmail(
-    email,
-    "Verify Your Account",
-    `Click to verify your account: <a href="${verifyUrl}">Verify Email</a>`
-  );
-
-  res.json({ message: "Verification email resent" });
 };

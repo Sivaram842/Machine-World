@@ -53,7 +53,7 @@ export default function NavbarStatic() {
                     }}
                     className="mx-10 text-xl tracking-[0.28em] font-semibold cursor-pointer"
                 >
-                    ANTI WORLD
+                    ANTIWORLD
                 </div>
 
                 {/* RIGHT */}

@@ -45,7 +45,9 @@ export default function CommercialAccount({ setPage }) {
                 termsAccepted: true,     // you can read checkbox state later
             });
 
-            navigate("/login");
+            navigate("/verify-notice", {
+  state: { email },
+});
 
             console.log("User registered:", response.data);
 
@@ -176,7 +178,7 @@ export default function CommercialAccount({ setPage }) {
                 <button
                     disabled={!isFormValid}
                     onClick={handleSignup}
-                    className={`px-8 py-2 rounded-full text-sm transition
+                    className={`px-8 py-2 rounded-full text-sm transition cursor-pointer
     ${isFormValid
                             ? "bg-black text-white hover:bg-gray-900"
                             : "bg-gray-200 text-gray-400 cursor-not-allowed"
