@@ -65,17 +65,17 @@ export const registerUser = async (req, res) => {
     // ✅ SEND EMAIL AFTER RESPONSE (NON-BLOCKING)
     const verifyUrl = `${process.env.FRONTEND_URL}/email-verify/${token}`;
 
-    sendEmail(
+    await sendEmail(
       email,
       "Verify Your Email",
       `<p>Click below to verify:</p><a href="${verifyUrl}">Verify Email</a>`
-    ).catch(err => {
-      console.error("EMAIL FAILED (ignored):", err.message);
-    });
+    );
 
   } catch (err) {
     console.error("REGISTER ERROR:", err);
-    res.status(500).json({ message: "Registration failed" });
+    if (!res.headersSent) {
+      res.status(500).json({ message: "Registration failed" });
+    }
   }
 };
 
