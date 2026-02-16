@@ -38,9 +38,9 @@ export default function Footer() {
                         <p className="text-sm tracking-widest mb-6">PRODUCTS</p>
                         <ul className="space-y-3 text-white/90">
                             {/* <li>PRODUCTS</li> */}
-                            <li>ZERO ONE</li>
-                            <li>ZERO TWO</li>
-                            <li>ZERO THREE</li>
+                            <li>DAS</li>
+                            <li>Realm</li>
+                            <li>Book</li>
                             <li>SPATIAL OS</li>
                             <li>MINIMAL OS</li>
 

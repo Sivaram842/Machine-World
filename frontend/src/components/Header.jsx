@@ -1,4 +1,5 @@
-import hero from "../assets/hero.mp4";
+import hero1 from "../assets/hero.mp4";
+import hero from "../assets/homeVideo.mp4";
 
 export default function Header() {
     return (

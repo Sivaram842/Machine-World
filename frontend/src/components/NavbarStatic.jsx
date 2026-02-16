@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import xr4Img from "../assets/Range_No Shadow.webp";
-import xr4SecureImg from "../assets/XR-4-gaia-from-the-front-1328x680.webp";
-import accessoriesImg from "../assets/Accesories-1.webp";
+import xr4Img from "../assets/DAS.jpeg";
+import xr4SecureImg from "../assets/Realm.jpeg";
+import accessoriesImg from "../assets/Book.jpeg";
 
 export default function NavbarStatic() {
     const [activeMenu, setActiveMenu] = useState(null);
@@ -13,9 +13,9 @@ export default function NavbarStatic() {
     const isOpen = (name) => activeMenu === name;
 
     const previewImages = {
-        xr4: xr4Img,
-        xr4secure: xr4SecureImg,
-        accessories: accessoriesImg,
+        DAS: xr4Img,
+        Realm: xr4SecureImg,
+        Book: accessoriesImg,
     };
 
     return (
@@ -93,18 +93,25 @@ export default function NavbarStatic() {
                             <ul className="space-y-4 text-[22px] font-light">
                                 <li
                                     onClick={() => navigate("/product1")}
-                                    onMouseEnter={() => setActivePreview("xr4")}
+                                    onMouseEnter={() => setActivePreview("DAS")}
                                     className="cursor-pointer text-gray-700 hover:text-black"
                                 >
-                                    XR-4 Series
+                                    DAS
                                 </li>
 
                                 <li
                                     onClick={() => navigate("/product2")}
-                                    onMouseEnter={() => setActivePreview("xr4secure")}
+                                    onMouseEnter={() => setActivePreview("Realm")}
                                     className="cursor-pointer text-gray-700 hover:text-black"
                                 >
-                                    XR-4 Secure Edition
+                                    Realm
+                                </li>
+                                <li
+                                    onClick={() => navigate("/product3")}
+                                    onMouseEnter={() => setActivePreview("Book")}
+                                    className="cursor-pointer text-gray-700 hover:text-black"
+                                >
+                                    Book
                                 </li>
 
                                 <li
@@ -112,7 +119,7 @@ export default function NavbarStatic() {
                                     onMouseEnter={() => setActivePreview("accessories")}
                                     className="cursor-pointer text-gray-700 hover:text-black"
                                 >
-                                    Accessories
+                                    Accesories
                                 </li>
 
                                 <li

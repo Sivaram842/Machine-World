@@ -15,6 +15,7 @@ import MainProduct from "./pages/products/MainProduct";
 
 import Product1 from "./pages/products/Product1";
 import Product2 from "./pages/products/Product2";
+import Product3 from "./pages/products/Product3";
 
 import Demo from "./pages/products/Demo";
 
@@ -60,11 +61,12 @@ const App = () => {
       <Route path="/forgot-password" element={<ForgotPassword />} />
       <Route path="/products" element={<MainProduct />} />
       <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/email-verify/:token" element={<EmailVerify/>}/>
+      <Route path="/email-verify/:token" element={<EmailVerify />} />
       <Route path="/verify-notice" element={<VerifyNotice />} />
 
       <Route path="/product1" element={<Product1 />} />
       <Route path="/product2" element={<Product2 />} />
+      <Route path="/product3" element={<Product3 />} />
       <Route path="/demo" element={<Demo />} />
       <Route path="/accessories" element={<Accessories />} />
       <Route path="/minimal-os" element={<MinimalOs />} />

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
-import xr4Img from "../assets/Range_No Shadow.webp";
-import xr4SecureImg from "../assets/XR-4-gaia-from-the-front-1328x680.webp";
-import accessoriesImg from "../assets/Accesories-1.webp";
+import xr4Img from "../assets/Book.jpeg";
+import xr4SecureImg from "../assets/DAS.jpeg";
+import accessoriesImg from "../assets/Realm.jpeg";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -34,9 +34,9 @@ export default function Navbar() {
     const [activePreview, setActivePreview] = useState(null);
 
     const previewImages = {
-        xr4: xr4Img,
-        xr4secure: xr4SecureImg,
-        accessories: accessoriesImg,
+        Book: xr4Img,
+        DAS: xr4SecureImg,
+        Realm: accessoriesImg,
     };
 
     useEffect(() => {
@@ -158,10 +158,10 @@ export default function Navbar() {
                                         setActiveMenu(null);   // close dropdown safely
                                         navigate("/product1");
                                     }}
-                                    onMouseEnter={() => setActivePreview("xr4")}
+                                    onMouseEnter={() => setActivePreview("DAS")}
                                     className="cursor-pointer text-gray-700 hover:text-black transition"
                                 >
-                                    Zero one
+                                    DAS
                                 </li>
 
                                 <li
@@ -169,10 +169,20 @@ export default function Navbar() {
                                         setActiveMenu(null);   // close dropdown safely
                                         navigate("/product2");
                                     }}
-                                    onMouseEnter={() => setActivePreview("xr4secure")}
+                                    onMouseEnter={() => setActivePreview("Realm")}
                                     className="cursor-pointer text-gray-700 hover:text-black transition"
                                 >
-                                    Zero Two
+                                    Realm
+                                </li>
+                                <li
+                                    onClick={() => {
+                                        setActiveMenu(null);   // close dropdown safely
+                                        navigate("/product3");
+                                    }}
+                                    onMouseEnter={() => setActivePreview("Book")}
+                                    className="cursor-pointer text-gray-700 hover:text-black transition"
+                                >
+                                    Book
                                 </li>
 
                                 <li
@@ -183,7 +193,7 @@ export default function Navbar() {
                                     onMouseEnter={() => setActivePreview("accessories")}
                                     className="cursor-pointer text-gray-700 hover:text-black transition"
                                 >
-                                    Zero Three
+                                    accessories
                                 </li>
 
                                 <li onClick={() => {
@@ -197,7 +207,7 @@ export default function Navbar() {
 
                         <div>
                             <p className="text-xs uppercase tracking-wide text-gray-500 mb-4">
-                                OPerating System
+                                Operating System
                             </p>
                             <ul className="space-y-4 text-[22px] font-light text-gray-700">
                                 <li onClick={() => {
