@@ -64,11 +64,16 @@ export const registerUser = async (req, res) => {
     // ✅ SEND EMAIL AFTER RESPONSE (NON-BLOCKING)
     const verifyUrl = `${process.env.FRONTEND_URL}/email-verify/${token}`;
 
-    await sendEmail(
+    sendEmail(
       email,
       "Verify Your Email",
       `<p>Click below to verify:</p><a href="${verifyUrl}">Verify Email</a>`
-    );
+    ).then(() => {
+      console.log("📧 Verification email sent to:", email);
+    }).catch(err => {
+      console.error("❌ EMAIL ERROR:", err);
+    });
+
 
   } catch (err) {
     console.error("REGISTER ERROR:", err);
