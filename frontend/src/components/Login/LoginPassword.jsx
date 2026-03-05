@@ -9,7 +9,7 @@ export default function LoginPassword() {
 
     const { email } = useOutletContext();
     const navigate = useNavigate();
-
+    const [loading, setLoading] = useState(false);
     const handleLogin = async () => {
         if (!password.trim()) {
             setError("Password required");
@@ -17,6 +17,8 @@ export default function LoginPassword() {
         }
 
         try {
+            setLoading(true);
+
             const api = `${import.meta.env.VITE_API_URL}/api/users/login`;
 
             const response = await axios.post(api, {
@@ -30,10 +32,13 @@ export default function LoginPassword() {
             localStorage.setItem("token", token);
 
             navigate("/dashboard");
+
         } catch (err) {
             setError(
                 err.response?.data?.message || "Invalid email or password"
             );
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -84,13 +89,21 @@ export default function LoginPassword() {
 
                 <button
                     onClick={handleLogin}
-                    disabled={!password.trim()}
-                    className={`w-full sm:w-auto h-10 px-5 rounded-full text-sm transition ${password.trim()
+                    disabled={!password.trim() || loading}
+                    className={`w-full sm:w-auto h-10 px-5 rounded-full text-sm transition flex items-center justify-center gap-2
+        ${password.trim() && !loading
                             ? "bg-black text-white hover:bg-gray-900"
                             : "bg-gray-300 text-gray-500 cursor-not-allowed"
                         }`}
                 >
-                    Log in
+                    {loading ? (
+                        <>
+                            <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                            Logging in...
+                        </>
+                    ) : (
+                        "Log in"
+                    )}
                 </button>
 
             </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import productImage from "../assets/DAS CORE0669.png";
-import Footer from "../components/Footer";
-import NavbarStatic from "../components/NavbarStatic";
+import productImage from "../../assets/DAS CORE0669.png";
+import Footer from "../../components/Footer";
+import NavbarStatic from "../../components/NavbarStatic";
 
 const ProductBook = () => {
     const [formData, setFormData] = useState({

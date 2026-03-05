@@ -186,7 +186,7 @@ export default function Navbar() {
                                 </p>
                                 <ul className="space-y-4 text-lg sm:text-xl lg:text-[22px] font-light text-gray-700">
                                     <li onClick={() => { setActiveMenu(null); navigate("/minimal-os"); }}
-                                        className="hover:text-black cursor-pointer">
+                                        className=" hover:text-black cursor-pointer">
                                         Minimal OS
                                     </li>
                                     <li onClick={() => { setActiveMenu(null); navigate("/spatial-os"); }}
@@ -213,37 +213,53 @@ export default function Navbar() {
                 {/* Other dropdowns with responsive text */}
                 <DropdownWrapper visible={mobileOpen || isOpen("usecases")}>
                     <ul className="space-y-6 text-xl sm:text-2xl lg:text-[26px] text-gray-700 font-light">
-                        <li onClick={() => { setActiveMenu(null); navigate("/learning"); }}>Learning</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/industry"); }}>Industry</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/entertainment"); }}>Entertainment</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/medical"); }}>Medical</li>
+                        <li onClick={() => { setActiveMenu(null); navigate("/learning"); }}
+                            className="cursor-pointer text-gray-700 hover:text-black transition">Learning</li>
+                        <li onClick={() => { setActiveMenu(null); navigate("/industry"); }}
+                            className="cursor-pointer text-gray-700 hover:text-black transition">Industry</li>
+                        <li onClick={() => { setActiveMenu(null); navigate("/entertainment"); }}
+                            className="cursor-pointer text-gray-700 hover:text-black transition">Entertainment</li>
+                        <li onClick={() => { setActiveMenu(null); navigate("/medical"); }}
+                            className="cursor-pointer text-gray-700 hover:text-black transition">Medical</li>
                     </ul>
                 </DropdownWrapper>
 
                 <DropdownWrapper visible={mobileOpen || isOpen("company")}>
                     <ul className="space-y-6 text-lg sm:text-xl lg:text-[24px] text-gray-700 font-light">
-                        <li onClick={() => { setActiveMenu(null); navigate("/about-us"); }}>About Us</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/newsroom"); }}>Newsroom</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/jobs"); }}>Jobs</li>
+                        <li onClick={() => { setActiveMenu(null); navigate("/about-us"); }}
+                            className="cursor-pointer text-gray-700 hover:text-black transition">About Us</li>
+                        <li onClick={() => { setActiveMenu(null); navigate("/newsroom"); }}
+                            className="cursor-pointer text-gray-700 hover:text-black transition">Newsroom</li>
+                        <li onClick={() => { setActiveMenu(null); navigate("/jobs"); }}
+                            className="cursor-pointer text-gray-700 hover:text-black transition">Jobs</li>
                     </ul>
                 </DropdownWrapper>
 
                 <DropdownWrapper visible={mobileOpen || isOpen("resources")}>
                     <ul className="space-y-6 text-lg sm:text-xl lg:text-[24px] text-gray-700 font-light">
-                        <li>AntiWorld Insider</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/case-studies"); }}>Case Studies</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/resources"); }}>E-Books and Whitepapers</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/product-book"); }}>Product Book</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/investors"); }}>Invest On US</li>
+                        <li onClick={() => { setActiveMenu(null); navigate("/insider"); }}
+                            className="cursor-pointer text-gray-700 hover:text-black transition">AntiWorld Insider</li>
+                        <li onClick={() => { setActiveMenu(null); navigate("/case-studies"); }}
+                            className="cursor-pointer text-gray-700 hover:text-black transition">Case Studies</li>
+                        <li onClick={() => { setActiveMenu(null); navigate("/resources"); }}
+                            className="cursor-pointer text-gray-700 hover:text-black transition">E-Books and Whitepapers</li>
+                        <li onClick={() => { setActiveMenu(null); navigate("/product-book"); }}
+                            className="cursor-pointer text-gray-700 hover:text-black transition">Product Book</li>
+                        <li onClick={() => { setActiveMenu(null); navigate("/investors"); }}
+                            className="cursor-pointer text-gray-700 hover:text-black transition">Invest On US</li>
                     </ul>
                 </DropdownWrapper>
 
                 <DropdownWrapper visible={mobileOpen || isOpen("support")}>
                     <ul className="space-y-6 text-lg sm:text-xl lg:text-[24px] text-gray-700 font-light">
-                        <li onClick={() => { setActiveMenu(null); navigate("/helpcenter"); }}>Help Center</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/contactus"); }}>Contact Support</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/accountportal"); }}>Account Portal</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/systemrequirements"); }}>System Requirements</li>
+                        <li onClick={() => { setActiveMenu(null); navigate("/helpcenter"); }}
+                            className="cursor-pointer text-gray-700 hover:text-black transition">Help Center</li>
+                        <li onClick={() => { setActiveMenu(null); navigate("/contactus"); }}
+                            className="cursor-pointer text-gray-700 hover:text-black transition">Contact Support</li>
+                        <li onClick={() => { setActiveMenu(null); navigate("/accountportal"); }}
+                            className="cursor-pointer text-gray-700 hover:text-black transition">Account Portal</li>
+                        <li onClick={() => { setActiveMenu(null); navigate("/systemrequirements"); }}
+                            className="cursor-pointer text-gray-700 hover:text-black transition">System Requirements</li>
                     </ul>
                 </DropdownWrapper>
             </div>

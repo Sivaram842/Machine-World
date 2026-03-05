@@ -1,7 +1,7 @@
 import { useState } from "react";
-import NavbarStatic from "../components/NavbarStatic";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import NavbarStatic from "../../components/NavbarStatic";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 
 const Investors = () => {
   const [form, setForm] = useState({

@@ -28,34 +28,39 @@ export default function CommercialAccount({ setPage }) {
         password, setPassword,
         dob, email, setEmail
     } = useOutletContext();
-
+    const [loading, setLoading] = useState(false);
     const handleSignup = async () => {
         try {
+            setLoading(true); // start loading
+
             const { day, month, year } = dob;
             const dateOfBirth = new Date(`${month} ${day}, ${year}`);
 
             const response = await axios.post(
-                `${import.meta.env.VITE_API_URL}/api/users/register`, {
-                firstName,
-                lastName,
-                country,
-                email,
-                password,
-                dateOfBirth,
-                updatesConsent: false,
-                termsAccepted: true,
-            });
-
-            navigate("/verify-notice", { state: { email } });
+                `${import.meta.env.VITE_API_URL}/api/users/register`,
+                {
+                    firstName,
+                    lastName,
+                    country,
+                    email,
+                    password,
+                    dateOfBirth,
+                    updatesConsent: false,
+                    termsAccepted: true,
+                }
+            );
 
             console.log("User registered:", response.data);
+
+            navigate("/verify-notice", { state: { email } });
 
         } catch (error) {
             console.error("SIGNUP ERROR:", error);
             alert(error.response?.data?.message || "Signup failed");
+        } finally {
+            setLoading(false);
         }
     };
-
     const isPasswordStrong = (pwd) =>
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/.test(pwd);
 
@@ -179,15 +184,22 @@ export default function CommercialAccount({ setPage }) {
             {/* SUBMIT */}
             <div className="flex justify-end mt-6 sm:mt-8">
                 <button
-                    disabled={!isFormValid}
+                    disabled={!isFormValid || loading}
                     onClick={handleSignup}
-                    className={`px-6 sm:px-8 py-2 rounded-full text-xs sm:text-sm transition cursor-pointer
-                        ${isFormValid
+                    className={`px-6 sm:px-8 py-2 rounded-full text-xs sm:text-sm transition flex items-center gap-2
+        ${isFormValid && !loading
                             ? "bg-black text-white hover:bg-gray-900"
                             : "bg-gray-200 text-gray-400 cursor-not-allowed"
                         }`}
                 >
-                    Create an account
+                    {loading ? (
+                        <>
+                            <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                            Creating...
+                        </>
+                    ) : (
+                        "Create an account"
+                    )}
                 </button>
             </div>
         </div>

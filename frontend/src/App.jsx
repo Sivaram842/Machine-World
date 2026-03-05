@@ -26,12 +26,12 @@ import SpatialOs from "./pages/Os/SpatialOs";
 import Accessories from "./pages/Accessories";
 import Dashboard from "./pages/Dashboard";
 import SignupLayout from "./pages/SignupLayout";
-import Investors from "./pages/Investors";
+import Investors from "./pages/Resources/Investors";
 import EmailVerify from "./pages/EmailVerify";
 import VerifyNotice from "./pages/VerifyNotice";
-import CaseStudies from "./pages/CaseStudies";
-import Resources from "./pages/Resources";
-import ProductBook from "./pages/ProductBook";
+import CaseStudies from "./pages/Resources/CaseStudies";
+import Resources from "./pages/Resources/Resources";
+import ProductBook from "./pages/Resources/ProductBook";
 import Jobs from "./pages/Company/Jobs";
 import AboutUs from "./pages/Company/AboutUs";
 import Newsroom from "./pages/Company/NewsRoom";
@@ -43,6 +43,8 @@ import ContactSupportPage from "./pages/Support/ContactUs";
 import HelpCenterPage from "./pages/Support/AccountPortalPage";
 import HelpCenter from "./pages/Support/HelpCenter";
 import SystemRequirementsPage from "./pages/Support/SystemRequirementPage";
+import Insider from "./pages/Resources/Insider";
+
 
 const App = () => {
   // stop browser scroll restoration (keep this if you still want it)
@@ -92,6 +94,7 @@ const App = () => {
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/product-book" element={<ProductBook />} />
+        <Route path="/insider" element={<Insider />} />
 
 
         <Route path="/jobs" element={<Jobs />} />
@@ -107,6 +110,9 @@ const App = () => {
         <Route path="/accountportal" element={<HelpCenterPage />} />
         <Route path="/helpcenter" element={<HelpCenter />} />
         <Route path="/systemrequirements" element={<SystemRequirementsPage />} />
+
+
+
 
       </Routes>
     </>

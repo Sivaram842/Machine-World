@@ -1,11 +1,11 @@
 import React from 'react'
-import NavbarStatic from '../components/NavbarStatic'
-import Footer from '../components/Footer'
-import img from "../assets/DAS1.jpeg";
-import heroImage from "../assets/XR-4-2.png";
-import documentaryVideo from "../assets/DAS2.mp4"; // 👈 your video
-import newsletterBg from "../assets/DAS.jpeg";
-import bookImg from "../assets/Book.jpeg";
+import NavbarStatic from '../../components/NavbarStatic'
+import Footer from '../../components/Footer'
+import img from "../../assets/DAS1.jpeg";
+import heroImage from "../../assets/XR-4-2.png";
+import documentaryVideo from "../../assets/DAS2.mp4"; // 👈 your video
+import newsletterBg from "../../assets/DAS.jpeg";
+import bookImg from "../../assets/Book.jpeg";
 const resources = [
     {
         id: 1,

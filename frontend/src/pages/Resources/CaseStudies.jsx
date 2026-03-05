@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NavbarStatic from "../components/NavbarStatic";
+import NavbarStatic from "../../components/NavbarStatic";
 import { useNavigate } from "react-router-dom";
 
 const caseStudiesData = [
