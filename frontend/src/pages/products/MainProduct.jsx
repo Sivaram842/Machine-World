@@ -9,28 +9,35 @@ import ExploreGrid from '../../components/ProductPageComponents/ExploreGrid';
 import OrderNow from '../../components/ProductPageComponents/OrderNow';
 import XRDetails from '../../components/ProductPageComponents/XRDetails';
 import MilitaryXR from '../../components/ProductPageComponents/MilitaryXR';
+
 const MainProduct = () => {
     return (
-        <div>
+        <div className="w-full overflow-x-hidden">
             <NavbarStatic />
 
-
             <HeroVideo />
-            <div className="h-40 bg-[#eeeeec]" />
+
+            <div className="h-16 sm:h-24 lg:h-40 bg-[#eeeeec]" />
+
             <MilitaryXR />
-            <div className="h-40 bg-[#eeeeec]" />
+
+            <div className="h-16 sm:h-24 lg:h-40 bg-[#eeeeec]" />
 
             <XRDetails />
+
             <DualXR />
-            <div className="h-40" />
+
+            <div className="h-16 sm:h-24 lg:h-40" />
+
             <OrderNow />
-            <div className="h-40" />
+
+            <div className="h-16 sm:h-24 lg:h-40" />
 
             <ExploreGrid />
-            <div className="h-40" />
+
+            <div className="h-16 sm:h-24 lg:h-40" />
 
             <TalkToSalesCTA />
-
 
             <Footer />
         </div>

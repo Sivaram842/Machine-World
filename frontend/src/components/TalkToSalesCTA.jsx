@@ -3,33 +3,34 @@ import { useNavigate } from "react-router-dom";
 export default function TalkToSalesCTA() {
 
     const navigate = useNavigate();
+
     return (
         <section className="w-full">
             <div
                 onClick={() => navigate("/talk-to-sales")}
                 className="
-          group
-          relative
-          w-full
-          h-[260px]
-          bg-black
-          transition-colors
-          duration-300
-          hover:bg-blue-900
-          flex
-          items-center
-          px-16
-          overflow-hidden
-          cursor-pointer
-        "
+                    group
+                    relative
+                    w-full
+                    h-[180px] sm:h-[220px] lg:h-[260px]
+                    bg-black
+                    transition-colors
+                    duration-300
+                    hover:bg-blue-900
+                    flex
+                    items-center
+                    px-4 sm:px-8 lg:px-16
+                    overflow-hidden
+                    cursor-pointer
+                "
             >
                 {/* LEFT TEXT */}
                 <div>
-                    <p className="text-sm tracking-widest text-white/80 mb-4">
+                    <p className="text-xs sm:text-sm tracking-widest text-white/80 mb-3 sm:mb-4">
                         READY TO REDEFINE REALITY?
                     </p>
 
-                    <h2 className="text-[56px] font-extrabold text-white leading-none">
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-extrabold text-white leading-none">
                         TALK TO SALES
                     </h2>
                 </div>
@@ -37,19 +38,18 @@ export default function TalkToSalesCTA() {
                 {/* ARROW (appears on hover) */}
                 <div
                     className="
-            absolute
-            right-16
-            opacity-0
-            translate-x-6
-            group-hover:opacity-100
-            group-hover:translate-x-0
-            transition-all
-            duration-300
-          "
+                        absolute
+                        right-4 sm:right-8 lg:right-16
+                        opacity-0
+                        translate-x-6
+                        group-hover:opacity-100
+                        group-hover:translate-x-0
+                        transition-all
+                        duration-300
+                    "
                 >
                     <svg
-                        width="100"
-                        height="60"
+                        className="w-[60px] sm:w-[80px] lg:w-[100px] h-auto"
                         viewBox="0 0 100 60"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"

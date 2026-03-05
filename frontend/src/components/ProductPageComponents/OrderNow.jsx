@@ -4,89 +4,62 @@ import p3 from "../../assets/XR-4-2.png";
 
 export default function OrderNow() {
     return (
-        <section className="w-full bg-white py-24 px-16">
+        <section className="w-full bg-white py-16 sm:py-20 lg:py-24 px-4 sm:px-8 lg:px-16">
+
             {/* TITLE */}
-            <h1 className="text-4xl font-semibold mb-16">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-10 sm:mb-14 lg:mb-16">
                 Order Now
             </h1>
 
             {/* GRID */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
 
-                {/* CARD 1 */}
-                <div className="relative bg-gray-100 p-10 flex flex-col items-start hover:bg-gray-200 transition">
-                    <h3 className="text-xl font-semibold mb-6">
-                        XR-4
-                    </h3>
+                {/* CARD */}
+                {[{
+                    title: "XR-4",
+                    img: p1,
+                    subtitle: "Fixed Focus",
+                    price: "€6,990 excluding sales tax"
+                },
+                {
+                    title: "XR-4 Focal Edition",
+                    img: p2,
+                    subtitle: "Autofocus",
+                    price: "€10,990 excluding sales tax"
+                },
+                {
+                    title: "XR-4 Secure Edition",
+                    img: p3,
+                    subtitle: "TAA Compliant",
+                    price: "Request a quote"
+                }].map((item, index) => (
+                    <div
+                        key={index}
+                        className="relative bg-gray-100 p-6 sm:p-8 lg:p-10 flex flex-col hover:bg-gray-200 transition min-h-[360px]"
+                    >
+                        <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">
+                            {item.title}
+                        </h3>
 
-                    <img
-                        src={p1}
-                        alt="XR-4"
-                        className="w-full max-w-[260px] mx-auto mb-6 object-contain"
-                    />
+                        <img
+                            src={item.img}
+                            alt={item.title}
+                            className="w-full max-w-[200px] sm:max-w-[240px] lg:max-w-[260px] mx-auto mb-4 sm:mb-6 object-contain"
+                        />
 
-                    <p className="text-sm text-gray-600 mb-2">
-                        Fixed Focus
-                    </p>
+                        <p className="text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2">
+                            {item.subtitle}
+                        </p>
 
-                    <span className="text-sm font-medium text-black">
-                        €6,990 excluding sales tax
-                    </span>
+                        <span className="text-sm font-medium text-black">
+                            {item.price}
+                        </span>
 
-                    <span className="absolute bottom-6 right-6 text-xl">
-                        →
-                    </span>
-                </div>
-
-                {/* CARD 2 */}
-                <div className="relative bg-gray-100 p-10 flex flex-col items-start hover:bg-gray-200 transition">
-                    <h3 className="text-xl font-semibold mb-6">
-                        XR-4 Focal Edition
-                    </h3>
-
-                    <img
-                        src={p2}
-                        alt="XR-4 Focal Edition"
-                        className="w-full max-w-[260px] mx-auto mb-6 object-contain"
-                    />
-
-                    <p className="text-sm text-gray-600 mb-2">
-                        Autofocus
-                    </p>
-
-                    <span className="text-sm font-medium text-black">
-                        €10,990 excluding sales tax
-                    </span>
-
-                    <span className="absolute bottom-6 right-6 text-xl">
-                        →
-                    </span>
-                </div>
-
-                {/* CARD 3 */}
-                <div className="relative bg-gray-100 p-10 flex flex-col items-start hover:bg-gray-200 transition">
-                    <h3 className="text-xl font-semibold mb-6">
-                        XR-4 Secure Edition
-                    </h3>
-
-                    <img
-                        src={p3}
-                        alt="XR-4 Secure Edition"
-                        className="w-full max-w-[260px] mx-auto mb-6 object-contain"
-                    />
-
-                    <p className="text-sm text-gray-600 mb-2">
-                        TAA Compliant
-                    </p>
-
-                    <span className="text-sm font-medium text-black">
-                        Request a quote
-                    </span>
-
-                    <span className="absolute bottom-6 right-6 text-xl">
-                        →
-                    </span>
-                </div>
+                        <span className="absolute bottom-4 sm:bottom-6 right-4 sm:right-6 text-lg sm:text-xl">
+                            →
+                        </span>
+                    </div>
+                ))}
 
             </div>
         </section>

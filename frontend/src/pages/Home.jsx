@@ -19,22 +19,33 @@ const Home = () => {
         <>
             <Navbar />
             <Header />
-            <div className="h-40" />
+
+            {/* Responsive spacing */}
+            <div className="h-16 sm:h-24 md:h-32 lg:h-40" />
+
             <TrainingSection />
-            <div className="h-40" />
+
+            <div className="h-16 sm:h-24 md:h-32 lg:h-40" />
+
             <PurposeSection />
-            <div className="h-40" />
+
+            <div className="h-16 sm:h-24 md:h-32 lg:h-40" />
+
             {/* <ScrollableShowcase /> */}
             {/* <ScrollableShowcaseHorizontal /> */}
             <ScrollableShowcaseFlip />
+
             <TrainingDomains />
             <ScrollRevealText />
             <MetaSlider />
             <CustomerStories />
 
-            <div className="h-40" />
+            <div className="h-16 sm:h-24 md:h-32 lg:h-40" />
+
             <LatestNewsSection />
-            <div className="h-40" />
+
+            <div className="h-16 sm:h-24 md:h-32 lg:h-40" />
+
             <TalkToSalesCTA />
             <Footer />
         </>

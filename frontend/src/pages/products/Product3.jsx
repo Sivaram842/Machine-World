@@ -18,8 +18,10 @@ import fullVideo from "../../assets/DAS2.mp4";
 
 const Product2 = () => {
     return (
-        <div>
+        <div className="w-full overflow-x-hidden">
             <Navbar />
+
+            {/* HERO */}
             <section className="relative w-full h-screen overflow-hidden">
                 <video
                     className="absolute inset-0 w-full h-full object-cover"
@@ -33,42 +35,37 @@ const Product2 = () => {
                 </video>
                 <div className="absolute inset-0 bg-black/60" />
 
-                {/* Content */}
                 <div className="relative z-10 h-full flex items-end">
-                    <div className="w-full px-12 pb-24">
-
-                        {/* GRID WRAPPER – this controls alignment */}
-                        <div className="grid grid-cols-2 gap-16 max-w-7xl">
-
-                            {/* LEFT COLUMN */}
-                            <h1 className="text-white text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+                    <div className="w-full px-6 sm:px-10 lg:px-12 pb-16 sm:pb-20 lg:pb-24">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 max-w-7xl">
+                            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
                                 {/* BOOK */}
                             </h1>
-
-
-
                         </div>
                     </div>
                 </div>
             </section>
-            <section className="bg-white py-[140px]">
-                <div className="mx-auto flex max-w-[1400px] items-start gap-[100px] px-16">
-                    {/* LEFT IMAGE */}
-                    <div className="w-[58%]">
+
+            {/* MAIN CONTENT SECTION */}
+            <section className="bg-white py-16 sm:py-24 lg:py-[140px]">
+                <div className="mx-auto flex flex-col lg:flex-row max-w-[1400px] items-start gap-10 lg:gap-[100px] px-6 sm:px-10 lg:px-16">
+
+                    {/* IMAGE */}
+                    <div className="w-full lg:w-[58%]">
                         <img
                             src={img}
                             alt="Immersion display"
-                            className="h-[520px] w-full object-cover"
+                            className="h-[300px] sm:h-[420px] lg:h-[520px] w-full object-cover"
                         />
                     </div>
 
-                    {/* RIGHT TEXT */}
-                    <div className="w-[42%]">
+                    {/* TEXT */}
+                    <div className="w-full lg:w-[42%]">
                         <small className="block text-[12px] tracking-widest text-black">
                             SEE EVERY MISSION DETAIL
                         </small>
 
-                        <h2 className="mt-6 text-[40px] font-light leading-tight text-black">
+                        <h2 className="mt-6 text-3xl sm:text-4xl lg:text-[40px] font-light leading-tight text-black">
                             The anti-distraction learning device.
                         </h2>
 
@@ -88,9 +85,12 @@ const Product2 = () => {
                     </div>
                 </div>
             </section>
+
             <PassthroughSection />
             <DeploymentSection />
-            <section className="relative w-full h-screen overflow-hidden">
+
+            {/* FULL VIDEO SECTION */}
+            <section className="relative w-full h-[60vh] sm:h-[75vh] lg:h-screen overflow-hidden">
                 <video
                     className="absolute inset-0 w-full h-full object-cover"
                     muted
@@ -102,6 +102,7 @@ const Product2 = () => {
                     <source src={fullVideo} type="video/mp4" />
                 </video>
             </section>
+
             <TrainingPackageSection />
             <CustomerQuoteSection />
             <FullScreenXRImage />
@@ -114,5 +115,3 @@ const Product2 = () => {
 }
 
 export default Product2
-
-

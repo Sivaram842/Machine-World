@@ -8,21 +8,21 @@ export default function Footer() {
         <footer className="bg-black text-white w-full">
 
             {/* ================= LAYER 1 — LOGO ================= */}
-            <div className="px-16 pt-20 pb-10">
-                <div className="text-2xl tracking-[0.3em] font-semibold">
+            <div className="px-4 sm:px-8 lg:px-16 pt-12 sm:pt-16 lg:pt-20 pb-8 sm:pb-10">
+                <div className="text-xl sm:text-2xl tracking-[0.3em] font-semibold">
                     ANTI WORLD
                 </div>
             </div>
 
 
             {/* ================= LAYER 2 — LINKS ================= */}
-            <div className="px-16 pb-16">
-                <div className="grid grid-cols-3 gap-32">
+            <div className="px-4 sm:px-8 lg:px-16 pb-12 sm:pb-16">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-20 lg:gap-32">
 
                     {/* COMPANY */}
                     <div>
-                        <p className="text-sm tracking-widest mb-6">COMPANY</p>
-                        <ul className="space-y-3 text-white/90">
+                        <p className="text-xs sm:text-sm tracking-widest mb-4 sm:mb-6">COMPANY</p>
+                        <ul className="space-y-2 sm:space-y-3 text-white/90 text-sm">
                             <li>About Us</li>
                             <li>News</li>
                             <li>Jobs</li>
@@ -35,22 +35,20 @@ export default function Footer() {
 
                     {/* PRODUCTS */}
                     <div>
-                        <p className="text-sm tracking-widest mb-6">PRODUCTS</p>
-                        <ul className="space-y-3 text-white/90">
-                            {/* <li>PRODUCTS</li> */}
+                        <p className="text-xs sm:text-sm tracking-widest mb-4 sm:mb-6">PRODUCTS</p>
+                        <ul className="space-y-2 sm:space-y-3 text-white/90 text-sm">
                             <li>DAS</li>
                             <li>Realm</li>
                             <li>Book</li>
                             <li>SPATIAL OS</li>
                             <li>MINIMAL OS</li>
-
                         </ul>
                     </div>
 
                     {/* SUPPORT */}
                     <div>
-                        <p className="text-sm tracking-widest mb-6">SUPPORT</p>
-                        <ul className="space-y-3 text-white/90">
+                        <p className="text-xs sm:text-sm tracking-widest mb-4 sm:mb-6">SUPPORT</p>
+                        <ul className="space-y-2 sm:space-y-3 text-white/90 text-sm">
                             <li>Help Center</li>
                             <li>System Requirements</li>
                             <li>Compatible Software</li>
@@ -66,61 +64,33 @@ export default function Footer() {
 
 
             {/* ================= LAYER 3 — BUTTONS ================= */}
-            <div className="px-16 pb-20">
+            <div className="px-4 sm:px-8 lg:px-16 pb-16 sm:pb-20">
                 <div className="flex flex-col gap-6 max-w-sm">
                     <button
                         onClick={() => window.open("/login", "_blank")}
-                        className="border border-white px-8 py-4 text-sm tracking-widest flex items-center justify-between hover:bg-white hover:text-black transition"
+                        className="border border-white px-6 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm tracking-widest flex items-center justify-between hover:bg-white hover:text-black transition w-full sm:w-auto"
                     >
                         ANTI WORLD ACCOUNT LOGIN
                         <span>→</span>
                     </button>
-
-
-                    {/* <button className="border border-white px-8 py-4 text-sm tracking-widest flex items-center justify-between hover:bg-white hover:text-black transition">
-                        SUBSCRIBE TO NEWSLETTER
-                        <span>→</span>
-                    </button> */}
                 </div>
             </div>
 
 
             {/* ================= LAYER 4 — CONTACT ================= */}
-            <div className="px-16 pb-20">
-                <p className="text-sm tracking-widest mb-10">CONTACT US</p>
+            <div className="px-4 sm:px-8 lg:px-16 pb-16 sm:pb-20">
+                <p className="text-xs sm:text-sm tracking-widest mb-6 sm:mb-10">CONTACT US</p>
 
-                <div className="grid grid-cols-3 gap-32 text-white/90">
-
-                    {/* <div className="space-y-1">
-                        <p className="font-medium">VARJO HQ / FINLAND</p>
-                        <p>Vuorikatu 20</p>
-                        <p>00100 Helsinki</p>
-                        <p>Finland</p>
-                    </div>
-
-                    <div className="space-y-1">
-                        <p className="font-medium">VARJO USA</p>
-                        <p>901 N Glebe Rd.</p>
-                        <p>Ste. 500</p>
-                        <p>Arlington, VA 22203</p>
-                    </div>
-
-                    <div className="space-y-1">
-                        <p className="font-medium">VARJO GERMANY</p>
-                        <p>Beta-Straße 10A</p>
-                        <p>85774 Unterföhring</p>
-                        <p>Munich, Germany</p>
-                    </div> */}
-
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-20 lg:gap-32 text-white/90">
                 </div>
             </div>
 
 
             {/* ================= LAYER 5 — SOCIAL LINKS ================= */}
-            <div className="px-16 pb-16 pt-8 border-t border-white/10">
-                <div className="flex justify-between items-center text-sm text-white/80">
+            <div className="px-4 sm:px-8 lg:px-16 pb-12 sm:pb-16 pt-8 border-t border-white/10">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 text-xs sm:text-sm text-white/80">
 
-                    <div className="flex gap-20">
+                    <div className="flex flex-wrap gap-6 sm:gap-10 lg:gap-20">
                         <span>INSTAGRAM</span>
                         <span>X</span>
                         <span>YOUTUBE</span>

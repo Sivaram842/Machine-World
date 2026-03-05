@@ -30,7 +30,7 @@ const EmailVerify = () => {
         setStatus("error");
         setMessage(
           err.response?.data?.message ||
-            "Invalid or expired verification link"
+          "Invalid or expired verification link"
         );
       }
     };
@@ -40,25 +40,36 @@ const EmailVerify = () => {
 
   return (
     <div style={styles.container}>
-      {status === "loading" && <h2>🔄 Verifying your email…</h2>}
+      <div style={styles.card}>
+        {status === "loading" && (
+          <h2 style={styles.heading}>🔄 Verifying your email…</h2>
+        )}
 
-      {status === "success" && (
-        <>
-          <h2 style={{ color: "green" }}>✅ Email Verified</h2>
-          <p>{message}</p>
-          <p>Redirecting to login…</p>
-        </>
-      )}
+        {status === "success" && (
+          <>
+            <h2 style={{ ...styles.heading, color: "green" }}>
+              ✅ Email Verified
+            </h2>
+            <p style={styles.text}>{message}</p>
+            <p style={styles.subText}>Redirecting to login…</p>
+          </>
+        )}
 
-      {status === "error" && (
-        <>
-          <h2 style={{ color: "red" }}>❌ Verification Failed</h2>
-          <p>{message}</p>
-          <button onClick={() => navigate("/login")} style={styles.button}>
-            Go to Login
-          </button>
-        </>
-      )}
+        {status === "error" && (
+          <>
+            <h2 style={{ ...styles.heading, color: "red" }}>
+              ❌ Verification Failed
+            </h2>
+            <p style={styles.text}>{message}</p>
+            <button
+              onClick={() => navigate("/login")}
+              style={styles.button}
+            >
+              Go to Login
+            </button>
+          </>
+        )}
+      </div>
     </div>
   );
 };
@@ -67,15 +78,40 @@ const styles = {
   container: {
     minHeight: "100vh",
     display: "flex",
-    flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    textAlign: "center",
     padding: "20px",
+    backgroundColor: "#f9f9f9",
+  },
+  card: {
+    width: "100%",
+    maxWidth: "480px",
+    backgroundColor: "#ffffff",
+    padding: "40px 24px",
+    borderRadius: "12px",
+    boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
+    textAlign: "center",
+  },
+  heading: {
+    fontSize: "clamp(20px, 5vw, 28px)",
+    marginBottom: "16px",
+  },
+  text: {
+    fontSize: "clamp(14px, 4vw, 16px)",
+    marginBottom: "12px",
+  },
+  subText: {
+    fontSize: "14px",
+    color: "#555",
   },
   button: {
     marginTop: "20px",
-    padding: "10px 20px",
+    padding: "12px 24px",
+    fontSize: "14px",
+    borderRadius: "6px",
+    border: "none",
+    backgroundColor: "#000",
+    color: "#fff",
     cursor: "pointer",
   },
 };

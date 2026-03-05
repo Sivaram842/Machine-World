@@ -4,9 +4,9 @@ export default function ForgotPassword({ setPage }) {
     const navigate = useNavigate();
 
     return (
-        <div className="max-w-[520px] mx-auto mt-20 px-4">
+        <div className="w-full max-w-[520px] mx-auto mt-12 sm:mt-16 md:mt-20 px-4 sm:px-6">
             {/* Heading */}
-            <h1 className="text-3xl font-medium mb-4">
+            <h1 className="text-2xl sm:text-3xl font-medium mb-4">
                 Reset password
             </h1>
 
@@ -27,9 +27,9 @@ export default function ForgotPassword({ setPage }) {
                 className="w-full h-11 px-3 text-base border border-gray-300 rounded-md bg-gray-100 mb-6 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
 
-            {/* Button — right aligned */}
-            <div className="flex justify-end mt-2">
-                <button className="px-6 py-2 border border-black text-sm tracking-wide hover:bg-black hover:text-white transition">
+            {/* Button — responsive alignment */}
+            <div className="flex justify-center sm:justify-end mt-2">
+                <button className="w-full sm:w-auto px-6 py-2 border border-black text-sm tracking-wide hover:bg-black hover:text-white transition">
                     Reset password
                 </button>
             </div>
@@ -37,7 +37,7 @@ export default function ForgotPassword({ setPage }) {
             <hr className="my-8 border-t border-gray-200" />
 
             {/* Links */}
-            <div className="text-sm space-y-2">
+            <div className="text-sm space-y-2 text-center sm:text-left">
                 <p
                     className="text-blue-600 cursor-pointer hover:underline"
                     onClick={() => navigate("/signup")}

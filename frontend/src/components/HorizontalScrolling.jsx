@@ -53,6 +53,7 @@ export default function ScrollableShowcaseHorizontal() {
     useEffect(() => {
         const handleScroll = () => {
             if (!containerRef.current || !trackRef.current) return;
+            if (window.innerWidth < 1024) return; // Disable horizontal scroll on mobile
 
             const sectionTop = containerRef.current.offsetTop;
             const sectionHeight = containerRef.current.offsetHeight;
@@ -61,11 +62,9 @@ export default function ScrollableShowcaseHorizontal() {
             const start = sectionTop;
             const end = sectionTop + sectionHeight - window.innerHeight;
 
-            if (scrollY < start) return;
-            if (scrollY > end) return;
+            if (scrollY < start || scrollY > end) return;
 
             const progress = (scrollY - start) / (end - start);
-
             const maxTranslate =
                 trackRef.current.scrollWidth - window.innerWidth;
 
@@ -77,21 +76,24 @@ export default function ScrollableShowcaseHorizontal() {
     }, []);
 
     return (
-        <section ref={containerRef} className="relative w-full h-[600vh]">
-            <div className="sticky top-0 flex h-screen overflow-hidden">
+        <section
+            ref={containerRef}
+            className="relative w-full lg:h-[600vh]"
+        >
+            <div className="lg:sticky lg:top-0 flex flex-col lg:flex-row lg:h-screen overflow-hidden">
 
-                {/* LEFT FIXED PANEL */}
-                <div className="w-1/2 bg-[#f2f2f2] flex items-center">
-                    <div className="px-16 max-w-xl">
-                        <p className="text-xs tracking-widest text-gray-500 uppercase mb-6">
+                {/* LEFT PANEL */}
+                <div className="w-full lg:w-1/2 bg-[#f2f2f2] flex items-center py-16 lg:py-0">
+                    <div className="px-6 sm:px-10 lg:px-16 max-w-xl">
+                        <p className="text-xs tracking-widest text-gray-500 uppercase mb-4 sm:mb-6">
                             Our XR Offering
                         </p>
 
-                        <h2 className="text-[42px] leading-tight font-light text-black mb-6">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] leading-tight font-light text-black mb-6">
                             Engineered for unlimited creation, learning, and collaboration.
                         </h2>
 
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                             At Varjo, you don’t just get breakthrough mixed reality hardware.
                             You gain access to a complete ecosystem of software, tools, and
                             integrations designed for professional training and simulation.
@@ -99,51 +101,50 @@ export default function ScrollableShowcaseHorizontal() {
                     </div>
                 </div>
 
-                {/* RIGHT HORIZONTAL SCROLLER */}
-                <div className="w-1/2 overflow-hidden relative">
+                {/* RIGHT SIDE */}
+                <div className="w-full lg:w-1/2 overflow-hidden relative">
                     <div
                         ref={trackRef}
-                        className="flex h-full transition-transform duration-75 ease-linear"
+                        className="flex flex-col lg:flex-row h-full transition-transform duration-75 ease-linear"
                         style={{
-                            transform: `translateX(${translateX}px)`,
+                            transform: window.innerWidth >= 1024
+                                ? `translateX(${translateX}px)`
+                                : "none",
                         }}
                     >
                         {sections.map((item, i) => (
                             <div
                                 key={i}
-                                className="relative min-w-full h-full"
+                                className="relative min-w-full lg:min-w-full h-[70vh] lg:h-full"
                                 style={{
                                     backgroundImage: `url(${item.image})`,
                                     backgroundSize: "cover",
                                     backgroundPosition: "center",
                                 }}
                             >
-                                {/* overlay */}
                                 <div className="absolute inset-0 bg-black/30" />
 
-                                {/* content */}
                                 <div className="relative z-10 h-full flex items-center">
-                                    <div className="px-16 max-w-xl text-white">
+                                    <div className="px-6 sm:px-10 lg:px-16 max-w-xl text-white">
                                         <p className="text-xs tracking-widest uppercase mb-4 opacity-80">
                                             Compatible software
                                         </p>
 
-                                        <h3 className="text-4xl font-light leading-tight mb-6">
+                                        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light leading-tight mb-6">
                                             {item.title}
                                         </h3>
 
-                                        <p className="text-base leading-relaxed opacity-90 mb-10">
+                                        <p className="text-sm sm:text-base leading-relaxed opacity-90 mb-8 lg:mb-10">
                                             {item.subtitle}
                                         </p>
 
-                                        <button className="border border-white px-8 py-3 text-sm hover:bg-white hover:text-black transition">
+                                        <button className="border border-white px-6 sm:px-8 py-2.5 sm:py-3 text-xs sm:text-sm hover:bg-white hover:text-black transition w-full sm:w-auto">
                                             Explore →
                                         </button>
                                     </div>
                                 </div>
 
-                                {/* INDEX */}
-                                <div className="absolute bottom-10 right-10 text-sm tracking-wide text-white/70">
+                                <div className="absolute bottom-6 sm:bottom-10 right-6 sm:right-10 text-xs sm:text-sm tracking-wide text-white/70">
                                     {item.index} / 06
                                 </div>
                             </div>

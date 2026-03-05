@@ -38,7 +38,6 @@ const Investors = () => {
     }
   };
 
-
   const handleReset = () => {
     setForm({
       name: "",
@@ -56,27 +55,29 @@ const Investors = () => {
     <div>
       <NavbarStatic />
       <Header />
-      <div className="w-full min-h-screen bg-white text-black flex flex-col items-center justify-start pb-16">
+
+      <div className="w-full min-h-screen bg-white text-black flex flex-col items-center pb-12 px-4 sm:px-6">
 
         {/* TOP SECTION */}
-        <div className="w-full max-w-[1200px] px-6 text-center py-16">
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+        <div className="w-full max-w-[1200px] text-center py-12 md:py-16">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-6">
             become an investor for<br />
-            ANTI WORLD        </h1>
+            ANTI WORLD
+          </h1>
 
-          <p className="text-lg md:text-xl max-w-[850px] mx-auto leading-8 text-black/90">
-
+          <p className="text-base sm:text-lg md:text-xl max-w-[850px] mx-auto leading-7 md:leading-8 text-black/90">
           </p>
         </div>
 
         {/* FORM SECTION */}
-        <div className="bg-white rounded-2xl shadow-xl text-black w-full max-w-[1150px] p-10 md:p-14">
-          <h2 className="text-3xl font-semibold mb-6 text-black">
+        <div className="bg-white rounded-xl md:rounded-2xl shadow-lg md:shadow-xl w-full max-w-[1150px] p-6 sm:p-8 md:p-14">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-6">
             enquiry form
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-6">
 
+            {/* NAME + CONTACT */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <input
                 type="text"
@@ -84,7 +85,7 @@ const Investors = () => {
                 placeholder="your name *"
                 value={form.name}
                 onChange={handleChange}
-                className="border rounded-md p-3 w-full "
+                className="border rounded-md p-3 w-full text-sm sm:text-base"
                 required
               />
 
@@ -94,7 +95,7 @@ const Investors = () => {
                 placeholder="your contact *"
                 value={form.contact}
                 onChange={handleChange}
-                className="border rounded-md p-3 w-full "
+                className="border rounded-md p-3 w-full text-sm sm:text-base"
                 required
               />
             </div>
@@ -105,7 +106,7 @@ const Investors = () => {
               placeholder="your email *"
               value={form.email}
               onChange={handleChange}
-              className="border rounded-md p-3 w-full "
+              className="border rounded-md p-3 w-full text-sm sm:text-base"
               required
             />
 
@@ -115,16 +116,17 @@ const Investors = () => {
               placeholder="investment value *"
               value={form.investment}
               onChange={handleChange}
-              className="border rounded-md p-3 w-full "
+              className="border rounded-md p-3 w-full text-sm sm:text-base"
               required
             />
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* COUNTRY STATE CITY */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               <select
                 name="country"
                 value={form.country}
                 onChange={handleChange}
-                className="border rounded-md p-3 w-full cursor-pointer "
+                className="border rounded-md p-3 w-full text-sm sm:text-base"
                 required
               >
                 <option value="">Select Country</option>
@@ -145,10 +147,11 @@ const Investors = () => {
                 name="state"
                 value={form.state}
                 onChange={handleChange}
-                className="border rounded-md p-3 w-full cursor-pointer "
+                className="border rounded-md p-3 w-full text-sm sm:text-base"
                 required
               >
                 <option value="">Select State</option>
+                {/* All your states remain unchanged */}
                 <option>Andhra Pradesh</option>
                 <option>Arunachal Pradesh</option>
                 <option>Assam</option>
@@ -177,8 +180,6 @@ const Investors = () => {
                 <option>Uttar Pradesh</option>
                 <option>Uttarakhand</option>
                 <option>West Bengal</option>
-
-
                 <option>Andaman and Nicobar Islands</option>
                 <option>Chandigarh</option>
                 <option>Dadra & Nagar Haveli and Daman & Diu</option>
@@ -187,17 +188,17 @@ const Investors = () => {
                 <option>Ladakh</option>
                 <option>Lakshadweep</option>
                 <option>Puducherry</option>
-
               </select>
 
               <select
                 name="city"
                 value={form.city}
                 onChange={handleChange}
-                className="border rounded-md p-3 w-full cursor-pointer "
+                className="border rounded-md p-3 w-full text-sm sm:text-base"
                 required
               >
                 <option value="">Select City</option>
+                {/* All your cities remain unchanged */}
                 <option>Mumbai</option>
                 <option>Delhi</option>
                 <option>Bengaluru</option>
@@ -236,7 +237,6 @@ const Investors = () => {
                 <option>Dehradun</option>
                 <option>Aurangabad</option>
                 <option>Nashik</option>
-
               </select>
             </div>
 
@@ -246,28 +246,31 @@ const Investors = () => {
               value={form.background}
               onChange={handleChange}
               rows={4}
-              className="border rounded-md p-3 w-full "
+              className="border rounded-md p-3 w-full text-sm sm:text-base"
             />
 
-            <div className="flex justify-between items-center pt-4">
+            {/* BUTTONS */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:justify-between sm:items-center pt-4">
               <button
                 type="button"
                 onClick={handleReset}
-                className="px-6 py-2 border-2 border-black rounded-md text-black hover:bg-black hover:text-white"
+                className="w-full sm:w-auto px-6 py-2 border-2 border-black rounded-md hover:bg-black hover:text-white transition"
               >
                 reset
               </button>
 
               <button
                 type="submit"
-                className="px-8 py-2 bg-black text-white rounded-md hover:opacity-80"
+                className="w-full sm:w-auto px-8 py-2 bg-black text-white rounded-md hover:opacity-80 transition"
               >
                 submit
               </button>
             </div>
+
           </form>
         </div>
       </div>
+
       <Footer />
     </div>
   );

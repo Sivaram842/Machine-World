@@ -32,7 +32,6 @@ export default function MetaSlider() {
 
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            // Initial state
             gsap.set(videosRef.current, { opacity: 0 });
             gsap.set(textsRef.current, { opacity: 0, y: 40 });
 
@@ -43,9 +42,9 @@ export default function MetaSlider() {
                 scrollTrigger: {
                     trigger: wrapperRef.current,
                     start: "top top",
-                    end: `+=${slides.length * 140}%`, // 🔥 more scroll distance
+                    end: `+=${slides.length * 140}%`,
                     pin: true,
-                    scrub: 1.4,                      // 🔥 smoother scrub
+                    scrub: 1.4,
                     pinSpacing: true,
                 },
             });
@@ -53,10 +52,8 @@ export default function MetaSlider() {
             slides.forEach((_, i) => {
                 if (i === 0) return;
 
-                // --- HOLD (delay before transition)
                 tl.to({}, { duration: 0.6 });
 
-                // --- VIDEO CROSSFADE (slow)
                 tl.to(
                     videosRef.current[i - 1],
                     { opacity: 0, duration: 0.8, ease: "power2.out" }
@@ -67,7 +64,6 @@ export default function MetaSlider() {
                     "<"
                 );
 
-                // --- TEXT TRANSITION (slightly after video)
                 tl.to(
                     textsRef.current[i - 1],
                     { opacity: 0, y: -40, duration: 0.6, ease: "power2.out" },
@@ -89,7 +85,7 @@ export default function MetaSlider() {
     return (
         <section
             ref={wrapperRef}
-            className="relative h-screen overflow-hidden bg-black text-white"
+            className="relative w-full min-h-[75vh] sm:min-h-[90vh] lg:h-screen overflow-hidden bg-black text-white"
         >
             {/* VIDEO LAYER */}
             <div className="absolute inset-0">
@@ -108,20 +104,22 @@ export default function MetaSlider() {
             </div>
 
             {/* TEXT LAYER */}
-            <div className="relative z-10 h-full flex items-center px-24">
+            <div className="relative z-10 h-full flex items-center px-6 sm:px-12 lg:px-24">
                 {slides.map((slide, i) => (
                     <div
                         key={i}
                         ref={(el) => (textsRef.current[i] = el)}
-                        className="absolute max-w-xl"
+                        className="absolute max-w-[90%] sm:max-w-xl"
                     >
-                        <h1 className="text-6xl font-bold mb-6">
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
                             {slide.title}
                         </h1>
-                        <p className="text-lg text-gray-200 mb-8">
+
+                        <p className="text-sm sm:text-base md:text-lg text-gray-200 mb-6 sm:mb-8 leading-relaxed">
                             {slide.description}
                         </p>
-                        <button className="px-8 py-3 bg-white text-black text-sm tracking-wide hover:opacity-80 transition">
+
+                        <button className="px-6 sm:px-8 py-2.5 sm:py-3 bg-white text-black text-xs sm:text-sm tracking-wide hover:opacity-80 transition w-full sm:w-auto">
                             EXPLORE
                         </button>
                     </div>

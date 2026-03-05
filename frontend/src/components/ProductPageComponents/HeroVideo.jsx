@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 import hero from "../../assets/hero.mp4";
 
 const HeroVideo = () => {
     return (
-        <section className="relative w-full h-screen overflow-hidden">
+        <section className="relative w-full min-h-[70vh] sm:min-h-[85vh] md:min-h-screen overflow-hidden">
+
+            {/* Video */}
             <video
                 className="absolute inset-0 w-full h-full object-cover"
                 muted
@@ -14,8 +16,12 @@ const HeroVideo = () => {
             >
                 <source src={hero} type="video/mp4" />
             </video>
-        </section>
-    )
-}
 
-export default HeroVideo
+            {/* Optional Dark Overlay (Improves readability if you add text later) */}
+            <div className="absolute inset-0 bg-black/30" />
+
+        </section>
+    );
+};
+
+export default HeroVideo;

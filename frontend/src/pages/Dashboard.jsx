@@ -71,33 +71,41 @@ export default function Dashboard() {
 
     return (
         <div className="min-h-screen bg-white text-gray-900">
+
             {/* Header */}
-            <header className="flex items-center justify-between px-8 py-5 border-b border-gray-200">
-                <h1 className="text-2xl font-semibold">Anti World Account</h1>
+            <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between px-4 sm:px-8 py-4 sm:py-5 border-b border-gray-200 gap-4 sm:gap-0">
+                <h1 className="text-xl sm:text-2xl font-semibold">
+                    Anti World Account
+                </h1>
                 <button
                     onClick={handleLogout}
-                    className="px-4 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-full"
+                    className="px-4 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-full text-sm sm:text-base"
                 >
                     Sign Out
                 </button>
             </header>
 
-            <div className="max-w-6xl mx-auto flex gap-12 py-12">
+            {/* Layout */}
+            <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-8 lg:gap-12 py-8 sm:py-12 px-4 sm:px-6 lg:px-0">
+
                 {/* Sidebar */}
-                <aside className="w-64 px-2">
+                <aside className="w-full lg:w-64 px-2">
+
                     <div className="flex gap-4 items-center mb-6">
-                        <div className="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center">
-                            <span className="text-gray-500 text-3xl">👤</span>
+                        <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gray-200 flex items-center justify-center">
+                            <span className="text-gray-500 text-2xl sm:text-3xl">👤</span>
                         </div>
                         <div>
-                            <p className="font-semibold">
+                            <p className="font-semibold text-sm sm:text-base">
                                 {user.firstName} {user.lastName}
                             </p>
-                            <p className="text-sm text-gray-500">{user.email}</p>
+                            <p className="text-xs sm:text-sm text-gray-500 break-all">
+                                {user.email}
+                            </p>
                         </div>
                     </div>
 
-                    <nav className="space-y-3 font-medium">
+                    <nav className="space-y-3 font-medium text-sm sm:text-base">
                         <p
                             onClick={() => setSelected("personal")}
                             className={`cursor-pointer hover:text-blue-600 ${selected === "personal"
@@ -171,7 +179,9 @@ export default function Dashboard() {
                 </aside>
 
                 {/* Dynamic Content */}
-                <main className="flex-1">{renderComponent()}</main>
+                <main className="flex-1 w-full">
+                    {renderComponent()}
+                </main>
             </div>
         </div>
     );

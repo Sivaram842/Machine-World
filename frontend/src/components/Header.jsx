@@ -1,9 +1,8 @@
-import hero1 from "../assets/hero.mp4";
 import hero from "../assets/homeVideo.mp4";
 
 export default function Header() {
     return (
-        <header className="relative h-screen w-full overflow-hidden">
+        <header className="relative w-full min-h-[75vh] sm:min-h-[90vh] lg:min-h-screen overflow-hidden">
 
             {/* Background video */}
             <video
@@ -19,19 +18,19 @@ export default function Header() {
             <div className="absolute inset-0 bg-black/60" />
 
             {/* Content */}
-            <div className="relative z-10 h-full flex items-end">
-                <div className="w-full px-12 pb-24">
+            <div className="relative z-10 flex items-end min-h-[75vh] sm:min-h-[90vh] lg:min-h-screen">
 
-                    {/* GRID WRAPPER – this controls alignment */}
-                    <div className="grid grid-cols-2 gap-16 max-w-7xl">
+                <div className="w-full px-4 sm:px-8 lg:px-12 pb-12 sm:pb-16 lg:pb-24">
 
-                        {/* LEFT COLUMN */}
-                        <h1 className="text-white text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+                    <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between max-w-7xl w-full gap-8">
+
+                        {/* LEFT */}
+                        <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight lg:max-w-2xl">
                             NEXT-GEN SPATIAL COMPUTING
                         </h1>
 
-                        {/* RIGHT COLUMN */}
-                        <p className="text-gray-300 text-base md:text-lg font-light leading-relaxed max-w-xl">
+                        {/* RIGHT */}
+                        <p className="text-gray-300 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-xl text-left lg:text-right">
                             By fusing immersive digital and real environments,
                             our spatial computers and modular XR glasses + pods enable creators,
                             students, and pioneers to invent, collaborate, and build in limitless
@@ -40,6 +39,7 @@ export default function Header() {
                         </p>
 
                     </div>
+
                 </div>
             </div>
 
