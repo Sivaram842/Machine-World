@@ -87,7 +87,7 @@ export default function Navbar() {
                         setActiveMenu(null);
                         navigate("/");
                     }}
-                    className={`text-base sm:text-lg lg:text-xl tracking-[0.28em] font-semibold cursor-pointer transition-colors
+                    className={`text-base sm:text-lg lg:text-xl tracking-[0.10em] font-semibold cursor-pointer transition-colors
             ${isWhite ? "text-black" : "text-white"}
         `}
                 >
@@ -193,6 +193,18 @@ export default function Navbar() {
                                         className="hover:text-black cursor-pointer">
                                         Spatial OS
                                     </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p className="text-xs uppercase tracking-wide text-gray-500 mb-4">
+                                    Professional Services
+                                </p>
+                                <ul className="space-y-4 text-lg sm:text-xl lg:text-[22px] font-light text-gray-700">
+                                    <li onClick={() => { setActiveMenu(null); navigate("/alfa"); }}
+                                        className=" hover:text-black cursor-pointer">
+                                        Antiworld Alfa
+                                    </li>
+
                                 </ul>
                             </div>
                         </div>

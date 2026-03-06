@@ -9,6 +9,7 @@ import ExploreGrid from '../../components/ProductPageComponents/ExploreGrid';
 import OrderNow from '../../components/ProductPageComponents/OrderNow';
 import XRDetails from '../../components/ProductPageComponents/XRDetails';
 import MilitaryXR from '../../components/ProductPageComponents/MilitaryXR';
+import ExpandableBlocks from '../../components/ProductPageComponents/ExpandableBlocks';
 
 const MainProduct = () => {
     return (
@@ -34,6 +35,7 @@ const MainProduct = () => {
             <div className="h-16 sm:h-24 lg:h-40" />
 
             <ExploreGrid />
+            <ExpandableBlocks />
 
             <div className="h-16 sm:h-24 lg:h-40" />
 

@@ -14,7 +14,7 @@ const Investors = () => {
     city: "",
     background: "",
   });
-
+  const [loading, setLoading] = useState(false);
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -22,19 +22,29 @@ const Investors = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    setLoading(true);
+
     try {
-      const res = await fetch("http://localhost:5000/api/investors", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/investors`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
 
       const data = await res.json();
-      alert(data.message);
+
+      if (!res.ok) {
+        throw new Error(data.message || "Request failed");
+      }
+
+      alert(data.message || "Form submitted successfully!");
       handleReset();
+
     } catch (error) {
       console.error(error);
       alert("Something went wrong!");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -261,9 +271,10 @@ const Investors = () => {
 
               <button
                 type="submit"
-                className="w-full sm:w-auto px-8 py-2 bg-black text-white rounded-md hover:opacity-80 transition"
+                disabled={loading}
+                className="w-full sm:w-auto px-8 py-2 bg-black text-white rounded-md hover:opacity-80 transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                submit
+                {loading ? "Submitting..." : "submit"}
               </button>
             </div>
 

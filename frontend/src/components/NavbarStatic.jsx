@@ -52,7 +52,7 @@ export default function NavbarStatic() {
                         setActiveMenu(null);
                         navigate("/");
                     }}
-                    className="text-lg lg:text-xl tracking-[0.28em] font-semibold cursor-pointer"
+                    className="text-lg lg:text-xl tracking-[0.10em] font-semibold cursor-pointer"
                 >
                     ANTIWORLD
                 </div>
@@ -135,6 +135,34 @@ export default function NavbarStatic() {
                                     Book a Demo
                                 </li>
                             </ul>
+
+                            <div>
+                                <p className="text-xs uppercase tracking-wide text-gray-500 mb-4">
+                                    Operating System
+                                </p>
+                                <ul className="space-y-4 text-lg sm:text-xl lg:text-[22px] font-light text-gray-700">
+                                    <li onClick={() => { setActiveMenu(null); navigate("/minimal-os"); }}
+                                        className=" hover:text-black cursor-pointer">
+                                        Minimal OS
+                                    </li>
+                                    <li onClick={() => { setActiveMenu(null); navigate("/spatial-os"); }}
+                                        className="hover:text-black cursor-pointer">
+                                        Spatial OS
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p className="text-xs uppercase tracking-wide text-gray-500 mb-4">
+                                    Professional Services
+                                </p>
+                                <ul className="space-y-4 text-lg sm:text-xl lg:text-[22px] font-light text-gray-700">
+                                    <li onClick={() => { setActiveMenu(null); navigate("/alfa"); }}
+                                        className=" hover:text-black cursor-pointer">
+                                        Antiworld Alfa
+                                    </li>
+
+                                </ul>
+                            </div>
                         </div>
 
                         {/* RIGHT PREVIEW */}
