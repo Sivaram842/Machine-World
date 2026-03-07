@@ -17,7 +17,8 @@ export default function Navbar() {
     const [atTop, setAtTop] = useState(true);
     const navigate = useNavigate();
     const lastScrollY = useRef(0);
-
+    const [defenceOpen, setDefenceOpen] = useState(false);
+    const [privateOpen, setPrivateOpen] = useState(false);
     const isOpen = (name) => activeMenu === name;
     const [activePreview, setActivePreview] = useState(null);
 
@@ -141,7 +142,7 @@ export default function Navbar() {
                         className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-10 lg:gap-20 items-start"
                         onMouseLeave={() => setActivePreview(null)}
                     >
-                        <div className="space-y-10 lg:space-y-14">
+                        <div className="space-y-10 lg:space-y-10">
 
                             <div>
                                 <p className="text-xs uppercase tracking-wide text-gray-500 mb-4">
@@ -196,13 +197,74 @@ export default function Navbar() {
                                 </ul>
                             </div>
                             <div>
-                                <p className="text-xs uppercase tracking-wide text-gray-500 mb-4">
-                                    Professional Services
+
+                                <p className="text-xs uppercase tracking-wide text-gray-500 mb-6">
+                                    Simulators
                                 </p>
+
                                 <ul className="space-y-4 text-lg sm:text-xl lg:text-[22px] font-light text-gray-700">
-                                    <li onClick={() => { setActiveMenu(null); navigate("/alfa"); }}
-                                        className=" hover:text-black cursor-pointer">
-                                        Antiworld Alfa
+
+                                    {/* Defence Dropdown */}
+                                    <li>
+                                        <div
+                                            onClick={() => setDefenceOpen(!defenceOpen)}
+                                            className="flex justify-between items-center cursor-pointer hover:text-black"
+                                        >
+                                            Defence Sector
+                                            <span>{defenceOpen ? "−" : "+"}</span>
+                                        </div>
+
+                                        {defenceOpen && (
+                                            <ul className="mt-3 space-y-3 pl-6 border-l border-gray-200">
+
+                                                <li
+                                                    onClick={() => { setActiveMenu(null); navigate("/aircrafts"); }}
+                                                    className="hover:text-black cursor-pointer"
+                                                >
+                                                    Aircrafts
+                                                </li>
+
+                                                <li
+                                                    onClick={() => { setActiveMenu(null); navigate("/ground-defence"); }}
+                                                    className="hover:text-black cursor-pointer"
+                                                >
+                                                    Ground Vehicles
+                                                </li>
+
+                                            </ul>
+                                        )}
+                                    </li>
+
+
+                                    {/* Private Dropdown */}
+                                    <li>
+                                        <div
+                                            onClick={() => setPrivateOpen(!privateOpen)}
+                                            className="flex justify-between items-center cursor-pointer hover:text-black"
+                                        >
+                                            Private
+                                            <span>{privateOpen ? "−" : "+"}</span>
+                                        </div>
+
+                                        {privateOpen && (
+                                            <ul className="mt-3 space-y-3 pl-6 border-l border-gray-200">
+
+                                                <li
+                                                    onClick={() => { setActiveMenu(null); navigate("/helicopter"); }}
+                                                    className="hover:text-black cursor-pointer"
+                                                >
+                                                    Helicopters
+                                                </li>
+
+                                                <li
+                                                    onClick={() => { setActiveMenu(null); navigate("/ground-private"); }}
+                                                    className="hover:text-black cursor-pointer"
+                                                >
+                                                    Ground Vehicles
+                                                </li>
+
+                                            </ul>
+                                        )}
                                     </li>
 
                                 </ul>

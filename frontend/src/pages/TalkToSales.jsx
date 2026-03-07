@@ -16,7 +16,7 @@ export default function TalkToSales() {
         message: "",
         consent: false,
     });
-
+    const [loading, setLoading] = useState(false);
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
@@ -27,17 +27,28 @@ export default function TalkToSales() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
+
         try {
-            const res = await fetch("http://localhost:5000/api/talk-to-sales", {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/talk-to-sales`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(form),
             });
 
             const data = await res.json();
-            alert(data.message);
+
+            if (!res.ok) {
+                throw new Error(data.message || "Request failed");
+            }
+
+            alert(data.message || "Message sent successfully!");
+
         } catch (err) {
+            console.error(err);
             alert("Something went wrong!");
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -237,9 +248,19 @@ export default function TalkToSales() {
 
                         <button
                             type="submit"
-                            className="mt-4 bg-black text-white px-8 md:px-10 py-3 text-[15px] transition hover:bg-[#333] flex items-center gap-3"
+                            disabled={loading}
+                            className="mt-4 bg-black text-white px-8 md:px-10 py-3 text-[15px] transition hover:bg-[#333] flex items-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
-                            SUBMIT <span>→</span>
+                            {loading ? (
+                                <>
+                                    <span className="animate-spin h-4 w-4 border-2 border-white border-t-transparent rounded-full"></span>
+                                    Sending...
+                                </>
+                            ) : (
+                                <>
+                                    SUBMIT <span>→</span>
+                                </>
+                            )}
                         </button>
                     </form>
                 </div>

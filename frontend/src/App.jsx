@@ -44,6 +44,10 @@ import HelpCenterPage from "./pages/Support/AccountPortalPage";
 import HelpCenter from "./pages/Support/HelpCenter";
 import SystemRequirementsPage from "./pages/Support/SystemRequirementPage";
 import Insider from "./pages/Resources/Insider";
+import Aircraft from "./pages/Simulators/Defence/Aircraft";
+import GroundVehicle from "./pages/Simulators/Defence/GroundVehicle";
+import Helicopter from "./pages/Simulators/Private/Helicopter";
+import GroundVehicleP from "./pages/Simulators/Private/GroundVehicle";
 
 
 const App = () => {
@@ -112,8 +116,10 @@ const App = () => {
         <Route path="/systemrequirements" element={<SystemRequirementsPage />} />
 
 
-
-
+        <Route path="/aircrafts" element={<Aircraft />} />
+        <Route path="/ground-defence" element={<GroundVehicle />} />
+        <Route path="/helicopter" element={<Helicopter />} />
+        <Route path="/ground-private" element={<GroundVehicleP />} />
       </Routes>
     </>
   );
