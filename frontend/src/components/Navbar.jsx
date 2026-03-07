@@ -266,7 +266,7 @@ export default function Navbar() {
                         className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-10 lg:gap-20 items-start"
                         onMouseLeave={() => setActivePreview(null)}
                     >
-                        <div className="space-y-10 lg:space-y-10">
+                        <div className="space-y-10 lg:space-y-6">
 
                             <div>
                                 <p className="text-xs uppercase tracking-wide text-gray-500 mb-4">
@@ -473,14 +473,15 @@ function DropdownWrapper({ children, visible }) {
         <div
             className={`
                 w-full bg-white border-t border-gray-200
-                transition-all duration-200
-                ${visible ? "max-h-[100vh] opacity-100" : "max-h-0 opacity-0 pointer-events-none"}
-                overflow-y-auto
+                transition-all duration-300 ease-in-out
+                ${visible ? "opacity-100" : "opacity-0 pointer-events-none"}
             `}
         >
-            <div className="px-4 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-14">
-                {children}
-            </div>
+            {visible && (
+                <div className="px-4 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-14 max-h-[calc(100vh-80px)] overflow-y-auto">
+                    {children}
+                </div>
+            )}
         </div>
     );
 }

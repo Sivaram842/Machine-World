@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 import xr4Img from "../assets/DAS.jpeg";
@@ -10,7 +10,13 @@ export default function NavbarStatic() {
     const [activePreview, setActivePreview] = useState(null);
     const [mobileOpen, setMobileOpen] = useState(false);
 
+    const [defenceOpen, setDefenceOpen] = useState(false);
+    const [privateOpen, setPrivateOpen] = useState(false);
+
     const navigate = useNavigate();
+    const [showNav, setShowNav] = useState(true);
+    const [atTop, setAtTop] = useState(true);
+    const lastScrollY = useRef(0);
     const isOpen = (name) => activeMenu === name;
 
     const previewImages = {
@@ -19,18 +25,61 @@ export default function NavbarStatic() {
         Book: accessoriesImg,
     };
 
+    useEffect(() => {
+        const handleScroll = () => {
+            if (mobileOpen) return;
+
+            const currentScroll = window.scrollY;
+
+            if (currentScroll === 0) {
+                setAtTop(true);
+                setShowNav(true);
+            } else if (currentScroll > lastScrollY.current) {
+                setShowNav(false);
+                setAtTop(false);
+            } else {
+                setShowNav(true);
+                setAtTop(false);
+            }
+
+            lastScrollY.current = currentScroll;
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [mobileOpen]);
+
+    useEffect(() => {
+        if (mobileOpen) {
+            document.body.style.overflow = "hidden";
+            document.body.style.height = "100vh";
+        } else {
+            document.body.style.overflow = "auto";
+            document.body.style.height = "auto";
+        }
+
+        return () => {
+            document.body.style.overflow = "auto";
+            document.body.style.height = "auto";
+        };
+    }, [mobileOpen]);
+
     return (
         <nav
             onMouseLeave={() => {
                 setActiveMenu(null);
                 setActivePreview(null);
             }}
-            className="fixed top-0 left-0 w-full z-50 bg-white border-b border-gray-200"
+            className={`
+fixed top-0 left-0 w-full z-50 bg-white border-b border-gray-200
+transition-all duration-300 ease-in-out
+${showNav ? "translate-y-0" : "-translate-y-full"}
+`}
         >
             {/* ================= TOP BAR ================= */}
             <div className="flex items-center justify-between px-6 lg:px-14 h-16 lg:h-20 text-black">
 
-                {/* LEFT (Desktop Only) */}
+                {/* LEFT */}
                 <div className="hidden lg:flex items-center gap-14 text-[15px] font-medium">
                     {["products", "usecases", "company"].map((item) => (
                         <div
@@ -60,7 +109,6 @@ export default function NavbarStatic() {
                 {/* RIGHT */}
                 <div className="flex items-center">
 
-                    {/* Desktop Right */}
                     <div className="hidden lg:flex items-center gap-14 text-[15px] font-medium">
                         {["resources", "support"].map((item) => (
                             <div
@@ -81,7 +129,7 @@ export default function NavbarStatic() {
                         </button>
                     </div>
 
-                    {/* Mobile Hamburger */}
+                    {/* Mobile */}
                     <button
                         onClick={() => setMobileOpen(!mobileOpen)}
                         className="lg:hidden text-2xl ml-4"
@@ -93,150 +141,206 @@ export default function NavbarStatic() {
 
             {/* ================= DROPDOWNS ================= */}
 
-            <div className={`${mobileOpen ? "block" : "hidden lg:block"}`}>
+            {/* PRODUCTS */}
+            <DropdownWrapper visible={isOpen("products")}>
+                <div className="grid lg:grid-cols-[420px_1fr] gap-10">
 
-                {/* PRODUCTS */}
-                <DropdownWrapper visible={mobileOpen || isOpen("products")}>
-                    <div className="grid lg:grid-cols-[420px_1fr] gap-20">
-                        <div className="space-y-10">
-                            <p className="text-xs uppercase tracking-wide text-gray-500">
-                                Headsets
+                    <div className="space-y-5">
+
+                        <p className="text-xs uppercase tracking-wide text-gray-500">
+                            Headsets
+                        </p>
+
+                        <ul className="space-y-2 text-[22px] font-light">
+                            <li onClick={() => navigate("/product1")}
+                                onMouseEnter={() => setActivePreview("DAS")}
+                                className="cursor-pointer text-gray-700 hover:text-black">
+                                DAS
+                            </li>
+
+                            <li onClick={() => navigate("/product2")}
+                                onMouseEnter={() => setActivePreview("Realm")}
+                                className="cursor-pointer text-gray-700 hover:text-black">
+                                Realm
+                            </li>
+
+                            <li onClick={() => navigate("/product3")}
+                                onMouseEnter={() => setActivePreview("Book")}
+                                className="cursor-pointer text-gray-700 hover:text-black">
+                                Book
+                            </li>
+
+                            <li onClick={() => navigate("/accessories")}
+                                className="cursor-pointer text-gray-700 hover:text-black">
+                                accessories
+                            </li>
+
+                            <li onClick={() => navigate("/demo")}
+                                className="cursor-pointer text-gray-700 hover:text-black">
+                                Book a Demo
+                            </li>
+                        </ul>
+
+                        {/* Operating System */}
+                        <div>
+                            <p className="text-xs uppercase tracking-wide text-gray-500 mb-3">
+                                Operating System
                             </p>
 
-                            <ul className="space-y-4 text-[22px] font-light">
-                                <li
-                                    onClick={() => navigate("/product1")}
-                                    onMouseEnter={() => setActivePreview("DAS")}
-                                    className="cursor-pointer text-gray-700 hover:text-black"
-                                >
-                                    DAS
-                                </li>
-                                <li
-                                    onClick={() => navigate("/product2")}
-                                    onMouseEnter={() => setActivePreview("Realm")}
-                                    className="cursor-pointer text-gray-700 hover:text-black"
-                                >
-                                    Realm
-                                </li>
-                                <li
-                                    onClick={() => navigate("/product3")}
-                                    onMouseEnter={() => setActivePreview("Book")}
-                                    className="cursor-pointer text-gray-700 hover:text-black"
-                                >
-                                    Book
-                                </li>
-                                <li onClick={() => { setActiveMenu(null); navigate("/accessories"); }}
-                                    className="cursor-pointer text-gray-700 hover:text-black transition">
-                                    accessories
+                            <ul className="space-y-4 text-[22px] font-light text-gray-700">
+                                <li onClick={() => navigate("/minimal-os")} className="hover:text-black cursor-pointer">
+                                    Minimal OS
                                 </li>
 
-                                <li onClick={() => { setActiveMenu(null); navigate("/demo"); }}
-                                    className="cursor-pointer text-gray-700 hover:text-black transition">
-                                    Book a Demo
+                                <li onClick={() => navigate("/spatial-os")} className="hover:text-black cursor-pointer">
+                                    Spatial OS
                                 </li>
                             </ul>
-
-                            <div>
-                                <p className="text-xs uppercase tracking-wide text-gray-500 mb-4">
-                                    Operating System
-                                </p>
-                                <ul className="space-y-4 text-lg sm:text-xl lg:text-[22px] font-light text-gray-700">
-                                    <li onClick={() => { setActiveMenu(null); navigate("/minimal-os"); }}
-                                        className=" hover:text-black cursor-pointer">
-                                        Minimal OS
-                                    </li>
-                                    <li onClick={() => { setActiveMenu(null); navigate("/spatial-os"); }}
-                                        className="hover:text-black cursor-pointer">
-                                        Spatial OS
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
-                                <p className="text-xs uppercase tracking-wide text-gray-500 mb-4">
-                                    Professional Services
-                                </p>
-                                <ul className="space-y-4 text-lg sm:text-xl lg:text-[22px] font-light text-gray-700">
-                                    <li onClick={() => { setActiveMenu(null); navigate("/alfa"); }}
-                                        className=" hover:text-black cursor-pointer">
-                                        Antiworld Alfa
-                                    </li>
-
-                                </ul>
-                            </div>
                         </div>
 
-                        {/* RIGHT PREVIEW */}
-                        <div className="relative w-full h-[260px] sm:h-[320px] lg:h-[420px] flex items-center justify-center bg-white">
-                            {activePreview && (
-                                <img
-                                    src={previewImages[activePreview]}
-                                    alt="Preview"
-                                    className="max-h-full max-w-full object-contain transition-opacity duration-300"
-                                />
-                            )}
+                        {/* Professional Services */}
+                        <div>
+                            <p className="text-xs uppercase tracking-wide text-gray-500 mb-3">
+                                Professional Services
+                            </p>
+
+                            <ul className="space-y-4 text-[22px] font-light text-gray-700">
+                                <li onClick={() => navigate("/alfa")} className="hover:text-black cursor-pointer">
+                                    Antiworld Alfa
+                                </li>
+                            </ul>
                         </div>
+
+                        {/* ================= SIMULATORS ================= */}
+                        <div>
+
+                            <p className="text-xs uppercase tracking-wide text-gray-500 mb-3">
+                                Simulators
+                            </p>
+
+                            <ul className="space-y-2 text-[22px] font-light text-gray-700">
+
+                                {/* Defence */}
+                                <li>
+                                    <div
+                                        onClick={() => setDefenceOpen(!defenceOpen)}
+                                        className="flex justify-between cursor-pointer hover:text-black"
+                                    >
+                                        Defence Sector
+                                        <span>{defenceOpen ? "−" : "+"}</span>
+                                    </div>
+
+                                    {defenceOpen && (
+                                        <ul className="mt-2 space-y-2 pl-6 border-l border-gray-200">
+                                            <li
+                                                onClick={() => navigate("/aircrafts")}
+                                                className="cursor-pointer hover:text-black"
+                                            >
+                                                Aircrafts
+                                            </li>
+
+                                            <li
+                                                onClick={() => navigate("/ground-defence")}
+                                                className="cursor-pointer hover:text-black"
+                                            >
+                                                Ground Vehicles
+                                            </li>
+                                        </ul>
+                                    )}
+                                </li>
+
+                                {/* Private */}
+                                <li>
+                                    <div
+                                        onClick={() => setPrivateOpen(!privateOpen)}
+                                        className="flex justify-between cursor-pointer hover:text-black"
+                                    >
+                                        Private
+                                        <span>{privateOpen ? "−" : "+"}</span>
+                                    </div>
+
+                                    {privateOpen && (
+                                        <ul className="mt-2 space-y-2 pl-6 border-l border-gray-200">
+                                            <li
+                                                onClick={() => navigate("/helicopter")}
+                                                className="cursor-pointer hover:text-black"
+                                            >
+                                                Helicopters
+                                            </li>
+
+                                            <li
+                                                onClick={() => navigate("/ground-private")}
+                                                className="cursor-pointer hover:text-black"
+                                            >
+                                                Ground Vehicles
+                                            </li>
+                                        </ul>
+                                    )}
+                                </li>
+
+                            </ul>
+                        </div>
+
                     </div>
-                </DropdownWrapper>
 
-                {/* USE CASES */}
-                <DropdownWrapper visible={mobileOpen || isOpen("usecases")}>
-                    <ul className="space-y-6 text-[24px] text-gray-700 font-light">
-                        <li onClick={() => { setActiveMenu(null); navigate("/learning"); }}
-                            className="cursor-pointer text-gray-700 hover:text-black transition">Learning</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/industry"); }}
-                            className="cursor-pointer text-gray-700 hover:text-black transition">Industry</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/entertainment"); }}
-                            className="cursor-pointer text-gray-700 hover:text-black transition">Entertainment</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/medical"); }}
-                            className="cursor-pointer text-gray-700 hover:text-black transition">Medical</li>
-                    </ul>
-                </DropdownWrapper>
+                    {/* RIGHT PREVIEW */}
+                    <div className="relative w-full min-h-[220px] flex items-center justify-center bg-white">
+                        {activePreview && (
+                            <img
+                                src={previewImages[activePreview]}
+                                alt="Preview"
+                                className="max-h-full max-w-full object-contain transition-opacity duration-300"
+                            />
+                        )}
+                    </div>
 
-                {/* COMPANY */}
-                <DropdownWrapper visible={mobileOpen || isOpen("company")}>
-                    <ul className="space-y-6 text-[24px] text-gray-700 font-light">
-                        <li onClick={() => { setActiveMenu(null); navigate("/about-us"); }}
-                            className="cursor-pointer text-gray-700 hover:text-black transition">About Us</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/newsroom"); }}
-                            className="cursor-pointer text-gray-700 hover:text-black transition">Newsroom</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/jobs"); }}
-                            className="cursor-pointer text-gray-700 hover:text-black transition">Jobs</li>
-                    </ul>
-                </DropdownWrapper>
+                </div>
+            </DropdownWrapper>
 
-                {/* RESOURCES */}
-                <DropdownWrapper visible={mobileOpen || isOpen("resources")}>
-                    <ul className="space-y-6 text-[24px] text-gray-700 font-light">
-                        <li onClick={() => { setActiveMenu(null); navigate("/insider"); }}
-                            className="cursor-pointer text-gray-700 hover:text-black transition">AntiWorld Insider</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/case-studies"); }}
-                            className="cursor-pointer text-gray-700 hover:text-black transition">Case Studies</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/resources"); }}
-                            className="cursor-pointer text-gray-700 hover:text-black transition">E-Books and Whitepapers</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/product-book"); }}
-                            className="cursor-pointer text-gray-700 hover:text-black transition">Product Book</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/investors"); }}
-                            className="cursor-pointer text-gray-700 hover:text-black transition">Invest On US</li>
-                    </ul>
-                </DropdownWrapper>
+            {/* USE CASES */}
+            <DropdownWrapper visible={isOpen("usecases")}>
+                <ul className="space-y-6 text-[24px] text-gray-700 font-light">
+                    <li onClick={() => navigate("/learning")} className="cursor-pointer hover:text-black">Learning</li>
+                    <li onClick={() => navigate("/industry")} className="cursor-pointer hover:text-black">Industry</li>
+                    <li onClick={() => navigate("/entertainment")} className="cursor-pointer hover:text-black">Entertainment</li>
+                    <li onClick={() => navigate("/medical")} className="cursor-pointer hover:text-black">Medical</li>
+                </ul>
+            </DropdownWrapper>
 
-                {/* SUPPORT */}
-                <DropdownWrapper visible={mobileOpen || isOpen("support")}>
-                    <ul className="space-y-6 text-[24px] text-gray-700 font-light">
-                        <li onClick={() => { setActiveMenu(null); navigate("/helpcenter"); }}
-                            className="cursor-pointer text-gray-700 hover:text-black transition">Help Center</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/contactus"); }}
-                            className="cursor-pointer text-gray-700 hover:text-black transition">Contact Support</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/accountportal"); }}
-                            className="cursor-pointer text-gray-700 hover:text-black transition">Account Portal</li>
-                        <li onClick={() => { setActiveMenu(null); navigate("/systemrequirements"); }}
-                            className="cursor-pointer text-gray-700 hover:text-black transition">System Requirements</li>
-                    </ul>
-                </DropdownWrapper>
-            </div>
+            {/* COMPANY */}
+            <DropdownWrapper visible={isOpen("company")}>
+                <ul className="space-y-6 text-[24px] text-gray-700 font-light">
+                    <li onClick={() => navigate("/about-us")} className="cursor-pointer hover:text-black">About Us</li>
+                    <li onClick={() => navigate("/newsroom")} className="cursor-pointer hover:text-black">Newsroom</li>
+                    <li onClick={() => navigate("/jobs")} className="cursor-pointer hover:text-black">Jobs</li>
+                </ul>
+            </DropdownWrapper>
+
+            {/* RESOURCES */}
+            <DropdownWrapper visible={isOpen("resources")}>
+                <ul className="space-y-6 text-[24px] text-gray-700 font-light">
+                    <li onClick={() => navigate("/insider")} className="cursor-pointer hover:text-black">AntiWorld Insider</li>
+                    <li onClick={() => navigate("/case-studies")} className="cursor-pointer hover:text-black">Case Studies</li>
+                    <li onClick={() => navigate("/resources")} className="cursor-pointer hover:text-black">E-Books and Whitepapers</li>
+                    <li onClick={() => navigate("/product-book")} className="cursor-pointer hover:text-black">Product Book</li>
+                    <li onClick={() => navigate("/investors")} className="cursor-pointer hover:text-black">Invest On US</li>
+                </ul>
+            </DropdownWrapper>
+
+            {/* SUPPORT */}
+            <DropdownWrapper visible={isOpen("support")}>
+                <ul className="space-y-6 text-[24px] text-gray-700 font-light">
+                    <li onClick={() => navigate("/helpcenter")} className="cursor-pointer hover:text-black">Help Center</li>
+                    <li onClick={() => navigate("/contactus")} className="cursor-pointer hover:text-black">Contact Support</li>
+                    <li onClick={() => navigate("/accountportal")} className="cursor-pointer hover:text-black">Account Portal</li>
+                    <li onClick={() => navigate("/systemrequirements")} className="cursor-pointer hover:text-black">System Requirements</li>
+                </ul>
+            </DropdownWrapper>
+
         </nav>
     );
 }
+
 
 /* Dropdown Wrapper */
 function DropdownWrapper({ children, visible }) {
@@ -244,11 +348,15 @@ function DropdownWrapper({ children, visible }) {
         <div
             className={`
                 w-full bg-white border-t border-gray-200
-                transition-all duration-200 overflow-hidden
-                ${visible ? "max-h-[800px] opacity-100 py-10" : "max-h-0 opacity-0 pointer-events-none"}
+                transition-all duration-300 ease-in-out
+                ${visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none hidden"}
             `}
         >
-            <div className="px-6 lg:px-12">{children}</div>
+            {visible && (
+                <div className="px-6 lg:px-12 py-10">
+                    {children}
+                </div>
+            )}
         </div>
     );
 }
