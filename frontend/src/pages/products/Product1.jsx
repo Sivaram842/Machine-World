@@ -13,8 +13,6 @@ import DeploymentSection from '../../components/ProductSubPageComponents/Deploym
 import FullScreenXRImage from '../../components/ProductSubPageComponents/FullScreenXRImage'
 import FullScreenImage from '../../components/ProductSubPageComponents/FullScreenImage'
 
-import hero from "../../assets/DASVideo.mp4";
-import fullVideo from "../../assets/DAS2.mp4";
 import img from "../../assets/DAS1.jpeg";
 import v1Image from "../../assets/V1Tv19.4.png";
 import v1Image1 from "../../assets/V1Tv19.3.png";
@@ -34,7 +32,7 @@ const Product1 = () => {
                     playsInline
                     preload="auto"
                 >
-                    <source src={hero} type="video/mp4" />
+                    <source src={"/DASVideo.mp4"} type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 bg-black/60" />
 
@@ -99,7 +97,7 @@ const Product1 = () => {
                     playsInline
                     preload="auto"
                 >
-                    <source src={fullVideo} type="video/mp4" />
+                    <source src={"/DAS2.mp4"} type="video/mp4" />
                 </video>
             </section>
 

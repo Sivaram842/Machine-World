@@ -12,9 +12,7 @@ import ImmersionSection from '../../components/ProductSubPageComponents/Immersio
 import DeploymentSection from '../../components/ProductSubPageComponents/DeploymentSection'
 import FullScreenXRImage from '../../components/ProductSubPageComponents/FullScreenXRImage'
 import FullScreenImage from '../../components/ProductSubPageComponents/FullScreenImage'
-import hero from "../../assets/BookHero.mp4";
 import img from "../../assets/Book1.jpeg";
-import fullVideo from "../../assets/DAS2.mp4";
 
 const Product2 = () => {
     return (
@@ -31,7 +29,7 @@ const Product2 = () => {
                     playsInline
                     preload="auto"
                 >
-                    <source src={hero} type="video/mp4" />
+                    <source src={"/BookHero.mp4"} type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 bg-black/60" />
 
@@ -99,7 +97,7 @@ const Product2 = () => {
                     playsInline
                     preload="auto"
                 >
-                    <source src={fullVideo} type="video/mp4" />
+                    <source src={"/DAS2.mp4"} type="video/mp4" />
                 </video>
             </section>
 

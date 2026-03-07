@@ -1,5 +1,4 @@
 import { useRef, useState } from "react";
-import trainingVideo from "../../assets/training.mp4";
 import poster from "../../assets/state-of-xr-report-hero.webp";
 
 export default function DeploymentSection() {
@@ -22,7 +21,7 @@ export default function DeploymentSection() {
                     {/* VIDEO */}
                     <video
                         ref={videoRef}
-                        src={trainingVideo}
+                        src={"/training.mp4"}
                         poster={poster}
                         controls
                         playsInline

@@ -30,6 +30,8 @@ export default function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false);
     useEffect(() => {
         const handleScroll = () => {
+            if (mobileOpen) return; // prevent navbar hiding while mobile menu open
+
             const currentScroll = window.scrollY;
 
             if (currentScroll === 0) {
@@ -48,8 +50,27 @@ export default function Navbar() {
 
         window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [mobileOpen]);
 
+    useEffect(() => {
+        if (mobileOpen) {
+            document.body.style.overflow = "hidden";
+            document.body.style.height = "100vh";
+        } else {
+            document.body.style.overflow = "auto";
+            document.body.style.height = "auto";
+        }
+
+        return () => {
+            document.body.style.overflow = "auto";
+            document.body.style.height = "auto";
+        };
+    }, [mobileOpen]);
+    const [mobileProducts, setMobileProducts] = useState(false);
+    const [mobileUsecases, setMobileUsecases] = useState(false);
+    const [mobileCompany, setMobileCompany] = useState(false);
+    const [mobileResources, setMobileResources] = useState(false);
+    const [mobileSupport, setMobileSupport] = useState(false);
     const isWhite = !atTop && showNav;
 
     return (
@@ -136,8 +157,111 @@ export default function Navbar() {
             </div>
 
             {/* DROPDOWNS */}
-            <div className={`${mobileOpen ? "block" : "hidden lg:block"}`}>
-                <DropdownWrapper visible={isOpen("products")}>
+            {/* MOBILE MENU */}
+            <div className={mobileOpen ? "fixed top-16 left-0 w-full h-[calc(100vh-64px)] bg-white overflow-y-auto lg:hidden px-6 py-6 space-y-6" : "hidden"}>
+                {/* MOBILE ACCORDION MENU */}
+                <div className="lg:hidden space-y-6">
+
+                    {/* PRODUCTS */}
+                    <div>
+                        <button
+                            onClick={() => setMobileProducts(!mobileProducts)}
+                            className="w-full flex justify-between text-lg font-medium"
+                        >
+                            Products <span>{mobileProducts ? "−" : "+"}</span>
+                        </button>
+
+                        {mobileProducts && (
+                            <div className="mt-4 space-y-3 text-gray-700">
+                                <p onClick={() => navigate("/product1")} className="cursor-pointer">DAS</p>
+                                <p onClick={() => navigate("/product2")} className="cursor-pointer">Realm</p>
+                                <p onClick={() => navigate("/product3")} className="cursor-pointer">Book</p>
+                                <p onClick={() => navigate("/accessories")} className="cursor-pointer">Accessories</p>
+                                <p onClick={() => navigate("/demo")} className="cursor-pointer">Book a Demo</p>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* USE CASES */}
+                    <div>
+                        <button
+                            onClick={() => setMobileUsecases(!mobileUsecases)}
+                            className="w-full flex justify-between text-lg font-medium"
+                        >
+                            Use Cases <span>{mobileUsecases ? "−" : "+"}</span>
+                        </button>
+
+                        {mobileUsecases && (
+                            <div className="mt-4 space-y-3 text-gray-700">
+                                <p onClick={() => navigate("/learning")} className="cursor-pointer">Learning</p>
+                                <p onClick={() => navigate("/industry")} className="cursor-pointer">Industry</p>
+                                <p onClick={() => navigate("/entertainment")} className="cursor-pointer">Entertainment</p>
+                                <p onClick={() => navigate("/medical")} className="cursor-pointer">Medical</p>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* COMPANY */}
+                    <div>
+                        <button
+                            onClick={() => setMobileCompany(!mobileCompany)}
+                            className="w-full flex justify-between text-lg font-medium"
+                        >
+                            Company <span>{mobileCompany ? "−" : "+"}</span>
+                        </button>
+
+                        {mobileCompany && (
+                            <div className="mt-4 space-y-3 text-gray-700">
+                                <p onClick={() => navigate("/about-us")} className="cursor-pointer">About Us</p>
+                                <p onClick={() => navigate("/newsroom")} className="cursor-pointer">Newsroom</p>
+                                <p onClick={() => navigate("/jobs")} className="cursor-pointer">Jobs</p>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* RESOURCES */}
+                    <div>
+                        <button
+                            onClick={() => setMobileResources(!mobileResources)}
+                            className="w-full flex justify-between text-lg font-medium"
+                        >
+                            Resources <span>{mobileResources ? "−" : "+"}</span>
+                        </button>
+
+                        {mobileResources && (
+                            <div className="mt-4 space-y-3 text-gray-700">
+                                <p onClick={() => navigate("/insider")} className="cursor-pointer">AntiWorld Insider</p>
+                                <p onClick={() => navigate("/case-studies")} className="cursor-pointer">Case Studies</p>
+                                <p onClick={() => navigate("/resources")} className="cursor-pointer">E-Books</p>
+                                <p onClick={() => navigate("/product-book")} className="cursor-pointer">Product Book</p>
+                                <p onClick={() => navigate("/investors")} className="cursor-pointer">Invest On Us</p>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* SUPPORT */}
+                    <div>
+                        <button
+                            onClick={() => setMobileSupport(!mobileSupport)}
+                            className="w-full flex justify-between text-lg font-medium"
+                        >
+                            Support <span>{mobileSupport ? "−" : "+"}</span>
+                        </button>
+
+                        {mobileSupport && (
+                            <div className="mt-4 space-y-3 text-gray-700">
+                                <p onClick={() => navigate("/helpcenter")} className="cursor-pointer">Help Center</p>
+                                <p onClick={() => navigate("/contactus")} className="cursor-pointer">Contact Support</p>
+                                <p onClick={() => navigate("/accountportal")} className="cursor-pointer">Account Portal</p>
+                                <p onClick={() => navigate("/systemrequirements")} className="cursor-pointer">System Requirements</p>
+                            </div>
+                        )}
+                    </div>
+
+                </div>
+            </div>
+            <div className="hidden lg:block">
+                <DropdownWrapper visible={mobileOpen || isOpen("products")}>
                     <div
                         className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-10 lg:gap-20 items-start"
                         onMouseLeave={() => setActivePreview(null)}
@@ -337,6 +461,8 @@ export default function Navbar() {
                     </ul>
                 </DropdownWrapper>
             </div>
+
+
         </nav>
     );
 }
@@ -347,8 +473,9 @@ function DropdownWrapper({ children, visible }) {
         <div
             className={`
                 w-full bg-white border-t border-gray-200
-                transition-all duration-200 overflow-hidden
-                ${visible ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"}
+                transition-all duration-200
+                ${visible ? "max-h-[100vh] opacity-100" : "max-h-0 opacity-0 pointer-events-none"}
+                overflow-y-auto
             `}
         >
             <div className="px-4 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-14">

@@ -1,4 +1,3 @@
-import trainingVideo from "../assets/training.mp4";
 
 export default function TrainingSection() {
     return (
@@ -35,7 +34,7 @@ export default function TrainingSection() {
                 {/* RIGHT VIDEO */}
                 <div className="w-full">
                     <video
-                        src={trainingVideo}
+                        src={"/training.mp4"}
                         autoPlay
                         loop
                         muted

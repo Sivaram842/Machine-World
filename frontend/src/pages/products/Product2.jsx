@@ -12,9 +12,7 @@ import ImmersionSection from '../../components/ProductSubPageComponents/Immersio
 import DeploymentSection from '../../components/ProductSubPageComponents/DeploymentSection'
 import FullScreenXRImage from '../../components/ProductSubPageComponents/FullScreenXRImage'
 import FullScreenImage from '../../components/ProductSubPageComponents/FullScreenImage'
-import fullVideo from "../../assets/DAS2.mp4";
 import img from "../../assets/Realm1.jpeg";
-import hero123 from "../../assets/RealmHero.mp4";
 import Boximg from "../../assets/RealmBox.jpeg";
 
 const Product2 = () => {
@@ -33,7 +31,7 @@ const Product2 = () => {
                     playsInline
                     preload="auto"
                 >
-                    <source src={hero123} type="video/mp4" />
+                    <source src={"/RealmHero.mp4"} type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 bg-black/60" />
 

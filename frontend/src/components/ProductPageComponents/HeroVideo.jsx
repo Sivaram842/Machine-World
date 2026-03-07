@@ -1,5 +1,4 @@
 import React from "react";
-import hero from "../../assets/hero.mp4";
 
 const HeroVideo = () => {
     return (
@@ -14,10 +13,10 @@ const HeroVideo = () => {
                 playsInline
                 preload="auto"
             >
-                <source src={hero} type="video/mp4" />
+                <source src="/hero.mp4" type="video/mp4" />
             </video>
 
-            {/* Optional Dark Overlay (Improves readability if you add text later) */}
+            {/* Optional Dark Overlay */}
             <div className="absolute inset-0 bg-black/30" />
 
         </section>

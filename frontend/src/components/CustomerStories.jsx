@@ -1,4 +1,3 @@
-import videoSrc from "../assets/driving-simulator-monitor-center.mp4";
 
 export default function CustomerQuoteSection() {
     return (
@@ -36,7 +35,7 @@ export default function CustomerQuoteSection() {
                     {/* VIDEO */}
                     <div className="relative w-full aspect-[16/9] min-h-[220px] sm:min-h-[320px] lg:min-h-[520px] overflow-hidden bg-black">
                         <video
-                            src={videoSrc}
+                            src={"/driving-simulator-monitor-center.mp4"}
                             controls
                             preload="metadata"
                             className="w-full h-full object-cover"

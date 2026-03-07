@@ -1,4 +1,3 @@
-import hero from "../assets/homeVideo.mp4";
 
 export default function Header() {
     return (
@@ -7,7 +6,7 @@ export default function Header() {
             {/* Background video */}
             <video
                 className="absolute inset-0 w-full h-full object-cover"
-                src={hero}
+                src={"/homeVideo.mp4"}
                 autoPlay
                 loop
                 muted
