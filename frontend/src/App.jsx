@@ -48,6 +48,11 @@ import Aircraft from "./pages/Simulators/Defence/Aircraft";
 import GroundVehicle from "./pages/Simulators/Defence/GroundVehicle";
 import Helicopter from "./pages/Simulators/Private/Helicopter";
 import GroundVehicleP from "./pages/Simulators/Private/GroundVehicle";
+import Rafale from "./pages/SimulatorComponents/Rafale";
+import MIG29 from "./pages/SimulatorComponents/MIG29";
+import MIG29K from "./pages/SimulatorComponents/MIG-29K";
+import Tejas from "./pages/SimulatorComponents/Tejas";
+import Su30MKI from "./pages/SimulatorComponents/Su-30MKI";
 
 
 const App = () => {
@@ -120,6 +125,12 @@ const App = () => {
         <Route path="/ground-defence" element={<GroundVehicle />} />
         <Route path="/helicopter" element={<Helicopter />} />
         <Route path="/ground-private" element={<GroundVehicleP />} />
+
+        <Route path="/rafale" element={<Rafale />} />
+        <Route path="/mig-29" element={<MIG29 />} />
+        <Route path="/mig-29k" element={<MIG29K />} />
+        <Route path="/tejas" element={<Tejas />} />
+        <Route path="su-30mki" element={<Su30MKI />} />
       </Routes>
     </>
   );

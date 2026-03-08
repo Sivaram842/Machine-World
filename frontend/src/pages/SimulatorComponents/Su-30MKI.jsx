@@ -1,19 +1,6 @@
-import React from 'react'
-import { useRef, useState } from "react";
-
-import HeroVideo from '../../components/ProductSubPageComponents/HeroVideo'
+import React, { useRef, useState } from "react";
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import TalkToSalesCTA from '../../components/TalkToSalesCTA'
-import CustomerQuoteSection from '../../components/CustomerStories'
-import VariantsSection from '../../components/ProductSubPageComponents/VariantsSection'
-import TrainingPackageSection from '../../components/ProductSubPageComponents/TrainingPackageSection'
-import SupportGridSection from '../../components/ProductSubPageComponents/SupportGridSection'
-import PassthroughSection from '../../components/ProductSubPageComponents/PassthroughSection'
-import ImmersionSection from '../../components/ProductSubPageComponents/ImmersionSection'
-import DeploymentSection from '../../components/ProductSubPageComponents/DeploymentSection'
-import FullScreenXRImage from '../../components/ProductSubPageComponents/FullScreenXRImage'
-import FullScreenImage from '../../components/ProductSubPageComponents/FullScreenImage'
 
 import img from "../../assets/DAS1.jpeg";
 import v1Image from "../../assets/V1Tv19.4.png";
@@ -24,7 +11,8 @@ import v1Image4 from "../../assets/DAS CORE0669.png";
 import v1Image5 from "../../assets/DAS.jpeg";
 import poster from "../../assets/officeDAS.png";
 import heroImg from "../../assets/officeDAS.png";
-
+import PassthroughSection from "../../components/ProductSubPageComponents/PassthroughSection";
+import TalkToSalesCTA from "../../components/TalkToSalesCTA";
 
 const cards = [
     {
@@ -66,47 +54,61 @@ const cards = [
         image: v1Image5
     }
 ];
-const Product1 = () => {
-
+const Su30MKI = () => {
 
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
 
     const handlePlay = () => {
-        if (!videoRef.current) return;
-        videoRef.current.play();
-        setIsPlaying(true);
+        if (videoRef.current) {
+            videoRef.current.play();
+        }
     };
     return (
-        <div className="w-full overflow-x-hidden">
+        <div>
             <Navbar />
+            <header className="relative w-full min-h-[75vh] sm:min-h-[90vh] lg:min-h-screen overflow-hidden">
 
-            {/* HERO */}
-            <section className="relative w-full h-screen overflow-hidden">
+                {/* Background video */}
                 <video
                     className="absolute inset-0 w-full h-full object-cover"
-                    muted
+                    src={"/homeVideo.mp4"}
                     autoPlay
                     loop
+                    muted
                     playsInline
-                    preload="auto"
-                >
-                    <source src={"/DASVideo.mp4"} type="video/mp4" />
-                </video>
+                />
+
+                {/* Dark overlay */}
                 <div className="absolute inset-0 bg-black/60" />
 
-                <div className="relative z-10 h-full flex items-end">
-                    <div className="w-full px-6 sm:px-10 lg:px-12 pb-16 sm:pb-20 lg:pb-24">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 max-w-7xl">
-                            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
-                                {/* DAS */}
+                {/* Content */}
+                <div className="relative z-10 flex items-end min-h-[75vh] sm:min-h-[90vh] lg:min-h-screen">
+
+                    <div className="w-full px-4 sm:px-8 lg:px-12 pb-12 sm:pb-16 lg:pb-24">
+
+                        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between w-full gap-8">
+
+                            {/* LEFT */}
+                            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight lg:max-w-2xl">
+                                NEXT-GEN SPATIAL COMPUTING
                             </h1>
+
+                            {/* RIGHT */}
+                            <p className="text-gray-300 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-xl text-left lg:text-right">
+                                By fusing immersive digital and real environments,
+                                our spatial computers and modular XR glasses + pods enable creators,
+                                students, and pioneers to invent, collaborate, and build in limitless
+                                3D space—without barriers, screens, or boundaries. Experience the freedom
+                                to create, learn, and connect anywhere—powered by AI, and always evolving.
+                            </p>
+
                         </div>
+
                     </div>
                 </div>
-            </section>
 
-            {/* IMMERSION SECTION */}
+            </header>
             <section className="bg-white py-16 sm:py-24 lg:py-[140px]">
                 <div className="mx-auto flex flex-col lg:flex-row max-w-[1400px] items-start gap-10 lg:gap-[100px] px-6 sm:px-10 lg:px-16">
 
@@ -168,17 +170,17 @@ const Product1 = () => {
                             <button
                                 onClick={handlePlay}
                                 className="absolute left-1/2 top-1/2 flex 
-                                                   h-14 w-14 sm:h-16 sm:w-16 lg:h-20 lg:w-20
-                                                   -translate-x-1/2 -translate-y-1/2 
-                                                   items-center justify-center 
-                                                   rounded-full bg-black/50 
-                                                   transition hover:bg-black/70"
+                                                               h-14 w-14 sm:h-16 sm:w-16 lg:h-20 lg:w-20
+                                                               -translate-x-1/2 -translate-y-1/2 
+                                                               items-center justify-center 
+                                                               rounded-full bg-black/50 
+                                                               transition hover:bg-black/70"
                             >
                                 <span className="ml-1 h-0 w-0 
-                                                         border-b-[8px] border-t-[8px] border-l-[14px]
-                                                         sm:border-b-[10px] sm:border-t-[10px] sm:border-l-[18px]
-                                                         lg:border-b-[12px] lg:border-t-[12px] lg:border-l-[22px]
-                                                         border-b-transparent border-t-transparent border-l-white" />
+                                                                     border-b-[8px] border-t-[8px] border-l-[14px]
+                                                                     sm:border-b-[10px] sm:border-t-[10px] sm:border-l-[18px]
+                                                                     lg:border-b-[12px] lg:border-t-[12px] lg:border-l-[22px]
+                                                                     border-b-transparent border-t-transparent border-l-white" />
                             </button>
                         )}
                     </div>
@@ -191,23 +193,23 @@ const Product1 = () => {
                     </h2>
 
                     <p className="mx-auto mt-6 sm:mt-8 max-w-[560px] 
-                                          text-sm sm:text-[15px] 
-                                          leading-relaxed sm:leading-[1.75] 
-                                          text-gray-600">
+                                                      text-sm sm:text-[15px] 
+                                                      leading-relaxed sm:leading-[1.75] 
+                                                      text-gray-600">
                         Break free from the limitations of traditional laptops and flat screens.
                         This professional spatial computer transforms your workflow into an immersive
                         3D environment where multiple applications exist around you.
                     </p>
 
                     <button className="mt-10 sm:mt-12 lg:mt-14 
-                                               inline-flex items-center justify-center gap-4 
-                                               bg-black 
-                                               px-6 sm:px-8 lg:px-10 
-                                               py-3 sm:py-3.5 lg:py-4 
-                                               text-xs sm:text-[13px] 
-                                               tracking-widest text-white 
-                                               transition hover:bg-gray-900 
-                                               w-full sm:w-auto">
+                                                           inline-flex items-center justify-center gap-4 
+                                                           bg-black 
+                                                           px-6 sm:px-8 lg:px-10 
+                                                           py-3 sm:py-3.5 lg:py-4 
+                                                           text-xs sm:text-[13px] 
+                                                           tracking-widest text-white 
+                                                           transition hover:bg-gray-900 
+                                                           w-full sm:w-auto">
                         VIEW Antiworld-READY SOFTWARE
                         <span className="text-base sm:text-lg">→</span>
                     </button>
@@ -247,10 +249,10 @@ const Product1 = () => {
                         </p>
 
                         <button className="inline-flex items-center gap-3 sm:gap-4 bg-black text-white 
-                        px-6 sm:px-8 lg:px-10 
-                        py-3 sm:py-4 
-                        text-sm sm:text-base font-medium 
-                        hover:opacity-80 transition">
+                                    px-6 sm:px-8 lg:px-10 
+                                    py-3 sm:py-4 
+                                    text-sm sm:text-base font-medium 
+                                    hover:opacity-80 transition">
                             WHY XR?
                             <span className="text-base sm:text-lg">→</span>
                         </button>
@@ -318,17 +320,17 @@ const Product1 = () => {
                             </p>
 
                             {/* <p className="text-xs sm:text-sm tracking-widest uppercase text-gray-600 mb-6">
-                                BARTEK PANASEWICZ — VP TRAINING SYSTEMS, LAND
-                            </p> */}
+                                            BARTEK PANASEWICZ — VP TRAINING SYSTEMS, LAND
+                                        </p> */}
 
                             <button className="inline-flex items-center justify-center gap-1 
-                                           bg-black text-white 
-                                           px-6 sm:px-8 
-                                           py-3 sm:py-4 
-                                           text-xs sm:text-sm 
-                                           tracking-wide 
-                                           hover:opacity-90 transition 
-                                           w-full sm:w-auto">
+                                                       bg-black text-white 
+                                                       px-6 sm:px-8 
+                                                       py-3 sm:py-4 
+                                                       text-xs sm:text-sm 
+                                                       tracking-wide 
+                                                       hover:opacity-90 transition 
+                                                       w-full sm:w-auto">
                                 READ CASE STUDY →
                             </button>
                         </div>
@@ -379,14 +381,14 @@ const Product1 = () => {
 
                     {/* Button */}
                     <button className="mt-12 sm:mt-20 lg:mt-28 
-                                   inline-flex items-center justify-center gap-3 
-                                   bg-black 
-                                   px-6 sm:px-8 lg:px-10 
-                                   py-3 sm:py-3.5 lg:py-4 
-                                   text-xs sm:text-[13px] 
-                                   tracking-widest text-white 
-                                   hover:bg-gray-900 transition 
-                                   w-full sm:w-auto">
+                                               inline-flex items-center justify-center gap-3 
+                                               bg-black 
+                                               px-6 sm:px-8 lg:px-10 
+                                               py-3 sm:py-3.5 lg:py-4 
+                                               text-xs sm:text-[13px] 
+                                               tracking-widest text-white 
+                                               hover:bg-gray-900 transition 
+                                               w-full sm:w-auto">
                         DOWNLOAD PRODUCT BOOK
                         <span className="text-base sm:text-lg">→</span>
                     </button>
@@ -424,9 +426,10 @@ const Product1 = () => {
             </section>
 
             <TalkToSalesCTA />
+
             <Footer />
         </div>
     )
 }
 
-export default Product1
+export default Su30MKI

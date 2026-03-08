@@ -21,7 +21,7 @@ export default function Header() {
 
                 <div className="w-full px-4 sm:px-8 lg:px-12 pb-12 sm:pb-16 lg:pb-24">
 
-                    <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between max-w-7xl w-full gap-8">
+                    <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between w-full gap-8">
 
                         {/* LEFT */}
                         <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight lg:max-w-2xl">
