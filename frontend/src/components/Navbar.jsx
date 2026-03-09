@@ -269,58 +269,6 @@ export default function Navbar() {
                         <div className="space-y-10 lg:space-y-6">
 
                             <div>
-                                <p className="text-xs uppercase tracking-wide text-gray-500 mb-4">
-                                    Devices
-                                </p>
-
-                                <ul className="space-y-4 text-lg sm:text-xl lg:text-[22px] font-light">
-                                    {/* unchanged list */}
-                                    <li onClick={() => { setActiveMenu(null); navigate("/product1"); }}
-                                        onMouseEnter={() => setActivePreview("DAS")}
-                                        className="cursor-pointer text-gray-700 hover:text-black transition">
-                                        DAS
-                                    </li>
-
-                                    <li onClick={() => { setActiveMenu(null); navigate("/product2"); }}
-                                        onMouseEnter={() => setActivePreview("Realm")}
-                                        className="cursor-pointer text-gray-700 hover:text-black transition">
-                                        Realm
-                                    </li>
-
-                                    <li onClick={() => { setActiveMenu(null); navigate("/product3"); }}
-                                        onMouseEnter={() => setActivePreview("Book")}
-                                        className="cursor-pointer text-gray-700 hover:text-black transition">
-                                        Book
-                                    </li>
-
-                                    <li onClick={() => { setActiveMenu(null); navigate("/accessories"); }}
-                                        className="cursor-pointer text-gray-700 hover:text-black transition">
-                                        accessories
-                                    </li>
-
-                                    <li onClick={() => { setActiveMenu(null); navigate("/demo"); }}
-                                        className="cursor-pointer text-gray-700 hover:text-black transition">
-                                        Book a Demo
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div>
-                                <p className="text-xs uppercase tracking-wide text-gray-500 mb-4">
-                                    Operating System
-                                </p>
-                                <ul className="space-y-4 text-lg sm:text-xl lg:text-[22px] font-light text-gray-700">
-                                    <li onClick={() => { setActiveMenu(null); navigate("/minimal-os"); }}
-                                        className=" hover:text-black cursor-pointer">
-                                        Minimal OS
-                                    </li>
-                                    <li onClick={() => { setActiveMenu(null); navigate("/spatial-os"); }}
-                                        className="hover:text-black cursor-pointer">
-                                        Spatial OS
-                                    </li>
-                                </ul>
-                            </div>
-                            <div>
 
                                 <p className="text-xs uppercase tracking-wide text-gray-500 mb-6">
                                     Simulators
@@ -393,6 +341,60 @@ export default function Navbar() {
 
                                 </ul>
                             </div>
+
+                            <div>
+                                <p className="text-xs uppercase tracking-wide text-gray-500 mb-4">
+                                    Devices
+                                </p>
+
+                                <ul className="space-y-4 text-lg sm:text-xl lg:text-[22px] font-light">
+                                    {/* unchanged list */}
+                                    <li onClick={() => { setActiveMenu(null); navigate("/product1"); }}
+                                        onMouseEnter={() => setActivePreview("DAS")}
+                                        className="cursor-pointer text-gray-700 hover:text-black transition">
+                                        DAS
+                                    </li>
+
+                                    <li onClick={() => { setActiveMenu(null); navigate("/product2"); }}
+                                        onMouseEnter={() => setActivePreview("Realm")}
+                                        className="cursor-pointer text-gray-700 hover:text-black transition">
+                                        Realm
+                                    </li>
+
+                                    <li onClick={() => { setActiveMenu(null); navigate("/product3"); }}
+                                        onMouseEnter={() => setActivePreview("Book")}
+                                        className="cursor-pointer text-gray-700 hover:text-black transition">
+                                        Book
+                                    </li>
+
+                                    <li onClick={() => { setActiveMenu(null); navigate("/accessories"); }}
+                                        className="cursor-pointer text-gray-700 hover:text-black transition">
+                                        accessories
+                                    </li>
+
+                                    <li onClick={() => { setActiveMenu(null); navigate("/demo"); }}
+                                        className="cursor-pointer text-gray-700 hover:text-black transition">
+                                        Book a Demo
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <p className="text-xs uppercase tracking-wide text-gray-500 mb-4">
+                                    Operating System
+                                </p>
+                                <ul className="space-y-4 text-lg sm:text-xl lg:text-[22px] font-light text-gray-700">
+                                    <li onClick={() => { setActiveMenu(null); navigate("/minimal-os"); }}
+                                        className=" hover:text-black cursor-pointer">
+                                        Minimal OS
+                                    </li>
+                                    <li onClick={() => { setActiveMenu(null); navigate("/spatial-os"); }}
+                                        className="hover:text-black cursor-pointer">
+                                        Spatial OS
+                                    </li>
+                                </ul>
+                            </div>
+
                         </div>
 
                         {/* RIGHT PREVIEW */}

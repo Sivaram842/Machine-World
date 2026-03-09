@@ -145,6 +145,75 @@ ${showNav ? "translate-y-0" : "-translate-y-full"}
             <DropdownWrapper visible={isOpen("products")}>
                 <div className="grid lg:grid-cols-[420px_1fr] gap-10">
 
+                    <div>
+
+                        <p className="text-xs uppercase tracking-wide text-gray-500 mb-3">
+                            Simulators
+                        </p>
+
+                        <ul className="space-y-2 text-[22px] font-light text-gray-700">
+
+                            {/* Defence */}
+                            <li>
+                                <div
+                                    onClick={() => setDefenceOpen(!defenceOpen)}
+                                    className="flex justify-between cursor-pointer hover:text-black"
+                                >
+                                    Defence Sector
+                                    <span>{defenceOpen ? "−" : "+"}</span>
+                                </div>
+
+                                {defenceOpen && (
+                                    <ul className="mt-2 space-y-2 pl-6 border-l border-gray-200">
+                                        <li
+                                            onClick={() => navigate("/aircrafts")}
+                                            className="cursor-pointer hover:text-black"
+                                        >
+                                            Aircrafts
+                                        </li>
+
+                                        <li
+                                            onClick={() => navigate("/ground-defence")}
+                                            className="cursor-pointer hover:text-black"
+                                        >
+                                            Ground Vehicles
+                                        </li>
+                                    </ul>
+                                )}
+                            </li>
+
+                            {/* Private */}
+                            <li>
+                                <div
+                                    onClick={() => setPrivateOpen(!privateOpen)}
+                                    className="flex justify-between cursor-pointer hover:text-black"
+                                >
+                                    Private
+                                    <span>{privateOpen ? "−" : "+"}</span>
+                                </div>
+
+                                {privateOpen && (
+                                    <ul className="mt-2 space-y-2 pl-6 border-l border-gray-200">
+                                        <li
+                                            onClick={() => navigate("/helicopter")}
+                                            className="cursor-pointer hover:text-black"
+                                        >
+                                            Helicopters
+                                        </li>
+
+                                        <li
+                                            onClick={() => navigate("/ground-private")}
+                                            className="cursor-pointer hover:text-black"
+                                        >
+                                            Ground Vehicles
+                                        </li>
+                                    </ul>
+                                )}
+                            </li>
+
+                        </ul>
+                    </div>
+
                     <div className="space-y-5">
 
                         <p className="text-xs uppercase tracking-wide text-gray-500">
@@ -212,74 +281,7 @@ ${showNav ? "translate-y-0" : "-translate-y-full"}
                         </div> */}
 
                         {/* ================= SIMULATORS ================= */}
-                        <div>
 
-                            <p className="text-xs uppercase tracking-wide text-gray-500 mb-3">
-                                Simulators
-                            </p>
-
-                            <ul className="space-y-2 text-[22px] font-light text-gray-700">
-
-                                {/* Defence */}
-                                <li>
-                                    <div
-                                        onClick={() => setDefenceOpen(!defenceOpen)}
-                                        className="flex justify-between cursor-pointer hover:text-black"
-                                    >
-                                        Defence Sector
-                                        <span>{defenceOpen ? "−" : "+"}</span>
-                                    </div>
-
-                                    {defenceOpen && (
-                                        <ul className="mt-2 space-y-2 pl-6 border-l border-gray-200">
-                                            <li
-                                                onClick={() => navigate("/aircrafts")}
-                                                className="cursor-pointer hover:text-black"
-                                            >
-                                                Aircrafts
-                                            </li>
-
-                                            <li
-                                                onClick={() => navigate("/ground-defence")}
-                                                className="cursor-pointer hover:text-black"
-                                            >
-                                                Ground Vehicles
-                                            </li>
-                                        </ul>
-                                    )}
-                                </li>
-
-                                {/* Private */}
-                                <li>
-                                    <div
-                                        onClick={() => setPrivateOpen(!privateOpen)}
-                                        className="flex justify-between cursor-pointer hover:text-black"
-                                    >
-                                        Private
-                                        <span>{privateOpen ? "−" : "+"}</span>
-                                    </div>
-
-                                    {privateOpen && (
-                                        <ul className="mt-2 space-y-2 pl-6 border-l border-gray-200">
-                                            <li
-                                                onClick={() => navigate("/helicopter")}
-                                                className="cursor-pointer hover:text-black"
-                                            >
-                                                Helicopters
-                                            </li>
-
-                                            <li
-                                                onClick={() => navigate("/ground-private")}
-                                                className="cursor-pointer hover:text-black"
-                                            >
-                                                Ground Vehicles
-                                            </li>
-                                        </ul>
-                                    )}
-                                </li>
-
-                            </ul>
-                        </div>
 
                     </div>
 
