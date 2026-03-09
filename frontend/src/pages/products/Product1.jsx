@@ -1,21 +1,13 @@
 import React from 'react'
 import { useRef, useState } from "react";
-
-import HeroVideo from '../../components/ProductSubPageComponents/HeroVideo'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import TalkToSalesCTA from '../../components/TalkToSalesCTA'
-import CustomerQuoteSection from '../../components/CustomerStories'
-import VariantsSection from '../../components/ProductSubPageComponents/VariantsSection'
-import TrainingPackageSection from '../../components/ProductSubPageComponents/TrainingPackageSection'
-import SupportGridSection from '../../components/ProductSubPageComponents/SupportGridSection'
 import PassthroughSection from '../../components/ProductSubPageComponents/PassthroughSection'
-import ImmersionSection from '../../components/ProductSubPageComponents/ImmersionSection'
-import DeploymentSection from '../../components/ProductSubPageComponents/DeploymentSection'
-import FullScreenXRImage from '../../components/ProductSubPageComponents/FullScreenXRImage'
-import FullScreenImage from '../../components/ProductSubPageComponents/FullScreenImage'
+
 
 import img from "../../assets/DAS1.jpeg";
+import img1 from "../../assets/das2.jpeg"
 import v1Image from "../../assets/V1Tv19.4.png";
 import v1Image1 from "../../assets/V1Tv19.3.png";
 import v1Image2 from "../../assets/V1Tv19.2.png";
@@ -143,7 +135,49 @@ const Product1 = () => {
                 </div>
             </section>
 
-            <PassthroughSection />
+            <section className="bg-white py-16 sm:py-24 lg:py-[140px]">
+                <div className="mx-auto flex flex-col lg:flex-row max-w-[1400px] items-start gap-10 sm:gap-16 lg:gap-[100px] px-4 sm:px-8 lg:px-16">
+
+                    {/* LEFT TEXT */}
+                    <div className="w-full lg:w-[42%]">
+                        <small className="block text-[10px] sm:text-[12px] tracking-widest text-black">
+                            DAS-01 SPATIAL COMPUTER
+                        </small>
+
+                        <h2 className="mt-4 sm:mt-6 text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-light leading-tight text-black">
+                            The future of computing in a spatial workspace.
+                        </h2>
+
+                        <p className="mt-4 sm:mt-6 text-sm sm:text-[15px] leading-relaxed text-gray-700">
+                            DAS-01 is the world’s first professional spatial computer designed to
+                            replace traditional laptops with an immersive 3D workspace.
+                        </p>
+
+
+
+                        <p className="mt-4 sm:mt-6 text-sm sm:text-[15px] leading-relaxed text-gray-700">
+                            With 6-DOF head, hand, and eye tracking, and support for gestures,
+                            voice, and gaze-based interaction, users can manage complex workflows
+                            naturally.
+
+                        </p>
+                        <p className="mt-4 sm:mt-6 text-sm sm:text-[15px] leading-relaxed text-gray-700">
+                            Imagine 8–16 windows floating in your workspace—coding,
+                            documentation, testing, and communication all accessible instantly.
+                        </p>
+                    </div>
+
+                    {/* RIGHT IMAGE */}
+                    <div className="w-full lg:w-[58%]">
+                        <img
+                            src={img1}
+                            alt="Passthrough optics"
+                            className="h-[260px] sm:h-[380px] lg:h-[520px] w-full object-cover"
+                        />
+                    </div>
+
+                </div>
+            </section>
             <section className="bg-white py-16 sm:py-24 lg:py-[160px] px-4 sm:px-6">
                 <div className="mx-auto max-w-[900px] text-center">
 

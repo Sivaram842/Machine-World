@@ -1,47 +1,53 @@
 import React, { useRef, useState } from "react";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-
+import entertainment from "../../assets/entertainmentheadset.jpeg"
+import entertainment1 from "../../assets/igaming.jpg"
+import entertainment2 from "../../assets/esports.avif"
+import entertainment3 from "../../assets/themepark.jpg"
+import entertainment4 from "../../assets/cinema.jpg"
+import entertainment5 from "../../assets/ienter.webp"
+import entertainment6 from "../../assets/simustream.jpg"
+import entertainment7 from "../../assets/imm3d.jpg"
 
 const cards = [
     {
-        tag: "BUILD SKILLS FROM DAY ONE",
-        title: "Foundational flight training",
-        desc: "Mixed reality enables student pilots to master maneuvers, navigation, and instrument procedures in safe, repeatable environments that accelerate their learning curve.",
-        img: "https://images.unsplash.com/photo-1542365887-9e1f3d1d6d2d"
+        tag: "IMMERSIVE GAMING",
+        title: "Next-generation XR gaming",
+        desc: "Antiworld’s XR technologies enable players to step inside immersive game worlds where physical movement, spatial interaction, and realistic environments create entirely new forms of entertainment.",
+        img: entertainment1
     },
     {
-        tag: "TRAIN FOR COMPLEXITY",
-        title: "Advanced operations",
-        desc: "Crew can practice formation flying, tactical maneuvers, and multi-aircraft coordination in highly realistic simulations that prepare them for operational demands.",
-        img: "https://images.unsplash.com/photo-1508610048659-a06b669e3321"
+        tag: "THEME PARK SIMULATION",
+        title: "Interactive attraction experiences",
+        desc: "XR simulators powered by the DAS spatial computer allow theme parks and entertainment venues to create thrilling ride simulations and interactive storytelling environments.",
+        img: entertainment3
     },
     {
-        tag: "PREPARE FOR THE UNEXPECTED",
-        title: "Emergency procedures",
-        desc: "Pilots rehearse critical responses to engine failures, system malfunctions, and severe weather without the risks or costs of live training.",
-        img: "https://images.unsplash.com/photo-1474302770737-173ee21bab63"
+        tag: "IMMERSIVE STORYTELLING",
+        title: "Cinematic XR environments",
+        desc: "REALM enables creators to build immersive narrative experiences where audiences become part of the story through interactive spatial environments.",
+        img: entertainment4
     },
     {
-        tag: "PRECISION UNDER PRESSURE",
-        title: "Weapons and targeting",
-        desc: "Mixed reality allows pilots, aircrew and JTACs to train together on air-to-air and air-to-ground targeting, building accuracy and confidence in mission scenarios.",
-        img: "https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51"
+        tag: "ESPORTS & ARENA EXPERIENCES",
+        title: "Large-scale XR multiplayer worlds",
+        desc: "Entertainment arenas can host large-scale XR experiences where players interact together inside shared digital worlds powered by the REALM platform.",
+        img: entertainment2
     },
     {
-        tag: "EVERY ROLE, EVERY MISSION",
-        title: "Crew and rear-crew training",
-        desc: "Weapons systems officers, loadmasters, and mission specialists can rehearse procedures and coordination in immersive environments that mirror real operations.",
-        img: "https://images.unsplash.com/photo-1558980664-10c236debd83"
+        tag: "INTERACTIVE ENTERTAINMENT",
+        title: "Live XR events and concerts",
+        desc: "Antiworld XR platforms enable virtual concerts, immersive performances, and interactive live entertainment experiences for global audiences.",
+        img: entertainment5
     },
     {
-        tag: "TRAIN THE MISSION BEFORE FLYING IT",
-        title: "Full mission rehearsal",
-        desc: "Full Mission Rehearsal lets aircrews practice complete missions in high-fidelity, data-driven virtual environments that enhance readiness while reducing cost and risk.",
-        img: "https://images.unsplash.com/photo-1504718855392-c0f33b372e72"
+        tag: "SIMULATION ENTERTAINMENT",
+        title: "Realistic simulation experiences",
+        desc: "Entertainment simulators such as racing, aviation, and adventure simulations allow users to experience high-fidelity environments designed for thrill and engagement.",
+        img: entertainment6
     }
 ];
-
 
 
 const customers = [
@@ -103,25 +109,19 @@ export default function Entertainment() {
             <Navbar />
             <section className="relative h-screen w-full overflow-hidden bg-black text-white">
 
-                {/* Exact structural match using figure */}
-                <figure className="absolute inset-0 h-full w-full">
-                    <img
-                        src="https://varjo.com/hs-fs/hubfs/Gaia%20images/1920x1080%20(5)-min.png?width=1920&height=1080&name=1920x1080%20(5)-min.png"
-                        srcSet={`
-            https://varjo.com/hs-fs/hubfs/Gaia%20images/1920x1080%20(5)-min.png?width=3840&name=1920x1080%20(5)-min.png 3840w,
-            https://varjo.com/hs-fs/hubfs/Gaia%20images/1920x1080%20(5)-min.png?width=2560&name=1920x1080%20(5)-min.png 2560w,
-            https://varjo.com/hs-fs/hubfs/Gaia%20images/1920x1080%20(5)-min.png?width=1920&name=1920x1080%20(5)-min.png 1920w,
-            https://varjo.com/hs-fs/hubfs/Gaia%20images/1920x1080%20(5)-min.png?width=1280&name=1920x1080%20(5)-min.png 1280w,
-            https://varjo.com/hs-fs/hubfs/Gaia%20images/1920x1080%20(5)-min.png?width=800&name=1920x1080%20(5)-min.png 800w
-          `}
-                        sizes="100vw"
-                        width="1920"
-                        height="1080"
-                        alt="A person sitting in a flight simulator, wearing a VR headset"
-                        loading="eager"
-                        className="w-full h-full object-cover"
-                    />
-                </figure>
+                {/* Background video */}
+                <video
+                    className="absolute inset-0 w-full h-full object-cover"
+                    src={"/spatialherovideo.mp4"}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                />
+
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-black/60" />
+
 
                 {/* Content */}
                 <div className="relative h-full w-full">
@@ -143,9 +143,11 @@ export default function Entertainment() {
           scale-y-95 md:scale-y-90
         "
                                 >
-                                    MASTER THE
-                                    <br />
-                                    COCKPIT
+                                    THE FUTURE OF<br />
+                                    IMMERSIVE
+                                    ENTERTAINMENT
+
+
                                 </h1>
                             </div>
 
@@ -159,9 +161,11 @@ export default function Entertainment() {
           max-w-full md:max-w-[430px]
         "
                                 >
-                                    Pilots and flight instructors globally are using immersive XR
-                                    technology to simulate flight scenarios at the point of need,
-                                    enabling a higher level of training at a fraction of the cost.
+                                    Antiworld technologies enable a new generation of immersive
+                                    entertainment experiences. By combining spatial computing,
+                                    XR environments, and interactive simulations, creators can
+                                    build digital worlds where audiences can explore, play,
+                                    and interact in ways never before possible.
                                 </p>
                             </div>
 
@@ -180,7 +184,7 @@ export default function Entertainment() {
                         {/* LEFT IMAGE (54%) */}
                         <div>
                             <img
-                                src="https://varjo.com/hs-fs/hubfs/Gaia%20images/1250X800%20(3).png?width=1875&height=1200&name=1250X800%20(3).png"
+                                src={entertainment}
                                 alt="Pilot training simulator"
                                 className="w-full h-auto object-cover"
                             />
@@ -189,7 +193,7 @@ export default function Entertainment() {
 
                             {/* Eyebrow */}
                             <p className="uppercase text-[13px] tracking-[0.2em] font-medium mb-5 text-left">
-                                TRAIN ANY TIME, ANY PLACE
+                                IMMERSIVE ENTERTAINMENT PLATFORMS
                             </p>
 
                             {/* Heading */}
@@ -203,44 +207,36 @@ export default function Entertainment() {
   scale-x-105 md:scale-x-110
   scale-y-95 md:scale-y-90
 ">
-                                BENEFIT FROM A SAFE, BUT
-                                <br />
-                                FULLY IMMERSIVE
-                                <br />
-                                ENVIRONMENT.
+                                EXPERIENCE ENTERTAINMENT<br />
+                                IN A NEW DIMENSION
+
                             </h2>
 
                             {/* Bullet List */}
                             <ul className="list-disc list-outside pl-4 space-y-3 text-[14px] md:text-[15px] leading-[1.65] text-[#1a1a1a]">
                                 <li>
-                                    <strong>Reduce the cost of training by up to 99%+</strong> with low-cost,
-                                    immersive learning environments to replace or supplement traditional
-                                    training solutions
+                                    Create immersive gaming environments powered by spatial computing technology
                                 </li>
 
                                 <li>
-                                    <strong>Increase training velocity</strong> and enable more trainees to
-                                    become proficient in less time by using XR and VR training tactics
+                                    Enable interactive XR experiences for theme parks, arcades, and entertainment venues
                                 </li>
 
                                 <li>
-                                    <strong>Optimize user engagement</strong> with a solution where trainees
-                                    want to engage in and repeat exercises
+                                    Deliver cinematic storytelling experiences where audiences become part of the narrative
                                 </li>
 
                                 <li>
-                                    <strong>Increase the value of existing part-task simulators</strong> with
-                                    full field of view, immersive visuals using mixed reality technology
+                                    Support large-scale multiplayer environments using the REALM immersive platform
+
                                 </li>
 
                                 <li>
-                                    <strong>Reduce travel time and costs</strong> by training at the point of
-                                    need, thanks to portability and reduced simulator size
+                                    Build high-fidelity simulators for racing, aviation, and adventure entertainment
                                 </li>
 
                                 <li>
-                                    <strong>Train effectively for the most dangerous scenarios</strong> in a
-                                    completely safe immersive environment
+                                    Transform digital entertainment with interactive spatial environments
                                 </li>
 
                             </ul>
@@ -309,15 +305,17 @@ export default function Entertainment() {
                 <div className="w-full max-w-[1100px] mx-auto px-[6vw] text-center">
 
                     <h2 className="uppercase font-light text-[24px] md:text-[40px] leading-[1.4] tracking-[0.03em] text-[#111111]">
-                        INDUSTRY LEADERS AND PIONEERS
+                        ENTERTAINMENT CREATORS
                         <br />
-                        CHOOSE VARJO FOR ADVANCED AIR
+                        ARE BUILDING THE NEXT
                         <br />
-                        TRAINING IN MIXED REALITY.
+                        GENERATION OF XR EXPERIENCES
                     </h2>
 
                     <p className="mt-8 md:mt-12 text-[16px] md:text-[19px] leading-[1.7] text-[#555555] max-w-[520px] mx-auto">
-                        Read how our customers and partners use the world's most advanced XR to modernize air training across the industry.
+                        Game developers, creative studios, and entertainment companies
+                        are exploring immersive spatial technologies to create interactive
+                        experiences that blur the boundary between digital and physical worlds.
                     </p>
 
                 </div>
@@ -373,14 +371,14 @@ export default function Entertainment() {
 
                         {/* QUOTE */}
                         <p className="text-[20px] md:text-[27px] leading-[1.4] italic font-light text-black mb-[18px]">
-                            “XR-4 truly has superlative resolution and immersion level that we
-                            have never seen before. It’s absolutely clear that Varjo is in a
-                            different league.”
+                            “Antiworld’s immersive XR environments allow audiences to step
+                            inside digital worlds and interact with entertainment experiences
+                            in ways that were previously impossible.”
                         </p>
 
                         {/* AUTHOR */}
                         <p className="uppercase text-[9px] tracking-[0.18em] text-black/60 mb-[24px]">
-                            JAVIER CASTELLAR – CHIEF STRATEGY OFFICER, AECHELON TECHNOLOGY
+                            CREATIVE DIRECTOR – IMMERSIVE ENTERTAINMENT STUDIO
                         </p>
 
                         {/* BUTTON */}
@@ -401,7 +399,7 @@ export default function Entertainment() {
                         {/* 16:9 Responsive Video */}
                         <div className="relative w-full aspect-video">
                             <iframe
-                                src="https://www.youtube.com/embed/9No-FiEInLA"
+                                src="/xrimmersive3d.mp4"
                                 title="Military Helicopter Cockpit Training"
                                 className="absolute top-0 left-0 w-full h-full"
                                 frameBorder="0"
@@ -424,17 +422,21 @@ export default function Entertainment() {
 
                             {/* Heading */}
                             <h2 className="uppercase text-[28px] md:text-[46px] font-extrabold leading-[1.1] mb-[26px]">
-                                U.S. ARMY RVCT AIR PROGRAM
+                                IMMERSIVE XR
+                                ENTERTAINMENT EXPERIENCES
                             </h2>
 
                             {/* Paragraph */}
                             <p className="text-[17px] leading-[1.7] text-black/70 mb-[40px]">
-                                Varjo was chosen as the XR technology provider for the U.S. Army’s
-                                Reconfigurable Virtual Collective Trainer (RVCT) Air Program in 2023,
-                                enabling a portable training capability for three different helicopters:
-                                Apache, Chinook, and Blackhawk. U.S. Army pilots use Varjo’s high
-                                resolution mixed reality to experience a fully immersive training
-                                environment where they can interact with physical controls in real-time.
+                                Antiworld immersive platforms enable entertainment creators to
+                                design fully interactive digital environments. Whether it is
+                                simulation-based attractions, multiplayer XR games, or immersive
+                                storytelling experiences, users can explore dynamic worlds that
+                                blend physical interaction with digital content.
+
+                                Powered by the DAS spatial computer and REALM platform, these
+                                experiences bring new possibilities to gaming, entertainment
+                                venues, and interactive media.
                             </p>
 
                             {/* Button */}
@@ -452,7 +454,7 @@ export default function Entertainment() {
                 className="relative w-full min-h-screen flex items-center text-white"
                 style={{
                     backgroundImage:
-                        "url('https://varjo.com/hs-fs/hubfs/Gaia%20images/1920x1080%20(6)-min.png?width=1920&height=1080&name=1920x1080%20(6)-min.png')",
+                        `url(${entertainment7})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center right",
                     backgroundRepeat: "no-repeat",
@@ -466,7 +468,7 @@ export default function Entertainment() {
 
                     {/* Preheader */}
                     <p className="uppercase text-[12px] tracking-[0.18em] font-light mb-6 text-white/80">
-                        THE VARJO ADVANTAGE
+                        THE ANTIWORLD  ADVANTAGE
                     </p>
 
                     {/* Heading */}
@@ -475,19 +477,21 @@ export default function Entertainment() {
                         <br />
                         STANDARD FOR
                         <br />
-                        MIXED REALITY
+                        IMMERSIVE
                         <br />
-                        TRAINING.
+                        ENTERTAINMENT
                     </h2>
 
                     {/* Paragraph */}
                     <p className="text-[15px] md:text-[16px] leading-[1.75] text-white/80 mb-10 max-w-[520px]">
-                        Varjo’s XR solutions provide the realism, interoperability, and security
-                        needed to prepare personnel for mission-critical operations. The XR-4
-                        Series delivers uncompising fidelity and integrates seamlessly with
-                        leading simulators, software, and hardware. Built for portability and
-                        scalability, and backed by Varjo’s defense-certified expert services, it
-                        is the trusted foundation for the future of training.
+                        Antiworld technologies combine spatial computing, immersive
+                        XR environments, and interactive simulation systems to enable
+                        new forms of entertainment experiences.
+
+
+                        From XR gaming worlds to simulation-based attractions,
+                        the platform enables creators to design highly interactive
+                        digital environments for audiences worldwide.
                     </p>
 
                     {/* Button */}
@@ -523,13 +527,13 @@ export default function Entertainment() {
 
                             {/* Paragraph */}
                             <p className="text-[16px] leading-[1.7] text-black/70 max-w-[460px]">
-                                The Varjo XR-4 Series brings unmatched realism to aerospace training,
-                                with advanced video passthrough, dual 4K displays, and LiDAR sensors
-                                that align physical and virtual elements seamlessly. Pilots can
-                                interact naturally with panels, HOTAS systems, and crew members while
-                                eliminating negative training risks. Ergonomic design features,
-                                including a zero gravity headband, automatic IPD adjustment, and
-                                active cooling, ensure long sessions remain comfortable and effective.
+                                Antiworld immersive systems deliver high-fidelity visual
+                                environments and natural interaction systems designed for
+                                long-duration entertainment experiences.
+
+                                Advanced rendering, spatial interaction, and realistic
+                                simulation environments allow audiences to fully immerse
+                                themselves in digital worlds.
                             </p>
 
                         </div>
@@ -540,7 +544,7 @@ export default function Entertainment() {
 
                             <video
                                 className="w-full h-[300px] md:h-[500px] object-cover"
-                                src="https://www.w3schools.com/html/mov_bbb.mp4"
+                                src="/headsetsubvideo.mp4"
                                 autoPlay
                                 loop
                                 muted
@@ -554,13 +558,12 @@ export default function Entertainment() {
                 </div>
 
             </section>
-            <section className="bg-[#f3f3f3] py-28">
+            {/* <section className="bg-[#f3f3f3] py-28">
                 <div className="max-w-[1700px] mx-auto px-[6vw]">
 
-                    {/* Top Row */}
                     <div className="flex justify-between items-center mb-16">
                         <p className="uppercase text-[12px] tracking-[0.18em]">
-                            BROWSE LATEST RELATED ARTICLES
+                            INSIGHTS FROM THE ANTIWORLD IMMERSIVE ENTERTAINMENT ECOSYSTEM
                         </p>
 
                         <a
@@ -571,10 +574,8 @@ export default function Entertainment() {
                         </a>
                     </div>
 
-                    {/* MAIN GRID */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-14 items-start">
 
-                        {/* SMALL SQUARE */}
                         <div className="relative aspect-square overflow-hidden group">
 
                             <img
@@ -587,16 +588,17 @@ export default function Entertainment() {
 
                             <div className="absolute bottom-10 left-10 right-10 text-white">
                                 <h3 className="uppercase text-[20px] font-bold leading-[1.25] mb-4">
-                                    ADVANCING PILOT READINESS THROUGH LOCKHEED MARTIN PREPAR3D’S NEXT-GENERATION XR
+                                    BUILDING NEXT-GENERATION XR ENTERTAINMENT EXPERIENCES
                                 </h3>
 
                                 <p className="text-[15px] leading-[1.6] text-white/90">
-                                    Learn about Varjo's longstanding collaboration with Lockheed Martin and Prepar3D.
+                                    Discover how Antiworld technologies enable immersive digital worlds
+                                    where audiences can explore interactive environments, simulations,
+                                    and XR-powered entertainment experiences.
                                 </p>
                             </div>
                         </div>
 
-                        {/* VERTICAL RECTANGLE 1 */}
                         <div className="relative h-[350px] md:h-[500px] overflow-hidden group">
 
                             <img
@@ -609,16 +611,17 @@ export default function Entertainment() {
 
                             <div className="absolute bottom-12 left-10 right-10 text-white">
                                 <h3 className="uppercase text-[22px] font-bold leading-[1.2] mb-6">
-                                    HOW THE SLOVENIAN ARMED FORCES ARE DRIVING OPERATIONAL READINESS WITH VR/XR
+                                    THE ROLE OF SPATIAL COMPUTING IN FUTURE ENTERTAINMENT
                                 </h3>
 
                                 <p className="text-[16px] leading-[1.6] text-white/90">
-                                    The XR military flight simulators delivered to the Slovenian Armed Forces are redefining tactical aviation training.
+                                    The DAS Spatial Computer enables developers and creators to build
+                                    large-scale immersive entertainment platforms where users interact
+                                    with content naturally in three-dimensional digital environments.
                                 </p>
                             </div>
                         </div>
 
-                        {/* VERTICAL RECTANGLE 2 */}
                         <div className="relative h-[500px] overflow-hidden group">
 
                             <img
@@ -631,15 +634,17 @@ export default function Entertainment() {
 
                             <div className="absolute bottom-12 left-10 right-10 text-white">
                                 <p className="uppercase text-[11px] tracking-[0.15em] mb-5 text-white/80">
-                                    COMPANY NEWS
+                                    ANTI WORLD TECHNOLOGY
                                 </p>
 
                                 <h3 className="uppercase text-[22px] font-bold leading-[1.2] mb-6">
-                                    VARJO SECURES U.S. AIR FORCE CERTIFICATION FOR VARJO BASE SOFTWARE
+                                    REALM PLATFORM: POWERING SHARED XR ENTERTAINMENT WORLDS
                                 </h3>
 
                                 <p className="text-[16px] leading-[1.6] text-white/90">
-                                    Varjo secures U.S. Air Force Certificate to Field for its Varjo Base software.
+                                    REALM enables shared immersive environments where users can
+                                    play, explore, and interact together inside large-scale
+                                    XR entertainment experiences.
                                 </p>
                             </div>
                         </div>
@@ -647,7 +652,7 @@ export default function Entertainment() {
                     </div>
 
                 </div>
-            </section>
+            </section> */}
             <Footer />
         </div>
 

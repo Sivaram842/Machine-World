@@ -2,18 +2,67 @@ import React from 'react'
 import Navbar from '../../components/Navbar'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-
+import spos from "../../assets/spatialOS.jpeg"
+import spos1 from "../../assets/spatialOS1.webp"
 const SpatialOs = () => {
     return (
         <div>
             <Navbar />
-            <Header />
+            <header className="relative w-full min-h-[75vh] sm:min-h-[90vh] lg:min-h-screen overflow-hidden">
+
+                {/* Background video */}
+                <video
+                    className="absolute inset-0 w-full h-full object-cover"
+                    src={"/spatialherovideo.mp4"}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                />
+
+                {/* Dark overlay */}
+                <div className="absolute inset-0 bg-black/60" />
+
+                {/* Content */}
+                <div className="relative z-10 flex items-end min-h-[75vh] sm:min-h-[90vh] lg:min-h-screen">
+
+                    <div className="w-full px-4 sm:px-8 lg:px-12 pb-12 sm:pb-16 lg:pb-24">
+
+                        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between w-full gap-8">
+
+                            <div className="max-w-2xl">
+                                <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                                    Spatial OS
+                                </h1>
+
+                                <p className="mt-4 text-gray-300 text-sm sm:text-base md:text-lg font-light leading-relaxed">
+                                    The Future Of Immersive  Defence & Enterprise Systems
+                                </p>
+                            </div>
+
+                            {/* RIGHT */}
+                            <div className="max-w-xl">
+                                <p className="text-gray-300 text-sm sm:text-base md:text-lg font-light leading-relaxed text-left">
+                                    Antiworld Spatial OS powers next-generation simulation,
+                                    training, and immersive computing environments. Designed
+                                    for defence, enterprise, and education sectors, it enables
+                                    realistic cockpit simulations, XR training systems, and
+                                    spatial computing platforms that bring digital environments
+                                    into the real world with precision and performance.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </header>
             <div className="bg-white text-black">
 
                 {/* ================= SECTION 1 - HERO ================= */}
                 <section className="relative h-[85vh] md:h-screen w-full overflow-hidden">
                     <img
-                        src="/images/varjo-base-hero.jpg"
+                        src={spos}
                         alt="Varjo Base"
                         className="absolute inset-0 w-full h-full object-cover"
                     />
@@ -24,22 +73,28 @@ const SpatialOs = () => {
                             <h1 className="text-white uppercase font-extrabold 
                text-[22px] sm:text-[28px] md:text-[40px] lg:text-[52px]
                leading-[1.15] md:leading-[1.1] tracking-tight">
-                                Varjo Base: <br />
-                                Take Your<br />
-                                Headset <br />
-                                Experience to <br />
-                                New Heights.
+
+                                The Core Platform <br />
+                                For Antiworld XR Systems
                             </h1>
 
-                            <p className="mt-8 text-white/80 
-                          text-[15px] sm:text-[17px] md:text-[18px] 
-                          leading-[26px] md:leading-[30px]">
-                                Varjo Base, the companion software for Varjo <br />
-                                headsets, gives you everything you need to <br />
-                                leverage the full capabilities of true-to-life <br />
-                                virtual and mixed reality. Now available in <br />
-                                both Free and Pro tiers.
+                            <p className="mt-6 text-gray-100 text-[16px] leading-[28px]">
+
+                                Antiworld Spatial OS acts as the central operating system
+                                connecting XR hardware, simulation software, and training
+                                environments into a single unified platform. Built for
+                                defence and enterprise applications, the system enables
+                                immersive spatial computing experiences that replicate
+                                real-world environments with high accuracy.
                             </p>
+
+                            <ul className="mt-6 space-y-3 text-gray-100 text-[15px]">
+                                <li>• Power high-fidelity cockpit simulators for defence pilot training.</li>
+                                <li>• Manage XR headsets, spatial sensors, and simulation environments.</li>
+                                <li>• Integrate real-world data and digital simulations in mixed reality.</li>
+                                <li>• Enable advanced visualization for training and mission rehearsal.</li>
+                                <li>• Record and analyze simulation sessions for performance evaluation.</li>
+                            </ul>
                         </div>
                     </div>
                 </section>
@@ -53,29 +108,40 @@ const SpatialOs = () => {
                             <h2 className="uppercase font-extrabold 
                text-[22px] sm:text-[26px] md:text-[34px] 
                leading-[1.2] tracking-tight">
-                                The Command Center For <br />
-                                Your XR Experience.
+                                Secure By Design <br />
+                                For Defence And <br />
+                                Critical Systems
                             </h2>
 
                             <p className="mt-6 text-gray-700 text-[16px] leading-[28px]">
 
-                                Varjo Base is the essential link between your hardware and your workflow. <br />
-                                Whether you’re deploying a single headset or managing an entire XR lab, Varjo <br />
-                                Base is designed to put you in control to get the most out of the headset.
+                                Antiworld Spatial OS is built with security as a core
+                                principle. Defence and enterprise environments require
+                                strict control over data, infrastructure, and network
+                                access. Our systems are designed to operate in isolated
+                                and secure environments where reliability and trust are
+                                critical.
+                            </p>
+                            <p className="mt-6 text-gray-700 leading-[28px]">
+
+                                From secure local data handling to controlled software
+                                updates and strict development practices, every component
+                                of Antiworld Spatial OS is designed to ensure that
+                                simulation environments, training systems, and defence
+                                applications remain protected and dependable.
                             </p>
 
-                            <ul className="mt-6 space-y-3 text-gray-700 text-[15px]">
-                                <li>• Easily control headset capabilities such as eye tracking, foveated rendering and visual quality.</li>
-                                <li>• Make adjustments to the mixed reality experience, altering how virtual and real worlds blend   together.</li>
-                                <li>• Manage supporting tools such as tracking devices and controllers.</li>
-                                <li>• Manage supporting tools such as tracking devices and controllers.</li>
-                                <li>• Record and share what the user is seeing with others.</li>
-                            </ul>
+                            <button className="mt-10 bg-black text-white px-10 py-4 
+uppercase tracking-wider text-sm
+transition-all duration-300
+hover:bg-[#1117C7]">
+                                Learn More About Antiworld →
+                            </button>
                         </div>
 
                         <div>
                             <img
-                                src="/images/varjo-base-engine.jpg"
+                                src={spos1}
                                 alt="Engine"
                                 className="w-full object-cover"
                             />
@@ -84,8 +150,8 @@ const SpatialOs = () => {
                     </div>
                 </section>
 
-
-                {/* ================= SECTION 3 ================= */}
+                {/* 
+               
                 <section className="py-20 md:py-28 px-6 text-center">
                     <div className="max-w-[700px] mx-auto">
 
@@ -122,60 +188,71 @@ const SpatialOs = () => {
                         </button>
 
                     </div>
-                </section>
+                </section> */}
 
 
-                {/* ================= SECTION 4 - GREY BG FEATURES ================= */}
                 <section className="py-24 px-6 bg-[#f3f3f3]">
                     <div className="max-w-[1400px] mx-auto">
 
                         <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
-                            <img src="/images/base-pro.jpg" alt="" className="w-full" />
 
+                            {/* LEFT VIDEO */}
+                            <video
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="w-full object-cover"
+                            >
+                                <source src="/spatialVideo.mp4" type="video/mp4" />
+                            </video>
+
+                            {/* RIGHT CONTENT */}
                             <div>
-                                <h2 className="uppercase font-extrabold 
-               text-[22px] sm:text-[26px] md:text-[34px] 
-               leading-[1.2] tracking-tight">
-                                    Varjo Base Pro: Unlock the full<br />
-                                    potential of your XR-4 Series<br />
-
-                                    headset.
+                                <h2
+                                    className="uppercase font-extrabold 
+          text-[22px] sm:text-[26px] md:text-[34px] 
+          leading-[1.2] tracking-tight"
+                                >
+                                    Unlock The Full Power <br />
+                                    Of Spatial Computing <br />
+                                    With Antiworld
                                 </h2>
 
                                 <p className="mt-6 text-gray-700 leading-[28px]">
-                                    Varjo Base is free-of-charge, but for the most advanced features you will need <br />
-                                    Varjo Base Pro. Gain access to advanced features, deeper customization, and <br />
-                                    enhanced data insights to elevate your workflows and deliver next-level<br />
-                                    performance.
+                                    Antiworld Spatial OS is designed to support advanced
+                                    immersive technologies including Virtual Reality,
+                                    Augmented Reality, and Mixed Reality. The platform
+                                    enables developers, engineers, and defence organizations
+                                    to create realistic training environments and powerful
+                                    simulation systems.
                                 </p>
 
                                 <ul className="mt-6 space-y-3 text-gray-700 text-[15px]">
-                                    <li>• Advanced VR and MR features, such as chroma key, advanced masking tools, and programmatic control over camera settings.</li>
-                                    <li>• Eye tracking for research and analytics, offering deeper insights with features like gaze data API and the eye camera data stream</li>
-                                    <li>• Custom tracking solutions, including third-party tracking plugin support and motion platform compatibility.</li>
-                                    <li>• Future software innovations, with access to a roadmap of new capabilities and ongoing enhancements to tracking, passthrough, and AI-assisted features.</li>
+                                    <li>• Advanced cockpit simulators for pilot training and mission rehearsal.</li>
+                                    <li>• XR training environments for defence, industrial, and education sectors.</li>
+                                    <li>• Integration with Unity and Unreal for simulation development.</li>
+                                    <li>• Spatial computing tools for visualization, analytics, and research.</li>
+                                    <li>• Future-ready architecture supporting AI-driven simulations.</li>
                                 </ul>
 
                                 <p className="mt-6 text-gray-700 leading-[28px]">
-                                    Pricing starts at 2,500€/$ per year, or 5,000€/$ perpetual for Varjo XR-4 and <br />
-                                    Varjo XR-4 Focal Edition. Varjo Base Pro license is included in Varjo XR-4 Secure <br />
-                                    Edition devices.
+                                    Antiworld continues to develop next-generation immersive
+                                    technologies that reduce training costs, improve safety,
+                                    and create new possibilities for learning and innovation.
                                 </p>
 
                                 <div className="mt-8 flex gap-6 flex-wrap">
-                                    <button className="bg-black text-white px-8 py-4 
-                                   uppercase text-sm transition-all 
-                                   hover:bg-[#1117C7]">
-                                        VARJO BASE PRO FEATURES →
-                                    </button>
-
-                                    <button className="bg-black text-white px-8 py-4 
-                                   uppercase text-sm transition-all 
-                                   hover:bg-[#1117C7]">
-                                        UPGRADE TO PRO →
+                                    <button
+                                        className="bg-black text-white px-8 py-4 
+            uppercase text-sm transition-all 
+            hover:bg-[#1117C7]"
+                                    >
+                                        Spatial OS FEATURES →
                                     </button>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </section>
@@ -193,26 +270,25 @@ const SpatialOs = () => {
                         <h2 className="uppercase font-extrabold 
                text-[22px] sm:text-[26px] md:text-[34px] 
                leading-[1.2] tracking-tight">
-                            Consistent <br />
-                            Updates.<br />
-                            Constant<br />
-                            Innovation.
+                            Continuous <br />
+                            Innovation.<br />
+                            Real-World <br />
+                            Impact.
                         </h2>
 
                         <p className="mt-6 text-gray-700 leading-[28px]">
-                            Varjo Base is continuously updated to deliver the best<br />
-                            possible XR experience—enhancing performance, <br />
-                            stability, and usability with every release. New versions<br />
-                            drop roughly every two months, introducing powerful new <br />
-                            features while refining existing ones based on real user <br />
-                            feedback. The core platform is designed to grow with you,<br />
-                            ensuring your setup stays optimized over time.
+                            Antiworld constantly improves its spatial computing
+                            platform to deliver cutting-edge capabilities for
+                            defence, enterprise, and research applications. Our
+                            multidisciplinary teams across hardware, software,
+                            design, and XR development collaborate to push the
+                            boundaries of immersive technology.
                         </p>
 
                         <button className="mt-10 bg-black text-white px-10 py-4 
-                             uppercase text-sm transition-all 
-                             hover:bg-[#1117C7]">
-                            READ LATEST RELEASE NOTES →
+uppercase text-sm transition-all 
+hover:bg-[#1117C7]">
+                            Explore Our Technologies →
                         </button>
 
                     </div>
@@ -227,16 +303,16 @@ const SpatialOs = () => {
                         {/* HEADER ROW */}
                         <div className="grid grid-cols-1 md:grid-cols-[1.6fr_1fr_1fr] 
                     mb-12 md:mb-24 items-center gap-6">
-
+                            {/* 
                             <h2 className="uppercase tracking-[3px] text-xs font-medium">
                                 Latest News and Insights
-                            </h2>
+                            </h2> */}
 
-                            <span className="uppercase tracking-[3px] text-xs 
+                            {/* <span className="uppercase tracking-[3px] text-xs 
                        transition-colors duration-300 
                        hover:text-[#1117C7] cursor-pointer">
                                 All Articles →
-                            </span>
+                            </span> */}
 
                             <div></div>
                         </div>
@@ -254,11 +330,11 @@ const SpatialOs = () => {
                       transition-all duration-300 
                       hover:bg-[#1117C7] cursor-pointer">
 
-                                <p className="text-sm text-gray-700 
+                                {/* <p className="text-sm text-gray-700 
                       group-hover:text-white 
                       transition-colors duration-300">
                                     February 26, 2026
-                                </p>
+                                </p> */}
 
                                 <div>
                                     <h3 className="uppercase font-extrabold 
@@ -267,7 +343,7 @@ const SpatialOs = () => {
                          text-black 
                          group-hover:text-white 
                          transition-colors duration-300">
-                                        Varjo Launches Ready-To-Deploy XR Systems For Secure And Air-Gapped Environments
+                                        Antiworld Develops Advanced XR Cockpit Simulator For Defence Training
                                     </h3>
 
                                     <p className="mt-4 sm:mt-6 text-gray-700 
@@ -275,9 +351,8 @@ const SpatialOs = () => {
                         leading-5 md:leading-6 
                         group-hover:text-white 
                         transition-colors duration-300">
-                                        The bundle offering combines XR-4 Series headsets,
-                                        certified workstations, and software into a single,
-                                        deployable XR system suitable for air-gapped environments.
+                                        Antiworld introduces a next-generation immersive cockpit simulator
+                                        designed to reduce pilot training costs while maintaining high realism.
                                     </p>
                                 </div>
                             </div>
@@ -291,11 +366,11 @@ const SpatialOs = () => {
                       transition-all duration-300 
                       hover:bg-[#1117C7] cursor-pointer">
 
-                                <p className="text-sm text-gray-700 
+                                {/* <p className="text-sm text-gray-700 
                       group-hover:text-white 
                       transition-colors duration-300">
                                     January 21, 2026
-                                </p>
+                                </p> */}
 
                                 <h3 className="uppercase font-extrabold 
                        text-[15px] sm:text-[17px] md:text-[18px] 
@@ -303,7 +378,7 @@ const SpatialOs = () => {
                        text-black 
                        group-hover:text-white 
                        transition-colors duration-300">
-                                    Varjo Achieves ISO/IEC 27001:2022 Certification
+                                    Antiworld Expands XR Development For Enterprise And Education
                                 </h3>
                             </div>
 
@@ -315,12 +390,12 @@ const SpatialOs = () => {
                       flex flex-col justify-between 
                       transition-all duration-300 
                       hover:bg-[#1117C7] cursor-pointer">
-
+                                {/* 
                                 <p className="text-sm text-gray-700 
                       group-hover:text-white 
                       transition-colors duration-300">
                                     December 3, 2025
-                                </p>
+                                </p> */}
 
                                 <h3 className="uppercase font-extrabold 
                        text-[15px] sm:text-[17px] md:text-[18px] 
@@ -328,7 +403,7 @@ const SpatialOs = () => {
                        text-black 
                        group-hover:text-white 
                        transition-colors duration-300">
-                                    Varjo Releases State Of XR In Simulation Training Report
+                                    The Future Of Spatial Computing In Defence And Simulation
                                 </h3>
                             </div>
 

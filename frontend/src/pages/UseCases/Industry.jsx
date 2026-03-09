@@ -5,39 +5,39 @@ import Navbar from "../../components/Navbar";
 
 const cards = [
     {
-        tag: "BUILD SKILLS FROM DAY ONE",
-        title: "Foundational flight training",
-        desc: "Mixed reality enables student pilots to master maneuvers, navigation, and instrument procedures in safe, repeatable environments that accelerate their learning curve.",
+        tag: "XR PILOT TRAINING",
+        title: "Jet cockpit simulation",
+        desc: "Antiworld cockpit simulators replicate modern jet aircraft environments, allowing pilots to train on navigation, systems management, and flight procedures in fully immersive virtual cockpits.",
         img: "https://images.unsplash.com/photo-1542365887-9e1f3d1d6d2d"
     },
     {
-        tag: "TRAIN FOR COMPLEXITY",
-        title: "Advanced operations",
-        desc: "Crew can practice formation flying, tactical maneuvers, and multi-aircraft coordination in highly realistic simulations that prepare them for operational demands.",
+        tag: "HELICOPTER OPERATIONS",
+        title: "Rotorcraft mission training",
+        desc: "Helicopter crews can rehearse rescue missions, tactical transport operations, and complex flight maneuvers using realistic XR training environments powered by the REALM simulation platform.",
         img: "https://images.unsplash.com/photo-1508610048659-a06b669e3321"
     },
     {
-        tag: "PREPARE FOR THE UNEXPECTED",
-        title: "Emergency procedures",
-        desc: "Pilots rehearse critical responses to engine failures, system malfunctions, and severe weather without the risks or costs of live training.",
+        tag: "EMERGENCY RESPONSE",
+        title: "Critical situation training",
+        desc: "Simulate emergency procedures including engine failures, instrument malfunction, and extreme weather scenarios without risk to personnel or equipment.",
         img: "https://images.unsplash.com/photo-1474302770737-173ee21bab63"
     },
     {
-        tag: "PRECISION UNDER PRESSURE",
-        title: "Weapons and targeting",
-        desc: "Mixed reality allows pilots, aircrew and JTACs to train together on air-to-air and air-to-ground targeting, building accuracy and confidence in mission scenarios.",
+        tag: "TACTICAL OPERATIONS",
+        title: "Weapons and targeting training",
+        desc: "Mixed reality allows pilots and operators to train together in coordinated tactical missions including targeting, surveillance, and combat scenarios.",
         img: "https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51"
     },
     {
-        tag: "EVERY ROLE, EVERY MISSION",
-        title: "Crew and rear-crew training",
-        desc: "Weapons systems officers, loadmasters, and mission specialists can rehearse procedures and coordination in immersive environments that mirror real operations.",
+        tag: "CREW COORDINATION",
+        title: "Multi-crew mission training",
+        desc: "Pilots, co-pilots, mission operators and ground teams can train together in shared virtual environments using the REALM collaboration platform.",
         img: "https://images.unsplash.com/photo-1558980664-10c236debd83"
     },
     {
-        tag: "TRAIN THE MISSION BEFORE FLYING IT",
-        title: "Full mission rehearsal",
-        desc: "Full Mission Rehearsal lets aircrews practice complete missions in high-fidelity, data-driven virtual environments that enhance readiness while reducing cost and risk.",
+        tag: "FULL MISSION SIMULATION",
+        title: "Complete mission rehearsal",
+        desc: "Antiworld training systems allow full mission rehearsal including navigation, threat environments, and operational decision making in high-fidelity simulation environments.",
         img: "https://images.unsplash.com/photo-1504718855392-c0f33b372e72"
     }
 ];
@@ -142,9 +142,9 @@ export default function Industry() {
           scale-y-95 md:scale-y-90
         "
                                 >
-                                    MASTER THE
-                                    <br />
-                                    COCKPIT
+                                    NEXT-GEN<br />
+                                    IMMERSIVE
+                                    TRAINING
                                 </h1>
                             </div>
 
@@ -158,9 +158,12 @@ export default function Industry() {
           max-w-full md:max-w-[430px]
         "
                                 >
-                                    Pilots and flight instructors globally are using immersive XR
-                                    technology to simulate flight scenarios at the point of need,
-                                    enabling a higher level of training at a fraction of the cost.
+                                    Antiworld’s immersive simulation systems combine XR technology,
+                                    realistic cockpit hardware, and spatial computing platforms to
+                                    create highly accurate training environments. From pilot training
+                                    to ground vehicle operations, teams can practice complex missions
+                                    in safe, repeatable simulations while dramatically reducing the
+                                    cost of traditional training.
                                 </p>
                             </div>
 
@@ -188,7 +191,7 @@ export default function Industry() {
 
                             {/* Eyebrow */}
                             <p className="uppercase text-[13px] tracking-[0.2em] font-medium mb-5 text-left">
-                                TRAIN ANY TIME, ANY PLACE
+                                TRAINING POWERED BY XR
                             </p>
 
                             {/* Heading */}
@@ -202,44 +205,35 @@ export default function Industry() {
   scale-x-105 md:scale-x-110
   scale-y-95 md:scale-y-90
 ">
-                                BENEFIT FROM A SAFE, BUT
-                                <br />
-                                FULLY IMMERSIVE
-                                <br />
-                                ENVIRONMENT.
+                                REALISTIC TRAINING<br />
+                                WITHOUT REAL-WORLD RISK
                             </h2>
 
                             {/* Bullet List */}
                             <ul className="list-disc list-outside pl-4 space-y-3 text-[14px] md:text-[15px] leading-[1.65] text-[#1a1a1a]">
                                 <li>
-                                    <strong>Reduce the cost of training by up to 99%+</strong> with low-cost,
-                                    immersive learning environments to replace or supplement traditional
-                                    training solutions
+                                    Reduce training costs dramatically using immersive cockpit simulators and XR environments instead of expensive live training missions
                                 </li>
 
                                 <li>
-                                    <strong>Increase training velocity</strong> and enable more trainees to
-                                    become proficient in less time by using XR and VR training tactics
+                                    Accelerate learning with realistic spatial simulations that allow pilots and operators to practice repeatedly
+
                                 </li>
 
                                 <li>
-                                    <strong>Optimize user engagement</strong> with a solution where trainees
-                                    want to engage in and repeat exercises
+                                    Improve engagement and skill retention through immersive, interactive training experiences
                                 </li>
 
                                 <li>
-                                    <strong>Increase the value of existing part-task simulators</strong> with
-                                    full field of view, immersive visuals using mixed reality technology
+                                    Integrate physical cockpit hardware with virtual environments using DAS spatial computing technology
                                 </li>
 
                                 <li>
-                                    <strong>Reduce travel time and costs</strong> by training at the point of
-                                    need, thanks to portability and reduced simulator size
+                                    Enable portable training systems that allow organizations to train personnel anywhere
                                 </li>
 
                                 <li>
-                                    <strong>Train effectively for the most dangerous scenarios</strong> in a
-                                    completely safe immersive environment
+                                    Safely simulate dangerous scenarios such as system failures, combat missions, and emergency situations
                                 </li>
 
                             </ul>
@@ -308,15 +302,19 @@ export default function Industry() {
                 <div className="w-full max-w-[1100px] mx-auto px-[6vw] text-center">
 
                     <h2 className="uppercase font-light text-[24px] md:text-[40px] leading-[1.4] tracking-[0.03em] text-[#111111]">
-                        INDUSTRY LEADERS AND PIONEERS
+                        DEFENSE AND ENTERPRISE
                         <br />
-                        CHOOSE VARJO FOR ADVANCED AIR
+                        ORGANIZATIONS ARE ADOPTING
                         <br />
-                        TRAINING IN MIXED REALITY.
+                        ANTI WORLD TRAINING SYSTEMS
                     </h2>
 
                     <p className="mt-8 md:mt-12 text-[16px] md:text-[19px] leading-[1.7] text-[#555555] max-w-[520px] mx-auto">
-                        Read how our customers and partners use the world's most advanced XR to modernize air training across the industry.
+                        Organizations across defense, aviation, and enterprise sectors are
+                        using Antiworld simulation technologies to modernize training.
+                        By combining immersive XR software, spatial computing platforms,
+                        and realistic cockpit hardware, teams can prepare for complex
+                        operations more efficiently than ever before.
                     </p>
 
                 </div>
@@ -372,14 +370,15 @@ export default function Industry() {
 
                         {/* QUOTE */}
                         <p className="text-[20px] md:text-[27px] leading-[1.4] italic font-light text-black mb-[18px]">
-                            “XR-4 truly has superlative resolution and immersion level that we
-                            have never seen before. It’s absolutely clear that Varjo is in a
-                            different league.”
+                            “Antiworld’s immersive training systems allow our teams to rehearse
+                            complex missions repeatedly while maintaining extremely high levels
+                            of realism. It has transformed how we prepare operators for real
+                            world scenarios.”
                         </p>
 
                         {/* AUTHOR */}
                         <p className="uppercase text-[9px] tracking-[0.18em] text-black/60 mb-[24px]">
-                            JAVIER CASTELLAR – CHIEF STRATEGY OFFICER, AECHELON TECHNOLOGY
+                            TRAINING DIRECTOR – DEFENSE SIMULATION PROGRAM
                         </p>
 
                         {/* BUTTON */}
@@ -423,17 +422,21 @@ export default function Industry() {
 
                             {/* Heading */}
                             <h2 className="uppercase text-[28px] md:text-[46px] font-extrabold leading-[1.1] mb-[26px]">
-                                U.S. ARMY RVCT AIR PROGRAM
+                                ADVANCED HELICOPTER
+                                TRAINING SIMULATION
                             </h2>
 
                             {/* Paragraph */}
                             <p className="text-[17px] leading-[1.7] text-black/70 mb-[40px]">
-                                Varjo was chosen as the XR technology provider for the U.S. Army’s
-                                Reconfigurable Virtual Collective Trainer (RVCT) Air Program in 2023,
-                                enabling a portable training capability for three different helicopters:
-                                Apache, Chinook, and Blackhawk. U.S. Army pilots use Varjo’s high
-                                resolution mixed reality to experience a fully immersive training
-                                environment where they can interact with physical controls in real-time.
+                                Antiworld develops immersive helicopter training environments that
+                                combine realistic cockpit hardware with XR simulation software.
+                                Pilots can interact with physical controls while operating inside
+                                a high-fidelity digital environment powered by the DAS spatial
+                                computer and REALM simulation platform.
+
+                                These systems enable mission rehearsal, emergency procedure
+                                training, and tactical flight exercises without the operational
+                                costs of real aircraft deployment.
                             </p>
 
                             {/* Button */}
@@ -465,7 +468,7 @@ export default function Industry() {
 
                     {/* Preheader */}
                     <p className="uppercase text-[12px] tracking-[0.18em] font-light mb-6 text-white/80">
-                        THE VARJO ADVANTAGE
+                        THE ANTIWORLD TRAINING ADVANTAGE
                     </p>
 
                     {/* Heading */}
@@ -481,12 +484,15 @@ export default function Industry() {
 
                     {/* Paragraph */}
                     <p className="text-[15px] md:text-[16px] leading-[1.75] text-white/80 mb-10 max-w-[520px]">
-                        Varjo’s XR solutions provide the realism, interoperability, and security
-                        needed to prepare personnel for mission-critical operations. The XR-4
-                        Series delivers uncompising fidelity and integrates seamlessly with
-                        leading simulators, software, and hardware. Built for portability and
-                        scalability, and backed by Varjo’s defense-certified expert services, it
-                        is the trusted foundation for the future of training.
+                        Antiworld simulation technologies combine immersive XR environments,
+                        high-performance spatial computing, and realistic hardware
+                        integration to deliver next-generation training systems.
+
+                        The DAS Spatial Computer powers complex virtual environments while
+                        the REALM platform enables collaborative training simulations
+                        between multiple users. Together they create highly realistic
+                        training experiences that prepare personnel for real world
+                        operations.
                     </p>
 
                     {/* Button */}
@@ -522,13 +528,15 @@ export default function Industry() {
 
                             {/* Paragraph */}
                             <p className="text-[16px] leading-[1.7] text-black/70 max-w-[460px]">
-                                The Varjo XR-4 Series brings unmatched realism to aerospace training,
-                                with advanced video passthrough, dual 4K displays, and LiDAR sensors
-                                that align physical and virtual elements seamlessly. Pilots can
-                                interact naturally with panels, HOTAS systems, and crew members while
-                                eliminating negative training risks. Ergonomic design features,
-                                including a zero gravity headband, automatic IPD adjustment, and
-                                active cooling, ensure long sessions remain comfortable and effective.
+                                Antiworld simulation systems are designed to deliver highly
+                                realistic training experiences. High-resolution displays,
+                                advanced tracking systems, and immersive spatial environments
+                                allow trainees to interact naturally with cockpit controls,
+                                instruments, and mission systems.
+
+                                This combination of physical hardware and digital environments
+                                creates training scenarios that closely mirror real operational
+                                conditions.
                             </p>
 
                         </div>
@@ -586,11 +594,11 @@ export default function Industry() {
 
                             <div className="absolute bottom-10 left-10 right-10 text-white">
                                 <h3 className="uppercase text-[20px] font-bold leading-[1.25] mb-4">
-                                    ADVANCING PILOT READINESS THROUGH LOCKHEED MARTIN PREPAR3D’S NEXT-GENERATION XR
+                                    HOW XR COCKPIT SIMULATORS ARE TRANSFORMING PILOT TRAINING
                                 </h3>
 
                                 <p className="text-[15px] leading-[1.6] text-white/90">
-                                    Learn about Varjo's longstanding collaboration with Lockheed Martin and Prepar3D.
+                                    Discover how Antiworld cockpit simulators combine physical controls and immersive XR environments to create highly realistic pilot training systems.
                                 </p>
                             </div>
                         </div>
@@ -608,11 +616,11 @@ export default function Industry() {
 
                             <div className="absolute bottom-12 left-10 right-10 text-white">
                                 <h3 className="uppercase text-[22px] font-bold leading-[1.2] mb-6">
-                                    HOW THE SLOVENIAN ARMED FORCES ARE DRIVING OPERATIONAL READINESS WITH VR/XR
+                                    BUILDING NEXT-GEN DEFENSE TRAINING WITH IMMERSIVE SIMULATION
                                 </h3>
 
                                 <p className="text-[16px] leading-[1.6] text-white/90">
-                                    The XR military flight simulators delivered to the Slovenian Armed Forces are redefining tactical aviation training.
+                                    Antiworld simulation platforms enable defense organizations to train personnel in complex mission scenarios using immersive XR environments and realistic cockpit systems.
                                 </p>
                             </div>
                         </div>
@@ -630,15 +638,15 @@ export default function Industry() {
 
                             <div className="absolute bottom-12 left-10 right-10 text-white">
                                 <p className="uppercase text-[11px] tracking-[0.15em] mb-5 text-white/80">
-                                    COMPANY NEWS
+                                    TECH INSIGHTS
                                 </p>
 
                                 <h3 className="uppercase text-[22px] font-bold leading-[1.2] mb-6">
-                                    VARJO SECURES U.S. AIR FORCE CERTIFICATION FOR VARJO BASE SOFTWARE
+                                    THE ROLE OF SPATIAL COMPUTING IN FUTURE TRAINING SYSTEMS
                                 </h3>
 
                                 <p className="text-[16px] leading-[1.6] text-white/90">
-                                    Varjo secures U.S. Air Force Certificate to Field for its Varjo Base software.
+                                    Learn how the DAS Spatial Computer and REALM platform enable immersive multi-user training environments for aviation, defense, and enterprise industries.
                                 </p>
                             </div>
                         </div>

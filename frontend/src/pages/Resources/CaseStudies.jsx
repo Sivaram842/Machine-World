@@ -3,113 +3,120 @@ import NavbarStatic from "../../components/NavbarStatic";
 import { useNavigate } from "react-router-dom";
 
 const caseStudiesData = [
-  // 🔥 YOUR DATA — NOT MODIFIED AT ALL
   {
     id: 1,
-    title: "REISER",
+    title: "ADVANCED FIGHTER COCKPIT SIMULATOR",
     description:
-      "Reiser's newly pre-qualified H145 D3 MR simulator marks a significant milestone for the industry.",
-    category: "Simulated Training",
-    industry: "Aviation",
-    size: "double",
+      "Antiworld developed a high-fidelity cockpit simulator designed to replicate real fighter jet controls and mission scenarios, allowing pilots to train safely while dramatically reducing operational training costs.",
+    category: "XR Training",
+    industry: "Defense",
+    size: "double"
   },
   {
     id: 2,
-    title: "THE ROYAL AUSTRALIAN AIR FORCE",
+    title: "COUNTER-DRONE DEFENSE SYSTEM",
     description:
-      "Harnessing the power of mixed reality to prepare personnel under demanding conditions.",
-    category: "Simulated Training",
-    industry: "Medical",
+      "An intelligent counter-drone platform designed to detect, track, and neutralize hostile drones in sensitive environments using advanced sensor systems and real-time threat monitoring.",
+    category: "Defense Technology",
+    industry: "Defense"
   },
   {
     id: 3,
-    title: "RHEINMETALL",
+    title: "MILITARY MISSION TRAINING ENVIRONMENT",
     description:
-      "Driving simulator powered by refreshed XR transforms training into preparation for real-world combat.",
-    category: "Simulated Training",
-    industry: "Defense",
+      "Immersive XR mission rehearsal environments that allow defense personnel to practice tactical operations, mission planning, and scenario simulations in realistic digital battlefields.",
+    category: "XR Training",
+    industry: "Defense"
   },
   {
     id: 4,
-    title: "DEFENSE CASE 1",
-    description: "Advanced defense mixed reality training program.",
+    title: "XR AVIATION TRAINING PLATFORM",
+    description:
+      "Mixed reality aviation training solutions enabling pilots to interact with real cockpit controls while visualizing fully immersive simulated flight environments.",
     category: "Simulated Training",
-    industry: "Defense",
+    industry: "Aviation"
   },
   {
     id: 5,
-    title: "DEFENSE CASE 2",
-    description: "Immersive battlefield readiness simulations.",
-    category: "Simulated Training",
-    industry: "Defense",
+    title: "ENTERPRISE SPATIAL WORKSPACE",
+    description:
+      "Antiworld built spatial computing workspaces that allow professionals to work with multiple virtual screens and collaborative XR environments for complex engineering workflows.",
+    category: "Spatial Computing",
+    industry: "Enterprise"
   },
   {
     id: 6,
-    title: "SPACE PROGRAM",
-    description: "Space mission preparation using XR environments.",
-    category: "Simulated Training",
-    industry: "Space",
+    title: "IMMERSIVE EDUCATION PLATFORM",
+    description:
+      "XR learning environments designed for educational institutions to deliver interactive training programs in engineering, aviation, and technical skills.",
+    category: "XR Education",
+    industry: "Education"
   },
   {
     id: 7,
-    title: "MEDICAL XR",
-    description: "Next-gen surgical simulation powered by XR.",
+    title: "DEFENSE VEHICLE SIMULATION TRAINING",
+    description:
+      "Vehicle simulation systems designed to train defense personnel in operating complex military vehicles using immersive XR environments.",
     category: "Simulated Training",
-    industry: "Medical",
+    industry: "Defense"
   },
   {
     id: 8,
-    title: "SPACE PROGRAM",
-    description: "Space mission preparation using XR environments.",
-    category: "Simulated Training",
-    industry: "Space",
+    title: "AR INDUSTRIAL MAINTENANCE SYSTEM",
+    description:
+      "Augmented reality tools that guide technicians through complex maintenance procedures using real-time visual overlays and interactive digital instructions.",
+    category: "AR Applications",
+    industry: "Enterprise"
   },
   {
     id: 9,
-    title: "MEDICAL XR",
-    description: "Next-gen surgical simulation powered by XR.",
-    category: "Simulated Training",
-    industry: "Medical",
+    title: "XR EMERGENCY RESPONSE TRAINING",
+    description:
+      "Immersive XR simulations designed to train emergency responders and security teams to operate in high-risk environments safely.",
+    category: "XR Training",
+    industry: "Defense"
   },
   {
     id: 10,
-    title: "REISER",
+    title: "NEXT-GEN COCKPIT TRAINING SYSTEM",
     description:
-      "Reiser's newly pre-qualified H145 D3 MR simulator marks a significant milestone for the industry.",
+      "Antiworld's modular cockpit training simulator provides realistic pilot training environments with immersive visuals and real-world flight control replication.",
     category: "Simulated Training",
     industry: "Aviation",
-    size: "double",
+    size: "double"
   },
   {
     id: 11,
-    title: "THE ROYAL AUSTRALIAN AIR FORCE",
+    title: "XR COLLABORATIVE DESIGN ENVIRONMENT",
     description:
-      "Harnessing the power of mixed reality to prepare personnel under demanding conditions.",
-    category: "Simulated Training",
-    industry: "Medical",
+      "A spatial computing platform allowing engineering teams to design, review, and collaborate on complex 3D systems inside shared XR workspaces.",
+    category: "Spatial Computing",
+    industry: "Enterprise"
   },
   {
     id: 12,
-    title: "RHEINMETALL",
+    title: "VIRTUAL DEFENSE MISSION PLANNING",
     description:
-      "Driving simulator powered by refreshed XR transforms training into preparation for real-world combat.",
-    category: "Simulated Training",
-    industry: "Defense",
+      "Immersive mission planning systems enabling defense teams to visualize operational scenarios and coordinate strategies inside XR environments.",
+    category: "XR Training",
+    industry: "Defense"
   },
   {
     id: 13,
-    title: "DEFENSE CASE 1",
-    description: "Advanced defense mixed reality training program.",
-    category: "Simulated Training",
-    industry: "Defense",
+    title: "INTERACTIVE XR ENTERTAINMENT PLATFORM",
+    description:
+      "Antiworld created immersive entertainment environments where users can experience interactive digital worlds powered by XR technology.",
+    category: "XR Experience",
+    industry: "Entertainment"
   },
   {
     id: 14,
-    title: "DEFENSE CASE 2",
-    description: "Immersive battlefield readiness simulations.",
+    title: "SIMULATION-BASED TECHNICAL TRAINING",
+    description:
+      "Advanced XR simulations designed to train technicians and engineers to operate complex systems in safe virtual environments.",
     category: "Simulated Training",
-    industry: "Defense",
-  },
+    industry: "Enterprise"
+  }
 ];
 
 const CaseStudies = () => {
@@ -138,21 +145,26 @@ const CaseStudies = () => {
         <div className="max-w-6xl px-6 sm:px-10 md:px-16 lg:px-20 py-16 md:py-24">
 
           <p className="text-lg sm:text-xl md:text-2xl tracking-widest font-bold uppercase mb-6">
-            Varjo Case Studies
+            Antiworld Case Studies
           </p>
 
           <h1 className="text-3xl sm:text-4xl md:text-[48px] font-bold leading-tight mb-5 max-w-[900px]">
-            OVER 25% OF <br />
-            FORTUNE100 <br />
-            COMPANIES ARE <br />
-            ALREADY USING <br />
-            VARJO FOR HIGH- <br />
-            STAKES WORK.
+            REAL-WORLD APPLICATIONS <br />
+            OF SPATIAL COMPUTING <br />
+            XR TECHNOLOGY <br />
+            AND DEFENSE <br />
+            SIMULATION SYSTEMS <br />
+            BUILT BY ANTIWORLD
           </h1>
 
           <p className="mt-10 md:mt-20 text-base sm:text-lg text-gray-700 max-w-2xl leading-relaxed">
-            From the very beginning, we’ve built VR/XR solutions for visionaries
-            in some of the world’s most demanding industries...
+            Antiworld develops advanced defense technologies, cockpit simulators,
+            and immersive XR applications designed for mission-critical training,
+            enterprise innovation, and next-generation spatial computing systems.
+
+            Our solutions help organizations reduce operational costs,
+            improve training efficiency, and unlock entirely new digital
+            workflows through immersive technologies.
           </p>
 
         </div>
@@ -168,8 +180,13 @@ const CaseStudies = () => {
             onChange={(e) => setSelectedCategory(e.target.value)}
             className="bg-transparent border-b border-black pb-2 text-sm uppercase tracking-wider focus:outline-none"
           >
-            <option value="All">Select Category</option>
+            <option value="XR Training">XR Training</option>
             <option value="Simulated Training">Simulated Training</option>
+            <option value="Spatial Computing">Spatial Computing</option>
+            <option value="Defense Technology">Defense Technology</option>
+            <option value="XR Education">XR Education</option>
+            <option value="AR Applications">AR Applications</option>
+            <option value="XR Experience">XR Experience</option>
           </select>
 
           <select
@@ -177,11 +194,11 @@ const CaseStudies = () => {
             onChange={(e) => setSelectedIndustry(e.target.value)}
             className="bg-transparent border-b border-black pb-2 text-sm uppercase tracking-wider focus:outline-none"
           >
-            <option value="All">Select Industry</option>
-            <option value="Aviation">Aviation</option>
-            <option value="Medical">Medical</option>
             <option value="Defense">Defense</option>
-            <option value="Space">Space</option>
+            <option value="Aviation">Aviation</option>
+            <option value="Enterprise">Enterprise</option>
+            <option value="Education">Education</option>
+            <option value="Entertainment">Entertainment</option>
           </select>
         </div>
 
@@ -258,7 +275,7 @@ const CaseStudies = () => {
 
         <div className="px-6 sm:px-10 md:px-16 pt-16 pb-10">
           <div className="text-xl sm:text-2xl tracking-[0.3em] font-semibold">
-            ANTI WORLD
+            ANTI  WORLD
           </div>
         </div>
 

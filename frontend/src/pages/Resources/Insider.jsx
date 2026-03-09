@@ -3,113 +3,120 @@ import Navbar from '../../components/Navbar'
 import Footer from "../../components/Footer";
 
 const filteredData = [
-    // 🔥 YOUR DATA — NOT MODIFIED AT ALL
     {
         id: 1,
-        title: "REISER",
+        title: "BUILDING THE DAS SPATIAL COMPUTER",
         description:
-            "Reiser's newly pre-qualified H145 D3 MR simulator marks a significant milestone for the industry.",
-        category: "Simulated Training",
-        industry: "Aviation",
-        size: "double",
+            "Discover how Antiworld developed DAS, a next-generation spatial computer designed to create immersive workspaces with multiple virtual displays and advanced XR interaction.",
+        category: "Product Technology",
+        industry: "Spatial Computing",
+        size: "double"
     },
     {
         id: 2,
-        title: "THE ROYAL AUSTRALIAN AIR FORCE",
+        title: "THE FUTURE OF XR TRAINING SYSTEMS",
         description:
-            "Harnessing the power of mixed reality to prepare personnel under demanding conditions.",
-        category: "Simulated Training",
-        industry: "Medical",
+            "XR technologies are transforming professional training. Learn how immersive environments enable safer, faster, and more cost-effective skill development.",
+        category: "XR Technology",
+        industry: "Training"
     },
     {
         id: 3,
-        title: "RHEINMETALL",
+        title: "REALM: THE PLATFORM FOR IMMERSIVE DIGITAL WORLDS",
         description:
-            "Driving simulator powered by refreshed XR transforms training into preparation for real-world combat.",
-        category: "Simulated Training",
-        industry: "Defense",
+            "Realm is Antiworld’s immersive platform designed for collaborative XR environments, enabling shared virtual spaces for development, design, and training.",
+        category: "Product Technology",
+        industry: "Spatial Computing"
     },
     {
         id: 4,
-        title: "DEFENSE CASE 1",
-        description: "Advanced defense mixed reality training program.",
-        category: "Simulated Training",
-        industry: "Defense",
+        title: "ADVANCED COCKPIT SIMULATORS FOR DEFENSE TRAINING",
+        description:
+            "Antiworld develops high-fidelity cockpit simulators for jets, helicopters, and military vehicles to enable safe and efficient pilot training.",
+        category: "Defense Technology",
+        industry: "Defense"
     },
     {
         id: 5,
-        title: "DEFENSE CASE 2",
-        description: "Immersive battlefield readiness simulations.",
-        category: "Simulated Training",
-        industry: "Defense",
+        title: "SPATIAL WORKSPACES FOR ENTERPRISE TEAMS",
+        description:
+            "Explore how spatial computing environments allow professionals to work with multiple digital tools simultaneously inside immersive 3D workspaces.",
+        category: "XR Technology",
+        industry: "Enterprise"
     },
     {
         id: 6,
-        title: "SPACE PROGRAM",
-        description: "Space mission preparation using XR environments.",
+        title: "THE ROLE OF XR IN AVIATION TRAINING",
+        description:
+            "Mixed reality cockpit simulators provide pilots with realistic mission training while significantly reducing operational costs.",
         category: "Simulated Training",
-        industry: "Space",
+        industry: "Aviation"
     },
     {
         id: 7,
-        title: "MEDICAL XR",
-        description: "Next-gen surgical simulation powered by XR.",
-        category: "Simulated Training",
-        industry: "Medical",
+        title: "BUILDING NEXT-GEN NOTEBOOK DEVICES",
+        description:
+            "The Antiworld Notebook reimagines portable computing by integrating immersive displays and spatial computing capabilities.",
+        category: "Product Technology",
+        industry: "Spatial Computing"
     },
     {
         id: 8,
-        title: "SPACE PROGRAM",
-        description: "Space mission preparation using XR environments.",
-        category: "Simulated Training",
-        industry: "Space",
+        title: "SIMULATION TECHNOLOGY FOR GROUND VEHICLES",
+        description:
+            "XR simulation systems help train operators for armored vehicles and defense equipment in fully immersive environments.",
+        category: "Defense Technology",
+        industry: "Defense"
     },
     {
         id: 9,
-        title: "MEDICAL XR",
-        description: "Next-gen surgical simulation powered by XR.",
-        category: "Simulated Training",
-        industry: "Medical",
+        title: "AR APPLICATIONS FOR INDUSTRIAL WORKFLOWS",
+        description:
+            "Augmented reality enables technicians to visualize complex systems and perform maintenance tasks with real-time digital guidance.",
+        category: "AR Applications",
+        industry: "Enterprise"
     },
     {
         id: 10,
-        title: "REISER",
+        title: "THE EVOLUTION OF SPATIAL COMPUTING",
         description:
-            "Reiser's newly pre-qualified H145 D3 MR simulator marks a significant milestone for the industry.",
-        category: "Simulated Training",
-        industry: "Aviation",
-        size: "double",
+            "From VR headsets to full spatial workspaces, explore how immersive computing technologies are redefining human-computer interaction.",
+        category: "XR Technology",
+        industry: "Spatial Computing",
+        size: "double"
     },
     {
         id: 11,
-        title: "THE ROYAL AUSTRALIAN AIR FORCE",
+        title: "MISSION SIMULATION IN XR ENVIRONMENTS",
         description:
-            "Harnessing the power of mixed reality to prepare personnel under demanding conditions.",
+            "Defense organizations can rehearse complex operations using immersive simulation environments powered by advanced XR systems.",
         category: "Simulated Training",
-        industry: "Medical",
+        industry: "Defense"
     },
     {
         id: 12,
-        title: "RHEINMETALL",
+        title: "IMMERSIVE EDUCATION PLATFORMS",
         description:
-            "Driving simulator powered by refreshed XR transforms training into preparation for real-world combat.",
-        category: "Simulated Training",
-        industry: "Defense",
+            "XR learning environments allow students to interact with complex systems and concepts in ways impossible with traditional education tools.",
+        category: "XR Technology",
+        industry: "Education"
     },
     {
         id: 13,
-        title: "DEFENSE CASE 1",
-        description: "Advanced defense mixed reality training program.",
-        category: "Simulated Training",
-        industry: "Defense",
+        title: "DESIGNING IMMERSIVE DIGITAL WORLDS",
+        description:
+            "Explore how developers and designers use XR platforms to build interactive digital environments for training and entertainment.",
+        category: "XR Experience",
+        industry: "Entertainment"
     },
     {
         id: 14,
-        title: "DEFENSE CASE 2",
-        description: "Immersive battlefield readiness simulations.",
-        category: "Simulated Training",
-        industry: "Defense",
-    },
+        title: "THE FUTURE OF DEFENSE SIMULATION",
+        description:
+            "Advanced cockpit simulators and XR environments will redefine how defense personnel train for real-world missions.",
+        category: "Defense Technology",
+        industry: "Defense"
+    }
 ];
 
 const Insider = () => {
@@ -129,19 +136,21 @@ const Insider = () => {
                     {/* Heading */}
                     <h1 className="text-[30px] sm:text-[48px] md:text-[48px] lg:text-[40px]
           font-extrabold uppercase tracking-tight leading-[0.95] scale-x-150 origin-left">
-                        VARJO INSIDER BLOG
+                        ANTIWORLD INSIDER
                     </h1>
 
                     {/* Subtitle */}
                     <p className="mt-6 text-[16px] md:text-[18px] text-gray-300 leading-[28px]">
-                        Pop the hood on the virtual, augmented, and mixed reality community.
+                        Insights into spatial computing, XR technologies, and next-generation defense simulation systems.
                     </p>
 
                     {/* Description */}
                     <p className="mt-6 text-[16px] md:text-[18px] text-gray-400 leading-[30px]">
-                        The Varjo Insider blog is the perfect place to keep up to date with
-                        our developer insights, tech tips, and insider opinions on VR, AR,
-                        and XR hardware and software.
+                        The Antiworld Insider blog explores the technologies shaping the future
+                        of immersive computing, spatial workspaces, and advanced simulation systems.
+                        Discover how XR, AR, and mixed reality are transforming industries
+                        from defense training and aviation to enterprise productivity
+                        and interactive digital environments.
                     </p>
 
                     {/* Link */}
@@ -150,7 +159,7 @@ const Insider = () => {
                         className="inline-block mt-8 text-[16px] text-gray-300 underline
           hover:text-white transition"
                     >
-                        What is the Varjo Insider Blog and how can I get involved?
+                        Learn more about Antiworld technologies and developer insights.
                     </a>
 
                 </div>
@@ -166,7 +175,12 @@ const Insider = () => {
                         className="bg-transparent border-b border-gray-500 pb-2 text-sm uppercase tracking-wider focus:outline-none text-white"
                     >
                         <option className="text-black" value="All">ALL CATEGORIES</option>
+                        <option className="text-black" value="Product Technology">Product Technology</option>
+                        <option className="text-black" value="XR Technology">XR Technology</option>
                         <option className="text-black" value="Simulated Training">Simulated Training</option>
+                        <option className="text-black" value="Defense Technology">Defense Technology</option>
+                        <option className="text-black" value="AR Applications">AR Applications</option>
+                        <option className="text-black" value="XR Experience">XR Experience</option>
                     </select>
 
                     <select
@@ -175,10 +189,13 @@ const Insider = () => {
                         className="bg-transparent border-b border-gray-500 pb-2 text-sm uppercase tracking-wider focus:outline-none text-white"
                     >
                         <option className="text-black" value="All">ALL INDUSTRIES</option>
-                        <option className="text-black" value="Aviation">Aviation</option>
-                        <option className="text-black" value="Medical">Medical</option>
+                        <option className="text-black" value="Spatial Computing">Spatial Computing</option>
                         <option className="text-black" value="Defense">Defense</option>
-                        <option className="text-black" value="Space">Space</option>
+                        <option className="text-black" value="Aviation">Aviation</option>
+                        <option className="text-black" value="Enterprise">Enterprise</option>
+                        <option className="text-black" value="Education">Education</option>
+                        <option className="text-black" value="Entertainment">Entertainment</option>
+                        <option className="text-black" value="Training">Training</option>
                     </select>
 
                 </div>

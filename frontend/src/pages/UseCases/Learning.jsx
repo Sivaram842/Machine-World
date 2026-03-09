@@ -1,57 +1,63 @@
 import React, { useRef, useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-
-
+import learn from "../../assets/immersive-education.jpg"
+import learn1 from "../../assets/skilldevelopment.jpg"
+import learn2 from "../../assets/labs.jpg"
+import learn3 from "../../assets/education.jpg"
+import learn4 from "../../assets/collab.jpg"
+import learn5 from "../../assets/mission.webp"
+import learn6 from "../../assets/XR_Lab.avif"
+import learn7 from "../../assets/training.jpeg"
 
 
 const cards = [
     {
-        tag: "BUILD SKILLS FROM DAY ONE",
-        title: "Foundational flight training",
-        desc: "Mixed reality enables student pilots to master maneuvers, navigation, and instrument procedures in safe, repeatable environments that accelerate their learning curve.",
-        img: "https://images.unsplash.com/photo-1542365887-9e1f3d1d6d2d"
+        tag: "INTERACTIVE LEARNING",
+        title: "Immersive classroom environments",
+        desc: "Students learn complex subjects through interactive spatial simulations where theory becomes practical experience inside immersive digital environments.",
+        img: learn
     },
     {
-        tag: "TRAIN FOR COMPLEXITY",
-        title: "Advanced operations",
-        desc: "Crew can practice formation flying, tactical maneuvers, and multi-aircraft coordination in highly realistic simulations that prepare them for operational demands.",
-        img: "https://images.unsplash.com/photo-1508610048659-a06b669e3321"
+        tag: "SKILL DEVELOPMENT",
+        title: "Hands-on technical training",
+        desc: "Learners can practice engineering, aviation, and industrial procedures inside virtual training systems powered by Antiworld XR technologies.",
+        img: learn1
     },
     {
-        tag: "PREPARE FOR THE UNEXPECTED",
-        title: "Emergency procedures",
-        desc: "Pilots rehearse critical responses to engine failures, system malfunctions, and severe weather without the risks or costs of live training.",
-        img: "https://images.unsplash.com/photo-1474302770737-173ee21bab63"
+        tag: "SIMULATION-BASED EDUCATION",
+        title: "Scenario-based learning",
+        desc: "Students experience real-world situations through immersive simulations that enhance decision making and problem solving skills.",
+        img: learn3
     },
     {
-        tag: "PRECISION UNDER PRESSURE",
-        title: "Weapons and targeting",
-        desc: "Mixed reality allows pilots, aircrew and JTACs to train together on air-to-air and air-to-ground targeting, building accuracy and confidence in mission scenarios.",
-        img: "https://images.unsplash.com/photo-1523966211575-eb4a01e7dd51"
+        tag: "IMMERSIVE LABS",
+        title: "Virtual laboratories",
+        desc: "Educational institutions can deploy virtual labs where students experiment, analyze systems, and interact with complex environments safely.",
+        img: learn2
     },
     {
-        tag: "EVERY ROLE, EVERY MISSION",
-        title: "Crew and rear-crew training",
-        desc: "Weapons systems officers, loadmasters, and mission specialists can rehearse procedures and coordination in immersive environments that mirror real operations.",
-        img: "https://images.unsplash.com/photo-1558980664-10c236debd83"
+        tag: "COLLABORATIVE TRAINING",
+        title: "Multi-user learning environments",
+        desc: "REALM enables collaborative XR training where multiple learners interact in shared immersive spaces.",
+        img: learn4
     },
     {
-        tag: "TRAIN THE MISSION BEFORE FLYING IT",
-        title: "Full mission rehearsal",
-        desc: "Full Mission Rehearsal lets aircrews practice complete missions in high-fidelity, data-driven virtual environments that enhance readiness while reducing cost and risk.",
-        img: "https://images.unsplash.com/photo-1504718855392-c0f33b372e72"
+        tag: "MISSION SIMULATION",
+        title: "Real-world system simulations",
+        desc: "From aviation to industrial training, Antiworld simulators replicate real operational environments for realistic practice.",
+        img: learn5
     }
 ];
 
 
 const customers = [
-    "AECHELON",
-    "TRU SIMULATION",
-    "FINNISH AIR FORCE",
-    "LUFTHANSA AVIATION TRAINING",
-    "SLOVENIAN ARMED FORCES",
-    "DASSAULT AVIATION",
+    "TECHNICAL UNIVERSITIES",
+    "AVIATION TRAINING CENTERS",
+    "DEFENSE ACADEMIES",
+    "ENGINEERING INSTITUTES",
+    "XR EDUCATION LABS",
+    "ADVANCED SKILL DEVELOPMENT PROGRAMS"
 ];
 
 
@@ -153,9 +159,9 @@ export default function Learning() {
           scale-y-95 md:scale-y-90
         "
                                 >
-                                    MASTER THE
-                                    <br />
-                                    COCKPIT
+                                    IMMERSIVE<br />
+                                    LEARNING
+                                    PLATFORMS
                                 </h1>
                             </div>
 
@@ -169,9 +175,7 @@ export default function Learning() {
           max-w-full md:max-w-[430px]
         "
                                 >
-                                    Pilots and flight instructors globally are using immersive XR
-                                    technology to simulate flight scenarios at the point of need,
-                                    enabling a higher level of training at a fraction of the cost.
+                                    Students, professionals, and institutions are adopting immersive XR learning environments to develop real-world skills. Antiworld technologies combine spatial computing, interactive simulations, and digital environments to create engaging and practical learning experiences across multiple industries.
                                 </p>
                             </div>
 
@@ -190,7 +194,7 @@ export default function Learning() {
                         {/* LEFT IMAGE (54%) */}
                         <div>
                             <img
-                                src="https://varjo.com/hs-fs/hubfs/Gaia%20images/1250X800%20(3).png?width=1875&height=1200&name=1250X800%20(3).png"
+                                src={learn6}
                                 alt="Pilot training simulator"
                                 className="w-full h-auto object-cover"
                             />
@@ -199,7 +203,7 @@ export default function Learning() {
 
                             {/* Eyebrow */}
                             <p className="uppercase text-[13px] tracking-[0.2em] font-medium mb-5 text-left">
-                                TRAIN ANY TIME, ANY PLACE
+                                NEXT-GENERATION EDUCATION
                             </p>
 
                             {/* Heading */}
@@ -213,44 +217,37 @@ export default function Learning() {
   scale-x-105 md:scale-x-110
   scale-y-95 md:scale-y-90
 ">
-                                BENEFIT FROM A SAFE, BUT
+                                TRANSFORM LEARNING
                                 <br />
-                                FULLY IMMERSIVE
+                                WITH IMMERSIVE
                                 <br />
-                                ENVIRONMENT.
+                                XR TECHNOLOGY
                             </h2>
 
                             {/* Bullet List */}
                             <ul className="list-disc list-outside pl-4 space-y-3 text-[14px] md:text-[15px] leading-[1.65] text-[#1a1a1a]">
                                 <li>
-                                    <strong>Reduce the cost of training by up to 99%+</strong> with low-cost,
-                                    immersive learning environments to replace or supplement traditional
-                                    training solutions
+                                    <strong>Enable experiential learning</strong> through immersive XR environments where students interact with realistic simulations instead of passive theoretical study.
                                 </li>
 
                                 <li>
-                                    <strong>Increase training velocity</strong> and enable more trainees to
-                                    become proficient in less time by using XR and VR training tactics
+                                    <strong>Accelerate skill development</strong> by allowing learners to repeatedly practice complex procedures in controlled virtual environments.
                                 </li>
 
                                 <li>
-                                    <strong>Optimize user engagement</strong> with a solution where trainees
-                                    want to engage in and repeat exercises
+                                    <strong>Improve engagement and retention</strong> using interactive spatial computing experiences powered by Antiworld's DAS platform.
                                 </li>
 
                                 <li>
-                                    <strong>Increase the value of existing part-task simulators</strong> with
-                                    full field of view, immersive visuals using mixed reality technology
+                                    <strong>Create virtual laboratories and simulation classrooms</strong> that replicate real-world systems and environments.
                                 </li>
 
                                 <li>
-                                    <strong>Reduce travel time and costs</strong> by training at the point of
-                                    need, thanks to portability and reduced simulator size
+                                    <strong>Expand accessibility to advanced training tools</strong> without the need for expensive physical infrastructure.
                                 </li>
 
                                 <li>
-                                    <strong>Train effectively for the most dangerous scenarios</strong> in a
-                                    completely safe immersive environment
+                                    <strong>Train safely for complex scenarios</strong> such as aviation operations, engineering procedures, and technical simulations.
                                 </li>
 
                             </ul>
@@ -319,15 +316,16 @@ export default function Learning() {
                 <div className="w-full max-w-[1100px] mx-auto px-[6vw] text-center">
 
                     <h2 className="uppercase font-light text-[24px] md:text-[40px] leading-[1.4] tracking-[0.03em] text-[#111111]">
-                        INDUSTRY LEADERS AND PIONEERS
+                        EDUCATIONAL INSTITUTIONS
                         <br />
-                        CHOOSE VARJO FOR ADVANCED AIR
+                        AND TRAINING ORGANIZATIONS
                         <br />
-                        TRAINING IN MIXED REALITY.
+                        ARE ADOPTING IMMERSIVE XR
+                        LEARNING SYSTEMS.
                     </h2>
 
                     <p className="mt-8 md:mt-12 text-[16px] md:text-[19px] leading-[1.7] text-[#555555] max-w-[520px] mx-auto">
-                        Read how our customers and partners use the world's most advanced XR to modernize air training across the industry.
+                        Discover how Antiworld technologies enable institutions and training centers to build immersive learning ecosystems that combine spatial computing, simulations, and real-time collaboration.
                     </p>
 
                 </div>
@@ -383,9 +381,8 @@ export default function Learning() {
 
                         {/* QUOTE */}
                         <p className="text-[20px] md:text-[27px] leading-[1.4] italic font-light text-black mb-[18px]">
-                            “XR-4 truly has superlative resolution and immersion level that we
-                            have never seen before. It’s absolutely clear that Varjo is in a
-                            different league.”
+                            “Our XR-powered training environments deliver exceptional realism and immersion, enabling
+                            learners to train, practice, and master complex skills inside highly interactive simulated worlds.”
                         </p>
 
                         {/* AUTHOR */}
@@ -411,7 +408,7 @@ export default function Learning() {
                         {/* 16:9 Responsive Video */}
                         <div className="relative w-full aspect-video">
                             <iframe
-                                src="https://www.youtube.com/embed/9No-FiEInLA"
+                                src="/training1.mp4"
                                 title="Military Helicopter Cockpit Training"
                                 className="absolute top-0 left-0 w-full h-full"
                                 frameBorder="0"
@@ -429,22 +426,18 @@ export default function Learning() {
 
                             {/* Eyebrow */}
                             <p className="uppercase text-[11px] tracking-[0.22em] text-black/70 mb-[22px]">
-                                SEAMLESS SYNTHETIC HELICOPTER TRAINING
+                                IMMERSIVE TRAINING ECOSYSTEM
                             </p>
 
                             {/* Heading */}
                             <h2 className="uppercase text-[28px] md:text-[46px] font-extrabold leading-[1.1] mb-[26px]">
-                                U.S. ARMY RVCT AIR PROGRAM
+                                XR-POWERED LEARNING
+                                AND TRAINING SYSTEMS
                             </h2>
 
                             {/* Paragraph */}
                             <p className="text-[17px] leading-[1.7] text-black/70 mb-[40px]">
-                                Varjo was chosen as the XR technology provider for the U.S. Army’s
-                                Reconfigurable Virtual Collective Trainer (RVCT) Air Program in 2023,
-                                enabling a portable training capability for three different helicopters:
-                                Apache, Chinook, and Blackhawk. U.S. Army pilots use Varjo’s high
-                                resolution mixed reality to experience a fully immersive training
-                                environment where they can interact with physical controls in real-time.
+                                Antiworld platforms combine spatial computing, immersive simulation environments, and real-time interaction systems to create advanced training ecosystems. Learners can practice complex procedures, explore digital environments, and collaborate with instructors in highly realistic immersive simulations.
                             </p>
 
                             {/* Button */}
@@ -462,7 +455,7 @@ export default function Learning() {
                 className="relative w-full min-h-screen flex items-center text-white"
                 style={{
                     backgroundImage:
-                        "url('https://varjo.com/hs-fs/hubfs/Gaia%20images/1920x1080%20(6)-min.png?width=1920&height=1080&name=1920x1080%20(6)-min.png')",
+                        `url(${learn7})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center right",
                     backgroundRepeat: "no-repeat",
@@ -476,28 +469,23 @@ export default function Learning() {
 
                     {/* Preheader */}
                     <p className="uppercase text-[12px] tracking-[0.18em] font-light mb-6 text-white/80">
-                        THE VARJO ADVANTAGE
+                        THE ANTIWORLD ADVANTAGE
                     </p>
 
                     {/* Heading */}
                     <h2 className="uppercase text-[28px] md:text-[36px] font-extrabold leading-[1.1] mb-8">
-                        SETTING THE
+                        BUILDING THE
                         <br />
-                        STANDARD FOR
+                        FUTURE OF
                         <br />
-                        MIXED REALITY
+                        IMMERSIVE
                         <br />
-                        TRAINING.
+                        LEARNING.
                     </h2>
 
                     {/* Paragraph */}
                     <p className="text-[15px] md:text-[16px] leading-[1.75] text-white/80 mb-10 max-w-[520px]">
-                        Varjo’s XR solutions provide the realism, interoperability, and security
-                        needed to prepare personnel for mission-critical operations. The XR-4
-                        Series delivers uncompising fidelity and integrates seamlessly with
-                        leading simulators, software, and hardware. Built for portability and
-                        scalability, and backed by Varjo’s defense-certified expert services, it
-                        is the trusted foundation for the future of training.
+                        Antiworld’s immersive technologies combine XR simulation, spatial computing, and interactive environments to redefine how knowledge is delivered. Our platforms allow learners to experience complex systems, develop practical skills, and collaborate inside fully immersive digital worlds.
                     </p>
 
                     {/* Button */}
@@ -505,47 +493,45 @@ export default function Learning() {
                         href="#"
                         className="inline-flex items-center gap-3 uppercase text-[13px] tracking-[0.12em] font-medium text-white hover:opacity-70 transition"
                     >
-                        Explore Products
+                        Explore Antiworld Technologies →
                         <span className="text-lg">→</span>
                     </a>
 
                 </div>
             </section>
-            <section className="w-full bg-[#f3f3f3] py-[170px]">
+            {/* <section className="w-full bg-[#f3f3f3] py-[170px]">
 
                 <div className="max-w-[1650px] mx-auto px-[6vw]">
 
                     <div className="flex flex-col md:flex-row justify-between items-start gap-12 md:gap-[7vw]">
 
-                        {/* ================= LEFT TEXT ================= */}
                         <div className="w-full md:w-[40%]">
-                            {/* Eyebrow */}
                             <p className="uppercase text-[11px] tracking-[0.22em] text-black/60 mb-[22px]">
-                                CLARITY AND COMFORT
+                                IMMERSIVE LEARNING TECHNOLOGY
                             </p>
 
-                            {/* Heading */}
                             <h2 className="uppercase text-[44px] font-extrabold leading-[1.08] mb-[26px]">
-                                DESIGNED FOR TRUE-TO-
+                                DESIGNED FOR REAL-WORLD
                                 <br />
-                                LIFE IMMERSION.
+                                DESIGNED FOR REAL-WORLD
                             </h2>
 
-                            {/* Paragraph */}
                             <p className="text-[16px] leading-[1.7] text-black/70 max-w-[460px]">
-                                The Varjo XR-4 Series brings unmatched realism to aerospace training,
-                                with advanced video passthrough, dual 4K displays, and LiDAR sensors
-                                that align physical and virtual elements seamlessly. Pilots can
-                                interact naturally with panels, HOTAS systems, and crew members while
-                                eliminating negative training risks. Ergonomic design features,
-                                including a zero gravity headband, automatic IPD adjustment, and
-                                active cooling, ensure long sessions remain comfortable and effective.
+                                Antiworld immersive systems combine spatial computing,
+                                interactive simulation environments, and real-time rendering
+                                technologies to create realistic digital training worlds.
+
+                                Learners can interact with complex systems, operate simulated
+                                equipment, and collaborate with instructors inside shared XR
+                                environments. By integrating cockpit simulators, immersive
+                                visualization systems, and multi-user platforms, Antiworld
+                                technologies enable practical skill development in fields
+                                such as aviation, engineering, defense, and technical education.
                             </p>
 
                         </div>
 
 
-                        {/* ================= RIGHT VIDEO ================= */}
                         <div className="w-full md:w-[55%]">
 
                             <video
@@ -567,10 +553,9 @@ export default function Learning() {
             <section className="bg-[#f3f3f3] py-28">
                 <div className="max-w-[1700px] mx-auto px-[6vw]">
 
-                    {/* Top Row */}
                     <div className="flex justify-between items-center mb-16">
                         <p className="uppercase text-[12px] tracking-[0.18em]">
-                            BROWSE LATEST RELATED ARTICLES
+                            INSIGHTS FROM THE ANTIWORLD LEARNING ECOSYSTEM
                         </p>
 
                         <a
@@ -581,10 +566,8 @@ export default function Learning() {
                         </a>
                     </div>
 
-                    {/* MAIN GRID */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-14 items-start">
 
-                        {/* SMALL SQUARE */}
                         <div className="relative aspect-square overflow-hidden group">
 
                             <img
@@ -597,16 +580,19 @@ export default function Learning() {
 
                             <div className="absolute bottom-10 left-10 right-10 text-white">
                                 <h3 className="uppercase text-[20px] font-bold leading-[1.25] mb-4">
-                                    ADVANCING PILOT READINESS THROUGH LOCKHEED MARTIN PREPAR3D’S NEXT-GENERATION XR
+                                    THE FUTURE OF IMMERSIVE EDUCATION WITH XR
                                 </h3>
 
                                 <p className="text-[15px] leading-[1.6] text-white/90">
-                                    Learn about Varjo's longstanding collaboration with Lockheed Martin and Prepar3D.
+                                    Antiworld immersive technologies enable educational institutions
+                                    to transform traditional classrooms into interactive learning
+                                    environments. Using spatial computing and XR simulation systems,
+                                    students can explore complex subjects through hands-on
+                                    experiences rather than passive theoretical instruction.
                                 </p>
                             </div>
                         </div>
 
-                        {/* VERTICAL RECTANGLE 1 */}
                         <div className="relative h-[350px] md:h-[500px] overflow-hidden group">
 
                             <img
@@ -619,16 +605,19 @@ export default function Learning() {
 
                             <div className="absolute bottom-12 left-10 right-10 text-white">
                                 <h3 className="uppercase text-[22px] font-bold leading-[1.2] mb-6">
-                                    HOW THE SLOVENIAN ARMED FORCES ARE DRIVING OPERATIONAL READINESS WITH VR/XR
+                                    HOW SIMULATION TECHNOLOGY IS CHANGING PROFESSIONAL TRAINING
                                 </h3>
 
                                 <p className="text-[16px] leading-[1.6] text-white/90">
-                                    The XR military flight simulators delivered to the Slovenian Armed Forces are redefining tactical aviation training.
+                                    Simulation-based training allows professionals to practice
+                                    complex operations in safe digital environments. Antiworld
+                                    cockpit simulators and immersive XR systems provide realistic
+                                    training scenarios that help users develop critical skills,
+                                    improve decision-making, and prepare for real-world challenges.
                                 </p>
                             </div>
                         </div>
 
-                        {/* VERTICAL RECTANGLE 2 */}
                         <div className="relative h-[500px] overflow-hidden group">
 
                             <img
@@ -641,15 +630,20 @@ export default function Learning() {
 
                             <div className="absolute bottom-12 left-10 right-10 text-white">
                                 <p className="uppercase text-[11px] tracking-[0.15em] mb-5 text-white/80">
-                                    COMPANY NEWS
+                                    ANTI WORLD TECHNOLOGY
                                 </p>
 
                                 <h3 className="uppercase text-[22px] font-bold leading-[1.2] mb-6">
-                                    VARJO SECURES U.S. AIR FORCE CERTIFICATION FOR VARJO BASE SOFTWARE
+                                    REALM: BUILDING COLLABORATIVE XR LEARNING WORLDS
                                 </h3>
 
                                 <p className="text-[16px] leading-[1.6] text-white/90">
-                                    Varjo secures U.S. Air Force Certificate to Field for its Varjo Base software.
+                                    REALM is Antiworld’s immersive platform designed to support
+                                    multi-user XR environments where learners, instructors, and
+                                    teams can interact inside shared digital worlds. By combining
+                                    spatial computing with real-time collaboration tools, REALM
+                                    creates powerful environments for training, simulation,
+                                    and knowledge sharing.
                                 </p>
                             </div>
                         </div>
@@ -657,7 +651,7 @@ export default function Learning() {
                     </div>
 
                 </div>
-            </section>
+            </section> */}
             <Footer />
         </div>
 
