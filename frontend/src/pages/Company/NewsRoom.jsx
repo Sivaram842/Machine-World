@@ -10,67 +10,67 @@ export default function Newsroom() {
         {
             id: 1,
             category: "Company News",
-            date: "June 4, 2025",
+            date: "June 12, 2026",
             title:
-                "Varjo XR technology powers first-ever EASA-qualified mixed reality flight simulator",
+                "Antiworld develops next-generation cockpit simulator for advanced pilot training",
             desc:
-                "For the first time ever, a mixed reality flight simulator has been officially qualified.",
+                "A new immersive cockpit simulator designed to improve pilot training efficiency while reducing operational costs.",
             featured: true,
         },
         {
             id: 2,
             category: "Company News",
-            date: "April 24, 2025",
+            date: "May 28, 2026",
             title:
-                "Varjo launches Teleport 2.0: A generational leap in photorealistic 3D capture",
+                "Antiworld expands XR research for defence and enterprise simulation systems",
             desc:
-                "Introducing Teleport 2.0, a next-generation release for our 3D capture service.",
+                "Our engineering team continues developing advanced XR solutions for training and operational simulation.",
         },
         {
             id: 3,
-            category: "Company News",
-            date: "March 25, 2025",
+            category: "Government & Defense",
+            date: "April 18, 2026",
             title:
-                "Varjo XR-4 achieves NATO accreditation in Inzpire's cutting-edge JTAC simulator",
+                "Antiworld introduces counter-drone monitoring system for defence applications",
             desc:
-                "Official certification from the UK Ministry of Defence and NATO competency.",
+                "The system enhances detection and response capabilities for modern aerial threats.",
         },
         {
             id: 4,
             category: "Press Release",
-            date: "March 18, 2025",
+            date: "March 22, 2026",
             title:
-                "Varjo named to Fast Company's list of the world’s most innovative companies",
+                "Antiworld announces new immersive training platform for defence and aviation sectors",
             desc:
-                "Varjo has been named to Fast Company's prestigious list of the world’s most innovative companies.",
+                "The platform integrates simulation software, XR technologies, and advanced hardware systems.",
         },
         {
             id: 5,
             category: "Press Release",
-            date: "November 25, 2025",
-            title: "New enterprise XR partnership announced",
-            desc: "Major enterprise collaboration expanding XR adoption.",
+            date: "February 12, 2026",
+            title: "Antiworld partners with technology teams to accelerate XR development",
+            desc: "New collaborations aim to expand immersive technology solutions across industries.",
         },
         {
             id: 6,
             category: "Product Update",
-            date: "November 3, 2025",
-            title: "XR-4 firmware update improves performance",
-            desc: "Latest update enhances tracking and visual clarity.",
+            date: "January 30, 2026",
+            title: "Simulation engine update improves performance and visual realism",
+            desc: "Latest improvements enhance real-time rendering and system stability for training environments.",
         },
         {
             id: 7,
             category: "Government & Defense",
-            date: "October 10, 2025",
-            title: "Military XR deployment success",
-            desc: "XR solutions deployed for defense training.",
+            date: "December 10, 2025",
+            title: "Advanced defence training systems developed using immersive technologies",
+            desc: "XR simulation platforms enable safer and more cost-efficient training operations.",
         },
         {
             id: 8,
             category: "Training and Simulation",
-            date: "September 14, 2025",
-            title: "XR simulation training breakthrough",
-            desc: "Revolutionizing training environments.",
+            date: "November 20, 2025",
+            title: "Immersive XR training environments redefine simulation-based learning",
+            desc: "Antiworld technology helps organizations train effectively in controlled virtual environments.",
         },
     ];
 
@@ -88,9 +88,7 @@ export default function Newsroom() {
             <NavbarStatic />
             <div className="font-sans text-black overflow-x-hidden">
 
-
-                {/* ================= HERO ================= */}
-                {/* ================= HERO ================= */}
+                {/* HERO */}
                 <section className="bg-[#f3f3f3] 
                     min-h-[75vh] md:min-h-[85vh] lg:min-h-[95vh] 
                     flex items-center 
@@ -107,15 +105,15 @@ export default function Newsroom() {
                   text-[15px] sm:text-[16px] md:text-[18px] 
                   leading-[26px] md:leading-[32px] 
                   text-gray-700">
-                            Read our latest VR/XR technology insights, hear what the world is
-                            saying about Varjo, and know right away when Varjo news breaks –
-                            it’s all here.
+                            Read the latest updates from Antiworld including defence technology
+                            developments, XR innovation, simulation breakthroughs, and company
+                            announcements from our engineering and research teams.
                         </p>
 
                     </div>
                 </section>
 
-                {/* ================= CATEGORIES ================= */}
+                {/* CATEGORIES */}
                 <section className="bg-[#f3f3f3] px-6 md:px-16 pb-16 md:pb-20 relative">
                     <div className="relative inline-block">
 
@@ -142,7 +140,7 @@ export default function Newsroom() {
                     </div>
                 </section>
 
-                {/* ================= NEWS GRID ================= */}
+                {/* NEWS GRID */}
                 <section className="bg-[#f3f3f3] px-6 md:px-16 pb-20 md:pb-32">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-12">
 
@@ -171,7 +169,7 @@ export default function Newsroom() {
                         ))}
                     </div>
 
-                    {/* ================= LOAD MORE ================= */}
+                    {/* LOAD MORE */}
                     {visible < articles.length && (
                         <div className="mt-12 md:mt-24 text-center">
                             <button

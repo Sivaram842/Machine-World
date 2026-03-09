@@ -1,59 +1,56 @@
 import React, { useRef, useState } from "react";
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
-import img from "../../assets/DAS1.jpeg";
-import v1Image from "../../assets/V1Tv19.4.png";
-import v1Image1 from "../../assets/V1Tv19.3.png";
-import v1Image2 from "../../assets/V1Tv19.2.png";
-import v1Image3 from "../../assets/V1Tv19.1.png";
-import v1Image4 from "../../assets/DAS CORE0669.png";
-import v1Image5 from "../../assets/DAS.jpeg";
-import poster from "../../assets/officeDAS.png";
-import heroImg from "../../assets/officeDAS.png";
+import img from "../../assets/mig -29 left side view.png";
+import img1 from "../../assets/mig-29 back view.png";
+import img2 from "../../assets/mig -29 side view - Copy.png";
+import img3 from "../../assets/MIG-29 GLASSCOCKPIT.png";
+import img4 from "../../assets/mig-29.png";
+import poster from "../../assets/mig -29 left side view.png";
 import PassthroughSection from "../../components/ProductSubPageComponents/PassthroughSection";
 import TalkToSalesCTA from "../../components/TalkToSalesCTA";
 
 
 const cards = [
     {
-        small: "DAS-OPTIMIZED",
-        title: "COMPUTING",
-        desc: "The DAS spatial computer is designed to seamlessly connect with modern devices, enabling professionals to transform any environment into an immersive multi-screen workspace powered by advanced spatial computing technology.",
-        image: v1Image,
+        small: "SIMULATION",
+        title: "HIGH-FIDELITY\nCOCKPIT",
+        desc: "A full-scale MiG-29 cockpit replica with authentic pilot controls, instrument panels, and realistic ergonomics.",
+        image: img,
         span: "lg:row-span-2"
     },
     {
-        small: "IMMERSIVE",
-        title: "WORKSPACE\nEXPERIENCE",
-        desc: "Experience an unlimited 3D workspace with DAS. Multiple virtual displays, intuitive interactions, and immersive visualization allow users to work, create, and collaborate in ways impossible on traditional laptops.",
-        image: v1Image1,
+        small: "TRAINING",
+        title: "MISSION\nSIMULATION",
+        desc: "Simulate complex combat scenarios including air-to-air engagements, navigation missions, and tactical exercises.",
+        image: img1,
         span: "lg:row-span-2"
     },
     {
-        small: "DISPLAY",
-        title: "ULTRA\nCLARITY",
-        desc: "Experience ultra-high resolution visuals designed for professional spatial computing workflows.",
-        image: v1Image2
+        small: "VISUALS",
+        title: "IMMERSIVE\nENVIRONMENT",
+        desc: "Ultra-realistic 3D environments with dynamic terrain, weather systems, and mission elements.",
+        image: img2
     },
     {
-        small: "PERFORMANCE",
-        title: "POWERFUL\nPROCESSING",
-        desc: "Built with advanced XR processors to deliver smooth and responsive performance.",
-        image: v1Image3
+        small: "AVIONICS",
+        title: "REAL AIRCRAFT\nSYSTEMS",
+        desc: "Simulated radar, navigation, weapons control, and cockpit instrumentation based on real aircraft systems.",
+        image: img3
     },
     {
-        small: "INTERACTION",
-        title: "NATURAL\nCONTROL",
-        desc: "Control your workspace with gestures, voice, and eye tracking for seamless interaction.",
-        image: v1Image4
+        small: "XR",
+        title: "MIXED\nREALITY",
+        desc: "Integration with advanced MR headsets for immersive mission visualization and research.",
+        image: img4
     },
     {
-        small: "WORKSPACE",
-        title: "IMMERSIVE\nPRODUCTIVITY",
-        desc: "Create an unlimited 3D workspace with multiple floating applications around you.",
-        image: v1Image5
+        small: "RESEARCH",
+        title: "AEROSPACE\nDEVELOPMENT",
+        desc: "Used by aerospace institutions and defense organizations for research and training innovation.",
+        image: img
     }
-];
+]
 const MIG29 = () => {
 
     const videoRef = useRef(null);
@@ -91,16 +88,19 @@ const MIG29 = () => {
 
                             {/* LEFT */}
                             <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight lg:max-w-2xl">
-                                NEXT-GEN SPATIAL COMPUTING
+                                MiG-29 High-Fidelity
+                                Cockpit Simulator
                             </h1>
 
                             {/* RIGHT */}
                             <p className="text-gray-300 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-xl text-left lg:text-right">
-                                By fusing immersive digital and real environments,
-                                our spatial computers and modular XR glasses + pods enable creators,
-                                students, and pioneers to invent, collaborate, and build in limitless
-                                3D space—without barriers, screens, or boundaries. Experience the freedom
-                                to create, learn, and connect anywhere—powered by AI, and always evolving.
+                                Train, research, and develop next-generation fighter aviation systems with the MiG-29 High-Fidelity Glass Cockpit Simulator.
+
+                                This full-scale cockpit replica combines authentic MiG-29 controls, real avionics simulation, and mixed-reality visualization to
+                                create an immersive training environment for aerospace laboratories, defense training centers, and advanced XR simulation facilities.
+
+                                With real pilot ergonomics, accurate flight physics, and ultra-realistic visual environments, the simulator enables pilots and engineers
+                                to experience mission operations exactly as they would in the real aircraft.
                             </p>
 
                         </div>
@@ -126,26 +126,69 @@ const MIG29 = () => {
                         </small>
 
                         <h2 className="mt-6 text-3xl sm:text-4xl lg:text-[40px] font-light leading-tight text-black">
-                            360 degrees of immersion.
+                            Immersive fighter
+                            pilot training.
                         </h2>
 
                         <p className="mt-6 text-[15px] leading-relaxed text-gray-700">
-                            Pilot-grade 4K-per-eye mini-LED displays with local dimming deliver
-                            the clarity, contrast, and depth perception required for authentic
-                            mission rehearsal.
+                            The MiG-29 simulator delivers ultra-realistic mission environments through
+                            high-resolution mixed-reality visualization and advanced rendering systems.
                         </p>
 
                         <p className="mt-6 text-[15px] leading-relaxed text-gray-700">
-                            A 120° × 105° field of view achieves full binocular vision, while
-                            28 million pixels of visual precision recreate environments with
-                            unprecedented realism, allowing trainees to perceive detail
-                            exactly as they would in the real world.
+                            Pilots experience a full-scale cockpit with authentic controls, real instrument
+                            panels, and accurate flight dynamics while viewing a simulated battlefield environment
+                            with true depth perception and spatial awareness.
                         </p>
                     </div>
                 </div>
             </section>
 
-            <PassthroughSection />
+            <section className="bg-white py-16 sm:py-24 lg:py-[140px]">
+                <div className="mx-auto flex flex-col lg:flex-row max-w-[1400px] items-start gap-10 sm:gap-16 lg:gap-[100px] px-4 sm:px-8 lg:px-16">
+
+                    {/* LEFT TEXT */}
+                    <div className="w-full lg:w-[42%]">
+                        <small className="block text-[10px] sm:text-[12px] tracking-widest text-black">
+                            REAL COCKPIT INTERACTION
+                        </small>
+
+                        <h2 className="mt-4 sm:mt-6 text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-light leading-tight text-black">
+                            Train inside a real
+                            fighter cockpit.
+                        </h2>
+
+                        <p className="mt-4 sm:mt-6 text-sm sm:text-[15px] leading-relaxed text-gray-700">
+                            The MiG-29 High-Fidelity Glass Cockpit Simulator combines a full-scale
+                            physical cockpit with immersive mixed-reality visualization to deliver
+                            an authentic fighter pilot training environment.
+                        </p>
+
+                        <p className="mt-4 sm:mt-6 text-sm sm:text-[15px] leading-relaxed text-gray-700">
+                            Pilots can interact naturally with real cockpit controls including
+                            the flight stick, throttle quadrant, avionics panels, and mission
+                            displays while experiencing a fully simulated operational environment.
+                        </p>
+
+                        <p className="mt-4 sm:mt-6 text-sm sm:text-[15px] leading-relaxed text-gray-700">
+                            High-resolution mixed reality visualization recreates external flight
+                            environments such as air combat scenarios, navigation missions,
+                            and dynamic weather conditions, providing trainees with a highly
+                            realistic and immersive training platform.
+                        </p>
+                    </div>
+
+                    {/* RIGHT IMAGE */}
+                    <div className="w-full lg:w-[58%]">
+                        <img
+                            src={img1}
+                            alt="MiG-29 cockpit simulator"
+                            className="h-[260px] sm:h-[380px] lg:h-[520px] w-full object-cover"
+                        />
+                    </div>
+
+                </div>
+            </section>
             <section className="bg-white py-16 sm:py-24 lg:py-[160px] px-4 sm:px-6">
                 <div className="mx-auto max-w-[900px] text-center">
 
@@ -187,18 +230,19 @@ const MIG29 = () => {
 
                     {/* TEXT */}
                     <h2 className="text-2xl sm:text-3xl md:text-[38px] font-light leading-tight">
-                        Unlimited Spatial
+                        Mixed Reality
                         <br />
-                        Workspace.
+                        Mission Visualization
                     </h2>
 
                     <p className="mx-auto mt-6 sm:mt-8 max-w-[560px] 
                                                       text-sm sm:text-[15px] 
                                                       leading-relaxed sm:leading-[1.75] 
                                                       text-gray-600">
-                        Break free from the limitations of traditional laptops and flat screens.
-                        This professional spatial computer transforms your workflow into an immersive
-                        3D environment where multiple applications exist around you.
+                        Using advanced mixed-reality technology, the simulator blends the physical cockpit with a fully rendered virtual battlefield environment.
+
+                        Pilots can interact with real cockpit controls while seeing the outside world, targets, terrain, and mission data in immersive 3D space.
+                        This approach allows training scenarios that would otherwise require expensive flight hours in real aircraft.
                     </p>
 
                     <button className="mt-10 sm:mt-12 lg:mt-14 
@@ -210,7 +254,7 @@ const MIG29 = () => {
                                                            tracking-widest text-white 
                                                            transition hover:bg-gray-900 
                                                            w-full sm:w-auto">
-                        VIEW Antiworld-READY SOFTWARE
+                        VIEW SIMULATION SOFTWARE →
                         <span className="text-base sm:text-lg">→</span>
                     </button>
                 </div>
@@ -226,7 +270,7 @@ const MIG29 = () => {
                     playsInline
                     preload="auto"
                 >
-                    <source src={"/DAS2.mp4"} type="video/mp4" />
+                    <source src={"/MIG-29.mp4"} type="video/mp4" />
                 </video>
             </section>
 
@@ -236,16 +280,16 @@ const MIG29 = () => {
                     {/* LEFT CONTENT */}
                     <div className="max-w-[620px]">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[38px] leading-tight font-light text-gray-900 mb-4 sm:mb-6">
-                            Spatial Computing: The Future of Work <br />
+                            Next-Generation<br />
+                            Flight Simulation<br />
+                            Technology
 
                         </h2>
 
                         <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4">
-                            Work is no longer limited to flat screens and crowded desktops.
-                            Spatial computing unlocks a new way to create, collaborate, and
-                            build in immersive digital environments.With an unlimited 3D workspace, professionals
-                            can organize multiple applications around them—coding, designing, testing, and communicating simultaneously.
-                            Complex workflows become clearer, faster, and more intuitive when information exists naturally in space.
+                            Modern fighter pilot training requires advanced simulation systems capable of replicating real aircraft behavior with extreme accuracy.
+
+                            The MiG-29 simulator integrates high-fidelity flight dynamics, real avionics systems, and immersive visual environments to deliver a training experience that closely mirrors operational aircraft performance.
                         </p>
 
                         <button className="inline-flex items-center gap-3 sm:gap-4 bg-black text-white 
@@ -253,7 +297,7 @@ const MIG29 = () => {
                                     py-3 sm:py-4 
                                     text-sm sm:text-base font-medium 
                                     hover:opacity-80 transition">
-                            WHY XR?
+                            WHY SIMULATION →
                             <span className="text-base sm:text-lg">→</span>
                         </button>
                     </div>
@@ -283,12 +327,11 @@ const MIG29 = () => {
 
                         <ul className="space-y-2 text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-[1.15] font-light">
                             {[
-                                "Multi-window coding environments",
-                                "Immersive 3D design workspaces",
-                                "Real-time simulation environments",
-                                "Remote collaboration spaces",
-                                "AI-assisted productivity workflows",
-
+                                "Advanced fighter pilot training",
+                                "Air-to-air combat simulation",
+                                "Tactical mission rehearsal",
+                                "Aircraft systems training",
+                                "Defense research and XR simulation"
                             ].map((item, i) => (
                                 <li
                                     key={i}
@@ -306,7 +349,7 @@ const MIG29 = () => {
                         {/* VIDEO */}
                         <div className="relative w-full aspect-[16/9] min-h-[220px] sm:min-h-[320px] lg:min-h-[520px] overflow-hidden bg-black">
                             <video
-                                src={"/driving-simulator-monitor-center.mp4"}
+                                src={"/MIG-29.mp4"}
                                 controls
                                 preload="metadata"
                                 className="w-full h-full object-cover"
@@ -316,7 +359,7 @@ const MIG29 = () => {
                         {/* QUOTE TEXT */}
                         <div className="max-w-3xl">
                             <p className="text-xl sm:text-2xl md:text-3xl lg:text-[42px] leading-[1.25] font-light italic text-black mb-4">
-                                “The spatial multi-window workspace completely changes how we code and manage complex projects.”
+                                “High-fidelity cockpit simulators allow pilots to train for complex missions with precision and safety while dramatically reducing operational costs.”
                             </p>
 
                             {/* <p className="text-xs sm:text-sm tracking-widest uppercase text-gray-600 mb-6">
@@ -331,7 +374,7 @@ const MIG29 = () => {
                                                        tracking-wide 
                                                        hover:opacity-90 transition 
                                                        w-full sm:w-auto">
-                                READ CASE STUDY →
+                                READ TRAINING CASE STUDY →
                             </button>
                         </div>
 
@@ -340,7 +383,7 @@ const MIG29 = () => {
             </section>
             <section className="relative w-full min-h-[70vh] sm:min-h-[85vh] lg:min-h-screen overflow-hidden">
                 <img
-                    src={heroImg}
+                    src={img2}
                     alt="XR Headsets"
                     className="block w-full h-full object-cover"
                 />
@@ -350,31 +393,28 @@ const MIG29 = () => {
 
                     {/* Heading */}
                     <h2 className="text-2xl sm:text-3xl md:text-[38px] font-light tracking-tight text-black">
-                        The Future of Work Starts Here
+                        The Future of
+                        Fighter Pilot Training
                     </h2>
 
                     {/* Subtitle */}
                     <p className="mx-auto mt-4 sm:mt-6 max-w-[520px] text-sm sm:text-[15px] leading-relaxed text-gray-600">
-                        Traditional computers limit how much you can see and interact with at once. This spatial computer removes those limits,
-                        transforming your environment into a fully immersive digital workspace.
+                        Flight simulators are transforming how pilots train and prepare for real missions.
+
+                        By combining real cockpit hardware with advanced simulation software and mixed reality visualization, training systems can replicate operational environments without the cost and risk of real aircraft.
                     </p>
 
                     {/* Variants */}
                     <div className="mt-10 sm:mt-14 lg:mt-20 space-y-8 sm:space-y-12 lg:space-y-16 text-sm sm:text-[15px] leading-relaxed text-gray-700">
 
                         <p>
-                            Organize multiple applications around you, interact naturally with your
-                            tools,<br /> and work with greater clarity and efficiency than ever before.
+                            Pilots can practice complex procedures, emergency handling, and combat scenarios inside a safe and controlled simulation environment.
                         </p>
-
                         <p>
-                            Whether you're coding, designing, researching, or collaborating,
-                            <br />
-                            the platform adapts to the way professionals think and work.
+                            Research institutions and aerospace engineers can also use the simulator to develop new training<br /> methods, avionics interfaces, and XR technologies.
                         </p>
-
                         <p>
-                            Learn more about the technology, architecture, <br /> and capabilities in the full product overview.
+                            The platform is designed to evolve continuously, supporting future upgrades in flight modeling, mission environments, and immersive visualization systems.
                         </p>
 
                     </div>
@@ -389,7 +429,7 @@ const MIG29 = () => {
                                                tracking-widest text-white 
                                                hover:bg-gray-900 transition 
                                                w-full sm:w-auto">
-                        DOWNLOAD PRODUCT BOOK
+                        DOWNLOAD SIMULATOR BROCHURE →
                         <span className="text-base sm:text-lg">→</span>
                     </button>
 
