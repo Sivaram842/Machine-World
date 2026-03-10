@@ -4,7 +4,7 @@ import xr4SecureImg from "../assets/DAS.jpeg";
 import accessoriesImg from "../assets/Realm.jpeg";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-
+import logo from "../assets/antiworld_white.png"
 const leftNavItems = [
     { label: "Products", key: "products", path: "/products" },
     { label: "Use Cases", key: "usecases", path: "/use-cases" },
@@ -104,17 +104,15 @@ export default function Navbar() {
                 </div>
 
                 {/* LOGO - ALWAYS VISIBLE */}
-                <div
+                <img
+                    src={logo}
+                    alt="Antiworld"
                     onClick={() => {
                         setActiveMenu(null);
                         navigate("/");
                     }}
-                    className={`text-base sm:text-lg lg:text-xl tracking-[0.10em] font-semibold cursor-pointer transition-colors
-            ${isWhite ? "text-black" : "text-white"}
-        `}
-                >
-                    ANTIWORLD
-                </div>
+                    className="h-7 sm:h-8 lg:h-9 cursor-pointer"
+                />
 
                 {/* RIGHT SIDE */}
                 <div className="flex items-center">

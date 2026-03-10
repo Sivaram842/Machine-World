@@ -1,7 +1,29 @@
 @import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+
+@font-face {
+    font-family: "SF Pro Text";
+    src: url("./assets/Fonts/SF-Pro-Text-Regular.otf") format("opentype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "SF Pro Text";
+    src: url("./assets/Fonts/SF-Pro-Text-Medium.otf") format("opentype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "SF Pro Text";
+    src: url("./assets/Fonts/SF-Pro-Text-Semibold.otf") format("opentype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "SF Pro Text";
+    src: url("./assets/Fonts/SF-Pro-Text-Bold.otf") format("opentype");
+    font-weight: 700;
+}
 
 /* Hide scrollbar but keep scroll functionality */
 .scrollbar-hide::-webkit-scrollbar {
@@ -23,4 +45,8 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+html {
+    font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif;
 }

@@ -65,7 +65,7 @@ const App = () => {
   }, []);
 
   return (
-    <>
+    <div className="font-sf">
       <SmoothScroll />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -132,7 +132,7 @@ const App = () => {
         <Route path="/tejas" element={<Tejas />} />
         <Route path="su-30mki" element={<Su30MKI />} />
       </Routes>
-    </>
+    </div >
   );
 };
 

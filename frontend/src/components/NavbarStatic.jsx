@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-
+import logo from "../assets/logo.png"
 import xr4Img from "../assets/DAS.jpeg";
 import xr4SecureImg from "../assets/Realm.jpeg";
 import accessoriesImg from "../assets/Book.jpeg";
@@ -95,16 +95,16 @@ ${showNav ? "translate-y-0" : "-translate-y-full"}
                     ))}
                 </div>
 
-                {/* LOGO */}
-                <div
+                {/* LOGO - ALWAYS VISIBLE */}
+                <img
+                    src={logo}
+                    alt="Antiworld"
                     onClick={() => {
                         setActiveMenu(null);
                         navigate("/");
                     }}
-                    className="text-lg lg:text-xl tracking-[0.10em] font-semibold cursor-pointer"
-                >
-                    ANTIWORLD
-                </div>
+                    className="h-7 sm:h-8 lg:h-9 cursor-pointer"
+                />
 
                 {/* RIGHT */}
                 <div className="flex items-center">
