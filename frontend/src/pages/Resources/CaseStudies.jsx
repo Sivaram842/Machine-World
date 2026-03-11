@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import NavbarStatic from "../../components/NavbarStatic";
+import Navbar from "../../components/NewNavbar";
 import { useNavigate } from "react-router-dom";
+import Footer from "../../components/NewFooter";
 
 const caseStudiesData = [
   {
@@ -136,7 +137,7 @@ const CaseStudies = () => {
 
   return (
     <div>
-      <NavbarStatic />
+      <Navbar />
 
       <div className="bg-[#f3f3f3] h-20 sm:h-28 md:h-40"></div>
 
@@ -270,59 +271,7 @@ const CaseStudies = () => {
         </div>
       </section>
 
-      {/* FOOTER RESPONSIVE */}
-      <footer className="bg-black text-white w-full">
-
-        <div className="px-6 sm:px-10 md:px-16 pt-16 pb-10">
-          <div className="text-xl sm:text-2xl tracking-[0.3em] font-semibold">
-            ANTI  WORLD
-          </div>
-        </div>
-
-        <div className="px-6 sm:px-10 md:px-16 pb-16">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 md:gap-24">
-
-            <div>
-              <p className="text-sm tracking-widest mb-6">COMPANY</p>
-              <ul className="space-y-3 text-white/90 text-sm">
-                <li>About Us</li>
-                <li>News</li>
-                <li>Jobs</li>
-                <li>Media</li>
-                <li>Legal</li>
-                <li>Case Studies</li>
-                <li>Blog</li>
-              </ul>
-            </div>
-
-            <div>
-              <p className="text-sm tracking-widest mb-6">PRODUCTS</p>
-              <ul className="space-y-3 text-white/90 text-sm">
-                <li>DAS</li>
-                <li>Realm</li>
-                <li>Book</li>
-                <li>SPATIAL OS</li>
-                <li>MINIMAL OS</li>
-              </ul>
-            </div>
-
-            <div>
-              <p className="text-sm tracking-widest mb-6">SUPPORT</p>
-              <ul className="space-y-3 text-white/90 text-sm">
-                <li>Help Center</li>
-                <li>System Requirements</li>
-                <li>Compatible Software</li>
-                <li>Find a Reseller</li>
-                <li>Setup Guide</li>
-                <li>Developers</li>
-                <li>ANTI WORLD Account Portal</li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
-
-      </footer>
+      <Footer />
     </div>
   );
 };

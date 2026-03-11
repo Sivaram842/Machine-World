@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Footer from "../../components/Footer";
-import NavbarStatic from "../../components/NavbarStatic";
+import Footer from "../../components/NewFooter";
+import Navbar from "../../components/NewNavbar";
 import axios from "axios";
 const ProductBook = () => {
 
@@ -43,7 +43,7 @@ const ProductBook = () => {
 
     return (
         <>
-            <NavbarStatic />
+            <Navbar />
 
             <section className="bg-[#f4f4f4] min-h-screen py-20">
                 <div className="max-w-4xl mx-auto px-6 md:px-12">

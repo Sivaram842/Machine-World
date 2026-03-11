@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import Navbar from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Navbar from '../../components/NewNavbar'
+import Footer from '../../components/NewFooter'
 import img from "../../assets/mig -29 left side view.png";
 import img1 from "../../assets/mig-29 back view.png";
 import img2 from "../../assets/mig -29 side view - Copy.png";

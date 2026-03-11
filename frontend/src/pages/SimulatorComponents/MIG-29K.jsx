@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import Navbar from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Navbar from '../../components/NewNavbar'
+import Footer from '../../components/NewFooter'
 import img from "../../assets/MIG -29K  WITH PILOT.png";
 import img1 from "../../assets/MIG-29K BACK VIEW.png";
 import img2 from "../../assets/MIG-29K BACK ANGLE.png";

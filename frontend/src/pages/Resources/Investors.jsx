@@ -1,6 +1,6 @@
 import { useState } from "react";
-import NavbarStatic from "../../components/NavbarStatic";
-import Footer from "../../components/Footer";
+import Navbar from "../../components/NewNavbar";
+import Footer from "../../components/NewFooter";
 import Header from "../../components/Header";
 
 const Investors = () => {
@@ -63,7 +63,7 @@ const Investors = () => {
 
   return (
     <div>
-      <NavbarStatic />
+      <Navbar />
       <Header />
 
       <div className="w-full min-h-screen bg-white text-black flex flex-col items-center pb-12 px-4 sm:px-6">

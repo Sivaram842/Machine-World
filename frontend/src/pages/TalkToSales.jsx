@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import NavbarStatic from "../components/NavbarStatic";
-import Footer from "../components/Footer";
+import Navbar from "../components/NewNavbar";
+import Footer from "../components/NewFooter";
 
 export default function TalkToSales() {
     const [form, setForm] = useState({
@@ -54,7 +54,7 @@ export default function TalkToSales() {
 
     return (
         <div>
-            <NavbarStatic />
+            <Navbar />
             <div className="h-24 md:h-40" />
 
             <div className="flex flex-col lg:flex-row min-h-screen w-full bg-white px-6 sm:px-10 md:px-16 lg:px-24 py-16 md:py-20 box-border gap-16">

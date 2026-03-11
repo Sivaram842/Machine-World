@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRef, useState } from "react";
-import Navbar from '../../components/Navbar'
-import Footer from '../../components/Footer'
+import Navbar from '../../components/NewNavbar'
+import Footer from '../../components/NewFooter'
 import TalkToSalesCTA from '../../components/TalkToSalesCTA'
 import PassthroughSection from '../../components/ProductSubPageComponents/PassthroughSection'
 

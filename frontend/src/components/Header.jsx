@@ -24,8 +24,9 @@ export default function Header() {
                     <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between w-full gap-8">
 
                         {/* LEFT */}
-                        <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight lg:max-w-2xl">
-                            NEXT-GEN SPATIAL COMPUTING
+                        <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight lg:max-w-2xl">
+                            Redefining India's Aerial &
+                            Ground Warfare
                         </h1>
 
                         {/* RIGHT */}

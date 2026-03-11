@@ -1,8 +1,8 @@
 import React from 'react'
 import HeroVideo from "../../components/ProductPageComponents/HeroVideo";
-import Footer from '../../components/Footer'
+import Footer from '../../components/NewFooter'
 import TalkToSalesCTA from '../../components/TalkToSalesCTA'
-import Navbar from '../../components/Navbar'
+import Navbar from '../../components/NewNavbar'
 import DualXR from '../../components/ProductPageComponents/DualXR';
 import NavbarStatic from '../../components/NavbarStatic';
 import ExploreGrid from '../../components/ProductPageComponents/ExploreGrid';
@@ -14,7 +14,7 @@ import ExpandableBlocks from '../../components/ProductPageComponents/ExpandableB
 const MainProduct = () => {
     return (
         <div className="w-full overflow-x-hidden">
-            <NavbarStatic />
+            <Navbar />
 
             <HeroVideo />
 

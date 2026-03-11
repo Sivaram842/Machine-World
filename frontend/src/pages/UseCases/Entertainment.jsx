@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
+import Footer from "../../components/NewFooter";
+import Navbar from "../../components/NewNavbar";
 import entertainment from "../../assets/entertainmentheadset.jpeg"
 import entertainment1 from "../../assets/igaming.jpg"
 import entertainment2 from "../../assets/esports.avif"

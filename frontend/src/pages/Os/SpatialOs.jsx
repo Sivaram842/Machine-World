@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '../../components/Navbar'
+import Navbar from '../../components/NewNavbar'
 import Header from '../../components/Header'
-import Footer from '../../components/Footer'
+import Footer from '../../components/NewFooter'
 import spos from "../../assets/spatialOS.jpeg"
 import spos1 from "../../assets/spatialOS1.webp"
 const SpatialOs = () => {

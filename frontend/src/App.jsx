@@ -53,6 +53,7 @@ import MIG29 from "./pages/SimulatorComponents/MIG29";
 import MIG29K from "./pages/SimulatorComponents/MIG-29K";
 import Tejas from "./pages/SimulatorComponents/Tejas";
 import Su30MKI from "./pages/SimulatorComponents/Su-30MKI";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 
 const App = () => {
@@ -98,21 +99,21 @@ const App = () => {
         <Route path="/accessories" element={<Accessories />} />
         <Route path="/minimal-os" element={<MinimalOs />} />
         <Route path="/spatial-os" element={<SpatialOs />} />
-        <Route path="/investors" element={<Investors />} />
+        <Route path="/campanyandresources/investors" element={<Investors />} />
 
-        <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/campanyandresources/casestudies" element={<CaseStudies />} />
         <Route path="/resources" element={<Resources />} />
-        <Route path="/product-book" element={<ProductBook />} />
+        <Route path="/campanyandresources/productbook" element={<ProductBook />} />
         <Route path="/insider" element={<Insider />} />
 
 
-        <Route path="/jobs" element={<Jobs />} />
-        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/campanyandresources/jobs" element={<Jobs />} />
+        <Route path="/campanyandresources/aboutus" element={<AboutUs />} />
         <Route path="/newsroom" element={<Newsroom />} />
 
         <Route path="/learning" element={<Learning />} />
         <Route path="/industry" element={<Industry />} />
-        <Route path="/entertainment" element={<Entertainment />} />
+        <Route path="/usecases/entertainment" element={<Entertainment />} />
         <Route path="/medical" element={<Medical />} />
 
         <Route path="/contactus" element={<ContactSupportPage />} />
@@ -121,10 +122,10 @@ const App = () => {
         <Route path="/systemrequirements" element={<SystemRequirementsPage />} />
 
 
-        <Route path="/aircrafts" element={<Aircraft />} />
-        <Route path="/ground-defence" element={<GroundVehicle />} />
-        <Route path="/helicopter" element={<Helicopter />} />
-        <Route path="/ground-private" element={<GroundVehicleP />} />
+        <Route path="/air/simulators/defence" element={<Aircraft />} />
+        <Route path="/land/simulators/defence" element={<GroundVehicle />} />
+        <Route path="/air/simulators/private" element={<Helicopter />} />
+        <Route path="/land/simulators/private" element={<GroundVehicleP />} />
 
         <Route path="/rafale" element={<Rafale />} />
         <Route path="/mig-29" element={<MIG29 />} />
@@ -132,6 +133,7 @@ const App = () => {
         <Route path="/tejas" element={<Tejas />} />
         <Route path="su-30mki" element={<Su30MKI />} />
       </Routes>
+      <ScrollToTopButton />
     </div >
   );
 };

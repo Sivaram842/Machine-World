@@ -1,6 +1,6 @@
 import { useState } from "react";
-import NavbarStatic from "../../components/NavbarStatic";
-import Footer from "../../components/Footer";
+import Navbar from "../../components/NewNavbar";
+import Footer from "../../components/NewFooter";
 import img from "../../assets/military.jpeg"
 import img1 from "../../assets/mrheadset.png"
 import img2 from "../../assets/hardware.png"
@@ -20,7 +20,7 @@ export default function Jobs() {
 
     return (
         <div>
-            <NavbarStatic />
+            <Navbar />
             <div className="font-sans text-black overflow-x-hidden">
 
                 {/* HERO */}

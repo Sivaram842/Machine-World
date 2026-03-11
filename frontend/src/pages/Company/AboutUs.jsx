@@ -1,7 +1,7 @@
 import { useState } from "react";
-import NavbarStatic from "../../components/NavbarStatic";
+import Navbar from "../../components/NewNavbar";
 import TalkToSalesCTA from "../../components/TalkToSalesCTA";
-import Footer from "../../components/Footer";
+import Footer from "../../components/NewFooter";
 import img from "../../assets/work.jpeg"
 import img1 from "../../assets/mrtrain.jpeg";
 import img2 from "../../assets/simulation.jpeg";
@@ -11,7 +11,7 @@ export default function AboutUs() {
 
     return (
         <div>
-            <NavbarStatic />
+            <Navbar />
             <div className="font-varjo text-black overflow-x-hidden">
 
                 <section className="relative h-[70vh] md:h-[85vh] lg:h-screen w-full overflow-hidden bg-black">

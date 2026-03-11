@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Footer from "../components/Footer";
-import NavbarStatic from "../components/NavbarStatic";
+import Footer from "../components/NewFooter";
+import Navbar from "../components/NewNavbar";
 import { useNavigate } from "react-router-dom";
 
 export default function Accessories() {
@@ -66,7 +66,7 @@ export default function Accessories() {
 
     return (
         <>
-            <NavbarStatic />
+            <Navbar />
 
             <div className="w-full overflow-x-hidden font-['Helvetica_Neue',Arial,sans-serif] text-black bg-white">
 

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import Navbar from "../../components/NewNavbar";
+import Footer from "../../components/NewFooter";
 import learn from "../../assets/immersive-education.jpg"
 import learn1 from "../../assets/skilldevelopment.jpg"
 import learn2 from "../../assets/labs.jpg"

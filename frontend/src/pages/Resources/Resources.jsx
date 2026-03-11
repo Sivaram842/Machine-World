@@ -1,6 +1,6 @@
 import React from 'react'
-import NavbarStatic from '../../components/NavbarStatic'
-import Footer from '../../components/Footer'
+import Navbar from '../../components/NewNavbar'
+import Footer from '../../components/NewFooter'
 import img from "../../assets/DAS1.jpeg";
 import heroImage from "../../assets/XR-4-2.png";
 import newsletterBg from "../../assets/DAS.jpeg";
@@ -135,7 +135,7 @@ const resources2 = [
 const Resources = () => {
     return (
         <div>
-            <NavbarStatic />
+            <Navbar />
             <div className=" bg-[#f3f3f3] h-16 md:h-24"></div>
             <section className="bg-[#f3f3f3] min-h-screen ">
                 <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 py-16 md:py-24">

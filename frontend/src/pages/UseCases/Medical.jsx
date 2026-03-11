@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
-import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
+import Footer from "../../components/NewFooter";
+import Navbar from "../../components/NewNavbar";
 
 const Container = ({ children, className = "" }) => (
     <div className={`max-w-8xl mx-auto px-8 md:px-16 ${className}`}>

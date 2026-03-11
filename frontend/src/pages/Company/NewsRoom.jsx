@@ -1,6 +1,6 @@
 import { useState } from "react";
-import NavbarStatic from "../../components/NavbarStatic";
-import Footer from "../../components/Footer";
+import Navbar from "../../components/NewNavbar";
+import Footer from "../../components/NewFooter";
 
 export default function Newsroom() {
     const [visible, setVisible] = useState(6);
@@ -85,7 +85,7 @@ export default function Newsroom() {
 
     return (
         <div>
-            <NavbarStatic />
+            <Navbar />
             <div className="font-sans text-black overflow-x-hidden">
 
                 {/* HERO */}
