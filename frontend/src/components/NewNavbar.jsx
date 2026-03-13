@@ -103,10 +103,10 @@ const menuData = {
         items: [
             {
                 name: "Defence",
-                path: "/usecases",
+                path: "/usecases/defence",
                 submenu: [
-                    { name: "Ground Warfare", path: "/usecases/ground" },
-                    { name: "Aerial Warfare", path: "/usecases/air" }
+                    { name: "Ground Warfare", path: "/usecases/defence/ground" },
+                    { name: "Aerial Warfare", path: "/usecases/defence/air" }
                 ]
             },
             {

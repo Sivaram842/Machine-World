@@ -13,42 +13,45 @@ import TalkToSalesCTA from '../components/TalkToSalesCTA'
 import Footer from '../components/NewFooter'
 import ScrollableShowcaseFlip from '../components/ScrollableShowcaseFlip'
 import MetaSlider from '../components/MetaSlider'
+import PageWrapper from '../components/PageWrapper'
 
 const Home = () => {
     return (
-        <>
-            <Navbar />
-            <Header />
+        <PageWrapper>
+            <>
+                <Navbar />
+                <Header />
 
-            {/* Responsive spacing */}
-            <div className="h-16 sm:h-24 md:h-32 lg:h-40" />
+                {/* Responsive spacing */}
+                <div className="h-16 sm:h-24 md:h-32 lg:h-40" />
 
-            <TrainingSection />
+                <TrainingSection />
 
-            <div className="h-16 sm:h-24 md:h-32 lg:h-40" />
+                <div className="h-16 sm:h-24 md:h-32 lg:h-40" />
 
-            <PurposeSection />
+                <PurposeSection />
 
-            <div className="h-16 sm:h-24 md:h-32 lg:h-40" />
+                <div className="h-16 sm:h-24 md:h-32 lg:h-40" />
 
-            {/* <ScrollableShowcase /> */}
-            {/* <ScrollableShowcaseHorizontal /> */}
-            <ScrollableShowcaseFlip />
+                {/* <ScrollableShowcase /> */}
+                {/* <ScrollableShowcaseHorizontal /> */}
+                <ScrollableShowcaseFlip />
 
-            <TrainingDomains />
-            <ScrollRevealText />
-            <MetaSlider />
-            <CustomerStories />
+                <TrainingDomains />
+                <ScrollRevealText />
+                <MetaSlider />
+                <CustomerStories />
 
-            <div className="h-16 sm:h-24 md:h-32 lg:h-40" />
+                <div className="h-16 sm:h-24 md:h-32 lg:h-40" />
 
-            <LatestNewsSection />
+                <LatestNewsSection />
 
-            <div className="h-16 sm:h-24 md:h-32 lg:h-40" />
+                <div className="h-16 sm:h-24 md:h-32 lg:h-40" />
 
-            <TalkToSalesCTA />
-            <Footer />
-        </>
+                <TalkToSalesCTA />
+                <Footer />
+            </>
+        </PageWrapper>
     )
 }
 

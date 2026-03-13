@@ -1,6 +1,6 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-
+import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
 import TalkToSales from "./pages/TalkToSales";
 import LoginPage from "./pages/LoginPage";
@@ -54,7 +54,44 @@ import MIG29K from "./pages/SimulatorComponents/MIG-29K";
 import Tejas from "./pages/SimulatorComponents/Tejas";
 import Su30MKI from "./pages/SimulatorComponents/Su-30MKI";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import Aerial from "./pages/UseCases/Defence/Aerial";
+import GroundWarfare from "./pages/UseCases/Defence/GroundWarfare";
+import ScrollToTop from "./components/ScrollToTop";
 
+import Su30CaseStudy1 from "./pages/CaseStudyPages/Su30CaseStudy1";
+import Su30CaseStudy2 from "./pages/CaseStudyPages/Su30CaseStudy2";
+import Su30CaseStudy3 from "./pages/CaseStudyPages/Su30CaseStudy3";
+import Su30CaseStudy4 from "./pages/CaseStudyPages/Su30CaseStudy4";
+import Su30CaseStudy5 from "./pages/CaseStudyPages/Su30CaseStudy5";
+import Su30CaseStudy6 from "./pages/CaseStudyPages/Su30CaseStudy6";
+
+import TejasCaseStudy1 from "./pages/CaseStudyPages/TejasCaseStudy1";
+import TejasCaseStudy2 from "./pages/CaseStudyPages/TejasCaseStudy2";
+import TejasCaseStudy3 from "./pages/CaseStudyPages/TejasCaseStudy3";
+import TejasCaseStudy4 from "./pages/CaseStudyPages/TejasCaseStudy4";
+import TejasCaseStudy5 from "./pages/CaseStudyPages/TejasCaseStudy5";
+import TejasCaseStudy6 from "./pages/CaseStudyPages/TejasCaseStudy6";
+
+import RafaleCaseStudy1 from "./pages/CaseStudyPages/RafaleCaseStudy1";
+import RafaleCaseStudy2 from "./pages/CaseStudyPages/RafaleCaseStudy2";
+import RafaleCaseStudy3 from "./pages/CaseStudyPages/RafaleCaseStudy3";
+import RafaleCaseStudy4 from "./pages/CaseStudyPages/RafaleCaseStudy4";
+import RafaleCaseStudy5 from "./pages/CaseStudyPages/RafaleCaseStudy5";
+import RafaleCaseStudy6 from "./pages/CaseStudyPages/RafaleCaseStudy6";
+
+import Mig29CaseStudy1 from "./pages/CaseStudyPages/Mig29CaseStudy1";
+import Mig29CaseStudy2 from "./pages/CaseStudyPages/Mig29CaseStudy2";
+import Mig29CaseStudy3 from "./pages/CaseStudyPages/Mig29CaseStudy3";
+import Mig29CaseStudy4 from "./pages/CaseStudyPages/Mig29CaseStudy4";
+import Mig29CaseStudy5 from "./pages/CaseStudyPages/Mig29CaseStudy5";
+import Mig29CaseStudy6 from "./pages/CaseStudyPages/Mig29CaseStudy6";
+
+import Mig29KCaseStudy1 from "./pages/CaseStudyPages/Mig29KCaseStudy1";
+import Mig29KCaseStudy2 from "./pages/CaseStudyPages/Mig29KCaseStudy2";
+import Mig29KCaseStudy3 from "./pages/CaseStudyPages/Mig29KCaseStudy3";
+import Mig29KCaseStudy4 from "./pages/CaseStudyPages/Mig29KCaseStudy4";
+import Mig29KCaseStudy5 from "./pages/CaseStudyPages/Mig29KCaseStudy5";
+import Mig29KCaseStudy6 from "./pages/CaseStudyPages/Mig29KCaseStudy6";
 
 const App = () => {
   // stop browser scroll restoration (keep this if you still want it)
@@ -65,74 +102,118 @@ const App = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const location = useLocation();
+
   return (
     <div className="font-sf">
       <SmoothScroll />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/talk-to-sales" element={<TalkToSales />} />
+      <ScrollToTop />
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/talk-to-sales" element={<TalkToSales />} />
 
-        <Route path="/login" element={<LoginPage />}>
-          <Route index element={<LoginEmail />} />
-          <Route path="password" element={<LoginPassword />} />
-        </Route>
+          <Route path="/login" element={<LoginPage />}>
+            <Route index element={<LoginEmail />} />
+            <Route path="password" element={<LoginPassword />} />
+          </Route>
 
-        <Route path="/signup" element={<SignupLayout />}>
-          <Route index element={<Signup />} />         {/* Email page */}
-          <Route path="paccount/dob" element={<PersonalDOB />} />
-          <Route path="caccount" element={<CommercialAccount />} />
-          <Route path="paccount" element={<PersonalAccount />} />  {/* If you still need */}
-        </Route>
+          <Route path="/signup" element={<SignupLayout />}>
+            <Route index element={<Signup />} />         {/* Email page */}
+            <Route path="paccount/dob" element={<PersonalDOB />} />
+            <Route path="caccount" element={<CommercialAccount />} />
+            <Route path="paccount" element={<PersonalAccount />} />  {/* If you still need */}
+          </Route>
 
-        {/* <Route path="/email-verify" element={<VerifyEmail />} /> */}
-        <Route path="/forgot-password" element={<ForgotPassword />} />
-        <Route path="/products" element={<MainProduct />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/email-verify/:token" element={<EmailVerify />} />
-        <Route path="/verify-notice" element={<VerifyNotice />} />
+          {/* <Route path="/email-verify" element={<VerifyEmail />} /> */}
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/products" element={<MainProduct />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/email-verify/:token" element={<EmailVerify />} />
+          <Route path="/verify-notice" element={<VerifyNotice />} />
 
-        <Route path="/product1" element={<Product1 />} />
-        <Route path="/product2" element={<Product2 />} />
-        <Route path="/product3" element={<Product3 />} />
-        <Route path="/demo" element={<Demo />} />
-        <Route path="/accessories" element={<Accessories />} />
-        <Route path="/minimal-os" element={<MinimalOs />} />
-        <Route path="/spatial-os" element={<SpatialOs />} />
-        <Route path="/campanyandresources/investors" element={<Investors />} />
+          <Route path="/product1" element={<Product1 />} />
+          <Route path="/product2" element={<Product2 />} />
+          <Route path="/product3" element={<Product3 />} />
+          <Route path="/demo" element={<Demo />} />
+          <Route path="/accessories" element={<Accessories />} />
+          <Route path="/minimal-os" element={<MinimalOs />} />
+          <Route path="/spatial-os" element={<SpatialOs />} />
+          <Route path="/campanyandresources/investors" element={<Investors />} />
 
-        <Route path="/campanyandresources/casestudies" element={<CaseStudies />} />
-        <Route path="/resources" element={<Resources />} />
-        <Route path="/campanyandresources/productbook" element={<ProductBook />} />
-        <Route path="/insider" element={<Insider />} />
-
-
-        <Route path="/campanyandresources/jobs" element={<Jobs />} />
-        <Route path="/campanyandresources/aboutus" element={<AboutUs />} />
-        <Route path="/newsroom" element={<Newsroom />} />
-
-        <Route path="/learning" element={<Learning />} />
-        <Route path="/industry" element={<Industry />} />
-        <Route path="/usecases/entertainment" element={<Entertainment />} />
-        <Route path="/medical" element={<Medical />} />
-
-        <Route path="/contactus" element={<ContactSupportPage />} />
-        <Route path="/accountportal" element={<HelpCenterPage />} />
-        <Route path="/helpcenter" element={<HelpCenter />} />
-        <Route path="/systemrequirements" element={<SystemRequirementsPage />} />
+          <Route path="/campanyandresources/casestudies" element={<CaseStudies />} />
+          <Route path="/resources" element={<Resources />} />
+          <Route path="/campanyandresources/productbook" element={<ProductBook />} />
+          <Route path="/insider" element={<Insider />} />
 
 
-        <Route path="/air/simulators/defence" element={<Aircraft />} />
-        <Route path="/land/simulators/defence" element={<GroundVehicle />} />
-        <Route path="/air/simulators/private" element={<Helicopter />} />
-        <Route path="/land/simulators/private" element={<GroundVehicleP />} />
+          <Route path="/campanyandresources/jobs" element={<Jobs />} />
+          <Route path="/campanyandresources/aboutus" element={<AboutUs />} />
+          <Route path="/newsroom" element={<Newsroom />} />
 
-        <Route path="/rafale" element={<Rafale />} />
-        <Route path="/mig-29" element={<MIG29 />} />
-        <Route path="/mig-29k" element={<MIG29K />} />
-        <Route path="/tejas" element={<Tejas />} />
-        <Route path="su-30mki" element={<Su30MKI />} />
-      </Routes>
+          <Route path="/learning" element={<Learning />} />
+          <Route path="/industry" element={<Industry />} />
+          <Route path="/usecases/entertainment" element={<Entertainment />} />
+          <Route path="/usecases/defence/air" element={<Aerial />} />
+          <Route path="/usecases/defence/ground" element={<GroundWarfare />} />
+          <Route path="/medical" element={<Medical />} />
+
+          <Route path="/contactus" element={<ContactSupportPage />} />
+          <Route path="/accountportal" element={<HelpCenterPage />} />
+          <Route path="/helpcenter" element={<HelpCenter />} />
+          <Route path="/systemrequirements" element={<SystemRequirementsPage />} />
+
+
+          <Route path="/air/simulators/defence" element={<Aircraft />} />
+          <Route path="/land/simulators/defence" element={<GroundVehicle />} />
+          <Route path="/air/simulators/private" element={<Helicopter />} />
+          <Route path="/land/simulators/private" element={<GroundVehicleP />} />
+
+          <Route path="/rafale" element={<Rafale />} />
+          <Route path="/mig-29" element={<MIG29 />} />
+          <Route path="/mig-29k" element={<MIG29K />} />
+          <Route path="/tejas" element={<Tejas />} />
+          <Route path="su-30mki" element={<Su30MKI />} />
+
+
+          <Route path="/su30-case-study-1" element={<Su30CaseStudy1 />} />
+          <Route path="/su30-case-study-2" element={<Su30CaseStudy2 />} />
+          <Route path="/su30-case-study-3" element={<Su30CaseStudy3 />} />
+          <Route path="/su30-case-study-4" element={<Su30CaseStudy4 />} />
+          <Route path="/su30-case-study-5" element={<Su30CaseStudy5 />} />
+          <Route path="/su30-case-study-6" element={<Su30CaseStudy6 />} />
+
+          <Route path="/tejas-case-study-1" element={<TejasCaseStudy1 />} />
+          <Route path="/tejas-case-study-2" element={<TejasCaseStudy2 />} />
+          <Route path="/tejas-case-study-3" element={<TejasCaseStudy3 />} />
+          <Route path="/tejas-case-study-4" element={<TejasCaseStudy4 />} />
+          <Route path="/tejas-case-study-5" element={<TejasCaseStudy5 />} />
+          <Route path="/tejas-case-study-6" element={<TejasCaseStudy6 />} />
+
+          <Route path="/rafale-case-study-1" element={<RafaleCaseStudy1 />} />
+          <Route path="/rafale-case-study-2" element={<RafaleCaseStudy2 />} />
+          <Route path="/rafale-case-study-3" element={<RafaleCaseStudy3 />} />
+          <Route path="/rafale-case-study-4" element={<RafaleCaseStudy4 />} />
+          <Route path="/rafale-case-study-5" element={<RafaleCaseStudy5 />} />
+          <Route path="/rafale-case-study-6" element={<RafaleCaseStudy6 />} />
+
+          <Route path="/mig29-case-study-1" element={<Mig29CaseStudy1 />} />
+          <Route path="/mig29-case-study-2" element={<Mig29CaseStudy2 />} />
+          <Route path="/mig29-case-study-3" element={<Mig29CaseStudy3 />} />
+          <Route path="/mig29-case-study-4" element={<Mig29CaseStudy4 />} />
+          <Route path="/mig29-case-study-5" element={<Mig29CaseStudy5 />} />
+          <Route path="/mig29-case-study-6" element={<Mig29CaseStudy6 />} />
+
+          <Route path="/mig29k-case-study-1" element={<Mig29KCaseStudy1 />} />
+          <Route path="/mig29k-case-study-2" element={<Mig29KCaseStudy2 />} />
+          <Route path="/mig29k-case-study-3" element={<Mig29KCaseStudy3 />} />
+          <Route path="/mig29k-case-study-4" element={<Mig29KCaseStudy4 />} />
+          <Route path="/mig29k-case-study-5" element={<Mig29KCaseStudy5 />} />
+          <Route path="/mig29k-case-study-6" element={<Mig29KCaseStudy6 />} />
+
+        </Routes>
+      </AnimatePresence>
       <ScrollToTopButton />
     </div >
   );
