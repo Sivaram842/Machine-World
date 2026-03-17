@@ -1,9 +1,10 @@
 import React from 'react'
+import { useRef, useState } from "react";
 import Navbar from '../../components/NewNavbar'
 import Header from '../../components/Header'
 import Footer from '../../components/NewFooter'
 import minimalimg from '../../assets/MinimalOs.png'
-import minimalimg1 from '../../assets/MinimalOs1.png'
+import minimalimg1 from '../../assets/mos.png'
 import minimalimg2 from '../../assets/MinimalOs2.png'
 import minimalimg3 from '../../assets/MinimalOs3.png'
 import minimalimg4 from '../../assets/MinimalOs4.png'
@@ -11,9 +12,99 @@ import minimalimg5 from '../../assets/MinimalOs5.png'
 import minimalimg6 from '../../assets/MinimalOs6.png'
 
 const MinimalOs = () => {
+    const curriculumRef = useRef(null);
+    const toolsRef = useRef(null);
+    const distractionRef = useRef(null);
+    const progressRef = useRef(null);
+
+    const scrollToSection = (ref) => {
+        ref.current?.scrollIntoView({ behavior: "smooth" });
+    };
+    const gridRef = useRef(null);
+    const scrollToGrid = () => {
+        gridRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
     return (
+
         <div>
             <Navbar />
+            <section className="w-full bg-white text-black min-h-[60vh] flex items-end px-4 lg:px-16 py-8">
+
+                <div className="w-full">
+
+                    {/* TITLE AREA */}
+                    <div className="mb-10">
+                        <p className="text-xs tracking-[0.25em] text-gray-600 mb-4">
+                            EDUCATION TECHNOLOGY
+                        </p>
+
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tight">
+                            Minimal OS Learning System
+                        </h1>
+                    </div>
+
+                    {/* BOTTOM GRID */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
+
+                        {/* Label */}
+                        <div className="text-xs tracking-wider text-gray-600">
+                            FOCUSED EDUCATION
+                        </div>
+
+                        {/* Description */}
+                        <div className="text-sm text-gray-700 leading-relaxed max-w-[320px]">
+                            Minimal OS is a purpose-built learning platform that removes digital
+                            distractions and creates a focused academic environment. Designed for schools
+                            and institutions, it gives students a structured workspace to study, access
+                            course materials, complete assignments, and track academic progress.
+                        </div>
+
+                        {/* Links */}
+                        <div className="flex flex-wrap gap-4 text-xs tracking-wide">
+
+                            <a
+                                onClick={() => scrollToSection(curriculumRef)}
+                                className="hover:underline cursor-pointer"
+                            >
+                                Digital Curriculum
+                            </a>
+
+                            <a
+                                onClick={() => scrollToSection(toolsRef)}
+                                className="hover:underline cursor-pointer"
+                            >
+                                Academic Tools
+                            </a>
+
+                            <a
+                                onClick={() => scrollToSection(distractionRef)}
+                                className="hover:underline cursor-pointer"
+                            >
+                                Distraction-Free Learning
+                            </a>
+
+                            <a
+                                onClick={() => scrollToSection(progressRef)}
+                                className="hover:underline cursor-pointer"
+                            >
+                                Student Progress
+                            </a>
+
+                        </div>
+
+                        {/* Arrow */}
+                        <div
+                            onClick={scrollToGrid}
+                            className="flex md:justify-end items-center text-3xl cursor-pointer hover:translate-y-1 transition"
+                        >
+                            ↓
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
             <header className="relative w-full min-h-[75vh] sm:min-h-[90vh] lg:min-h-screen overflow-hidden">
 
                 {/* Background video */}
@@ -46,13 +137,13 @@ const MinimalOs = () => {
 
                             {/* RIGHT */}
                             <div className="max-w-xl">
-                                <p className="text-gray-300 text-sm sm:text-base md:text-lg font-light leading-relaxed text-left">
+                                {/* <p className="text-gray-300 text-sm sm:text-base md:text-lg font-light leading-relaxed text-left">
                                     Minimal OS is a purpose-built learning system designed to eliminate
                                     digital distractions and restore focus to education. Built for schools,
                                     colleges, and institutions, the platform provides students with
                                     everything they need to study, practice, and progress — all within a
                                     secure, distraction-free environment.
-                                </p>
+                                </p> */}
                             </div>
 
                         </div>
@@ -61,9 +152,48 @@ const MinimalOs = () => {
                 </div>
 
             </header>
+            <section ref={curriculumRef} className="py-20 md:py-28 px-6 md:px-16 bg-white">
+                <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+                    <div>
+                        <img
+                            src={minimalimg1}
+                            alt="Digital Curriculum"
+                            className="w-full object-cover"
+                        />
+                    </div>
+
+                    <div>
+                        <h2 className="uppercase font-extrabold 
+      text-[22px] sm:text-[26px] md:text-[34px] 
+      leading-[1.2] tracking-tight">
+                            Digital Curriculum
+                            <p className="mt-4 text-gray text-sm sm:text-base md:text-lg font-light leading-relaxed">
+                                Structured Learning Materials for Every Student
+                            </p>
+                        </h2>
+
+                        <ul className="mt-6 space-y-3 text-gray-700 text-[15px]">
+
+                            <li> Complete academic curriculum organized into structured learning paths</li>
+
+                            <li> Digital textbooks, lectures, and course modules in one place</li>
+
+                            {/* <li> Secure institution-approved learning resources for all students</li> */}
+
+                            <li> Equal access to academic materials without internet dependency</li>
+
+                            {/* <li> Offline access to essential study content anytime</li> */}
+
+                        </ul>
+
+                    </div>
+
+                </div>
+            </section>
             <div className="bg-white text-black">
 
-                {/* ================= SECTION 1 - HERO ================= */}
+                {/* ================= SECTION 1 - HERO =================
                 <section className="relative h-[85vh] md:h-screen w-full overflow-hidden">
                     <img
                         src={minimalimg1}
@@ -81,58 +211,47 @@ const MinimalOs = () => {
                                 for Student Learning<br />
                                 {/* Headset <br />
                                 Experience to <br />
-                                New Heights. */}
-                            </h1>
+                                New Heights. 
+            </h1>
 
-                            <p className="mt-8 text-white/80 
+            <p className="mt-8 text-white/80 
                           text-[15px] sm:text-[17px] md:text-[18px] 
                           leading-[26px] md:leading-[30px]">
-                                Minimal OS acts as the academic command center for students.<br />
-                                Every course, resource, and academic activity is organized<br />
-                                into a single focused environment designed to support structured learning.<br />
-                                Students can explore their curriculum, read digital textbooks,<br />
-                                complete assignments, track progress, and review course materials<br />
-                                — all within one distraction-free system.<br />
+                Minimal OS acts as the academic command center for students.<br />
+                Every course, resource, and academic activity is organized<br />
+                into a single focused environment designed to support structured learning.<br />
+                Students can explore their curriculum, read digital textbooks,<br />
+                complete assignments, track progress, and review course materials<br />
+                — all within one distraction-free system.<br />
 
-                            </p>
-                        </div>
-                    </div>
-                </section>
+            </p>
+        </div>
+                    </div >
+                </section > */}
 
 
                 {/* ================= SECTION 2 ================= */}
-                <section className="py-20 md:py-28 px-6 md:px-16">
+                <section ref={distractionRef} className="py-20 md:py-28 px-6 md:px-16">
                     <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-16 items-center">
 
                         <div>
                             <h2 className="uppercase font-extrabold 
-               text-[22px] sm:text-[26px] md:text-[34px] 
-               leading-[1.2] tracking-tight">
-                                Distraction-Free Learning <br />
+      text-[22px] sm:text-[26px] md:text-[34px] 
+      leading-[1.2] tracking-tight">
+                                Distraction-Free Learning
                                 <p className="mt-4 text-gray text-sm sm:text-base md:text-lg font-light leading-relaxed">
                                     Built for Focus. Designed for Education.
                                 </p>
                             </h2>
 
-                            <p className="mt-6 text-gray-700 text-[16px] leading-[28px]">
-
-
-                                Minimal OS removes the biggest obstacle in modern education: digital distraction. <br />
-                                Students no longer need to navigate between social media, messaging apps, <br />
-                                and entertainment platforms while trying to study. Instead, Minimal OS creates a <br />
-                                controlled academic environment where every tool serves a single purpose — learning.
-                            </p>
-                            <p className="mt-6 text-gray-700 text-[16px] leading-[28px]">
-                                With no internet connectivity and only essential
-                                academic tools installed, students remain focused on their
-                                coursework, assignments, and academic growth.
-                            </p>
                             <ul className="mt-6 space-y-3 text-gray-700 text-[15px]">
-                                <li>• No social media platforms</li>
-                                <li>• No games or entertainment applications</li>
-                                <li>• No unnecessary notifications</li>
-                                <li>• Only study tools approved by the institution</li>
-                                <li>• A clean and minimal interface optimized for learning</li>
+
+                                <li> Distraction-free academic environment designed purely for learning.</li>
+
+                                <li> Blocks social media, games, entertainment apps, and unnecessary notifications.</li>
+
+                                <li> Only institution-approved study tools available with a clean minimal interface.</li>
+
                             </ul>
                         </div>
 
@@ -148,73 +267,123 @@ const MinimalOs = () => {
                 </section>
 
 
+
                 {/* ================= SECTION 3 ================= */}
-                <section className="py-20 md:py-28 px-6 text-center">
-                    <div className="max-w-[700px] mx-auto">
+                <section ref={toolsRef} className="py-24 px-6 md:px-12 lg:px-20 bg-white">
 
-                        <h2 className="uppercase font-extrabold 
-               text-[22px] sm:text-[26px] md:text-[34px] 
-               leading-[1.2] tracking-tight">
-                            Academic Tools  <br />
-                            &<br />
-                            Learning Features
-                        </h2>
-                        <p className="mt-4 text-gray text-sm sm:text-base md:text-lg font-light leading-relaxed">
-                            Everything a Student Needs — In One Device
-                        </p>
+                    <div className="max-w-[1200px] mx-auto">
 
-                        <p className="mt-6 text-gray-700 leading-[28px]">
-                            Minimal OS transforms a simple device into a complete <br />
-                            academic companion.From textbooks to assignments,<br />
-                            students have instant access to every resource required<br />
-                            throughout their academic journey.<br />
+                        {/* Header */}
+                        <div className="text-center max-w-[750px] mx-auto">
 
-                        </p>
+                            <h2 className="uppercase font-extrabold 
+      text-[26px] sm:text-[30px] md:text-[40px]
+      tracking-tight leading-[1.2]">
+                                Academic Tools & Learning Features
+                            </h2>
 
-                        <div className="mt-6 text-gray-700 leading-[28px]">
-
-                            <p className="font-semibold mb-3">Feature List</p>
-
-                            <p className="mb-3">
-                                • <span className="font-medium">Digital Curriculum Access</span><br />
-                                Students can view their entire course structure, subjects, and academic roadmap.
-                            </p>
-
-                            <p className="mb-3">
-                                • <span className="font-medium">Integrated Digital Library</span><br />
-                                All textbooks and required reading materials are available directly on the device.
-                            </p>
-
-                            <p className="mb-3">
-                                • <span className="font-medium">Assignment & Project Workspace</span><br />
-                                Students can work on assignments, submit projects, and track deadlines.
-                            </p>
-
-                            <p className="mb-3">
-                                • <span className="font-medium">Course Progress Dashboard</span><br />
-                                Track completed modules, upcoming lessons, and academic performance.
-                            </p>
-
-                            <p className="mb-3">
-                                • <span className="font-medium">Institution Updates & Academic Requirements</span><br />
-                                Students receive essential academic instructions and course updates from their institution.
-                            </p>
-
-                            <p>
-                                • <span className="font-medium">Note-Taking & Study Tools</span><br />
-                                Use the stylus to annotate textbooks, write notes, and organize study material.
+                            <p className="mt-4 text-gray-600 text-[16px] md:text-[18px] leading-[28px]">
+                                A focused digital environment designed for studying, assignments, and academic progress.
                             </p>
 
                         </div>
 
-                        <button className="mt-10 bg-black text-white px-10 py-4 
-                             uppercase tracking-wider text-sm
-                             transition-all duration-300
-                             hover:bg-[#1117C7]">
-                            Explore More →
-                        </button>
+                        {/* React State */}
+                        {(() => {
+                            const [showAll, setShowAll] = useState(false);
+
+                            const features = [
+
+                                {
+                                    title: "Digital Curriculum",
+                                    desc: "Access the complete course structure and subjects in one place."
+                                },
+
+                                {
+                                    title: "Digital Library",
+                                    desc: "All textbooks and required academic reading materials available offline."
+                                },
+
+                                {
+                                    title: "Assignment Workspace",
+                                    desc: "Work on assignments, submit projects, and manage deadlines easily."
+                                },
+
+                                {
+                                    title: "Progress Dashboard",
+                                    desc: "Track learning progress, completed modules, and upcoming lessons."
+                                },
+
+                                {
+                                    title: "Institution Updates",
+                                    desc: "Receive academic announcements, instructions, and curriculum updates."
+                                },
+
+                                {
+                                    title: "Note-Taking Tools",
+                                    desc: "Annotate textbooks and organize study notes with stylus support."
+                                },
+
+                                {
+                                    title: "Exam Preparation Mode",
+                                    desc: "Practice tests and revision tools to prepare for assessments."
+                                },
+
+                                {
+                                    title: "Study Planner",
+                                    desc: "Plan daily study schedules and track learning goals."
+                                }
+
+                            ];
+
+                            const visibleFeatures = showAll ? features : features.slice(0, 3);
+
+                            return (
+                                <>
+                                    {/* Feature Grid */}
+                                    <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                                        {visibleFeatures.map((feature, index) => (
+                                            <div
+                                                key={index}
+                                                className="group p-8 border border-gray-200 rounded-xl hover:border-black transition duration-300"
+                                            >
+
+                                                <h3 className="font-semibold text-[18px] mb-3">
+                                                    {feature.title}
+                                                </h3>
+
+                                                <p className="text-gray-600 text-[15px] leading-[26px]">
+                                                    {feature.desc}
+                                                </p>
+
+                                            </div>
+                                        ))}
+
+                                    </div>
+
+                                    {/* Button */}
+                                    <div className="mt-16 text-center">
+
+                                        <button
+                                            onClick={() => setShowAll(!showAll)}
+                                            className="bg-black text-white px-10 py-4
+              uppercase tracking-wider text-sm
+              transition-all duration-300
+              hover:bg-[#1117C7]"
+                                        >
+
+                                            {showAll ? "Show Less" : "Show More"} →
+
+                                        </button>
+
+                                    </div>
+                                </>
+                            );
+                        })()}
 
                     </div>
+
                 </section>
 
 
@@ -223,9 +392,11 @@ const MinimalOs = () => {
                     <div className="max-w-[1400px] mx-auto">
 
                         <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
+
                             <img src={minimalimg3} alt="" className="w-full" />
 
                             <div>
+
                                 <h2 className="font-extrabold text-[22px] sm:text-[26px] md:text-[34px] leading-[1.15] tracking-tight">
 
                                     <span className="block text-xs sm:text-sm uppercase text-gray-400 font-medium tracking-wider mb-1">
@@ -236,53 +407,68 @@ const MinimalOs = () => {
 
                                 </h2>
 
-                                <p className="mt-6 text-gray-700 leading-[28px]">
-                                    Minimal OS is not only designed for students — it also provides<br />
-                                    institutions with a structured way to distribute curriculum, <br />
-                                    manage academic resources, and standardize learning tools across departments.
-                                </p>
-                                <p className="mt-6 text-gray-700 leading-[28px]">
-                                    By providing a dedicated learning device, institutions can<br />
-                                    ensure every student has equal access to course materials and <br />
-                                    academic resources.
-                                </p>
-                                <h2 className="font-bold text-[11px] sm:text-[13px] md:text-[17px] leading-[1.15] tracking-loose">
-                                    Benefits for Institutions
-                                </h2>
                                 <ul className="mt-6 space-y-3 text-gray-700 text-[15px]">
-                                    <li>• Standardized academic resources for every student</li>
-                                    <li>• Secure distribution of curriculum and textbooks</li>
-                                    <li>• Simplified management of assignments and coursework</li>
-                                    <li>• Reduced dependency on internet connectivity</li>
-                                    <li>• Improved student engagement and focus</li>
-                                    <li>• Consistent learning experience across departments</li>
+
+                                    <li>• Structured platform to securely distribute curriculum and academic resources.</li>
+
+                                    <li>• Dedicated learning device ensuring equal access to course materials for all students.</li>
+
+                                    <li>• Simplified management of textbooks, assignments, and coursework.</li>
+
+                                    <li>• Offline academic access that improves focus and consistency across departments.</li>
+
                                 </ul>
 
-                                {/* <p className="mt-6 text-gray-700 leading-[28px]">
-                                    Pricing starts at 2,500€/$ per year, or 5,000€/$ perpetual for Varjo XR-4 and <br />
-                                    Varjo XR-4 Focal Edition. Varjo Base Pro license is included in Varjo XR-4 Secure <br />
-                                    Edition devices.
-                                </p> */}
-
                                 <div className="mt-8 flex gap-6 flex-wrap">
-                                    <button className="bg-black text-white px-8 py-4 
-                                   uppercase text-sm transition-all 
-                                   hover:bg-[#1117C7]">
-                                        SEE ALL FEATURES →
-                                    </button>
-
                                     {/* <button className="bg-black text-white px-8 py-4 
-                                   uppercase text-sm transition-all 
-                                   hover:bg-[#1117C7]">
-                                        UPGRADE TO PRO →
+            uppercase text-sm transition-all 
+            hover:bg-[#1117C7]">
+                                        SEE ALL FEATURES →
                                     </button> */}
                                 </div>
+
                             </div>
                         </div>
+
                     </div>
                 </section>
+                {/* ================= SECTION - STUDENT PROGRESS ================= */}
+                <section ref={progressRef} className="py-20 md:py-28 px-6 md:px-16 bg-[#f8f8f8]">
+                    <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-16 items-center">
 
+                        <div>
+                            <h2 className="uppercase font-extrabold 
+      text-[22px] sm:text-[26px] md:text-[34px] 
+      leading-[1.2] tracking-tight">
+                                Student Progress
+                                <p className="mt-4 text-gray text-sm sm:text-base md:text-lg font-light leading-relaxed">
+                                    Track learning and academic performance.
+                                </p>
+                            </h2>
 
+                            <ul className="mt-6 space-y-3 text-gray-700 text-[15px]">
+
+                                <li>• Track completed lessons and course progress.</li>
+
+                                <li>• Monitor assignments, deadlines, and upcoming tasks.</li>
+
+                                <li>• View academic performance across subjects.</li>
+
+                                <li>• Stay organized with clear learning milestones.</li>
+
+                            </ul>
+                        </div>
+
+                        <div>
+                            <img
+                                src={minimalimg6}
+                                alt="Student Progress"
+                                className="w-full object-cover"
+                            />
+                        </div>
+
+                    </div>
+                </section>
 
 
 
@@ -293,33 +479,20 @@ const MinimalOs = () => {
                     <div className="max-w-[700px] mx-auto">
 
                         <h2 className="uppercase font-extrabold 
-               text-[22px] sm:text-[26px] md:text-[34px] 
-               leading-[1.2] tracking-tight">
-                            Future of Focused Education :<br />
-                            Redefining the Way Students Learn
+      text-[22px] sm:text-[26px] md:text-[34px] 
+      leading-[1.2] tracking-tight">
+                            The Future of Focused Education
                         </h2>
 
                         <p className="mt-6 text-gray-700 leading-[28px]">
-                            Minimal OS represents a shift toward focused, intentional<br />
-                            learning. By removing distractions and placing academic<br />
-                            tools at the center of the student experience, it empowers <br />
-                            learners to study with clarity, discipline, and purpose.<br />
-
-                        </p>
-                        <p className="mt-6 text-gray-700 leading-[28px]">
-                            As education continues to evolve, Minimal OS provides a <br />
-                            foundation for institutions that value focus, structure, and <br />
-                            meaningful academic progress.
-                        </p>
-                        <p className="mt-6 text-gray-700 leading-[28px]">
-                            A new generation of students deserves a better<br />
-                            learning environment — one designed entirely for education.
+                            Minimal OS creates a distraction-free learning environment where academic tools stay at the center of the student experience.
+                            Built for institutions that value focus, structure, and meaningful academic progress.
                         </p>
 
                         <button className="mt-10 bg-black text-white px-10 py-4 
-                             uppercase text-sm transition-all 
-                             hover:bg-[#1117C7]">
-                            READ LATEST RELEASE NOTES →
+      uppercase text-sm tracking-wider transition-all duration-300
+      hover:bg-[#1117C7] hover:scale-[1.03]">
+                            Talk to Our Team →
                         </button>
 
                     </div>
@@ -340,11 +513,11 @@ const MinimalOs = () => {
 
                             </h2>
 
-                            <span className="uppercase tracking-[3px] text-xs 
+                            {/* <span className="uppercase tracking-[3px] text-xs 
                        transition-colors duration-300 
                        hover:text-[#1117C7] cursor-pointer">
                                 Explore the Learning Experience →
-                            </span>
+                            </span> */}
 
                             <div></div>
                         </div>
@@ -484,9 +657,9 @@ const MinimalOs = () => {
                         </div>
                     </div>
                 </section>
-            </div>
+            </div >
             <Footer />
-        </div>
+        </div >
     )
 }
 

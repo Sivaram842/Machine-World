@@ -1,211 +1,210 @@
 import Mig29K6 from "../../assets/Mig29K-6.jpg";
 import Mig29K61 from "../../assets/Mig29K-6-1.jpg";
 import Mig29K62 from "../../assets/Mig29K-6-2.jpg";
-
+import Navbar from "../../../src/components/NewNavbar"
+import Footer from "../../../src/components/NewFooter"
 export default function Mig29KCaseStudy6() {
     return (
-        <div className="bg-[#f3f3f3] text-black">
+        <div>
+            <Navbar />
+            <div className="bg-black text-white">
 
-            {/* ================= HERO ================= */}
-            <section className="py-20 md:py-32 text-center px-6">
+                {/* ================= HERO ================= */}
+                <section className="py-20 md:py-32 text-center px-6">
 
-                <p className="uppercase text-xs md:text-sm tracking-[3px] text-gray-600">
-                    Case Study
-                </p>
-
-                <h1 className="mt-6 md:mt-8 
-        text-[24px] sm:text-[28px] md:text-[36px] lg:text-[44px] 
-        font-extrabold uppercase 
-        leading-[1.2] md:leading-[1.15] 
-        max-w-[760px] mx-auto">
-
-                    MiG-29K Cockpit <br />
-                    and Avionics Systems
-                </h1>
-
-                <p className="mt-8 md:mt-10 text-[16px] md:text-[18px] leading-[28px] md:leading-[32px] text-gray-700 max-w-[620px] mx-auto">
-                    The MiG-29K features a modern glass cockpit and advanced avionics
-                    systems that significantly improve pilot situational awareness and
-                    combat effectiveness during naval operations.
-                </p>
-
-            </section>
-
-
-            {/* ================= HERO IMAGE ================= */}
-            <section className="px-4 md:px-6">
-                <div className="max-w-[1100px] mx-auto">
-
-                    <img
-                        src={Mig29K6}
-                        alt="MiG-29K cockpit"
-                        className="w-full h-[300px] sm:h-[400px] md:h-[600px] object-cover"
-                    />
-
-                </div>
-            </section>
-
-
-            {/* ================= BACKGROUND ================= */}
-            <section className="py-16 md:py-24 px-6">
-
-                <div className="max-w-[760px] mx-auto space-y-6 md:space-y-8
-        text-[16px] md:text-[18px] leading-[28px] md:leading-[32px] text-gray-800">
-
-                    <p>
-                        Modern naval fighter aircraft rely heavily on advanced avionics
-                        systems to manage complex combat environments.
+                    <p className="uppercase text-xs md:text-sm tracking-[3px] text-gray-500">
+                        Case Study
                     </p>
 
-                    <p>
-                        The <strong>MiG-29K</strong> incorporates a modern
-                        <strong> glass cockpit</strong>, replacing traditional analog
-                        instruments with digital displays and integrated avionics.
+                    <h1 className="mt-6 md:mt-8 
+               text-[26px] sm:text-[32px] md:text-[40px] lg:text-[48px] 
+               font-extrabold uppercase 
+               leading-[1.15] 
+               max-w-[780px] mx-auto">
+
+                        MiG-29K Cockpit <br />
+                        and Avionics Systems
+                    </h1>
+
+                    <p className="mt-8 md:mt-10 text-[16px] md:text-[18px] leading-[30px] text-gray-400 max-w-[640px] mx-auto">
+                        The MiG-29K features a modern glass cockpit and advanced avionics
+                        that enhance situational awareness and combat performance.
                     </p>
 
-                    <p>
-                        These systems help pilots process large amounts of battlefield
-                        information quickly while maintaining full control of the aircraft.
-                    </p>
-
-                </div>
-
-            </section>
+                </section>
 
 
-            {/* ================= SECOND IMAGE ================= */}
-            <section className="px-4 md:px-6">
-                <div className="max-w-[1100px] mx-auto">
+                {/* ================= HERO IMAGE ================= */}
+                <section className="px-4 md:px-6">
+                    <div className="max-w-[780px] mx-auto">
 
-                    <img
-                        src={Mig29K61}
-                        alt="MiG-29K avionics displays"
-                        className="w-full h-[260px] sm:h-[360px] md:h-[520px] object-cover"
-                    />
+                        <img
+                            src={Mig29K6}
+                            alt="MiG-29K cockpit"
+                            className="w-full h-[300px] sm:h-[420px] md:h-[600px] object-cover rounded-2xl shadow-lg hover:scale-[1.02] transition duration-500"
+                        />
 
-                </div>
-            </section>
-
-
-            {/* ================= COCKPIT FEATURES ================= */}
-            <section className="py-16 md:py-24 px-6">
-
-                <div className="max-w-[760px] mx-auto space-y-8
-        text-[16px] md:text-[18px] leading-[30px] text-gray-800">
-
-                    <h2 className="text-[24px] font-bold uppercase">
-                        Key Cockpit Features
-                    </h2>
-
-                    <h3 className="font-bold text-[18px]">
-                        Multifunction Displays
-                    </h3>
-
-                    <p>
-                        The cockpit contains several digital multifunction displays
-                        (MFDs) that present critical flight and combat information.
-                    </p>
-
-                    <ul className="list-disc pl-6 space-y-2">
-                        <li>Radar information</li>
-                        <li>Navigation data</li>
-                        <li>Weapon status</li>
-                        <li>Flight parameters</li>
-                    </ul>
+                    </div>
+                </section>
 
 
-                    <h3 className="font-bold text-[18px]">
-                        Helmet-Mounted Targeting System
-                    </h3>
+                {/* ================= BACKGROUND ================= */}
+                <section className="py-16 md:py-24 px-6">
 
-                    <p>
-                        Pilots can target enemy aircraft simply by looking at the
-                        target through a helmet-mounted sight, enabling faster
-                        missile engagement during dogfights.
-                    </p>
+                    <div className="max-w-[780px] mx-auto space-y-6 md:space-y-8
+               text-[16px] md:text-[18px] leading-[30px] text-gray-300">
 
-                    <h3 className="font-bold text-[18px]">
-                        Digital Flight Control Assistance
-                    </h3>
+                        <p>
+                            Modern naval fighters rely heavily on advanced avionics to
+                            manage complex combat environments.
+                        </p>
 
-                    <p>
-                        The MiG-29K incorporates digital control assistance systems
-                        that improve flight stability and handling during demanding
-                        carrier operations.
-                    </p>
+                        <p>
+                            The <strong className="text-white">MiG-29K</strong> features a
+                            <strong className="text-white"> glass cockpit</strong>, replacing
+                            traditional analog instruments with digital systems.
+                        </p>
 
-                </div>
+                        <p>
+                            These systems allow pilots to process large amounts of
+                            battlefield information quickly and efficiently.
+                        </p>
 
-            </section>
+                    </div>
 
-
-            {/* ================= THIRD IMAGE ================= */}
-            <section className="px-4 md:px-6">
-
-                <div className="max-w-[900px] mx-auto">
-
-                    <img
-                        src={Mig29K62}
-                        alt="MiG-29K radar and sensors"
-                        className="w-full object-cover"
-                    />
-
-                </div>
-
-            </section>
+                </section>
 
 
-            {/* ================= RADAR AND SENSOR INTEGRATION ================= */}
-            <section className="py-16 md:py-24 px-6">
+                {/* ================= SECOND IMAGE ================= */}
+                <section className="px-4 md:px-6">
+                    <div className="max-w-[780px] mx-auto">
 
-                <div className="max-w-[760px] mx-auto space-y-6
-        text-[16px] md:text-[18px] leading-[30px] text-gray-800">
+                        <img
+                            src={Mig29K61}
+                            alt="MiG-29K avionics displays"
+                            className="w-full h-[260px] sm:h-[360px] md:h-[520px] object-cover rounded-2xl shadow-lg hover:scale-[1.02] transition duration-500"
+                        />
 
-                    <h2 className="text-[24px] font-bold uppercase">
-                        Radar and Sensor Integration
-                    </h2>
-
-                    <p>
-                        The MiG-29K’s radar and sensors provide advanced target
-                        detection and tracking capability.
-                    </p>
-
-                    <ul className="list-disc pl-6 space-y-2">
-                        <li>Long-range target detection</li>
-                        <li>Tracking of multiple airborne targets</li>
-                        <li>Guidance for air-to-air missile systems</li>
-                    </ul>
-
-                </div>
-
-            </section>
+                    </div>
+                </section>
 
 
-            {/* ================= OPERATIONAL ADVANTAGES ================= */}
-            <section className="py-16 md:py-24 px-6">
+                {/* ================= FEATURES ================= */}
+                <section className="py-16 md:py-24 px-6">
 
-                <div className="max-w-[760px] mx-auto space-y-6
-        text-[16px] md:text-[18px] leading-[30px] text-gray-800">
+                    <div className="max-w-[780px] mx-auto space-y-8
+               text-[16px] md:text-[18px] leading-[30px] text-gray-300">
 
-                    <h2 className="text-[24px] font-bold uppercase">
-                        Operational Advantages
-                    </h2>
+                        <h2 className="text-[26px] font-bold uppercase text-white">
+                            Key Cockpit Features
+                        </h2>
 
-                    <ul className="list-disc pl-6 space-y-2">
-                        <li>Reduced pilot workload</li>
-                        <li>Improved targeting accuracy</li>
-                        <li>Faster decision-making during combat</li>
-                    </ul>
+                        <h3 className="font-semibold text-[18px] text-white">
+                            Multifunction Displays (MFDs)
+                        </h3>
 
-                    <p>
-                        These avionics capabilities make the MiG-29K a highly capable
-                        carrier-based fighter aircraft for modern naval operations.
-                    </p>
+                        <p>
+                            Digital displays provide critical flight and combat data.
+                        </p>
 
-                </div>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>Radar data</li>
+                            <li>Navigation information</li>
+                            <li>Weapon status</li>
+                            <li>Flight parameters</li>
+                        </ul>
 
-            </section>
 
+                        <h3 className="font-semibold text-[18px] text-white">
+                            Helmet-Mounted Targeting
+                        </h3>
+
+                        <p>
+                            Enables pilots to lock targets by simply looking at them,
+                            improving reaction time in combat.
+                        </p>
+
+                        <h3 className="font-semibold text-[18px] text-white">
+                            Digital Flight Control Systems
+                        </h3>
+
+                        <p>
+                            Assist in stability and handling during demanding carrier operations.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                {/* ================= THIRD IMAGE ================= */}
+                <section className="px-4 md:px-6">
+
+                    <div className="max-w-[780px] mx-auto">
+
+                        <img
+                            src={Mig29K62}
+                            alt="MiG-29K radar and sensors"
+                            className="w-full object-cover rounded-2xl shadow-lg hover:scale-[1.02] transition duration-500"
+                        />
+
+                    </div>
+
+                </section>
+
+
+                {/* ================= RADAR ================= */}
+                <section className="py-16 md:py-24 px-6">
+
+                    <div className="max-w-[780px] mx-auto space-y-6
+               text-[16px] md:text-[18px] leading-[30px] text-gray-300">
+
+                        <h2 className="text-[26px] font-bold uppercase text-white">
+                            Radar and Sensor Integration
+                        </h2>
+
+                        <p>
+                            Advanced radar and sensor systems enhance detection and tracking.
+                        </p>
+
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>Long-range target detection</li>
+                            <li>Multi-target tracking</li>
+                            <li>Missile guidance support</li>
+                        </ul>
+
+                    </div>
+
+                </section>
+
+
+                {/* ================= ADVANTAGES ================= */}
+                <section className="py-16 md:py-24 px-6">
+
+                    <div className="max-w-[780px] mx-auto space-y-6
+               text-[16px] md:text-[18px] leading-[30px] text-gray-300">
+
+                        <h2 className="text-[26px] font-bold uppercase text-white">
+                            Operational Advantages
+                        </h2>
+
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>Reduced pilot workload</li>
+                            <li>Improved targeting accuracy</li>
+                            <li>Faster decision-making</li>
+                        </ul>
+
+                        <p>
+                            These systems significantly enhance combat effectiveness
+                            in modern naval operations.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </div>
+            <Footer />
         </div>
     );
 }

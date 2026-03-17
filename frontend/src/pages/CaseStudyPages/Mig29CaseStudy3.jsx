@@ -1,206 +1,193 @@
 import Mig293 from "../../assets/Mig29-3.jpg";
 import Mig2931 from "../../assets/Mig29-3-1.jpg";
 import Mig2932 from "../../assets/Mig29-3-2.jpg";
-
+import Navbar from "../../../src/components/NewNavbar"
+import Footer from "../../../src/components/NewFooter"
 export default function Mig29CaseStudy3() {
     return (
-        <div className="bg-[#f3f3f3] text-black">
+        <div>
+            <Navbar />
+            <div className="bg-black text-white">
 
-            {/* ================= HERO ================= */}
-            <section className="py-20 md:py-32 text-center px-6">
+                {/* ================= HERO ================= */}
+                <section className="py-20 md:py-32 text-center px-6">
 
-                <p className="uppercase text-xs md:text-sm tracking-[3px] text-gray-600">
-                    Case Study
-                </p>
-
-                <h1 className="mt-6 md:mt-8 
-        text-[24px] sm:text-[28px] md:text-[36px] lg:text-[44px] 
-        font-extrabold uppercase 
-        leading-[1.2] md:leading-[1.15] 
-        max-w-[760px] mx-auto">
-
-                    MiG-29 in the <br />
-                    Indian Air Force
-                </h1>
-
-                <p className="mt-8 md:mt-10 text-[16px] md:text-[18px] leading-[28px] md:leading-[32px] text-gray-700 max-w-[620px] mx-auto">
-                    The MiG-29 has served as a key air superiority fighter in the
-                    Indian Air Force since the 1980s, playing a vital role in
-                    protecting Indian airspace and maintaining regional air power balance.
-                </p>
-
-            </section>
-
-
-            {/* ================= HERO IMAGE ================= */}
-            <section className="px-4 md:px-6">
-                <div className="max-w-[1100px] mx-auto">
-
-                    <img
-                        src={Mig293}
-                        alt="Indian Air Force MiG-29"
-                        className="w-full h-[300px] sm:h-[400px] md:h-[600px] object-cover"
-                    />
-
-                </div>
-            </section>
-
-
-            {/* ================= BACKGROUND ================= */}
-            <section className="py-16 md:py-24 px-6">
-
-                <div className="max-w-[760px] mx-auto space-y-6 md:space-y-8 
-        text-[16px] md:text-[18px] leading-[28px] md:leading-[32px] text-gray-800">
-
-                    <p>
-                        India inducted the <strong>Mikoyan MiG-29</strong> into the
-                        <strong> Indian Air Force</strong> during the
-                        <strong> 1980s</strong>. The aircraft was introduced primarily
-                        to counter potential threats from neighboring countries and
-                        maintain strong air superiority capability.
+                    <p className="uppercase text-xs md:text-sm tracking-[3px] text-gray-500">
+                        Case Study
                     </p>
 
-                    <p>
-                        At the time of induction, the MiG-29 became one of the most
-                        advanced and capable fighter aircraft in India’s inventory,
-                        significantly strengthening the country's air defense capability.
+                    <h1 className="mt-6 md:mt-8 
+                            text-[26px] sm:text-[32px] md:text-[40px] lg:text-[48px] 
+                            font-extrabold uppercase 
+                            leading-[1.15] 
+                            max-w-[780px] mx-auto">
+
+                        MiG-29 in the <br />
+                        Indian Air Force
+                    </h1>
+
+                    <p className="mt-8 md:mt-10 text-[16px] md:text-[18px] leading-[30px] text-gray-400 max-w-[640px] mx-auto">
+                        The MiG-29 has served as a key air superiority fighter in the
+                        Indian Air Force since the 1980s, playing a vital role in
+                        protecting Indian airspace and maintaining regional air power balance.
                     </p>
 
-                </div>
-
-            </section>
+                </section>
 
 
-            {/* ================= SECOND IMAGE ================= */}
-            <section className="px-4 md:px-6">
-                <div className="max-w-[1100px] mx-auto">
+                {/* ================= HERO IMAGE ================= */}
+                <section className="px-4 md:px-6">
+                    <div className="max-w-[780px] mx-auto">
 
-                    <img
-                        src={Mig2931}
-                        alt="MiG-29 Indian Air Force operations"
-                        className="w-full h-[260px] sm:h-[360px] md:h-[520px] object-cover"
-                    />
+                        <img
+                            src={Mig293}
+                            alt="Indian Air Force MiG-29"
+                            loading="lazy"
+                            className="w-full h-[220px] sm:h-[320px] md:h-[450px] object-cover rounded-2xl shadow-lg hover:scale-[1.02] transition duration-500"
+                        />
 
-                </div>
-            </section>
+                    </div>
+                </section>
 
+                {/* ================= BACKGROUND ================= */}
+                <section className="py-16 md:py-24 px-6">
 
-            {/* ================= OPERATIONAL ROLE ================= */}
-            <section className="py-16 md:py-24 px-6">
+                    <div className="max-w-[780px] mx-auto space-y-6 md:space-y-8 
+                            text-[16px] md:text-[18px] leading-[30px] text-gray-300">
 
-                <div className="max-w-[760px] mx-auto space-y-6 md:space-y-8 
-        text-[16px] md:text-[18px] leading-[28px] md:leading-[32px] text-gray-800">
+                        <p>
+                            India inducted the <strong className="text-white">Mikoyan MiG-29</strong> into the
+                            <strong className="text-white"> Indian Air Force</strong> during the
+                            <strong className="text-white"> 1980s</strong>. The aircraft was introduced primarily
+                            to counter potential threats and maintain strong air superiority capability.
+                        </p>
 
-                    <p>
-                        Within the Indian Air Force, the MiG-29 performs several
-                        important operational roles:
-                    </p>
+                        <p>
+                            At the time of induction, the MiG-29 became one of the most
+                            advanced fighter aircraft in India’s inventory, significantly
+                            strengthening national air defense capability.
+                        </p>
 
-                    <ul className="space-y-2 md:space-y-3 list-disc pl-6">
+                    </div>
 
-                        <li>Air superiority missions</li>
-
-                        <li>Interception of hostile aircraft</li>
-
-                        <li>Escort missions for other aircraft</li>
-
-                        <li>Defensive counter-air operations</li>
-
-                    </ul>
-
-                    <p>
-                        The aircraft is widely recognized for its strong dogfighting
-                        capability, high agility, and powerful twin-engine performance.
-                    </p>
-
-                </div>
-
-            </section>
+                </section>
 
 
-            {/* ================= THIRD IMAGE ================= */}
-            <section className="px-4 md:px-6">
+                {/* ================= SECOND IMAGE ================= */}
+                <section className="px-4 md:px-6">
+                    <div className="max-w-[780px] mx-auto">
 
-                <div className="max-w-[900px] mx-auto">
+                        <img
+                            src={Mig2931}
+                            alt="MiG-29 Indian Air Force operations"
+                            loading="lazy"
+                            className="w-full h-[220px] sm:h-[320px] md:h-[450px] object-cover rounded-2xl shadow-lg hover:scale-[1.02] transition duration-500"
+                        />
 
-                    <img
-                        src={Mig2932}
-                        alt="MiG-29 cockpit upgrade"
-                        className="w-full object-cover"
-                    />
+                    </div>
+                </section>
 
-                </div>
+                {/* ================= OPERATIONAL ROLE ================= */}
+                <section className="py-16 md:py-24 px-6">
 
-            </section>
+                    <div className="max-w-[780px] mx-auto space-y-6 md:space-y-8 
+                            text-[16px] md:text-[18px] leading-[30px] text-gray-300">
 
+                        <p>
+                            Within the Indian Air Force, the MiG-29 performs critical operational roles:
+                        </p>
 
-            {/* ================= MIG-29UPG UPGRADE ================= */}
-            <section className="py-16 md:py-24 px-6">
+                        <ul className="space-y-3 list-disc pl-6">
 
-                <div className="max-w-[760px] mx-auto space-y-6 md:space-y-8 
-        text-[16px] md:text-[18px] leading-[28px] md:leading-[32px] text-gray-800">
+                            <li>Air superiority missions</li>
+                            <li>Interception of hostile aircraft</li>
+                            <li>Escort missions for allied aircraft</li>
+                            <li>Defensive counter-air operations</li>
 
-                    <h2 className="text-[24px] font-bold uppercase">
-                        MiG-29UPG Upgrade Program
-                    </h2>
+                        </ul>
 
-                    <p>
-                        To extend the operational life and improve combat capability,
-                        India initiated the <strong>MiG-29UPG modernization program</strong>.
-                    </p>
+                        <p>
+                            The aircraft is widely recognized for its agility,
+                            high thrust-to-weight ratio, and exceptional dogfighting capability.
+                        </p>
 
-                    <ul className="space-y-2 font-medium list-disc pl-6">
+                    </div>
 
-                        <li>Zhuk-ME radar system</li>
-
-                        <li>Modern glass cockpit displays</li>
-
-                        <li>Air-to-air refueling capability</li>
-
-                        <li>Improved electronic warfare systems</li>
-
-                        <li>Compatibility with modern air-to-air missiles</li>
-
-                    </ul>
-
-                    <p>
-                        These upgrades significantly enhanced the aircraft’s operational
-                        performance and extended its service life within the Indian Air Force.
-                    </p>
-
-                </div>
-
-            </section>
+                </section>
 
 
-            {/* ================= STRATEGIC IMPORTANCE ================= */}
-            <section className="py-16 md:py-24 px-6">
+                {/* ================= THIRD IMAGE ================= */}
+                <section className="px-4 md:px-6">
+                    <div className="max-w-[780px] mx-auto">
 
-                <div className="max-w-[760px] mx-auto space-y-6 text-[16px] md:text-[18px] leading-[30px] text-gray-800">
+                        <img
+                            src={Mig2932}
+                            alt="MiG-29 cockpit upgrade"
+                            loading="lazy"
+                            className="w-full h-[220px] sm:h-[320px] md:h-[450px] object-cover rounded-2xl shadow-lg hover:scale-[1.02] transition duration-500"
+                        />
 
-                    <h2 className="text-[24px] font-bold uppercase">
-                        Strategic Importance
-                    </h2>
+                    </div>
+                </section>
 
-                    <p>
-                        The MiG-29 continues to play a vital role in India’s
-                        integrated air defense network.
-                    </p>
 
-                    <ul className="space-y-2 list-disc pl-6">
+                {/* ================= MIG-29UPG ================= */}
+                <section className="py-16 md:py-24 px-6">
 
-                        <li>Protection of critical airspace</li>
+                    <div className="max-w-[780px] mx-auto space-y-6 md:space-y-8 
+                            text-[16px] md:text-[18px] leading-[30px] text-gray-300">
 
-                        <li>Support for frontline fighter squadrons</li>
+                        <h2 className="text-[26px] font-bold uppercase text-white">
+                            MiG-29UPG Upgrade Program
+                        </h2>
 
-                        <li>Quick reaction interception capability</li>
+                        <p>
+                            To extend operational life and enhance combat capability,
+                            India launched the <strong className="text-white">MiG-29UPG modernization program</strong>.
+                        </p>
 
-                    </ul>
+                        <ul className="space-y-3 list-disc pl-6 font-medium">
 
-                </div>
+                            <li>Zhuk-ME radar system</li>
+                            <li>Modern glass cockpit</li>
+                            <li>Air-to-air refueling capability</li>
+                            <li>Advanced electronic warfare systems</li>
+                            <li>Modern missile integration</li>
 
-            </section>
+                        </ul>
 
+                    </div>
+
+                </section>
+
+
+                {/* ================= STRATEGIC IMPORTANCE ================= */}
+                <section className="py-16 md:py-24 px-6">
+
+                    <div className="max-w-[780px] mx-auto space-y-6 text-[16px] md:text-[18px] leading-[30px] text-gray-300">
+
+                        <h2 className="text-[26px] font-bold uppercase text-white">
+                            Strategic Importance
+                        </h2>
+
+                        <p>
+                            The MiG-29 remains a critical asset in India’s integrated air defense network.
+                        </p>
+
+                        <ul className="space-y-3 list-disc pl-6">
+
+                            <li>Protection of critical airspace</li>
+                            <li>Support for frontline squadrons</li>
+                            <li>Rapid interception capability</li>
+
+                        </ul>
+
+                    </div>
+
+                </section>
+
+            </div>
+            <Footer />
         </div>
     );
 }

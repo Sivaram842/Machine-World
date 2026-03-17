@@ -1,16 +1,70 @@
-import React from 'react'
+import React, { useState, useRef } from "react";
 import Navbar from '../../../components/NewNavbar'
 import Header from '../../../components/Header'
 import Footer from '../../../components/NewFooter'
 const Helicopter = () => {
+    const gridRef = useRef(null);
+    const scrollToGrid = () => {
+        gridRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
     return (
         <div>
             <Navbar />
+            <section className="w-full bg-white text-black h-[70vh] flex items-end px-4 lg:px-16 py-8">
+
+                <div className="w-full">
+
+                    {/* TITLE AREA */}
+                    <div className="mb-10">
+                        <p className="text-xs tracking-[0.25em] text-gray-600 mb-4">
+                            SIMULATION SYSTEMS
+                        </p>
+
+                        <h1 className="text-5xl lg:text-7xl font-semibold tracking-tight">
+                            Training Simulators for Industry
+                        </h1>
+                    </div>
+
+                    {/* BOTTOM GRID */}
+                    <div className="grid grid-cols-4 gap-10 items-start">
+
+                        <div className="text-xs tracking-wider text-gray-600">
+                            PROFESSIONAL TRAINING
+                        </div>
+
+                        <div className="text-xs text-gray-700 leading-relaxed max-w-[320px]">
+                            Antiworld develops advanced simulation platforms designed for
+                            aviation, industrial operations, and technical training.
+                            Our immersive systems help organizations train professionals,
+                            test complex scenarios, and improve operational readiness
+                            without the risks or costs of real-world environments.
+                        </div>
+
+                        <div className="flex gap-6 text-xs tracking-wide">
+                            <a className="hover:underline cursor-pointer">Flight Simulators</a>
+                            <a className="hover:underline cursor-pointer">XR Training</a>
+                            <a className="hover:underline cursor-pointer">Industrial Simulation</a>
+                            <a className="hover:underline cursor-pointer">Safety Training</a>
+                        </div>
+
+                        <div
+                            onClick={scrollToGrid}
+                            className="flex justify-end items-end text-3xl cursor-pointer hover:translate-y-1 transition"
+                        >
+                            ↓
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
             <Header />
             <div className="bg-white text-black">
 
                 {/* ================= SECTION 1 - HERO ================= */}
-                <section className="relative h-[85vh] md:h-screen w-full overflow-hidden">
+                <section ref={gridRef} className="relative h-[85vh] md:h-screen w-full overflow-hidden">
                     <img
                         src="/images/varjo-base-hero.jpg"
                         alt="Varjo Base"

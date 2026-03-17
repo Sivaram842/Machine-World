@@ -1,103 +1,103 @@
-import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import { useEffect } from "react";
-import Navbar from '../../components/NewNavbar'
-import Footer from '../../components/NewFooter'
+import React, { useRef, useState, useEffect } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { Link, useNavigate } from "react-router-dom";
 
-import Mig29hero from "../../assets/Mig29hero.jpg";
-import Mig291 from "../../assets/Mig29-1.jpg";
-import Mig292 from "../../assets/Mig29-2.jpg";
-import Mig293 from "../../assets/Mig29-3.jpg";
-import Mig294 from "../../assets/Mig29-4.jpg";
-import Mig295 from "../../assets/Mig29-5.jpg";
-import Mig296 from "../../assets/Mig29-6.jpg";
-
-import img from "../../assets/mig -29 left side view.png";
-import img1 from "../../assets/mig-29 back view.png";
-import img2 from "../../assets/mig -29 side view - Copy.png";
-import img3 from "../../assets/MIG-29 GLASSCOCKPIT.png";
-import img4 from "../../assets/mig-29.png";
-import poster from "../../assets/mig -29 left side view.png";
-import PassthroughSection from "../../components/ProductSubPageComponents/PassthroughSection";
+import Navbar from "../../components/NewNavbar";
+import Footer from "../../components/NewFooter";
 import TalkToSalesCTA from "../../components/TalkToSalesCTA";
 
-const cards = [
-    {
+import img1 from "../../assets/srm1.jpg";
+import img2 from "../../assets/srm2.jpeg";
+import img3 from "../../assets/srm3.png";
+import img4 from "../../assets/srm4.jpg";
 
-        title: "Development of the MiG-29 – Soviet Response to Western Fighters",
-        image: Mig291,
-        span: "lg:row-span-2",
-        link: "/mig29-case-study-1"
+
+import RafaleImg from "../../assets/Mig29Img.png";
+import Mig29K1 from "../../assets/Mig29-1.jpg";
+import Mig29K2 from "../../assets/Mig29-2.jpg";
+import Mig29K3 from "../../assets/Mig29-3.jpg";
+import Mig29K4 from "../../assets/Mig29-4.jpg";
+import Mig29K5 from "../../assets/Mig29-5.jpg";
+import Mig29K6 from "../../assets/Mig29-6.jpg";
+import Mig29K7 from "../../assets/Mig29-7.avif";
+import rafaleCockpit from "../../assets/mig29-cockpit.jpg";
+
+
+const tabs = [
+    {
+        id: 1,
+        label: "Building Blocks Curriculum",
+        title: "BUILDING BLOCKS CURRICULUM",
+        text: "A structured building-block curriculum spanning Tier 1 to Tier 3, delivering immersive high-fidelity simulations that enhance muscle memory and pilot readiness.",
+        img: img1
     },
     {
-
-        title: "MiG-29 in the Gulf War",
-
-        image: Mig292,
-        span: "lg:row-span-2",
-        link: "/mig29-case-study-2"
+        id: 2,
+        label: "Basic to Advance Training",
+        title: "Basic to Advance Training Simulation Solutions",
+        text: "From basic to advanced training, our simulation solutions deliver immersive pilot training environments.High-fidelity systems replicate real aircraft cockpits for a truly authentic flight experience.",
+        img: img2
     },
     {
-
-        title: "MiG-29 in the Indian Air Force",
-
-        image: Mig293,
-        link: "/mig29-case-study-3"
-
+        id: 3,
+        label: "Combined Squadran Training",
+        title: "Integrated Combined Squadron Training",
+        text: "Combined training blends multiple aircraft types, scenarios, or crew roles into integrated sessions to build coordination and adaptability in realistic operations.",
+        img: img3
     },
     {
+        id: 4,
+        label: "Indegeous Product Development",
+        title: "Indigenous Engineering Excellence",
+        text: "Atmanirbhar Bharat promotes indigenous development by strengthening domestic manufacturing, technology, and innovation to reduce dependence on foreign imports.",
 
-        title: "MiG-29 Naval Operations",
-
-        image: Mig294,
-        link: "/mig29-case-study-4"
-    },
-    {
-
-        title: "MiG-29 Dogfight Capability and Air Combat Maneuverability",
-
-        image: Mig295,
-        link: "/mig29-case-study-5"
-    },
-    {
-
-        title: "Evolution of MiG-29 Upgrades → MiG-35 Development",
-
-        image: Mig296,
-        link: "/mig29-case-study-6"
+        img: img4
     }
 ];
-const cockpitDetails = [
-    {
-        title: "Head-Up Display (HUD)"
-    },
-    {
-        title: "Radar and Targeting Display"
-    },
-    {
-        title: "Hands-On-Throttle-And-Stick (HOTAS) Controls"
-    },
-    {
-        title: "Navigation and Flight Instruments"
-    },
-    {
-        title: "Weapon System Controls"
-    }
-];
+
+
+
+
 const MIG29 = () => {
 
+    const navigate = useNavigate();
     const videoRef = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(false);
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-    const [activeCockpit, setActiveCockpit] = useState(null);
+
+
+    const [active, setActive] = useState(0);
 
     const handlePlay = () => {
         if (videoRef.current) {
             videoRef.current.play();
         }
     };
+
+    const pyramidContainer = {
+        hidden: {},
+        show: {
+            transition: {
+                staggerChildren: 0.25
+            }
+        }
+    };
+
+    const pyramidItem = {
+        hidden: { opacity: 0, y: 40 },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: "easeOut"
+            }
+        }
+    };
+
+    const { scrollYProgress } = useScroll();
+    const y = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
     const [openIndex, setOpenIndex] = useState(null);
 
@@ -108,15 +108,83 @@ const MIG29 = () => {
             setOpenIndex(index);
         }
     };
+    const [open, setOpen] = useState(false);
+
+    const gridRef = useRef(null);
+
+
+    const scrollToSection = (ref) => {
+        ref.current?.scrollIntoView({ behavior: "smooth" });
+    };
+    const scrollToGrid = () => {
+        gridRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
+
+    const statVariant = {
+        hidden: { opacity: 0, y: 80 },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.7,
+                ease: "easeOut"
+            }
+        }
+    };
+
     return (
         <div>
             <Navbar />
-            <header className="relative w-full min-h-[75vh] sm:min-h-[90vh] lg:min-h-screen overflow-hidden">
+            <motion.section
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
+                className="w-full bg-black text-white min-h-[60vh] flex flex-col justify-between px-6 sm:px-10 lg:px-20 pt-20 pb-10"
+            >
+
+                {/* BIG TITLE */}
+                <div>
+                    <h1 className="text-[34px] sm:text-[48px] md:text-[72px] lg:text-[110px] font-semibold tracking-tight leading-[0.95]">
+                        Mikoyan MiG-29
+                    </h1>
+                </div>
+
+                {/* BOTTOM CONTENT */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:items-end">
+
+                    {/* LEFT LABEL */}
+                    <div className="text-[11px] sm:text-[12px] tracking-[0.25em] text-gray-400 uppercase space-y-3">
+                        <div>HIGH FIDELITY SIMULATION</div>
+                        <div>[ MR ]</div>
+                    </div>
+
+                    {/* PARAGRAPH */}
+                    <div className="text-[13px] sm:text-[14px] leading-relaxed text-gray-300 max-w-[420px]">
+                        The Mikoyan MiG-29 is a twin-engine supersonic fighter jet designed for
+                        air superiority, known for its high maneuverability, powerful radar
+                        systems, and advanced combat capabilities.
+                    </div>
+
+                    {/* SCROLL ARROW */}
+                    <div
+                        onClick={scrollToGrid}
+                        className="flex md:justify-end text-3xl md:text-4xl cursor-pointer text-gray-300 hover:translate-y-1 transition"
+                    >
+                        ↓
+                    </div>
+
+                </div>
+
+            </motion.section>
+
+
+
+            <header className="relative w-full min-h-[75vh] sm:min-h-[100vh] lg:min-h-screen overflow-hidden">
 
                 {/* Background image */}
                 <img
-                    src={Mig29hero}
-                    alt="Mig-29 Fighter"
+                    src={RafaleImg}
+                    alt="Rafale Fighter"
                     className="absolute inset-0 w-full h-full object-cover"
                 />
 
@@ -130,17 +198,6 @@ const MIG29 = () => {
 
                         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between w-full gap-8">
 
-                            {/* LEFT */}
-                            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight lg:max-w-2xl">
-                                MiG-29
-                            </h1>
-
-                            {/* RIGHT */}
-                            <p className="text-gray-300 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-xl text-left lg:text-right">
-                                Train, research, and develop next-generation fighter aviation systems with the MiG-29 High-Fidelity Glass Cockpit Simulator.
-
-
-                            </p>
 
                         </div>
 
@@ -148,609 +205,515 @@ const MIG29 = () => {
                 </div>
 
             </header>
+            {/* BLACK BLANK SECTION */}
+            <section className="w-full bg-black h-[6vh] sm:h-[8vh]"></section>
 
-
-
-
-
-            {/* SUPPORT GRID */}
-
-            <section className="bg-[#f2f2f2] px-6 sm:px-10 lg:px-20 py-16 sm:py-24 lg:py-[120px]">
-
-                <div className="grid grid-cols-4 grid-rows-2 gap-6 max-w-[1400px] mx-auto">
-
-                    {cards.map((card, index) => {
-
-                        const isTall = index === 0 || index === 1;
-
-                        return (
-
-                            <Link
-                                to={card.link}
-                                key={index}
-                                className={`${isTall ? "row-span-2" : ""} group`}
-                            >
-
-                                <div
-                                    className={`relative bg-cover bg-center text-white
-${isTall ? "h-full min-h-[540px] p-8" : "aspect-square p-6"}`}
-                                    style={{ backgroundImage: `url(${card.image})` }}
-                                >
-
-                                    {/* Hover overlay */}
-                                    <div className="absolute inset-0 bg-[#0057ff]/0 group-hover:bg-[#0057ff]/70 transition duration-300" />
-
-                                    <div className="relative z-10">
-
-                                        <small className="text-[12px] tracking-widest">
-                                            {card.small}
-                                        </small>
-
-                                        <h3 className={`mt-3 leading-snug ${isTall ? "text-[22px]" : "text-[18px]"}`}>
-                                            {card.title}
-                                        </h3>
-
-                                        <p className={`text-gray-200 ${isTall ? "mt-4 text-[14px]" : "mt-2 text-[13px]"}`}>
-                                            {card.desc}
-                                        </p>
-
-                                    </div>
-
-                                </div>
-
-                            </Link>
-
-                        )
-
-                    })}
-
-                </div>
-
-            </section>
-            {/* ================= COCKPIT SYSTEMS ================= */}
-
-            <section className="bg-white py-16 sm:py-24 lg:py-[140px]">
-
-                <div className="mx-auto max-w-[1400px] flex flex-col lg:flex-row gap-16 px-6 lg:px-16 items-start">
-
-                    {/* LEFT SIDE */}
-
-                    <div className="lg:w-[42%] w-full -mt-16">
-
-                        <small className="block text-[12px] tracking-widest uppercase text-black">
-                            COCKPIT SYSTEMS
-                        </small>
-
-                        <h2 className="mt-4 text-3xl md:text-4xl lg:text-[40px] font-light leading-tight">
-                            Inside the MiG-29 Cockpit
-                        </h2>
-
-                        <p className="mt-6 text-[15px] leading-[1.7] text-gray-700">
-                            The MiG-29 cockpit is designed for high-performance air combat operations with a pilot-centric layout that enables rapid decision making. A head-up display, radar screen, navigation instruments, and weapon control panels provide real-time flight and combat information directly within the pilot’s field of view.</p>
-
-
-
-                        <ul className="mt-8 space-y-4">
-
-                            {cockpitDetails.map((item, index) => (
-
-                                <li
-                                    key={index}
-                                    className="relative"
-                                    onMouseEnter={() => setActiveCockpit(index)}
-                                    onMouseLeave={() => setActiveCockpit(null)}
-                                >
-
-                                    <div className={`flex items-center gap-3 text-[16px] cursor-pointer transition-colors
-${activeCockpit === index ? "text-black" : "text-gray-500 hover:text-black"}
-`}>
-
-                                        <span className="w-3 h-3 rounded-full bg-black"></span>
-
-                                        {item.title}
-
-                                    </div>
-
-                                </li>
-
-                            ))}
-
-                        </ul>
-
-                    </div>
-
-                    {/* RIGHT IMAGE */}
-
-                    <div className="lg:w-[58%] w-full">
-
-                        <img
-                            src={img1}
-                            alt="MiG-29K cockpit simulator"
-                            className="w-full h-[520px] object-cover"
-                        />
-
-                    </div>
-
-                </div>
-
-            </section>
-            {/* ================= COST AND TRAINING ================= */}
-
-            <section className="w-full bg-white py-16 px-6 lg:px-20">
-
-                <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-10 items-start">
-
-                    {/* LEFT SIDE */}
-
-                    <div className="flex flex-col justify-between h-full">
-
-                        <h2 className="text-[28px] md:text-[34px] font-extrabold uppercase leading-tight mb-10">
-                            The Cost and Complexity of Fighter Pilot Training
-                        </h2>
-
-                        <div className="space-y-6 text-[15px] tracking-wide">
-
-                            {[
-                                {
-                                    title: "AIRCRAFT PROCUREMENT COST",
-                                    desc: "MiG-29 fighters typically cost $20–40 million per aircraft depending on upgrades and avionics configuration."
-                                },
-                                {
-                                    title: "MAINTENANCE AND LIFECYCLE COST",
-                                    desc: "Maintenance accounts for nearly 40–50% of operating expenses, covering engine overhaul, spare parts, avionics servicing, and structural inspections."
-                                },
-                                {
-                                    title: "FUEL AND OPERATIONAL COST",
-                                    desc: "The MiG-29 consumes about 6500 liters of fuel per flight hour, making fuel one of the largest operational costs."
-                                },
-                                {
-                                    title: "PILOT TRAINING HOURS",
-                                    desc: "Operating a MiG-29 costs roughly $6,000–$7,000 per flight hour, including fuel, maintenance wear, and ground support."
-                                },
-                                {
-                                    title: "TRAINING RESOURCE DEMAND",
-                                    desc: "Fighter pilots typically require 180–240 flight hours annually to maintain operational combat readiness."
-                                },
-                                {
-                                    title: "SOLUTION: MR COCKPIT SIMULATORS",
-                                    desc: "India reduces training costs using high-fidelity cockpit simulators and the MiG-29UPG upgrade, enabling realistic mission training while minimizing real aircraft flight hours."
-                                }
-                            ].map((item, index) => (
-
-                                <div key={index}>
-
-                                    <div
-                                        onClick={() => toggleItem(index)}
-                                        className="flex items-start gap-3 cursor-pointer select-none"
-                                    >
-
-                                        <span
-                                            className={`text-orange-500 mt-1 text-[18px] transition-transform duration-300 ${openIndex === index ? "rotate-90" : ""
-                                                }`}
-                                        >
-                                            ▶
-                                        </span>
-
-                                        <p className="font-mono leading-relaxed">
-                                            {item.title}
-                                        </p>
-
-                                    </div>
-
-                                    {openIndex === index && (
-
-                                        <p className="ml-6 mt-2 text-gray-600 text-[14px] leading-relaxed max-w-[420px] transition-all duration-300">
-                                            {item.desc}
-                                        </p>
-
-                                    )}
-
-                                </div>
-
-                            ))}
-
-                        </div>
-
-                        <div className="grid grid-cols-2 gap-4 mt-10">
-
-                            <img
-                                src={img3}
-                                className="w-full h-[180px] object-cover"
-                                alt="cockpit controls"
-                            />
-
-                            <img
-                                src={img4}
-                                className="w-full h-[180px] object-cover"
-                                alt="pilot simulator training"
-                            />
-
-                        </div>
-
-                    </div>
-
-                    {/* RIGHT IMAGE */}
-
-                    <div className="w-full">
-
-                        <img
-                            src={img2}
-                            alt="MR cockpit simulator"
-                            className="w-full h-full object-cover"
-                        />
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            {/* ================= IMMERSIVE COMBAT SIMULATION ================= */}
-
-            <section className="bg-white py-16 sm:py-24 lg:py-[160px] px-4 sm:px-6">
-                <div className="mx-auto max-w-[900px] text-center">
-
-                    {/* VIDEO CONTAINER */}
-                    <div className="relative mx-auto mb-10 sm:mb-14 lg:mb-16 w-full max-w-[640px]">
-
-                        {/* VIDEO */}
-                        <video
-                            ref={videoRef}
-                            src={"/training.mp4"}
-                            poster={poster}
-                            controls
-                            playsInline
-                            preload="metadata"
-                            onPause={() => setIsPlaying(false)}
-                            onPlay={() => setIsPlaying(true)}
-                            className="block h-[220px] sm:h-[320px] md:h-[420px] w-full bg-black object-cover"
-                        />
-
-                        {/* CUSTOM PLAY BUTTON */}
-                        {!isPlaying && (
-                            <button
-                                onClick={handlePlay}
-                                className="absolute left-1/2 top-1/2 flex
-                    h-14 w-14 sm:h-16 sm:w-16 lg:h-20 lg:w-20
-                    -translate-x-1/2 -translate-y-1/2
-                    items-center justify-center
-                    rounded-full bg-black/50
-                    transition hover:bg-black/70"
-                            >
-                                <span className="ml-1 h-0 w-0
-                    border-b-[8px] border-t-[8px] border-l-[14px]
-                    sm:border-b-[10px] sm:border-t-[10px] sm:border-l-[18px]
-                    lg:border-b-[12px] lg:border-t-[12px] lg:border-l-[22px]
-                    border-b-transparent border-t-transparent border-l-white" />
-                            </button>
-                        )}
-
-                    </div>
-
-                    {/* TEXT */}
-                    <h2 className="text-2xl sm:text-3xl md:text-[38px] font-light leading-tight">
-                        Immersive
-                        <br />
-                        Combat
-                        Simulation
-                    </h2>
-
-                    <p className="mx-auto mt-6 sm:mt-8 max-w-[560px]
-        text-sm sm:text-[15px]
-        leading-relaxed sm:leading-[1.75]
-        text-gray-600">
-                        The MiG-29 cockpit simulator recreates complex mission environments such as air-to-air combat, beyond-visual-range engagements, and precision strike operations. Pilots interact with realistic cockpit controls while the mixed-reality simulation system generates a dynamic battlefield environment in real time, enabling them to practice tactical decision-making, sensor management, and combat maneuvering in a safe and controlled training environment.
-                    </p>
-
-                    <button className="mt-10 sm:mt-12 lg:mt-14
-        inline-flex items-center justify-center gap-4
-        bg-black
-        px-6 sm:px-8 lg:px-10
-        py-3 sm:py-3.5 lg:py-4
-        text-xs sm:text-[13px]
-        tracking-widest text-white
-        transition hover:bg-gray-900
-        w-full sm:w-auto">
-                        VIEW TRAINING SYSTEM →
-                        <span className="text-base sm:text-lg">→</span>
-                    </button>
-
-                </div>
-            </section>
-
-            {/* FULL VIDEO */}
-            <section className="relative w-full h-[60vh] sm:h-[75vh] lg:h-screen overflow-hidden">
-                <video
-                    className="absolute inset-0 w-full h-full object-cover"
-                    muted
-                    autoPlay
-                    loop
-                    playsInline
-                    preload="auto"
-                >
-                    <source src={"/Su30MKI.mp4"} type="video/mp4" />
-                </video>
-            </section>
-            { /* ================= muscle memory  ================= */}
-            <section className="bg-white py-16 sm:py-24 lg:py-[140px]">
-                <div className="mx-auto flex flex-col lg:flex-row max-w-[1400px] items-start gap-10 lg:gap-[100px] px-6 sm:px-10 lg:px-16">
-
-                    <div className="w-full lg:w-[58%]">
-                        <img
-                            src={img}
-                            alt="Immersion display"
-                            className="h-[300px] sm:h-[420px] lg:h-[520px] w-full object-cover"
-                        />
-                    </div>
-
-                    <div className="w-full lg:w-[42%]">
-                        <small className="block text-[12px] tracking-widest text-black">
-                            FEATURES
-                        </small>
-
-                        <h2 className="mt-6 text-3xl sm:text-4xl lg:text-[40px] font-light leading-tight text-black">
-                            MUSCLE MEMORY
-                            <br />
-                            DEVELOPMENT
-                        </h2>
-
-                        <p className="mt-6 text-[15px] leading-relaxed text-gray-700">
-                            Muscle memory development trains MiG-29 pilots to perform cockpit actions instinctively through repeated simulator practice. In high-performance fighter aircraft, pilots must manage radar systems, navigation displays, weapon controls, and flight maneuvers within seconds. High-fidelity cockpit simulators allow trainees to repeatedly practice these procedures, building automatic responses and operational familiarity before flying the actual aircraft. </p>
-
-
-                    </div>
-                </div>
-            </section>
-
-            { /* ================= building blocks ================= */}
+            {/* ================= AEROSPACE MOSAIC GRID ================= */}
 
             <section
-                className="relative w-full min-h-screen flex items-center text-white"
-                style={{
-                    backgroundImage: "url('/images/learn7.jpg')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center right",
-                    backgroundRepeat: "no-repeat",
-                }}
+                ref={gridRef}
+                className="w-full bg-black text-white py-20 sm:py-24 lg:py-32 px-6 sm:px-10 lg:px-20"
             >
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/30"></div>
+                <div className="max-w-[1700px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 auto-rows-[220px] sm:auto-rows-[240px] lg:auto-rows-[260px] gap-6">
 
-                {/* LEFT CONTENT */}
-                <div className="relative ml-[4vw] max-w-[560px] px-6 lg:px-0">
+                    {/* HERO BLOCK */}
+                    <div
+                        onClick={() => navigate("/mig29-case-study-1")}
+                        className="relative col-span-1 sm:col-span-2 lg:col-span-6 lg:row-span-2 rounded-xl overflow-hidden group cursor-pointer"
+                        style={{
+                            backgroundImage: `url(${Mig29K1})`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center"
+                        }}
+                    >
 
-                    <p className="uppercase text-[12px] tracking-[0.18em] font-light mb-6 text-white/80">
-                        THE ANTIWORLD ADVANTAGE
-                    </p>
+                        <div className="absolute inset-0 bg-black/50 group-hover:bg-black/30 transition"></div>
 
-                    <h2 className="uppercase text-[28px] md:text-[36px] font-extrabold leading-[1.1] mb-8">
-                        BUILDING-BLOCK
-                        <br />
-                        TRAINING CURRICULUM
-                    </h2>
+                        <div className="absolute bottom-6 sm:bottom-8 lg:bottom-10 left-6 sm:left-8 lg:left-10 max-w-[420px]">
 
-                    <div className="text-[15px] md:text-[16px] leading-[1.75] text-white/80 mb-10 max-w-[520px]">
+                            <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-3 group-hover:-translate-y-1 transition">
+                                Development of the MiG-29 – Soviet Response to Western Fighters
+                            </h3>
 
-                        <p className="mb-6">
-                            A structured building-block training curriculum guides pilots from cockpit
-                            familiarization to advanced mission execution, ensuring progressive skill
-                            development and operational readiness.
-                        </p>
+                            <p className="text-gray-300 text-sm hidden sm:block">
+                                The Mikoyan MiG-29 was developed during the 1970s by the Mikoyan
+                                Design Bureau in the Soviet Union.
+                            </p>
 
-                        <ul className="space-y-2 list-disc pl-5">
-
-                            <li>Basic to Advanced Pilot Training</li>
-
-                            <li>Stage 1 — Cockpit Familiarization & Aircraft Systems</li>
-
-                            <li>Stage 2 — Flight Operations & Navigation Training</li>
-
-                            <li>Stage 3 — Tactical Combat Training</li>
-
-                            <li>Stage 4 — Advanced Mission & Combat Scenarios</li>
-
-                        </ul>
+                        </div>
 
                     </div>
 
+
+                    {/* SMALL CARD */}
+                    <div
+                        onClick={() => navigate("/mig29-case-study-2")}
+                        className="relative col-span-1 lg:col-span-3 rounded-xl overflow-hidden group cursor-pointer"
+                        style={{
+                            backgroundImage: `url(${Mig29K2})`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center"
+                        }}
+                    >
+
+                        <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition"></div>
+
+                        <div className="absolute bottom-6 left-6 right-6">
+                            <h4 className="text-lg font-semibold">
+                                MiG-29 in the Gulf War
+                            </h4>
+                        </div>
+
+                    </div>
+
+
+                    {/* SMALL CARD */}
+                    <div
+                        onClick={() => navigate("/mig29-case-study-3")}
+                        className="relative col-span-1 lg:col-span-3 rounded-xl overflow-hidden group cursor-pointer"
+                        style={{
+                            backgroundImage: `url(${Mig29K3})`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center"
+                        }}
+                    >
+
+                        <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition"></div>
+
+                        <div className="absolute bottom-6 left-6 right-6">
+                            <h4 className="text-lg font-semibold">
+                                MiG-29 in the Indian Air Force
+                            </h4>
+                        </div>
+
+                    </div>
+
+
+                    {/* WIDE CARD */}
+                    <div
+                        onClick={() => navigate("/mig29-case-study-4")}
+                        className="relative col-span-1 sm:col-span-2 lg:col-span-6 rounded-xl overflow-hidden group cursor-pointer"
+                        style={{
+                            backgroundImage: `url(${Mig29K4})`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center"
+                        }}
+                    >
+
+                        <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition"></div>
+
+                        <div className="absolute bottom-6 sm:bottom-8 left-6 sm:left-8 max-w-[400px]">
+                            <h3 className="text-lg sm:text-xl font-semibold">
+                                MiG-29 Naval Operations
+                            </h3>
+                        </div>
+
+                    </div>
+
+
+                    {/* SMALL */}
+                    <div
+                        onClick={() => navigate("/mig29-case-study-5")}
+                        className="relative col-span-1 lg:col-span-3 rounded-xl overflow-hidden group cursor-pointer"
+                        style={{
+                            backgroundImage: `url(${Mig29K5})`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center"
+                        }}
+                    >
+
+                        <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition"></div>
+
+                        <div className="absolute bottom-6 left-6">
+                            <h4 className="text-lg font-semibold">
+                                MiG-29 Dogfight Capability and Air Combat Maneuverability
+                            </h4>
+                        </div>
+
+                    </div>
+
+
+                    {/* MEDIUM */}
+                    <div
+                        onClick={() => navigate("/mig29-case-study-6")}
+                        className="relative col-span-1 lg:col-span-3 rounded-xl overflow-hidden group cursor-pointer"
+                        style={{
+                            backgroundImage: `url(${Mig29K6})`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center"
+                        }}
+                    >
+
+                        <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition"></div>
+
+                        <div className="absolute bottom-6 left-6">
+                            <h4 className="text-lg font-semibold">
+                                Evolution of MiG-29 Upgrades → MiG-35 Development
+                            </h4>
+                        </div>
+
+                    </div>
+
+
+                    {/* WIDE CARD */}
+                    <div
+                        onClick={() => navigate("/mig29-case-study-7")}
+                        className="relative col-span-1 sm:col-span-2 lg:col-span-6 rounded-xl overflow-hidden group cursor-pointer"
+                        style={{
+                            backgroundImage: `url(${Mig29K7})`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center"
+                        }}
+                    >
+
+                        <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition"></div>
+
+                        <div className="absolute bottom-6 sm:bottom-8 left-6 sm:left-8 max-w-[400px]">
+                            <h3 className="text-lg sm:text-xl font-semibold">
+                                MiG-29 Crash Near Agra (2024)
+                            </h3>
+                        </div>
+
+                    </div>
 
                 </div>
 
             </section>
 
-            {/* FULL VIDEO */}
-            <section className="relative w-full h-[60vh] sm:h-[75vh] lg:h-screen overflow-hidden">
-                <video
-                    className="absolute inset-0 w-full h-full object-cover"
-                    muted
-                    autoPlay
-                    loop
-                    playsInline
-                    preload="auto"
-                >
-                    <source src={"/DAS2.mp4"} type="video/mp4" />
-                </video>
-            </section>
 
 
-            { /* =================dog fight  ================= */}
-            <section className="w-full bg-[#f3f3f3] py-[160px]">
-                <div className="flex flex-col md:flex-row w-full max-w-[1650px] mx-auto px-6 md:px-[6vw] gap-12">
 
-                    {/* ================= LEFT SECTION ================= */}
-                    <div className="w-full md:w-[55%]">
+            <section className="w-full bg-black text-white py-16 sm:py-20 flex items-center px-6 sm:px-10 lg:px-20">
 
-                        {/* 16:9 Responsive Video */}
-                        <div className="relative w-full aspect-video">
-                            <iframe
-                                src=""
-                                title="Military Helicopter Cockpit Training"
-                                className="absolute top-0 left-0 w-full h-full"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
-                        </div>
+                <div className="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+
+                    {/* LEFT SIDE */}
+                    <div className="max-w-[620px]">
+
+                        <h2
+                            className="font-semibold leading-[0.95] tracking-tight
+        text-[36px] sm:text-[48px] md:text-[64px] lg:text-[60px] mb-8"
+                        >
+                            MIG-29 <br />
+                            Cockpit Architecture
+                        </h2>
+
+                        <p className="text-gray-400 text-[14px] sm:text-[16px] leading-relaxed max-w-[420px]">
+                            The Mikoyan MiG-29 glass cockpit integrates digital multifunction
+                            displays, a head-up display, and advanced avionics to present real-time
+                            flight, radar, navigation, and weapon data, enabling faster pilot
+                            decision-making and improved situational awareness during combat
+                            missions.
+                        </p>
 
                     </div>
 
-                    {/* ================= RIGHT SECTION ================= */}
-                    <div className="w-full md:w-[45%] flex items-center">
+                    {/* RIGHT IMAGE */}
+                    <div className="flex justify-center lg:justify-end">
 
-                        <div className="max-w-[580px]">
+                        <img
+                            src={rafaleCockpit}
+                            alt="MiG-29 Cockpit"
+                            className="w-full max-w-[280px] sm:max-w-[360px] lg:max-w-[500px] object-contain"
+                        />
 
-                            {/* Eyebrow */}
-                            <p className="uppercase text-[11px] tracking-[0.22em] text-black/70 mb-[22px]">
+                    </div>
 
-                            </p>
+                </div>
 
-                            {/* Heading */}
-                            <h2 className="uppercase text-[28px] md:text-[46px] font-extrabold leading-[1.1] mb-[26px]">
-                                DOG-FIGHT
-                                SIMULATIONS
+            </section>
+
+            <section className="w-full bg-black text-white py-16 sm:py-20 lg:py-24">
+
+                <div className="max-w-[1500px] mx-auto px-6 lg:px-10">
+
+                    {/* SECTION 1 */}
+                    <p className="text-gray-400 tracking-widest text-xs sm:text-sm uppercase mb-10 sm:mb-14">
+                        Airframe & Operational Expenditure Overview
+                    </p>
+
+                    <motion.div
+                        variants={statVariant}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, amount: 0.3 }}
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-center gap-10"
+                    >
+
+                        <div>
+                            <h2 className="text-[36px] sm:text-[48px] md:text-[64px] font-semibold leading-none">
+                                $45–50M
                             </h2>
-
-                            {/* Paragraph */}
-                            <p className="text-[17px] leading-[1.7] text-black/70 mb-[40px]">
-                                Dogfight operations involve close-range air-to-air combat, where fighter pilots rely on high-speed maneuvering and situational awareness to gain a tactical advantage over an opponent.
-                                Pilots must manage high-G maneuvers, weapon targeting, and rapid decision-making while maintaining control of the aircraft in dynamic combat conditions.
+                            <p className="text-gray-400 mt-3">
+                                Airframe
                             </p>
-
-                            {/* Button */}
-                            <button className="bg-black text-white px-[34px] py-[16px] uppercase text-[12px] tracking-[0.14em] hover:bg-black/80 transition">
-                                READ MORE →
-                            </button>
-
                         </div>
 
-                    </div>
-
-                </div>
-            </section>
-
-
-            <section className="w-full bg-white py-16 sm:py-24 lg:py-36">
-                <div className="max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-28 items-start">
-
-                    {/* LEFT SIDE — CUSTOMER LIST */}
-                    <div>
-                        <p className="text-xs tracking-widest text-gray-500 mb-6 sm:mb-8 lg:mb-10 uppercase">
-                            From our customers
-                        </p>
-
-                        <ul className="space-y-2 text-2xl sm:text-3xl md:text-4xl lg:text-[40px] leading-[1.15] font-light">
-                            {[
-                                "Advanced fighter pilot training",
-                                "Air-to-air combat simulation",
-                                "Tactical mission rehearsal",
-                                "Aircraft systems training",
-                                "Defense research and XR simulation"
-                            ].map((item, i) => (
-                                <li
-                                    key={i}
-                                    className="text-gray-400 hover:text-black transition-colors duration-300 cursor-pointer"
-                                >
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* RIGHT SIDE */}
-                    <div className="flex flex-col gap-8 sm:gap-12 lg:gap-14">
-
-                        {/* VIDEO */}
-                        <div className="relative w-full aspect-[16/9] min-h-[220px] sm:min-h-[320px] lg:min-h-[520px] overflow-hidden bg-black">
-                            <video
-                                src={"/MIG-29.mp4"}
-                                controls
-                                preload="metadata"
-                                className="w-full h-full object-cover"
-                            />
-                        </div>
-
-                        {/* QUOTE TEXT */}
-                        <div className="max-w-3xl">
-                            <p className="text-xl sm:text-2xl md:text-3xl lg:text-[42px] leading-[1.25] font-light italic text-black mb-4">
-                                “High-fidelity cockpit simulators allow pilots to train for complex missions with precision and safety while dramatically reducing operational costs.”
+                        <div>
+                            <h2 className="text-[36px] sm:text-[48px] md:text-[64px] font-semibold leading-none">
+                                $4–5K
+                            </h2>
+                            <p className="text-gray-400 mt-3">
+                                Fuel per hour
                             </p>
-
-                            {/* <p className="text-xs sm:text-sm tracking-widest uppercase text-gray-600 mb-6">
-                                            BARTEK PANASEWICZ — VP TRAINING SYSTEMS, LAND
-                                        </p> */}
-
-                            <button className="inline-flex items-center justify-center gap-1 
-                                                       bg-black text-white 
-                                                       px-6 sm:px-8 
-                                                       py-3 sm:py-4 
-                                                       text-xs sm:text-sm 
-                                                       tracking-wide 
-                                                       hover:opacity-90 transition 
-                                                       w-full sm:w-auto">
-                                READ TRAINING CASE STUDY →
-                            </button>
                         </div>
 
-                    </div>
-                </div>
-            </section>
+                        <div>
+                            <h2 className="text-[36px] sm:text-[48px] md:text-[64px] font-semibold leading-none">
+                                $2–3K
+                            </h2>
+                            <p className="text-gray-400 mt-3">
+                                Maintenance per flight hour
+                            </p>
+                        </div>
+
+                    </motion.div>
+
+                    <div className="border-b border-gray-700 my-14"></div>
 
 
-            <section className="relative w-full min-h-[70vh] sm:min-h-[85vh] lg:min-h-screen overflow-hidden">
-                <img
-                    src={img2}
-                    alt="XR Headsets"
-                    className="block w-full h-full object-cover"
-                />
-            </section>
-            <section className="bg-[#efefed] px-4 sm:px-6 py-16 sm:py-24 lg:py-[160px]">
-                <div className="mx-auto max-w-3xl text-center">
-
-                    {/* Heading */}
-                    <h2 className="text-2xl sm:text-3xl md:text-[38px] font-light tracking-tight text-black">
-                        The Future of
-                        Fighter Pilot Training
-                    </h2>
-
-                    {/* Subtitle */}
-                    <p className="mx-auto mt-4 sm:mt-5 max-w-[520px] text-sm sm:text-[15px] leading-relaxed text-gray-600">
-                        Flight simulators are transforming how pilots train and prepare for real missions.
-
-
+                    {/* SECTION 2 */}
+                    <p className="text-gray-400 tracking-widest text-xs sm:text-sm uppercase mb-10 sm:mb-14">
+                        Estimated Expenditure on OEM's
                     </p>
 
-                    {/* Variants */}
-                    <div className="mt-6 sm:mt-8 lg:mt-10 space-y-4 sm:space-y-5 lg:space-y-6 text-sm sm:text-[15px] leading-relaxed text-gray-700">
+                    <motion.div
+                        variants={statVariant}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, amount: 0.3 }}
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-center gap-10"
+                    >
 
-                        <p>
-                            Pilots can practice complex procedures, emergency handling, and combat scenarios inside a safe and controlled simulation environment.
-                        </p>
+                        <div>
+                            <h2 className="text-[36px] sm:text-[48px] md:text-[64px] font-semibold leading-none">
+                                $6–12M
+                            </h2>
+                            <p className="text-gray-400 mt-3">
+                                MiG-29 Simulator Infrastructure
+                            </p>
+                        </div>
+
+                        <div>
+                            <h2 className="text-[36px] sm:text-[48px] md:text-[64px] font-semibold leading-none">
+                                $4–6M
+                            </h2>
+                            <p className="text-gray-400 mt-3">
+                                Full-Mission Cockpit Simulator
+                            </p>
+                        </div>
+
+                        <div>
+                            <h2 className="text-[36px] sm:text-[48px] md:text-[64px] font-semibold leading-none">
+                                $600M+
+                            </h2>
+                            <p className="text-gray-400 mt-3">
+                                OEM Support & Engine Contracts
+                            </p>
+                        </div>
+
+                    </motion.div>
+
+                    <div className="border-b border-gray-700 my-14"></div>
 
 
-                        <p>
-                            The platform is designed to evolve continuously, supporting future upgrades in flight modeling,
-                            mission environments, and immersive visualization systems.
-                        </p>
+                    {/* SECTION 3 */}
+                    <p className="text-gray-400 tracking-widest text-xs sm:text-sm uppercase mb-10 sm:mb-14">
+                        Operational Training Investment
+                    </p>
+
+                    <motion.div
+                        variants={statVariant}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, amount: 0.3 }}
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-center gap-10"
+                    >
+
+                        <div>
+                            <h2 className="text-[36px] sm:text-[48px] md:text-[64px] font-semibold leading-none">
+                                900–1,000
+                            </h2>
+                            <p className="text-gray-400 mt-3">
+                                Total Fighter Pilots (IAF)
+                            </p>
+                        </div>
+
+                        <div>
+                            <h2 className="text-[36px] sm:text-[48px] md:text-[64px] font-semibold leading-none">
+                                200,000+ hrs
+                            </h2>
+                            <p className="text-gray-400 mt-3">
+                                Total Annual Flying Hours
+                            </p>
+                        </div>
+
+                        <div>
+                            <h2 className="text-[36px] sm:text-[48px] md:text-[64px] font-semibold leading-none">
+                                $1.1–1.5B
+                            </h2>
+                            <p className="text-gray-400 mt-3">
+                                Estimated Annual Training Cost
+                            </p>
+                        </div>
+
+                    </motion.div>
+
+                </div>
+
+            </section>
+            {/* ================= ANDURIL STYLE HERO ================= */}
+            <section className="relative py-20 sm:py-24 md:py-32 px-6 sm:px-10 lg:px-20 overflow-hidden bg-black">
+
+                {/* Subtle radial glow */}
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_40%),radial-gradient(circle_at_80%_60%,rgba(255,255,255,0.06),transparent_45%)]"></div>
+
+                <div className="relative max-w-[1100px] mx-auto text-left lg:ml-20">
+
+                    <motion.h2
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        className="
+        font-extrabold uppercase
+        text-[26px] sm:text-[34px] md:text-[46px] lg:text-[60px]
+        leading-[1.08]
+        tracking-tight
+        text-white
+      "
+                    >
+
+                        {[
+                            "WE ARE PROVIDING",
+                            "HIGH FIDELITY MIXED REALITY",
+                            "COCKPIT SIMULATORS",
+                            "REPLICATING ACTUAL COCKPIT",
+                            "ENVIRONMENT FEEL AND TOUCH"
+                        ].map((line, i) => (
+                            <motion.span
+                                key={i}
+                                variants={{
+                                    hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
+                                    visible: {
+                                        opacity: 1,
+                                        y: 0,
+                                        filter: "blur(0px)",
+                                        transition: {
+                                            delay: i * 0.2,
+                                            duration: 0.8,
+                                            ease: [0.22, 1, 0.36, 1]
+                                        }
+                                    }
+                                }}
+                                className={`block ${i === 1
+                                    ? "bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent"
+                                    : i === 4
+                                        ? "text-gray-500"
+                                        : i === 3
+                                            ? "text-gray-300"
+                                            : ""
+                                    }`}
+                            >
+                                {line}
+                            </motion.span>
+                        ))}
+
+                    </motion.h2>
+
+                </div>
+
+            </section>
+            <section className="w-full bg-black text-white py-20 sm:py-24 lg:py-32">
+
+                <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-20">
+
+                    {/* TITLE */}
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-light mb-12 sm:mb-16">
+                        OUR ADVANCED COCKPIT SIMULATOR PROVIDES
+                    </h2>
+
+                    {/* TAB MENU */}
+                    <div className="flex overflow-x-auto gap-6 sm:gap-10 text-gray-400 border-b border-gray-700 pb-4 sm:pb-6 mb-12 sm:mb-16">
+
+                        {tabs.map((tab, index) => (
+                            <button
+                                key={index}
+                                onClick={() => setActive(index)}
+                                className={`whitespace-nowrap transition ${active === index
+                                        ? "text-white border-b border-white pb-2"
+                                        : ""
+                                    }`}
+                            >
+                                {tab.label}
+                            </button>
+                        ))}
 
                     </div>
 
-                    {/* Button */}
-                    <button className="mt-10 sm:mt-12 lg:mt-16 
-            inline-flex items-center justify-center gap-3 
-            bg-black 
-            px-6 sm:px-8 lg:px-10 
-            py-3 sm:py-3.5 lg:py-4 
-            text-xs sm:text-[13px] 
-            tracking-widest text-white 
-            hover:bg-gray-900 transition 
-            w-full sm:w-auto">
-                        DOWNLOAD SIMULATOR BROCHURE →
-                    </button>
+                    {/* CONTENT */}
+                    <div className="bg-gray-100 text-black p-6 sm:p-10 lg:p-16 grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-20">
+
+                        {/* LEFT TEXT */}
+                        <AnimatePresence mode="wait">
+
+                            <motion.div
+                                key={active}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.4 }}
+                            >
+
+                                <p className="text-sm tracking-wide text-gray-500 mb-4">
+                                    0{tabs[active].id} / 04
+                                </p>
+
+                                <p className="text-xs tracking-widest mb-6">
+                                    {tabs[active].title}
+                                </p>
+
+                                <p className="text-lg sm:text-xl md:text-2xl max-w-[520px] leading-relaxed">
+                                    {tabs[active].text}
+                                </p>
+
+                                <div className="text-[60px] sm:text-[90px] lg:text-[120px] font-bold mt-10 lg:mt-16 opacity-80">
+                                    {tabs[active].id}
+                                </div>
+
+                            </motion.div>
+
+                        </AnimatePresence>
+
+                        {/* IMAGE */}
+                        <div className="relative w-full h-[220px] sm:h-[280px] lg:h-[360px] overflow-hidden rounded-lg">
+
+                            <AnimatePresence mode="wait">
+
+                                <motion.img
+                                    key={tabs[active].img}
+                                    src={tabs[active].img}
+                                    alt=""
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                    initial={{ opacity: 0, x: 80 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    exit={{ opacity: 0, x: -80 }}
+                                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                                />
+
+                            </AnimatePresence>
+
+                        </div>
+
+                    </div>
 
                 </div>
+
             </section>
+
+
+
+
             <TalkToSalesCTA />
             <Footer />
         </div>

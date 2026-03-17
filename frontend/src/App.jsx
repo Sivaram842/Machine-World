@@ -93,6 +93,16 @@ import Mig29KCaseStudy4 from "./pages/CaseStudyPages/Mig29KCaseStudy4";
 import Mig29KCaseStudy5 from "./pages/CaseStudyPages/Mig29KCaseStudy5";
 import Mig29KCaseStudy6 from "./pages/CaseStudyPages/Mig29KCaseStudy6";
 
+
+import PageTransitionOverlay from "./components/PageTransitionOverlay";
+import Enterprise from "./pages/UseCases/Enterprise";
+import WhyXR from "./pages/WhyXR";
+import Su30CaseStudy7 from "./pages/CaseStudyPages/Su30CaseStudy7";
+import TejasCaseStudy7 from "./pages/CaseStudyPages/TejasCaseStudy7";
+import Mig29CaseStudy7 from "./pages/CaseStudyPages/Mig29CaseStudy7";
+import RafaleCaseStudy7 from "./pages/CaseStudyPages/RafaleCaseStudy7";
+import Mig29KCaseStudy7 from "./pages/CaseStudyPages/Mig29KCaseStudy7";
+
 const App = () => {
   // stop browser scroll restoration (keep this if you still want it)
   useEffect(() => {
@@ -109,6 +119,7 @@ const App = () => {
       <SmoothScroll />
       <ScrollToTop />
       <AnimatePresence mode="wait">
+        {/* <PageTransitionOverlay /> */}
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
@@ -140,16 +151,16 @@ const App = () => {
           <Route path="/accessories" element={<Accessories />} />
           <Route path="/minimal-os" element={<MinimalOs />} />
           <Route path="/spatial-os" element={<SpatialOs />} />
-          <Route path="/campanyandresources/investors" element={<Investors />} />
+          <Route path="/company/investors" element={<Investors />} />
 
-          <Route path="/campanyandresources/casestudies" element={<CaseStudies />} />
+          <Route path="/resources/casestudies" element={<CaseStudies />} />
           <Route path="/resources" element={<Resources />} />
-          <Route path="/campanyandresources/productbook" element={<ProductBook />} />
+          <Route path="/resources/productbook" element={<ProductBook />} />
           <Route path="/insider" element={<Insider />} />
 
 
-          <Route path="/campanyandresources/jobs" element={<Jobs />} />
-          <Route path="/campanyandresources/aboutus" element={<AboutUs />} />
+          <Route path="/company/jobs" element={<Jobs />} />
+          <Route path="/company/aboutus" element={<AboutUs />} />
           <Route path="/newsroom" element={<Newsroom />} />
 
           <Route path="/learning" element={<Learning />} />
@@ -158,6 +169,7 @@ const App = () => {
           <Route path="/usecases/defence/air" element={<Aerial />} />
           <Route path="/usecases/defence/ground" element={<GroundWarfare />} />
           <Route path="/medical" element={<Medical />} />
+          <Route path="/usecases/enterprise" element={<Enterprise />} />
 
           <Route path="/contactus" element={<ContactSupportPage />} />
           <Route path="/accountportal" element={<HelpCenterPage />} />
@@ -183,6 +195,8 @@ const App = () => {
           <Route path="/su30-case-study-4" element={<Su30CaseStudy4 />} />
           <Route path="/su30-case-study-5" element={<Su30CaseStudy5 />} />
           <Route path="/su30-case-study-6" element={<Su30CaseStudy6 />} />
+          <Route path="/su30-case-study-7" element={<Su30CaseStudy7 />} />
+
 
           <Route path="/tejas-case-study-1" element={<TejasCaseStudy1 />} />
           <Route path="/tejas-case-study-2" element={<TejasCaseStudy2 />} />
@@ -190,6 +204,8 @@ const App = () => {
           <Route path="/tejas-case-study-4" element={<TejasCaseStudy4 />} />
           <Route path="/tejas-case-study-5" element={<TejasCaseStudy5 />} />
           <Route path="/tejas-case-study-6" element={<TejasCaseStudy6 />} />
+          <Route path="/tejas-case-study-7" element={<TejasCaseStudy7 />} />
+
 
           <Route path="/rafale-case-study-1" element={<RafaleCaseStudy1 />} />
           <Route path="/rafale-case-study-2" element={<RafaleCaseStudy2 />} />
@@ -197,6 +213,7 @@ const App = () => {
           <Route path="/rafale-case-study-4" element={<RafaleCaseStudy4 />} />
           <Route path="/rafale-case-study-5" element={<RafaleCaseStudy5 />} />
           <Route path="/rafale-case-study-6" element={<RafaleCaseStudy6 />} />
+          <Route path="/rafale-case-study-7" element={<RafaleCaseStudy7 />} />
 
           <Route path="/mig29-case-study-1" element={<Mig29CaseStudy1 />} />
           <Route path="/mig29-case-study-2" element={<Mig29CaseStudy2 />} />
@@ -204,6 +221,7 @@ const App = () => {
           <Route path="/mig29-case-study-4" element={<Mig29CaseStudy4 />} />
           <Route path="/mig29-case-study-5" element={<Mig29CaseStudy5 />} />
           <Route path="/mig29-case-study-6" element={<Mig29CaseStudy6 />} />
+          <Route path="/mig29-case-study-7" element={<Mig29CaseStudy7 />} />
 
           <Route path="/mig29k-case-study-1" element={<Mig29KCaseStudy1 />} />
           <Route path="/mig29k-case-study-2" element={<Mig29KCaseStudy2 />} />
@@ -211,6 +229,9 @@ const App = () => {
           <Route path="/mig29k-case-study-4" element={<Mig29KCaseStudy4 />} />
           <Route path="/mig29k-case-study-5" element={<Mig29KCaseStudy5 />} />
           <Route path="/mig29k-case-study-6" element={<Mig29KCaseStudy6 />} />
+          <Route path="/mig29k-case-study-7" element={<Mig29KCaseStudy7 />} />
+
+          <Route path="/whyxr" element={<WhyXR />} />
 
         </Routes>
       </AnimatePresence>

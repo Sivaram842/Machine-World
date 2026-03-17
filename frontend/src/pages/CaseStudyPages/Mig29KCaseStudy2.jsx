@@ -1,230 +1,226 @@
 import Mig29K2 from "../../assets/Mig29K-2.jpg";
 import Mig29K21 from "../../assets/Mig29K-2-1.jpg";
 import Mig29K22 from "../../assets/Mig29K-2-2.jpg";
-
+import Navbar from "../../../src/components/NewNavbar"
+import Footer from "../../../src/components/NewFooter"
 export default function Mig29KCaseStudy2() {
     return (
-        <div className="bg-[#f3f3f3] text-black">
+        <div>
+            <Navbar />
+            <div className="bg-black text-white">
 
-            {/* ================= HERO ================= */}
-            <section className="py-20 md:py-32 text-center px-6">
+                {/* ================= HERO ================= */}
+                <section className="py-20 md:py-32 text-center px-6">
 
-                <p className="uppercase text-xs md:text-sm tracking-[3px] text-gray-600">
-                    Case Study
-                </p>
-
-                <h1 className="mt-6 md:mt-8 
-        text-[24px] sm:text-[28px] md:text-[36px] lg:text-[44px] 
-        font-extrabold uppercase 
-        leading-[1.2] md:leading-[1.15] 
-        max-w-[760px] mx-auto">
-
-                    MiG-29K Operations <br />
-                    in the Indian Navy
-                </h1>
-
-                <p className="mt-8 md:mt-10 text-[16px] md:text-[18px] leading-[28px] md:leading-[32px] text-gray-700 max-w-[620px] mx-auto">
-                    The MiG-29K is the primary carrier-based fighter aircraft of the
-                    Indian Navy, providing air superiority, maritime strike capability,
-                    and fleet protection during naval operations.
-                </p>
-
-            </section>
-
-
-            {/* ================= HERO IMAGE ================= */}
-            <section className="px-4 md:px-6">
-                <div className="max-w-[1100px] mx-auto">
-
-                    <img
-                        src={Mig29K2}
-                        alt="MiG-29K Indian Navy fighter"
-                        className="w-full h-[300px] sm:h-[400px] md:h-[600px] object-cover"
-                    />
-
-                </div>
-            </section>
-
-
-            {/* ================= BACKGROUND ================= */}
-            <section className="py-16 md:py-24 px-6">
-
-                <div className="max-w-[760px] mx-auto space-y-6 md:space-y-8
-        text-[16px] md:text-[18px] leading-[28px] md:leading-[32px] text-gray-800">
-
-                    <p>
-                        The <strong>MiG-29K</strong> forms the backbone of the
-                        carrier-based fighter fleet of the <strong>Indian Navy</strong>.
+                    <p className="uppercase text-xs md:text-sm tracking-[3px] text-gray-500">
+                        Case Study
                     </p>
 
-                    <p>
-                        India procured MiG-29K aircraft to operate from aircraft carriers
-                        such as:
+                    <h1 className="mt-6 md:mt-8 
+                text-[26px] sm:text-[32px] md:text-[40px] lg:text-[48px] 
+                font-extrabold uppercase 
+                leading-[1.15] 
+                max-w-[780px] mx-auto">
+
+                        MiG-29K Operations <br />
+                        in the Indian Navy
+                    </h1>
+
+                    <p className="mt-8 md:mt-10 text-[16px] md:text-[18px] leading-[30px] text-gray-400 max-w-[640px] mx-auto">
+                        The MiG-29K serves as the primary carrier-based fighter of the
+                        Indian Navy, providing air superiority, strike capability,
+                        and fleet defense.
                     </p>
 
-                    <ul className="list-disc pl-6 space-y-2">
-                        <li>INS Vikramaditya</li>
-                        <li>INS Vikrant</li>
-                    </ul>
-
-                    <p>
-                        These aircraft provide air superiority and strike capability
-                        to protect naval fleets operating across the Indian Ocean region.
-                    </p>
-
-                </div>
-
-            </section>
+                </section>
 
 
-            {/* ================= SECOND IMAGE ================= */}
-            <section className="px-4 md:px-6">
-                <div className="max-w-[1100px] mx-auto">
+                {/* ================= HERO IMAGE ================= */}
+                <section className="px-4 md:px-6">
+                    <div className="max-w-[780px] mx-auto">
 
-                    <img
-                        src={Mig29K21}
-                        alt="MiG-29K carrier operations"
-                        className="w-full h-[260px] sm:h-[360px] md:h-[520px] object-cover"
-                    />
+                        <img
+                            src={Mig29K2}
+                            alt="MiG-29K Indian Navy fighter"
+                            className="w-full h-[220px] sm:h-[320px] md:h-[450px] object-cover rounded-2xl shadow-lg hover:scale-[1.02] transition duration-500"
+                        />
 
-                </div>
-            </section>
-
-
-            {/* ================= OPERATIONAL ROLES ================= */}
-            <section className="py-16 md:py-24 px-6">
-
-                <div className="max-w-[760px] mx-auto space-y-8
-        text-[16px] md:text-[18px] leading-[30px] text-gray-800">
-
-                    <h2 className="text-[24px] font-bold uppercase">
-                        Operational Roles
-                    </h2>
-
-                    <h3 className="font-bold text-[18px]">Fleet Air Defense</h3>
-                    <p>
-                        MiG-29K fighters intercept hostile aircraft or incoming threats
-                        approaching naval carrier groups, protecting the fleet.
-                    </p>
-
-                    <h3 className="font-bold text-[18px]">Maritime Strike Missions</h3>
-                    <p>
-                        The aircraft can launch anti-ship missiles capable of attacking
-                        enemy naval vessels at long distances.
-                    </p>
-
-                    <h3 className="font-bold text-[18px]">Air Superiority</h3>
-                    <p>
-                        MiG-29K fighters engage enemy aircraft to establish control of
-                        the airspace above naval forces.
-                    </p>
-
-                    <h3 className="font-bold text-[18px]">Reconnaissance</h3>
-                    <p>
-                        The aircraft can also conduct surveillance missions to monitor
-                        maritime activity and gather operational intelligence.
-                    </p>
-
-                </div>
-
-            </section>
+                    </div>
+                </section>
 
 
-            {/* ================= THIRD IMAGE ================= */}
-            <section className="px-4 md:px-6">
+                {/* ================= BACKGROUND ================= */}
+                <section className="py-16 md:py-24 px-6">
 
-                <div className="max-w-[900px] mx-auto">
+                    <div className="max-w-[780px] mx-auto space-y-6 md:space-y-8
+                text-[16px] md:text-[18px] leading-[30px] text-gray-300">
 
-                    <img
-                        src={Mig29K22}
-                        alt="MiG-29K weapons and avionics"
-                        className="w-full object-cover"
-                    />
+                        <p>
+                            The <strong className="text-white">MiG-29K</strong> forms the backbone of
+                            carrier-based aviation in the
+                            <strong className="text-white"> Indian Navy</strong>.
+                        </p>
 
-                </div>
+                        <p>
+                            These aircraft operate from carriers such as:
+                        </p>
 
-            </section>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>INS Vikramaditya</li>
+                            <li>INS Vikrant</li>
+                        </ul>
 
+                        <p>
+                            They provide air superiority and strike capability across the
+                            Indian Ocean region.
+                        </p>
 
-            {/* ================= WEAPONS CAPABILITY ================= */}
-            <section className="py-16 md:py-24 px-6">
+                    </div>
 
-                <div className="max-w-[760px] mx-auto space-y-6
-        text-[16px] md:text-[18px] leading-[30px] text-gray-800">
-
-                    <h2 className="text-[24px] font-bold uppercase">
-                        Weapons Capability
-                    </h2>
-
-                    <p>
-                        The MiG-29K can carry a wide range of weapons for both defensive
-                        and offensive naval missions.
-                    </p>
-
-                    <ul className="list-disc pl-6 space-y-2">
-                        <li>Air-to-air missiles</li>
-                        <li>Anti-ship missiles</li>
-                        <li>Precision-guided bombs</li>
-                        <li>Unguided rockets</li>
-                    </ul>
-
-                </div>
-
-            </section>
+                </section>
 
 
-            {/* ================= ADVANTAGES ================= */}
-            <section className="py-16 md:py-24 px-6">
+                {/* ================= SECOND IMAGE ================= */}
+                <section className="px-4 md:px-6">
+                    <div className="max-w-[780px] mx-auto">
 
-                <div className="max-w-[760px] mx-auto space-y-6
-        text-[16px] md:text-[18px] leading-[30px] text-gray-800">
+                        <img
+                            src={Mig29K21}
+                            alt="MiG-29K carrier operations"
+                            className="w-full h-[220px] sm:h-[320px] md:h-[450px] object-cover rounded-2xl shadow-lg hover:scale-[1.02] transition duration-500"
+                        />
 
-                    <h2 className="text-[24px] font-bold uppercase">
-                        Advantages for Carrier Operations
-                    </h2>
-
-                    <ul className="list-disc pl-6 space-y-2">
-                        <li>Powerful engines enabling ski-jump takeoff</li>
-                        <li>Strong landing gear for arrested carrier landings</li>
-                        <li>Folding wings for efficient storage on carrier decks</li>
-                        <li>Modern avionics for multirole combat missions</li>
-                    </ul>
-
-                </div>
-
-            </section>
+                    </div>
+                </section>
 
 
-            {/* ================= STRATEGIC IMPORTANCE ================= */}
-            <section className="py-16 md:py-24 px-6">
+                {/* ================= ROLES ================= */}
+                <section className="py-16 md:py-24 px-6">
 
-                <div className="max-w-[760px] mx-auto space-y-6
-        text-[16px] md:text-[18px] leading-[30px] text-gray-800">
+                    <div className="max-w-[780px] mx-auto space-y-8
+                text-[16px] md:text-[18px] leading-[30px] text-gray-300">
 
-                    <h2 className="text-[24px] font-bold uppercase">
-                        Strategic Importance for India
-                    </h2>
+                        <h2 className="text-[26px] font-bold uppercase text-white">
+                            Operational Roles
+                        </h2>
 
-                    <p>
-                        The MiG-29K plays a critical role in India's maritime defense
-                        strategy by strengthening the air power of naval carrier groups.
-                    </p>
+                        <h3 className="font-semibold text-[18px] text-white">Fleet Air Defense</h3>
+                        <p>
+                            Intercepts incoming threats to protect carrier strike groups.
+                        </p>
 
-                    <ul className="list-disc pl-6 space-y-2">
-                        <li>Protection of aircraft carriers</li>
-                        <li>Extended reach of naval air power</li>
-                        <li>Rapid response to maritime threats</li>
-                    </ul>
+                        <h3 className="font-semibold text-[18px] text-white">Maritime Strike</h3>
+                        <p>
+                            Launches anti-ship missiles against hostile naval targets.
+                        </p>
 
-                    <p>
-                        Carrier-based fighters allow the Indian Navy to project military
-                        power across the Indian Ocean region.
-                    </p>
+                        <h3 className="font-semibold text-[18px] text-white">Air Superiority</h3>
+                        <p>
+                            Engages enemy aircraft to control airspace over naval forces.
+                        </p>
 
-                </div>
+                        <h3 className="font-semibold text-[18px] text-white">Reconnaissance</h3>
+                        <p>
+                            Conducts surveillance and intelligence gathering missions.
+                        </p>
 
-            </section>
+                    </div>
 
+                </section>
+
+
+                {/* ================= THIRD IMAGE ================= */}
+                <section className="px-4 md:px-6">
+                    <div className="max-w-[780px] mx-auto">
+
+                        <img
+                            src={Mig29K22}
+                            alt="MiG-29K weapons and avionics"
+                            className="w-full h-[220px] sm:h-[320px] md:h-[450px] object-cover rounded-2xl shadow-lg hover:scale-[1.02] transition duration-500"
+                        />
+
+                    </div>
+                </section>
+
+
+                {/* ================= WEAPONS ================= */}
+                <section className="py-16 md:py-24 px-6">
+
+                    <div className="max-w-[780px] mx-auto space-y-6
+                text-[16px] md:text-[18px] leading-[30px] text-gray-300">
+
+                        <h2 className="text-[26px] font-bold uppercase text-white">
+                            Weapons Capability
+                        </h2>
+
+                        <p>
+                            The MiG-29K supports a wide range of weapon systems:
+                        </p>
+
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>Air-to-air missiles</li>
+                            <li>Anti-ship missiles</li>
+                            <li>Precision-guided bombs</li>
+                            <li>Unguided rockets</li>
+                        </ul>
+
+                    </div>
+
+                </section>
+
+
+                {/* ================= ADVANTAGES ================= */}
+                <section className="py-16 md:py-24 px-6">
+
+                    <div className="max-w-[780px] mx-auto space-y-6
+                text-[16px] md:text-[18px] leading-[30px] text-gray-300">
+
+                        <h2 className="text-[26px] font-bold uppercase text-white">
+                            Carrier Operation Advantages
+                        </h2>
+
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>High thrust for ski-jump takeoff</li>
+                            <li>Reinforced landing gear</li>
+                            <li>Folding wings for deck storage</li>
+                            <li>Modern multirole avionics</li>
+                        </ul>
+
+                    </div>
+
+                </section>
+
+
+                {/* ================= STRATEGIC ================= */}
+                <section className="py-16 md:py-24 px-6">
+
+                    <div className="max-w-[780px] mx-auto space-y-6
+                text-[16px] md:text-[18px] leading-[30px] text-gray-300">
+
+                        <h2 className="text-[26px] font-bold uppercase text-white">
+                            Strategic Importance
+                        </h2>
+
+                        <p>
+                            The MiG-29K is central to India's maritime defense strategy.
+                        </p>
+
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>Carrier protection</li>
+                            <li>Extended naval air reach</li>
+                            <li>Rapid maritime response</li>
+                        </ul>
+
+                        <p>
+                            It enables power projection across the Indian Ocean region.
+                        </p>
+
+                    </div>
+
+                </section>
+
+            </div>
+            <Footer />
         </div>
     );
 }

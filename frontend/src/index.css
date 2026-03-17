@@ -52,7 +52,40 @@ html {
 }
 
 html,
+body {
+    overflow-x: hidden;
+}
+
+/* html,
 body,
 #root {
     background: black;
+} */
+
+.animate-text {
+    animation: text-appear ease-in both;
+    animation-timeline: view();
+    animation-range: 0vh 70vh;
+}
+
+.animate-image {
+    animation: image-appear ease-in both;
+    animation-timeline: view();
+    animation-range: entry 50% 100vh;
+}
+
+@keyframes image-appear {
+    from {
+        filter: saturate(0) contrast(4) brightness(.1) blur(3px);
+        opacity: 0;
+        scale: .95;
+        transform: translateY(4rem);
+    }
+}
+
+@keyframes text-appear {
+    from {
+        opacity: 0;
+        transform: translateY(8rem);
+    }
 }

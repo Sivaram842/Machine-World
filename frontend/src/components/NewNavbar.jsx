@@ -1,6 +1,9 @@
 import React, { useState } from "react";
-import logo from "../assets/antiworld_white.png"
+import logoWhite from "../assets/antiworld_white.png"
+import logoBlack from "../assets/logo.png"
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import Typewriter from "../components/Typewriter";
 const menuData = {
     Air: {
         description:
@@ -8,28 +11,36 @@ const menuData = {
         items: [
             {
                 name: "Simulators",
-                path: "/air/simulators",
+                // path: "/air/simulators",
                 submenu: [
-                    { name: "Defence", path: "/air/simulators/defence" },
-                    { name: "Private", path: "/air/simulators/private" }
+                    {
+                        name: "Defence",
+                        path: "/air/simulators/defence",
+                        children: [
+                            { name: "Rafale", path: "/rafale" },
+                            { name: "Su-30MKI", path: "/su-30mki" },
+                            { name: "Tejas", path: "/tejas" },
+                            { name: "MIG-29", path: "/mig-29" },
+                            { name: "MIG-29K", path: "/mig-29k" }
+                        ]
+                    },
+                    {
+                        name: "Private",
+                        // path: "/air/simulators/private",
+                        children: [
+                            { name: "Helicopter", }
+                        ]
+                    }
                 ]
             },
             {
                 name: "Counter UAVs",
-                path: "/air/counter-uavs",
+                // path: "/air/counter-uavs",
                 submenu: [
-                    { name: "Recon System", path: "/air/counter-uavs/recon" },
-                    { name: "Stealth Mode", path: "/air/counter-uavs/stealth" }
+                    { name: "Recon System", },
+                    { name: "Stealth Mode", }
                 ]
-            },
-            // {
-            //     name: "Dive Systems",
-            //     path: "/air/dive-systems",
-            //     submenu: [
-            //         { name: "Underwater Robotics", path: "/air/dive/robotics" },
-            //         { name: "Inspection Tools", path: "/air/dive/inspection" }
-            //     ]
-            // }
+            }
         ]
     },
 
@@ -39,10 +50,10 @@ const menuData = {
         items: [
             {
                 name: "Simulators",
-                path: "/land/sentry-tower",
+                // path: "/land/sentry-tower",
                 submenu: [
-                    { name: "Defense", path: "/land/simulators/defence" },
-                    { name: "Private", path: "/land/simulators/private" }
+                    { name: "Defense", },
+                    { name: "Private", }
                 ]
             },
             // {
@@ -70,15 +81,15 @@ const menuData = {
         items: [
             {
                 name: "Warfare Solutions",
-                path: "/software/interceptor",
+                // path: "/software/interceptor",
                 submenu: [
-                    { name: "Comand & Control System", path: "/software/interceptor/drone" },
-                    { name: "AI Algorithms", path: "/software/interceptor/deployment" }
+                    { name: "Comand & Control System", },
+                    { name: "AI Algorithms", }
                 ]
             },
             {
                 name: "Product Software",
-                path: "/software/air-defense",
+                // path: "/software/air-defense",
                 submenu: [
                     { name: "DAS", path: "/product1" },
                     { name: "Realm", path: "/product2" },
@@ -103,7 +114,7 @@ const menuData = {
         items: [
             {
                 name: "Defence",
-                path: "/usecases/defence",
+                // path: "/usecases/defence",
                 submenu: [
                     { name: "Ground Warfare", path: "/usecases/defence/ground" },
                     { name: "Aerial Warfare", path: "/usecases/defence/air" }
@@ -128,52 +139,45 @@ const menuData = {
         ]
     },
 
-    "Company and Resources": {
+    "Company": {
         description:
-            "Company Resources provide information about our company, opportunities, and insights. Explore our story, careers, case studies, and investment opportunities.",
+            "Learn about our organization, mission, and opportunities to work with us.",
         items: [
             {
-                name: "About Us ",
-                path: "/campanyandresources/aboutus",
-                submenu: [
-                    // { name: "Autonomy Engine", path: "/lattice/os/autonomy" },
-                    // { name: "Mission Control", path: "/lattice/os/control" }
-                ]
+                name: "About Us",
+                path: "/company/aboutus",
+                submenu: []
             },
             {
                 name: "Jobs",
-                path: "/campanyandresources/jobs",
-                submenu: [
-                    // { name: "Battlefield AI", path: "/lattice/ai/battlefield" },
-                    // { name: "Real-time Analysis", path: "/lattice/ai/realtime" }
-                ]
-            },
-            {
-                name: "Case Studies",
-                path: "/campanyandresources/casestudies",
-                submenu: [
-                    // { name: "Multi-source Data", path: "/lattice/sensor/data" },
-                    // { name: "Threat Analysis", path: "/lattice/sensor/threat" }
-                ]
-            },
-            {
-                name: "Product Book",
-                path: "/campanyandresources/productbook",
-                submenu: [
-                    // { name: "Multi-source Data", path: "/lattice/sensor/data" },
-                    // { name: "Threat Analysis", path: "/lattice/sensor/threat" }
-                ]
+                path: "/company/jobs",
+                submenu: []
             },
             {
                 name: "Invest on Us",
-                path: "/campanyandresources/investors",
-                submenu: [
-                    // { name: "Multi-source Data", path: "/lattice/sensor/data" },
-                    // { name: "Threat Analysis", path: "/lattice/sensor/threat" }
-                ]
+                path: "/company/investors",
+                submenu: []
             }
         ]
     },
+
+    "Resources": {
+        description:
+            "Explore insights, documentation, and real-world implementations of our technologies.",
+        items: [
+            {
+                name: "Case Studies",
+                path: "/resources/casestudies",
+                submenu: []
+            },
+            {
+                name: "Product Book",
+                path: "/resources/productbook",
+                submenu: []
+            }
+        ]
+    },
+
 
     // "Arsenal-1": {
     //     description:
@@ -214,24 +218,85 @@ const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [mobileActiveMenu, setMobileActiveMenu] = useState(null);
     const [mobileActiveAccordion, setMobileActiveAccordion] = useState(null);
+    const [mobileActiveChildAccordion, setMobileActiveChildAccordion] = useState(null);
+    const [activeThirdMenu, setActiveThirdMenu] = useState(null);
     const navigate = useNavigate();
+    const location = useLocation();
+    const darkNavbarPages = [
+        "/",
+        "/home",
+        "/talk-to-sales",
+        "/whyxr",
+        "/rafale",
+        "/mig-29k",
+        "/mig-29",
+        "/tejas",
+        "/su-30mki",
+        "/su30-case-study-1",
+        "/su30-case-study-2",
+        "/su30-case-study-3",
+        "/su30-case-study-4",
+        "/su30-case-study-5",
+        "/su30-case-study-6",
+        "/su30-case-study-7",
+        "/tejas-case-study-1",
+        "/tejas-case-study-2",
+        "/tejas-case-study-3",
+        "/tejas-case-study-4",
+        "/tejas-case-study-5",
+        "/tejas-case-study-6",
+        "/tejas-case-study-7",
+        "/rafale-case-study-1",
+        "/rafale-case-study-2",
+        "/rafale-case-study-3",
+        "/rafale-case-study-4",
+        "/rafale-case-study-5",
+        "/rafale-case-study-6",
+        "/rafale-case-study-7",
+        "/mig29-case-study-1",
+        "/mig29-case-study-2",
+        "/mig29-case-study-3",
+        "/mig29-case-study-4",
+        "/mig29-case-study-5",
+        "/mig29-case-study-6",
+        "/mig29-case-study-7",
+        "/mig29k-case-study-1",
+        "/mig29k-case-study-2",
+        "/mig29k-case-study-3",
+        "/mig29k-case-study-4",
+        "/mig29k-case-study-5",
+        "/mig29k-case-study-6",
+        "/mig29k-case-study-7",
+
+    ];
+
+    const isDarkNavbar = darkNavbarPages.includes(location.pathname);
     return (
-        <div>
+        <div className="relative">
+            {activeMenu && (
+                <div className="fixed inset-0 backdrop-blur-sm bg-white/30 z-40 pointer-events-none"></div>
+            )}
             <nav
-                className="bg-black text-white w-full relative"
+                className={`w-full relative transition-all duration-300 z-50 ${isDarkNavbar
+                    ? "bg-black text-white "
+                    : activeMenu
+                        ? "bg-gray-200 text-black backdrop-blur-md"
+                        : "bg-white text-black "
+                    }`}
                 onMouseLeave={() => setActiveMenu(null)}
             >
+
                 {/* NAVBAR */}
-                <div className="flex justify-between items-center px-6 lg:px-10 py-5">
+                <div className="flex justify-between items-center px-4 sm:px-6 lg:px-10 py-4">
                     {/* LOGO */}
                     <img
-                        src={logo}
+                        src={isDarkNavbar ? logoWhite : logoBlack}
                         alt="Antiworld"
                         onClick={() => {
                             setActiveMenu(null);
                             navigate("/");
                         }}
-                        className="h-7 sm:h-8 lg:h-9 cursor-pointer"
+                        className="h-6 sm:h-7 md:h-8 lg:h-9 cursor-pointer"
                     />
 
                     {/* CENTER MENU (DESKTOP) */}
@@ -242,6 +307,7 @@ const Navbar = () => {
                                 onMouseEnter={() => {
                                     setActiveMenu(menu);
                                     setActiveSubMenu(null);
+                                    setActiveThirdMenu(null);
                                 }}
                                 className="cursor-pointer text-sm tracking-wide"
                             >
@@ -249,34 +315,45 @@ const Navbar = () => {
                             </div>
                         ))}
                     </div>
-
-                    {/* RIGHT SIDE */}
-                    <button
-                        className="bg-black text-white px-4 sm:px-5 lg:px-6 py-2 text-xs sm:text-sm hover:opacity-80"
-                        onClick={() => navigate("/talk-to-sales")}
-                    >
-                        TALK TO SALES →
-                    </button>
-                    {/* MOBILE MENU BUTTON */}
-                    <button
-                        className="lg:hidden text-2xl"
-                        onClick={() => setMobileMenuOpen(true)}
-                    >
-                        ☰
-                    </button>
+                    <div className="flex items-center gap-3 flex-shrink-0">
+                        {/* RIGHT SIDE */}
+                        <button
+                            className="bg-black text-white px-3 sm:px-5 py-2 text-xs sm:text-sm whitespace-nowrap hover:opacity-80"
+                            onClick={() => navigate("/talk-to-sales")}
+                        >
+                            TALK TO SALES →
+                        </button>
+                        {/* MOBILE MENU BUTTON */}
+                        <button
+                            className="lg:hidden text-2xl"
+                            onClick={() => setMobileMenuOpen(true)}
+                        >
+                            ☰
+                        </button>
+                    </div>
                 </div>
 
                 {/* DROPDOWN */}
                 {activeMenu && !mobileMenuOpen && (
-                    <div className="absolute left-0 top-full w-full bg-black border-t border-neutral-800 z-50">
-                        <div className="grid grid-cols-3 px-16 py-12 gap-12">
-                            {/* LEFT */}
+                    <div
+                        className={`absolute left-0 top-full w-full  z-50 ${isDarkNavbar
+                            ? "bg-black border-neutral-800"
+                            : "bg-gray-200 border-neutral-200"
+                            }`}
+                    >
+                        <div className="max-w-[1400px] mx-auto  grid grid-cols-1 lg:grid-cols-[1.6fr_1fr_1.4fr] px-16 py-12 gap-10">
                             <div className="max-w-sm">
-                                <p className="text-xs text-gray-400 uppercase mb-4">
+                                <p
+                                    className={`text-sm leading-relaxed ${isDarkNavbar ? "text-gray-300" : "text-gray-600"
+                                        }`}
+                                >
                                     {activeMenu} Domain
                                 </p>
 
-                                <p className="text-sm text-gray-300 leading-relaxed">
+                                <p
+                                    className={`text-sm leading-relaxed ${isDarkNavbar ? "text-gray-300" : "text-gray-600"
+                                        }`}
+                                >
                                     {menuData[activeMenu].description}
                                 </p>
                             </div>
@@ -286,33 +363,75 @@ const Navbar = () => {
                                 {menuData[activeMenu].items.map((item, index) => (
                                     <span
                                         key={index}
-                                        onMouseEnter={() => setActiveSubMenu(item)}
-                                        onClick={() => navigate(item.path)}
-                                        className="text-lg hover:text-gray-300 cursor-pointer"
+                                        onMouseEnter={() => {
+                                            setActiveSubMenu(item);
+                                            setActiveThirdMenu(null);
+                                        }}
+                                        onClick={() => {
+                                            if (item.path) {
+                                                navigate(item.path);
+                                                setActiveMenu(null);
+                                            }
+                                        }}
+                                        className="text-lg cursor-pointer"
                                     >
-                                        + {item.name}
+                                        + <Typewriter text={item.name} />
                                     </span>
                                 ))}
                             </div>
 
                             {/* RIGHT (future section) */}
-                            <div>
+                            {/* RIGHT SIDE (two columns inside) */}
+                            <div className="flex gap-16">
+                                {/* COLUMN 3 → Defence / Private */}
                                 <div className="flex flex-col gap-3">
                                     {activeSubMenu?.submenu?.map((sub, i) => (
                                         <span
                                             key={i}
-                                            onClick={() => {
-                                                navigate(sub.path);
-                                                setMobileMenuOpen(false);
-                                                setMobileActiveMenu(null);
-                                                setMobileActiveAccordion(null);
+                                            onMouseEnter={() => {
+                                                if (sub.children) {
+                                                    setActiveThirdMenu(sub);
+                                                } else {
+                                                    setActiveThirdMenu(null);
+                                                }
                                             }}
-                                            className="text-md text-gray-300 hover:text-white cursor-pointer"
+                                            onClick={() => {
+                                                if (sub.path) {
+                                                    navigate(sub.path);
+                                                    setActiveMenu(null);
+                                                }
+                                            }}
+                                            className={`text-md cursor-pointer ${isDarkNavbar
+                                                ? "text-gray-300 hover:text-white"
+                                                : "text-gray-600 hover:text-black"
+                                                }`}
                                         >
-                                            {sub.name}
+                                            <Typewriter text={sub.name} />
                                         </span>
                                     ))}
                                 </div>
+
+                                {/* COLUMN 4 → Rafale / Tejas etc */}
+                                <div className="flex flex-col gap-3">
+                                    {activeThirdMenu?.children?.map((child, i) => (
+                                        <span
+                                            key={i}
+                                            onClick={() => {
+                                                if (child.path) {
+                                                    navigate(child.path);
+                                                    setActiveMenu(null);
+                                                }
+                                            }}
+                                            className={`text-md cursor-pointer ${isDarkNavbar
+                                                ? "text-gray-300 hover:text-white"
+                                                : "text-gray-600 hover:text-black"
+                                                }`}
+                                        >
+                                            <Typewriter text={child.name} />
+                                        </span>
+                                    ))}
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -352,12 +471,12 @@ const Navbar = () => {
                         <div className="mt-16">
 
                             <p className="text-xs text-gray-400">CONTACT</p>
-                            <p className="text-lg mt-2">contact@antiworld.in</p>
+                            <p className="text-lg mt-2">sashank@antiworld.in</p>
 
-                            <p className="text-xs text-gray-400 mt-10">SOCIAL</p>
+                            <p className="text-xs text-gray-400 mt-10">MOBILE</p>
 
                             <div className="flex gap-6 mt-3 text-sm">
-                                X YT IG FB LI
+                                +91 8184809777
                             </div>
 
                         </div>
@@ -407,9 +526,21 @@ const Navbar = () => {
 
                                         <div
                                             className="flex justify-between items-center text-xl cursor-pointer"
-                                            onClick={() => setMobileActiveAccordion(open ? null : index)}
-                                        >
+                                            onClick={() => {
 
+                                                if (item.submenu && item.submenu.length > 0) {
+                                                    setMobileActiveAccordion(open ? null : index);
+                                                    setMobileActiveChildAccordion(null);
+                                                }
+
+                                                else if (item.path) {
+                                                    navigate(item.path);
+                                                    setMobileMenuOpen(false);
+                                                    setMobileActiveMenu(null);
+                                                }
+
+                                            }}
+                                        >
                                             <span>{item.name}</span>
                                             <span>{open ? "−" : "+"}</span>
 
@@ -418,21 +549,75 @@ const Navbar = () => {
                                         {open && (
                                             <div className="mt-4 ml-4 flex flex-col gap-3 text-gray-300">
 
-                                                {item.submenu.map((sub, i) => (
-                                                    <span
-                                                        key={i}
-                                                        onClick={() => {
-                                                            navigate(sub.path);
-                                                            setMobileMenuOpen(false);
-                                                            setMobileActiveMenu(null);
-                                                            setMobileActiveAccordion(null);
-                                                        }}
-                                                        className="cursor-pointer hover:text-white"
-                                                    >
-                                                        {sub.name}
-                                                    </span>
-                                                ))}
+                                                {item.submenu.map((sub, i) => {
 
+                                                    const childOpen = mobileActiveChildAccordion === i;
+
+                                                    return (
+                                                        <div key={i}>
+
+                                                            {/* SUBMENU LEVEL */}
+                                                            <div className="flex justify-between items-center  hover:text-white">
+
+                                                                {/* TEXT → NAVIGATE */}
+                                                                <span
+                                                                    className="cursor-pointer"
+                                                                    onClick={() => {
+                                                                        if (sub.path) {
+                                                                            navigate(sub.path);
+                                                                            setMobileMenuOpen(false);
+                                                                            setMobileActiveMenu(null);
+                                                                            setMobileActiveAccordion(null);
+                                                                            setMobileActiveChildAccordion(null);
+                                                                        }
+                                                                    }}
+                                                                >
+                                                                    {sub.name}
+                                                                </span>
+
+                                                                {/* PLUS BUTTON → DROPDOWN */}
+                                                                {sub.children && sub.children.length > 0 && (
+                                                                    <span
+                                                                        className="cursor-pointer px-3 flex-shrink-0"
+                                                                        onClick={() =>
+                                                                            setMobileActiveChildAccordion(childOpen ? null : i)
+                                                                        }
+                                                                    >
+                                                                        {childOpen ? "−" : "+"}
+                                                                    </span>
+                                                                )}
+
+                                                            </div>
+
+                                                            {/* THIRD LEVEL (Rafale / Tejas / MIG) */}
+                                                            {childOpen && sub.children && (
+                                                                <div className="ml-4 mt-3 flex flex-col gap-2 text-gray-400 transition-all duration-300">
+
+                                                                    {sub.children.map((child, j) => (
+                                                                        <span
+                                                                            key={j}
+                                                                            className={`cursor-pointer ${child.path ? "hover:text-white" : "opacity-60 cursor-default"}`}
+                                                                            onClick={() => {
+                                                                                if (!child.path) return;   // 🚀 stop if no path
+
+                                                                                navigate(child.path);
+                                                                                setMobileMenuOpen(false);
+                                                                                setMobileActiveMenu(null);
+                                                                                setMobileActiveAccordion(null);
+                                                                                setMobileActiveChildAccordion(null);
+                                                                            }}
+                                                                        >
+                                                                            {child.name}
+                                                                        </span>
+                                                                    ))}
+
+                                                                </div>
+                                                            )}
+
+                                                        </div>
+                                                    )
+
+                                                })}
                                             </div>
                                         )}
 

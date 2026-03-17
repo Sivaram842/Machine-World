@@ -1,13 +1,106 @@
 import React from 'react'
+import { useRef, useState } from "react";
 import Navbar from '../../components/NewNavbar'
 import Header from '../../components/Header'
 import Footer from '../../components/NewFooter'
 import spos from "../../assets/spatialOS.jpeg"
 import spos1 from "../../assets/spatialOS1.webp"
+import spos2 from "../../assets/spatialapplication.webp"
+import spos3 from "../../assets/worldmesh.png"
+import { useNavigate } from 'react-router-dom'
+
 const SpatialOs = () => {
+    const gridRef = useRef(null);
+    const spatialAppsRef = useRef(null);
+    const xrInteractionRef = useRef(null);
+    const worldMeshRef = useRef(null);
+    const simulationRef = useRef(null);
+    const navigate = useNavigate();
+
+    const scrollToSection = (ref) => {
+        ref.current?.scrollIntoView({ behavior: "smooth" });
+    };
+    const scrollToGrid = () => {
+        gridRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
     return (
         <div>
             <Navbar />
+            <section className="w-full bg-white text-black min-h-[60vh] flex items-end px-4 lg:px-16 py-8">
+
+                <div className="w-full">
+
+                    {/* TITLE AREA */}
+                    <div className="mb-10">
+                        <p className="text-xs tracking-[0.25em] text-gray-600 mb-4">
+                            SPATIAL COMPUTING PLATFORM
+                        </p>
+
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tight">
+                            Spatial OS
+                        </h1>
+                    </div>
+
+                    {/* BOTTOM GRID */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
+
+                        {/* Label */}
+                        <div className="text-xs tracking-wider text-gray-600">
+                            IMMERSIVE XR SYSTEMS
+                        </div>
+
+                        {/* Description */}
+                        <div className="text-sm text-gray-700 leading-relaxed max-w-[320px]">
+                            Spatial OS enables enterprise applications to run in a 3D spatial computing environment, where users interact
+                            naturally using XR devices. It transforms traditional interfaces into immersive digital workspaces.
+                        </div>
+
+                        {/* Links */}
+                        <div className="flex flex-wrap gap-4 text-xs tracking-wide">
+
+                            <a
+                                onClick={() => scrollToSection(spatialAppsRef)}
+                                className="hover:underline cursor-pointer"
+                            >
+                                Spatial Applications
+                            </a>
+
+                            <a
+                                onClick={() => scrollToSection(xrInteractionRef)}
+                                className="hover:underline cursor-pointer"
+                            >
+                                XR Interaction
+                            </a>
+
+                            <a
+                                onClick={() => scrollToSection(worldMeshRef)}
+                                className="hover:underline cursor-pointer"
+                            >
+                                World Mesh
+                            </a>
+
+                            <a
+                                onClick={() => scrollToSection(simulationRef)}
+                                className="hover:underline cursor-pointer"
+                            >
+                                Simulation Systems
+                            </a>
+
+                        </div>
+
+                        {/* Arrow */}
+                        <div
+                            onClick={scrollToGrid}
+                            className="flex md:justify-end items-center text-3xl cursor-pointer hover:translate-y-1 transition"
+                        >
+                            ↓
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
             <header className="relative w-full min-h-[75vh] sm:min-h-[90vh] lg:min-h-screen overflow-hidden">
 
                 {/* Background video */}
@@ -42,14 +135,11 @@ const SpatialOs = () => {
 
                             {/* RIGHT */}
                             <div className="max-w-xl">
-                                <p className="text-gray-300 text-sm sm:text-base md:text-lg font-light leading-relaxed text-left">
-                                    Antiworld Spatial OS powers next-generation simulation,
-                                    training, and immersive computing environments. Designed
-                                    for defence, enterprise, and education sectors, it enables
-                                    realistic cockpit simulations, XR training systems, and
-                                    spatial computing platforms that bring digital environments
-                                    into the real world with precision and performance.
-                                </p>
+                                {/* <p className="text-gray-300 text-sm sm:text-base md:text-lg font-light leading-relaxed text-left">
+                                    Antiworld Spatial OS enables enterprise applications to run in interactive
+                                    spatial environments where users can launch and interact with apps in 3D
+                                    using VR, MR, and XR technologies.
+                                </p> */}
                             </div>
                         </div>
 
@@ -63,93 +153,76 @@ const SpatialOs = () => {
                 <section className="relative h-[85vh] md:h-screen w-full overflow-hidden">
                     <img
                         src={spos}
-                        alt="Varjo Base"
+                        alt="Antiworld Spatial OS"
                         className="absolute inset-0 w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/60"></div>
 
                     <div className="relative z-10 flex items-center justify-center h-full px-6 text-center">
                         <div className="max-w-[900px]">
-                            <h1 className="text-white uppercase font-extrabold 
-               text-[22px] sm:text-[28px] md:text-[40px] lg:text-[52px]
-               leading-[1.15] md:leading-[1.1] tracking-tight">
 
+                            <h1 className="text-white uppercase font-extrabold 
+      text-[22px] sm:text-[28px] md:text-[40px] lg:text-[52px]
+      leading-[1.15] md:leading-[1.1] tracking-tight">
                                 The Core Platform <br />
                                 For Antiworld XR Systems
                             </h1>
 
                             <p className="mt-6 text-gray-100 text-[16px] leading-[28px]">
+                                Antiworld Spatial OS runs enterprise and simulation applications inside immersive 3D spatial environments by connecting XR hardware, sensors, and rendering engines.
+                            </p>
+                            <p className="mt-6 text-gray-100 text-[16px] leading-[28px]">
+                                Generate world meshes and interact with apps using spatial controls in real spaces.
 
-                                Antiworld Spatial OS acts as the central operating system
-                                connecting XR hardware, simulation software, and training
-                                environments into a single unified platform. Built for
-                                defence and enterprise applications, the system enables
-                                immersive spatial computing experiences that replicate
-                                real-world environments with high accuracy.
                             </p>
 
-                            <ul className="mt-6 space-y-3 text-gray-100 text-[15px]">
-                                <li>• Power high-fidelity cockpit simulators for defence pilot training.</li>
-                                <li>• Manage XR headsets, spatial sensors, and simulation environments.</li>
-                                <li>• Integrate real-world data and digital simulations in mixed reality.</li>
-                                <li>• Enable advanced visualization for training and mission rehearsal.</li>
-                                <li>• Record and analyze simulation sessions for performance evaluation.</li>
-                            </ul>
                         </div>
                     </div>
                 </section>
-
-
-                {/* ================= SECTION 2 ================= */}
-                <section className="py-20 md:py-28 px-6 md:px-16">
+                {/* ================= SPATIAL APPLICATIONS + INTERACTION ================= */}
+                <section ref={spatialAppsRef} className="py-20 md:py-28 px-6 md:px-16">
                     <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-16 items-center">
 
+                        {/* LEFT CONTENT */}
                         <div>
                             <h2 className="uppercase font-extrabold 
-               text-[22px] sm:text-[26px] md:text-[34px] 
-               leading-[1.2] tracking-tight">
-                                Secure By Design <br />
-                                For Defence And <br />
-                                Critical Systems
+      text-[22px] sm:text-[26px] md:text-[34px] 
+      leading-[1.2] tracking-tight">
+                                Spatial Applications <br />
+                                And Interaction
                             </h2>
 
-                            <p className="mt-6 text-gray-700 text-[16px] leading-[28px]">
+                            <ul className="mt-6 space-y-3 text-gray-700 text-[15px]">
 
-                                Antiworld Spatial OS is built with security as a core
-                                principle. Defence and enterprise environments require
-                                strict control over data, infrastructure, and network
-                                access. Our systems are designed to operate in isolated
-                                and secure environments where reliability and trust are
-                                critical.
-                            </p>
-                            <p className="mt-6 text-gray-700 leading-[28px]">
+                                <li> Run enterprise software as spatial applications inside immersive 3D workspaces.</li>
 
-                                From secure local data handling to controlled software
-                                updates and strict development practices, every component
-                                of Antiworld Spatial OS is designed to ensure that
-                                simulation environments, training systems, and defence
-                                applications remain protected and dependable.
-                            </p>
+                                <li> Organize dashboards, analytics, and collaboration tools as floating spatial panels.</li>
+
+                                <li> Manage multiple applications simultaneously in a natural multi-window environment.</li>
+
+                                <li> Interact with applications using spatial controls like hover, follow mode, and theatre view.</li>
+
+                            </ul>
 
                             <button className="mt-10 bg-black text-white px-10 py-4 
-uppercase tracking-wider text-sm
-transition-all duration-300
-hover:bg-[#1117C7]">
-                                Learn More About Antiworld →
+      uppercase tracking-wider text-sm
+      transition-all duration-300
+      hover:bg-[#1117C7]">
+                                Explore Spatial Features →
                             </button>
                         </div>
 
+                        {/* RIGHT IMAGE */}
                         <div>
                             <img
-                                src={spos1}
-                                alt="Engine"
+                                src={spos2}
+                                alt="Spatial Applications and Interaction"
                                 className="w-full object-cover"
                             />
                         </div>
 
                     </div>
                 </section>
-
                 {/* 
                
                 <section className="py-20 md:py-28 px-6 text-center">
@@ -191,7 +264,51 @@ hover:bg-[#1117C7]">
                 </section> */}
 
 
-                <section className="py-24 px-6 bg-[#f3f3f3]">
+
+
+                {/* ================= WORLD MESH ================= */}
+                <section ref={worldMeshRef} className="py-20 md:py-28 px-6 md:px-16 bg-[#f3f3f3]">
+                    <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+                        <img
+                            src={spos3}
+                            alt="Spatial OS World Mesh"
+                            className="w-full object-cover"
+                        />
+
+                        {/* RIGHT CONTENT */}
+                        <div>
+                            <h2 className="uppercase font-extrabold 
+      text-[22px] sm:text-[26px] md:text-[34px] 
+      leading-[1.2] tracking-tight">
+                                World Mesh <br />
+                                Spatial Mapping <br />
+                                Technology
+                            </h2>
+
+                            <ul className="mt-6 space-y-3 text-gray-700 text-[15px]">
+
+                                <li> Scan and reconstruct real-world environments as detailed 3D spatial meshes.</li>
+
+                                <li> Place and interact with spatial applications on physical surfaces like walls, desks, and tables.</li>
+
+                                <li> Anchor digital objects with spatial persistence inside mixed-reality environments.</li>
+
+                            </ul>
+
+                            {/* <button className="mt-10 bg-black text-white px-10 py-4 
+      uppercase tracking-wider text-sm
+      transition-all duration-300
+      hover:bg-[#1117C7]">
+                                Learn About World Mesh →
+                            </button> */}
+                        </div>
+
+                    </div>
+                </section>
+
+
+                <section ref={simulationRef} className="py-24 px-6 bg-[#f3f3f3]">
                     <div className="max-w-[1400px] mx-auto">
 
                         <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
@@ -214,42 +331,23 @@ hover:bg-[#1117C7]">
           text-[22px] sm:text-[26px] md:text-[34px] 
           leading-[1.2] tracking-tight"
                                 >
-                                    Unlock The Full Power <br />
-                                    Of Spatial Computing <br />
-                                    With Antiworld
+                                    Spatial Productivity Workspace
                                 </h2>
 
-                                <p className="mt-6 text-gray-700 leading-[28px]">
-                                    Antiworld Spatial OS is designed to support advanced
-                                    immersive technologies including Virtual Reality,
-                                    Augmented Reality, and Mixed Reality. The platform
-                                    enables developers, engineers, and defence organizations
-                                    to create realistic training environments and powerful
-                                    simulation systems.
-                                </p>
-
                                 <ul className="mt-6 space-y-3 text-gray-700 text-[15px]">
-                                    <li>• Advanced cockpit simulators for pilot training and mission rehearsal.</li>
-                                    <li>• XR training environments for defence, industrial, and education sectors.</li>
-                                    <li>• Integration with Unity and Unreal for simulation development.</li>
-                                    <li>• Spatial computing tools for visualization, analytics, and research.</li>
-                                    <li>• Future-ready architecture supporting AI-driven simulations.</li>
+
+                                    <li>Use real productivity tools inside immersive spatial workspaces with large floating interfaces.</li>
+                                    <li>Interact with applications using XR pointers, virtual keyboards, and spatial UI controls.</li>
                                 </ul>
 
-                                <p className="mt-6 text-gray-700 leading-[28px]">
-                                    Antiworld continues to develop next-generation immersive
-                                    technologies that reduce training costs, improve safety,
-                                    and create new possibilities for learning and innovation.
-                                </p>
-
                                 <div className="mt-8 flex gap-6 flex-wrap">
-                                    <button
+                                    {/* <button
                                         className="bg-black text-white px-8 py-4 
             uppercase text-sm transition-all 
             hover:bg-[#1117C7]"
                                     >
-                                        Spatial OS FEATURES →
-                                    </button>
+                                        Spatial OS Features →
+                                    </button> */}
                                 </div>
                             </div>
 
@@ -260,34 +358,28 @@ hover:bg-[#1117C7]">
 
 
 
-
-
-
                 {/* ================= SECTION 5 ================= */}
                 <section className="py-24 px-6 text-center">
                     <div className="max-w-[700px] mx-auto">
 
                         <h2 className="uppercase font-extrabold 
-               text-[22px] sm:text-[26px] md:text-[34px] 
-               leading-[1.2] tracking-tight">
-                            Continuous <br />
-                            Innovation.<br />
-                            Real-World <br />
-                            Impact.
+    text-[22px] sm:text-[26px] md:text-[34px] 
+    leading-[1.2] tracking-tight">
+                            Continuous Innovation <br />
+                            Real-World Impact
                         </h2>
 
-                        <p className="mt-6 text-gray-700 leading-[28px]">
-                            Antiworld constantly improves its spatial computing
-                            platform to deliver cutting-edge capabilities for
-                            defence, enterprise, and research applications. Our
-                            multidisciplinary teams across hardware, software,
-                            design, and XR development collaborate to push the
-                            boundaries of immersive technology.
-                        </p>
+                        <ul className="mt-6 space-y-3 text-gray-700 text-[15px]">
 
-                        <button className="mt-10 bg-black text-white px-10 py-4 
-uppercase text-sm transition-all 
-hover:bg-[#1117C7]">
+                            <li> Advancing spatial computing for defence, enterprise, and research applications.</li>
+
+                            <li> Multidisciplinary teams across hardware, software, design, and XR development driving innovation.</li>
+
+                        </ul>
+
+                        <button onClick={() => navigate("/resources/casestudies")} className="mt-10 bg-black text-white px-10 py-4 
+    uppercase text-sm transition-all 
+    hover:bg-[#1117C7] cursor-pointer">
                             Explore Our Technologies →
                         </button>
 

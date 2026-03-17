@@ -3,26 +3,34 @@ import HeroVideo from '../../components/ProductSubPageComponents/HeroVideo'
 import Navbar from '../../components/NewNavbar'
 import Footer from '../../components/NewFooter'
 import TalkToSalesCTA from '../../components/TalkToSalesCTA'
-import CustomerQuoteSection from '../../components/CustomerStories'
-import VariantsSection from '../../components/ProductSubPageComponents/VariantsSection'
-import TrainingPackageSection from '../../components/ProductSubPageComponents/TrainingPackageSection'
-import SupportGridSection from '../../components/ProductSubPageComponents/SupportGridSection'
-import PassthroughSection from '../../components/ProductSubPageComponents/PassthroughSection'
-import ImmersionSection from '../../components/ProductSubPageComponents/ImmersionSection'
-import DeploymentSection from '../../components/ProductSubPageComponents/DeploymentSection'
-import FullScreenXRImage from '../../components/ProductSubPageComponents/FullScreenXRImage'
-import FullScreenImage from '../../components/ProductSubPageComponents/FullScreenImage'
 import fullImg from "../../assets/casualDAS.png";
 
-import img from "../../assets/Realm2.jpeg";
-import img1 from "../../assets/Realm3.jpeg";
+import img from "../../assets/sss.png";
+import img1 from "../../assets/ssr.png";
+import img2 from "../../assets/realmback.png"
+import img3 from "../../assets/sss.png"
+import img4 from "../../assets/rrr.png"
 import Boximg from "../../assets/RealmBox.jpeg";
 import { useRef, useState } from "react";
 import poster from "../../assets/homeRealm.png";
+import { useNavigate } from 'react-router-dom'
 const Product2 = () => {
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
+    const gridRef = useRef(null);
+    const xrGlassesRef = useRef(null);
+    const workspaceRef = useRef(null);
+    const computePodRef = useRef(null);
+    const simulationRef = useRef(null);
+    const [showMore, setShowMore] = useState(false);
+    const navigate = useNavigate();
 
+    const scrollToSection = (ref) => {
+        ref.current?.scrollIntoView({ behavior: "smooth" });
+    };
+    const scrollToGrid = () => {
+        gridRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
     const handlePlay = () => {
         if (!videoRef.current) return;
         videoRef.current.play();
@@ -32,20 +40,94 @@ const Product2 = () => {
 
         <div className="w-full overflow-x-hidden">
             <Navbar />
+            <section className="w-full bg-white text-black min-h-[60vh] flex items-end px-4 lg:px-16 py-8">
+
+                <div className="w-full">
+
+                    {/* TITLE AREA */}
+                    <div className="mb-10">
+                        <p className="text-xs tracking-[0.25em] text-gray-600 mb-4">
+                            SPATIAL COMPUTING SYSTEM
+                        </p>
+
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tight">
+                            Portable XR Spatial Computer
+                        </h1>
+                    </div>
+
+                    {/* BOTTOM GRID */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
+
+                        {/* Label */}
+                        <div className="text-xs tracking-wider text-gray-600">
+                            IMMERSIVE COMPUTING
+                        </div>
+
+                        {/* Description */}
+                        <div className="text-sm text-gray-700 leading-relaxed max-w-[320px]">
+                            REALM is Antiworld’s portable spatial computing system combining
+                            lightweight XR glasses with a pocket-sized compute pod.
+                            It enables immersive workspaces, simulation design, and
+                            professional workflows anywhere without bulky hardware
+                            or traditional desktop setups.
+                        </div>
+
+                        {/* Links */}
+                        <div className="flex flex-wrap gap-4 text-xs tracking-wide">
+
+                            <a
+                                onClick={() => scrollToSection(xrGlassesRef)}
+                                className="hover:underline cursor-pointer"
+                            >
+                                XR Glasses
+                            </a>
+
+                            <a
+                                onClick={() => scrollToSection(workspaceRef)}
+                                className="hover:underline cursor-pointer"
+                            >
+                                Spatial Workspace
+                            </a>
+
+                            <a
+                                onClick={() => scrollToSection(computePodRef)}
+                                className="hover:underline cursor-pointer"
+                            >
+                                Compute Pod
+                            </a>
+
+                            <a
+                                onClick={() => scrollToSection(simulationRef)}
+                                className="hover:underline cursor-pointer"
+                            >
+                                Portable Simulation
+                            </a>
+
+                        </div>
+
+                        {/* Arrow */}
+                        <div
+                            onClick={scrollToGrid}
+                            className="flex md:justify-end items-center text-3xl cursor-pointer hover:translate-y-1 transition"
+                        >
+                            ↓
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
 
             {/* HERO */}
             <section className="relative w-full h-screen overflow-hidden">
-                <video
-                    className="absolute inset-0 w-full h-full object-cover"
-                    muted
-                    autoPlay
-                    loop
-                    playsInline
-                    preload="auto"
-                >
-                    <source src={"/RealmHero.mp4"} type="video/mp4" />
-                </video>
-                <div className="absolute inset-0 bg-black/60" />
+                <img
+                    src={img4}
+                    alt="Fullscreen"
+                    className="block w-full h-full object-cover"
+                />
+                {/* <div className="absolute inset-0 bg-black/60" /> */}
 
                 <div className="relative z-10 h-full flex items-end">
                     <div className="w-full px-6 sm:px-10 lg:px-12 pb-16 sm:pb-20 lg:pb-24">
@@ -58,195 +140,83 @@ const Product2 = () => {
                 </div>
             </section>
 
-            {/* SECTION 1 */}
-            <section className="bg-white py-16 sm:py-24 lg:py-[140px]">
+            <section ref={xrGlassesRef} className="bg-white py-16 sm:py-24 lg:py-[140px]">
                 <div className="mx-auto flex flex-col lg:flex-row max-w-[1400px] items-start gap-10 lg:gap-[100px] px-6 sm:px-10 lg:px-16">
 
+                    {/* IMAGE */}
                     <div className="w-full lg:w-[58%]">
                         <img
-                            src={img}
-                            alt="Immersion display"
+                            src={img2}
+                            alt="Realm XR Glasses"
                             className="h-[300px] sm:h-[420px] lg:h-[520px] w-full object-cover"
                         />
-                    </div>
-
-                    <div className="w-full lg:w-[42%]">
-                        <small className="block text-[12px] tracking-widest text-black">
-                            {/* SEE EVERY MISSION DETAIL */}
-                        </small>
-
-                        <h2 className="mt-6 text-3xl sm:text-4xl lg:text-[40px] font-light leading-tight text-black">
-                            REALM
-                        </h2>
-
-                        <p className="mt-6 text-[15px] leading-relaxed text-gray-700">
-                            Realm is Antiworld's most powerful portable spatial computer—a lightweight
-                            XR glasses system paired with a pocket-sized compute pod. Bring desktop-class creativity,
-                            simulation design, and immersive training anywhere without heavy gear.
-                        </p>
-
-                        <p className="mt-6 text-[15px] leading-relaxed text-gray-700">
-                            <b> Who It's For ?</b><br />
-                            Perfect for creators, designers, defense operators, entertainers, and engineers
-                            who demand professional performance on their terms—just unlimited possibilities in your pocket.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            {/* SECTION 2 */}
-            <section className="bg-white py-16 sm:py-24 lg:py-[140px]">
-                <div className="mx-auto flex flex-col-reverse lg:flex-row max-w-[1400px] items-start gap-10 lg:gap-[100px] px-6 sm:px-10 lg:px-16">
-
-                    <div className="w-full lg:w-[42%]">
-                        <small className="block text-[12px] tracking-widest text-black">
-                            {/* TRAIN WITH PHYSICAL ELEMENTS */}
-                        </small>
-
-                        <h2 className="mt-6 text-3xl sm:text-4xl lg:text-[40px] font-light leading-tight text-black">
-                            Why It Elevates Your Workflow ?
-                        </h2>
-
-                        <p className="mt-6 text-[15px] leading-relaxed text-gray-700">
-                            Portable power meets pro-grade performance—XR glasses +
-                            pocket compute pod in one sleek carry case. Deploy anywhere, dominate simulations.
-                        </p>
-
-                        <p className="mt-6 text-[15px] leading-relaxed text-gray-700">
-                            <b> Pocket Precision:</b> Ultra-high-res XR glasses and compact compute pod deliver
-                            crisp 90Hz visuals + precise tracking for cockpit sims, drone command, or 3D modeling—all backpack-portable.
-                        </p>
-
-                        <p className="mt-6 text-[15px] leading-relaxed text-gray-700">
-                            <b>Seamless Integration:</b> Native support for top sim platforms
-                            and live analytics—no cables or desktops needed.
-                        </p>
-
-                        <p className="mt-6 text-[15px] leading-relaxed text-gray-700">
-                            <b>Instant Deployment:</b> 3-minute field setup for training drills, remote reviews, or creative sessions.
-                        </p>
-                    </div>
-
-                    <div className="w-full lg:w-[58%]">
-                        <img
-                            src={Boximg}
-                            alt="Passthrough optics"
-                            className="h-[300px] sm:h-[420px] lg:h-[520px] w-full object-cover"
-                        />
-                    </div>
-                </div>
-            </section>
-
-            <section className="bg-white py-16 sm:py-24 lg:py-[160px] px-4 sm:px-6">
-                <div className="mx-auto max-w-[900px] text-center">
-
-                    {/* VIDEO CONTAINER */}
-                    <div className="relative mx-auto mb-10 sm:mb-14 lg:mb-16 w-full max-w-[640px]">
-
-                        {/* VIDEO */}
-                        <video
-                            ref={videoRef}
-                            src={"/training.mp4"}
-                            poster={poster}
-                            controls
-                            playsInline
-                            preload="metadata"
-                            onPause={() => setIsPlaying(false)}
-                            onPlay={() => setIsPlaying(true)}
-                            className="block h-[220px] sm:h-[320px] md:h-[420px] w-full bg-black object-cover"
-                        />
-
-                        {/* CUSTOM PLAY BUTTON */}
-                        {!isPlaying && (
-                            <button
-                                onClick={handlePlay}
-                                className="absolute left-1/2 top-1/2 flex 
-                                                  h-14 w-14 sm:h-16 sm:w-16 lg:h-20 lg:w-20
-                                                  -translate-x-1/2 -translate-y-1/2 
-                                                  items-center justify-center 
-                                                  rounded-full bg-black/50 
-                                                  transition hover:bg-black/70"
-                            >
-                                <span className="ml-1 h-0 w-0 
-                                                        border-b-[8px] border-t-[8px] border-l-[14px]
-                                                        sm:border-b-[10px] sm:border-t-[10px] sm:border-l-[18px]
-                                                        lg:border-b-[12px] lg:border-t-[12px] lg:border-l-[22px]
-                                                        border-b-transparent border-t-transparent border-l-white" />
-                            </button>
-                        )}
                     </div>
 
                     {/* TEXT */}
-                    <h2 className="text-2xl sm:text-3xl md:text-[38px] font-light leading-tight">
-                        Spatial Software.
-                        <br />
-                        Limitless Possibilities.
-                    </h2>
+                    <div className="w-full lg:w-[42%]">
 
-                    <p className="mx-auto mt-6 sm:mt-8 max-w-[560px] 
-                                         text-sm sm:text-[15px] 
-                                         leading-relaxed sm:leading-[1.75] 
-                                         text-gray-600">
-                        The system is powered by a custom spatial computing platform designed
-                        to bring desktop-level productivity into an immersive environment.
-                        Applications, tools, and content appear around you as floating windows
-                        in a fully interactive 3D workspace.
-                    </p>
+                        <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-light leading-tight text-black">
+                            REALM
+                        </h2>
 
-                    <button className="mt-10 sm:mt-12 lg:mt-14 
-                                              inline-flex items-center justify-center gap-4 
-                                              bg-black 
-                                              px-6 sm:px-8 lg:px-10 
-                                              py-3 sm:py-3.5 lg:py-4 
-                                              text-xs sm:text-[13px] 
-                                              tracking-widest text-white 
-                                              transition hover:bg-gray-900 
-                                              w-full sm:w-auto">
-                        VIEW Antiworld-READY SOFTWARE
-                        <span className="text-base sm:text-lg">→</span>
-                    </button>
+                        <ul className="mt-6 space-y-4 text-[15px] text-gray-700 leading-relaxed">
+
+                            <li> Portable spatial computer with lightweight XR glasses and pocket compute pod.</li>
+
+                            <li> Enables desktop-level creativity, simulation design, and immersive training anywhere.</li>
+
+                            <li> Ideal for creators, engineers, designers, defense operators, and entertainment professionals.</li>
+
+                            {/* <li>• XR glasses + compact compute pod deliver crisp 90Hz visuals with precise spatial tracking.</li>
+
+                            <li>• Supports cockpit simulations, drone command systems, and advanced 3D modeling workflows.</li>
+
+                            <li>• Native compatibility with major simulation platforms and live analytics tools.</li>
+
+                            <li>• Cable-free portable system designed for backpack deployment.</li>
+
+                            <li>• Full system setup and operational readiness in under 3 minutes.</li> */}
+
+                        </ul>
+
+                    </div>
+
                 </div>
             </section>
-            <section className="w-full min-h-[70vh] sm:min-h-[85vh] lg:min-h-screen overflow-hidden">
+
+
+            {/* <section className="w-full min-h-[70vh] sm:min-h-[85vh] lg:min-h-screen overflow-hidden">
                 <img
                     src={fullImg}
                     alt="Fullscreen"
                     className="block w-full h-full object-cover"
                 />
-            </section>
-            <section className="bg-white px-4 sm:px-6 py-16 sm:py-24 lg:py-[160px]">
+            </section> */}
+            <section ref={workspaceRef} className="bg-white px-4 sm:px-6 py-16 sm:py-24 lg:py-[160px]">
                 <div className="mx-auto max-w-[450px] text-center">
 
                     {/* Heading */}
                     <h2 className="text-2xl sm:text-3xl md:text-[36px] font-light leading-snug text-black">
-                        A Complete System for
-                        <br />
-                        Portable Spatial Computing.
+                        The Future of Portable Spatial Computing
                     </h2>
 
-                    {/* Paragraph 1 */}
+                    {/* Two-line content */}
                     <p className="mt-6 sm:mt-8 lg:mt-10 text-sm sm:text-[15px] leading-relaxed text-gray-600">
-                        Designed for everyday use, the XR glasses combine lightweight comfort with powerful
-                        spatial computing capabilities. The compact pocket-sized compute pod delivers
-                        desktop-class performance while keeping the system portable and easy to carry anywhere.
-                    </p>
-
-                    {/* Paragraph 2 */}
-                    <p className="mt-6 sm:mt-8 text-sm sm:text-[15px] leading-relaxed text-gray-600">
-                        With vibrant 4K visuals, a wide field of view, and ultra-responsive performance,
-                        the system creates an immersive workspace that moves with you—from home to office to travel.
+                        Lightweight XR glasses and a pocket-sized compute pod deliver powerful desktop-class spatial computing anywhere.
+                        Experience immersive 4K visuals, wide field of view, and a portable workspace designed to move with you.
                     </p>
 
                     {/* Button */}
-                    <button className="mt-10 sm:mt-14 lg:mt-20 
-                                   inline-flex items-center justify-center gap-4 
-                                   bg-black 
-                                   px-6 sm:px-8 lg:px-10 
-                                   py-3 sm:py-3.5 lg:py-4 
-                                   text-xs sm:text-[13px] 
-                                   tracking-widest text-white 
-                                   hover:bg-gray-900 transition 
-                                   w-full sm:w-auto">
+                    <button onClick={() => navigate("/spatial-os")} className="mt-10 sm:mt-14 lg:mt-20 
+      inline-flex items-center justify-center gap-4 
+      bg-black 
+      px-6 sm:px-8 lg:px-10 
+      py-3 sm:py-3.5 lg:py-4 
+      text-xs sm:text-[13px] 
+      tracking-widest text-white 
+      hover:bg-gray-900 transition 
+      w-full sm:w-auto cursor-pointer">
+
                         LEARN MORE ABOUT SPATIAL COMPUTING
                         <span className="text-base sm:text-lg">→</span>
                     </button>
@@ -287,7 +257,7 @@ const Product2 = () => {
                         {/* VIDEO */}
                         <div className="relative w-full aspect-[16/9] min-h-[220px] sm:min-h-[320px] lg:min-h-[520px] overflow-hidden bg-black">
                             <video
-                                src={"/driving-simulator-monitor-center.mp4"}
+                                src={"/RealmHero.mp4"}
                                 controls
                                 preload="metadata"
                                 className="w-full h-full object-cover"
@@ -305,7 +275,7 @@ const Product2 = () => {
                                 BARTEK PANASEWICZ — VP TRAINING SYSTEMS, LAND
                             </p> */}
 
-                            <button className="inline-flex items-center justify-center gap-1 
+                            {/* <button className="inline-flex items-center justify-center gap-1 
                                            bg-black text-white 
                                            px-6 sm:px-8 
                                            py-3 sm:py-4 
@@ -314,18 +284,58 @@ const Product2 = () => {
                                            hover:opacity-90 transition 
                                            w-full sm:w-auto">
                                 READ MORE →
-                            </button>
+                            </button> */}
                         </div>
 
                     </div>
                 </div>
             </section>
-            <section className="relative w-full min-h-[70vh] sm:min-h-[85vh] lg:min-h-screen overflow-hidden">
+            {/* <section className="relative w-full min-h-[70vh] sm:min-h-[85vh] lg:min-h-screen overflow-hidden">
                 <img
                     src={poster}
                     alt="XR Headsets"
                     className="block w-full h-full object-cover"
                 />
+            </section> */}
+            {/* COMPUTE POD + PORTABLE SIMULATION */}
+            <section ref={computePodRef} className="bg-white py-16 sm:py-24 lg:py-[140px]">
+                <div className="mx-auto flex flex-col lg:flex-row max-w-[1400px] items-start gap-10 lg:gap-[100px] px-6 sm:px-10 lg:px-16">
+
+                    {/* LEFT IMAGE */}
+                    <div className="w-full lg:w-[58%]">
+                        <img
+                            src={img1}
+                            alt="REALM Compute Pod"
+                            className="h-[300px] sm:h-[420px] lg:h-[520px] w-full object-cover"
+                        />
+                    </div>
+
+                    {/* RIGHT CONTENT */}
+                    <div className="w-full lg:w-[42%]">
+
+                        <small className="block text-[12px] tracking-widest text-black">
+                            COMPUTE POD & PORTABLE SIMULATION
+                        </small>
+
+                        <h2 className="mt-6 text-3xl sm:text-4xl lg:text-[40px] font-light leading-tight text-black">
+                            Run Powerful Simulations Anywhere
+                        </h2>
+
+                        <ul className="mt-6 space-y-4 text-[15px] leading-relaxed text-gray-700">
+
+                            <li> Pocket-sized compute pod with powerful XR processing.</li>
+
+                            <li> Instantly create a portable spatial workstation.</li>
+
+                            <li> Run immersive simulations and 3D environments anywhere.</li>
+
+                            <li> Train, test, and collaborate from any location.</li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
             </section>
             <section className="bg-[#efefed] px-4 sm:px-6 py-16 sm:py-24 lg:py-[160px]">
                 <div className="mx-auto max-w-3xl text-center">
@@ -335,60 +345,50 @@ const Product2 = () => {
                         Modes of Your Spatial Computer
                     </h2>
 
-                    {/* Subtitle
-                    <p className="mx-auto mt-4 sm:mt-6 max-w-[520px] text-sm sm:text-[15px] leading-relaxed text-gray-600">
-                        The Varjo XR-4 Series includes three models, each tailored
-                        for specific operational requirements:
-                    </p> */}
-
-                    {/* Variants */}
-                    <div className="mt-10 sm:mt-14 lg:mt-20 space-y-8 sm:space-y-12 lg:space-y-16 text-sm sm:text-[15px] leading-relaxed text-gray-700">
+                    {/* Modes */}
+                    <div className="mt-10 sm:mt-14 lg:mt-20 space-y-6 text-sm sm:text-[15px] text-gray-700">
 
                         <p>
-                            <strong className="font-semibold text-black">
-                                Experiences for Every Workflow
-                            </strong>{" "}
-                            — Our spatial computer adapts to how you work, create,     <br />
-                            and explore. With XR glasses and a pocket-sized compute pod,    <br />
-                            the system supports multiple usage modes designed for    <br />
-                            productivity, creativity, and entertainment.
-
-
+                            <strong className="text-black">Portable Display Mode</strong> — Use XR glasses as a lightweight personal display for work and entertainment.
                         </p>
 
                         <p>
-                            <strong className="font-semibold text-black">
-                                Portable Display Mode
-                            </strong>{" "}
-                            — Use the glasses as a lightweight high-resolution<br />
-                            personal display for work, streaming, and everyday computing.
-
-
+                            <strong className="text-black">Spatial Workspace Mode</strong> — Create immersive multi-window environments for coding, designing, and multitasking.
                         </p>
 
-                        <p>
-                            <strong className="font-semibold text-black">
-                                Spatial Workspace Mode
-                            </strong>{" "}
-                            — Unlock a full immersive computing environment<br />
-                            with multiple floating windows for coding, designing,<br />
-                            researching, and multitasking.
+                        {/* Hidden modes */}
+                        {showMore && (
+                            <>
+                                <p>
+                                    <strong className="text-black">Simulation Mode</strong> — Run immersive training and testing environments anywhere.
+                                </p>
 
-                        </p>
+                                <p>
+                                    <strong className="text-black">Collaboration Mode</strong> — Work together in shared spatial environments with remote teams.
+                                </p>
+
+                                <p>
+                                    <strong className="text-black">Entertainment Mode</strong> — Enjoy immersive movies, games, and interactive experiences.
+                                </p>
+                            </>
+                        )}
 
                     </div>
 
-                    {/* Button */}
-                    <button className="mt-12 sm:mt-20 lg:mt-28 
-                                   inline-flex items-center justify-center gap-3 
-                                   bg-black 
-                                   px-6 sm:px-8 lg:px-10 
-                                   py-3 sm:py-3.5 lg:py-4 
-                                   text-xs sm:text-[13px] 
-                                   tracking-widest text-white 
-                                   hover:bg-gray-900 transition 
-                                   w-full sm:w-auto">
-                        Learn more
+                    {/* Load More Button */}
+                    <button
+                        onClick={() => setShowMore(!showMore)}
+                        className="mt-12 sm:mt-20 lg:mt-28 
+          inline-flex items-center justify-center gap-3 
+          bg-black 
+          px-6 sm:px-8 lg:px-10 
+          py-3 sm:py-3.5 lg:py-4 
+          text-xs sm:text-[13px] 
+          tracking-widest text-white 
+          hover:bg-gray-900 transition 
+          w-full sm:w-auto"
+                    >
+                        {showMore ? "Show Less" : "Load More"}
                         <span className="text-base sm:text-lg">→</span>
                     </button>
 
@@ -399,8 +399,8 @@ const Product2 = () => {
 
                     {/* BLOCK 1 – IMAGE (row-span-2 on desktop only) */}
                     <div
-                        className="group relative lg:row-span-2 min-h-[260px] sm:min-h-[300px] lg:min-h-[325px] cursor-pointer bg-cover bg-center p-6 sm:p-8 text-white transition-colors"
-                        style={{ backgroundImage: `url(${img})` }}
+                        className="group relative lg:row-span-2 min-h-[260px] sm:min-h-[300px] lg:min-h-[325px] cursor-pointer bg-cover bg-[position:30%_center] p-6 sm:p-8 text-white transition-colors"
+                        style={{ backgroundImage: `url(${img4})` }}
                     >
                         <div className="absolute inset-0 bg-[#0057ff]/0 transition group-hover:bg-[#0057ff]/75" />
 

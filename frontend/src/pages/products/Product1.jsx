@@ -3,19 +3,17 @@ import { useRef, useState } from "react";
 import Navbar from '../../components/NewNavbar'
 import Footer from '../../components/NewFooter'
 import TalkToSalesCTA from '../../components/TalkToSalesCTA'
-import PassthroughSection from '../../components/ProductSubPageComponents/PassthroughSection'
-
-
 import img from "../../assets/DAS1.jpeg";
 import img1 from "../../assets/das2.jpeg"
 import v1Image from "../../assets/V1Tv19.4.png";
 import v1Image1 from "../../assets/V1Tv19.3.png";
 import v1Image2 from "../../assets/V1Tv19.2.png";
 import v1Image3 from "../../assets/V1Tv19.1.png";
-import v1Image4 from "../../assets/DAS CORE0669.png";
+import v1Image4 from "../../assets/das.png";
 import v1Image5 from "../../assets/DAS.jpeg";
 import poster from "../../assets/officeDAS.png";
 import heroImg from "../../assets/officeDAS.png";
+import { useNavigate } from 'react-router-dom';
 
 
 const cards = [
@@ -63,7 +61,18 @@ const Product1 = () => {
 
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
-
+    const gridRef = useRef(null);
+    const workspaceRef = useRef(null);
+    const displayRef = useRef(null);
+    const dofRef = useRef(null);
+    const interactionRef = useRef(null);
+    const navigate = useNavigate();
+    const scrollToSection = (ref) => {
+        ref.current?.scrollIntoView({ behavior: "smooth" });
+    };
+    const scrollToGrid = () => {
+        gridRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
     const handlePlay = () => {
         if (!videoRef.current) return;
         videoRef.current.play();
@@ -72,181 +81,81 @@ const Product1 = () => {
     return (
         <div className="w-full overflow-x-hidden">
             <Navbar />
+            <section className="w-full bg-white text-black min-h-[60vh] flex items-end px-4 lg:px-16 py-8">
 
-            {/* HERO */}
-            <section className="relative w-full h-screen overflow-hidden">
-                <video
-                    className="absolute inset-0 w-full h-full object-cover"
-                    muted
-                    autoPlay
-                    loop
-                    playsInline
-                    preload="auto"
-                >
-                    <source src={"/DASVideo.mp4"} type="video/mp4" />
-                </video>
-                <div className="absolute inset-0 bg-black/60" />
+                <div className="w-full">
 
-                <div className="relative z-10 h-full flex items-end">
-                    <div className="w-full px-6 sm:px-10 lg:px-12 pb-16 sm:pb-20 lg:pb-24">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 max-w-7xl">
-                            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
-                                {/* DAS */}
-                            </h1>
+                    {/* TITLE AREA */}
+                    <div className="mb-10">
+                        <p className="text-xs tracking-[0.25em] text-gray-600 mb-4">
+                            SPATIAL COMPUTING
+                        </p>
+
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold tracking-tight">
+                            DAS Spatial Computer
+                        </h1>
+                    </div>
+
+                    {/* BOTTOM GRID */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
+
+                        <div className="text-xs tracking-wider text-gray-600">
+                            IMMERSIVE WORKSPACE
                         </div>
-                    </div>
-                </div>
-            </section>
 
-            {/* IMMERSION SECTION */}
-            <section className="bg-white py-16 sm:py-24 lg:py-[140px]">
-                <div className="mx-auto flex flex-col lg:flex-row max-w-[1400px] items-start gap-10 lg:gap-[100px] px-6 sm:px-10 lg:px-16">
+                        <div className="text-sm text-gray-700 leading-relaxed max-w-[320px]">
+                            DAS is Antiworld’s professional spatial computer designed to
+                            transform traditional computing into an immersive 3D workspace.
+                            With advanced XR displays, natural interaction, and spatial
+                            computing capabilities, professionals can manage complex
+                            workflows in a fully interactive environment.
+                        </div>
 
-                    <div className="w-full lg:w-[58%]">
-                        <img
-                            src={img}
-                            alt="Immersion display"
-                            className="h-[300px] sm:h-[420px] lg:h-[520px] w-full object-cover"
-                        />
-                    </div>
+                        <div className="flex flex-wrap gap-4 text-xs tracking-wide">
 
-                    <div className="w-full lg:w-[42%]">
-                        <small className="block text-[12px] tracking-widest text-black">
-                            SEE EVERY MISSION DETAIL
-                        </small>
-
-                        <h2 className="mt-6 text-3xl sm:text-4xl lg:text-[40px] font-light leading-tight text-black">
-                            360 degrees of immersion.
-                        </h2>
-
-                        <p className="mt-6 text-[15px] leading-relaxed text-gray-700">
-                            Pilot-grade 4K-per-eye mini-LED displays with local dimming deliver
-                            the clarity, contrast, and depth perception required for authentic
-                            mission rehearsal.
-                        </p>
-
-                        <p className="mt-6 text-[15px] leading-relaxed text-gray-700">
-                            A 120° × 105° field of view achieves full binocular vision, while
-                            28 million pixels of visual precision recreate environments with
-                            unprecedented realism, allowing trainees to perceive detail
-                            exactly as they would in the real world.
-                        </p>
-                    </div>
-                </div>
-            </section>
-
-            <section className="bg-white py-16 sm:py-24 lg:py-[140px]">
-                <div className="mx-auto flex flex-col lg:flex-row max-w-[1400px] items-start gap-10 sm:gap-16 lg:gap-[100px] px-4 sm:px-8 lg:px-16">
-
-                    {/* LEFT TEXT */}
-                    <div className="w-full lg:w-[42%]">
-                        <small className="block text-[10px] sm:text-[12px] tracking-widest text-black">
-                            DAS-01 SPATIAL COMPUTER
-                        </small>
-
-                        <h2 className="mt-4 sm:mt-6 text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-light leading-tight text-black">
-                            The future of computing in a spatial workspace.
-                        </h2>
-
-                        <p className="mt-4 sm:mt-6 text-sm sm:text-[15px] leading-relaxed text-gray-700">
-                            DAS-01 is the world’s first professional spatial computer designed to
-                            replace traditional laptops with an immersive 3D workspace.
-                        </p>
-
-
-
-                        <p className="mt-4 sm:mt-6 text-sm sm:text-[15px] leading-relaxed text-gray-700">
-                            With 6-DOF head, hand, and eye tracking, and support for gestures,
-                            voice, and gaze-based interaction, users can manage complex workflows
-                            naturally.
-
-                        </p>
-                        <p className="mt-4 sm:mt-6 text-sm sm:text-[15px] leading-relaxed text-gray-700">
-                            Imagine 8–16 windows floating in your workspace—coding,
-                            documentation, testing, and communication all accessible instantly.
-                        </p>
-                    </div>
-
-                    {/* RIGHT IMAGE */}
-                    <div className="w-full lg:w-[58%]">
-                        <img
-                            src={img1}
-                            alt="Passthrough optics"
-                            className="h-[260px] sm:h-[380px] lg:h-[520px] w-full object-cover"
-                        />
-                    </div>
-
-                </div>
-            </section>
-            <section className="bg-white py-16 sm:py-24 lg:py-[160px] px-4 sm:px-6">
-                <div className="mx-auto max-w-[900px] text-center">
-
-                    {/* VIDEO CONTAINER */}
-                    <div className="relative mx-auto mb-10 sm:mb-14 lg:mb-16 w-full max-w-[640px]">
-
-                        {/* VIDEO */}
-                        <video
-                            ref={videoRef}
-                            src={"/training.mp4"}
-                            poster={poster}
-                            controls
-                            playsInline
-                            preload="metadata"
-                            onPause={() => setIsPlaying(false)}
-                            onPlay={() => setIsPlaying(true)}
-                            className="block h-[220px] sm:h-[320px] md:h-[420px] w-full bg-black object-cover"
-                        />
-
-                        {/* CUSTOM PLAY BUTTON */}
-                        {!isPlaying && (
-                            <button
-                                onClick={handlePlay}
-                                className="absolute left-1/2 top-1/2 flex 
-                                                   h-14 w-14 sm:h-16 sm:w-16 lg:h-20 lg:w-20
-                                                   -translate-x-1/2 -translate-y-1/2 
-                                                   items-center justify-center 
-                                                   rounded-full bg-black/50 
-                                                   transition hover:bg-black/70"
+                            <a
+                                onClick={() => scrollToSection(workspaceRef)}
+                                className="hover:underline cursor-pointer"
                             >
-                                <span className="ml-1 h-0 w-0 
-                                                         border-b-[8px] border-t-[8px] border-l-[14px]
-                                                         sm:border-b-[10px] sm:border-t-[10px] sm:border-l-[18px]
-                                                         lg:border-b-[12px] lg:border-t-[12px] lg:border-l-[22px]
-                                                         border-b-transparent border-t-transparent border-l-white" />
-                            </button>
-                        )}
+                                Spatial Workspace
+                            </a>
+
+                            <a
+                                onClick={() => scrollToSection(displayRef)}
+                                className="hover:underline cursor-pointer"
+                            >
+                                XR Displays
+                            </a>
+
+                            <a
+                                onClick={() => scrollToSection(dofRef)}
+                                className="hover:underline cursor-pointer"
+                            >
+                                6-DOF Tracking
+                            </a>
+
+                            <a
+                                onClick={() => scrollToSection(interactionRef)}
+                                className="hover:underline cursor-pointer"
+                            >
+                                Natural Interaction
+                            </a>
+
+                        </div>
+
+                        <div
+                            onClick={() => scrollToSection(workspaceRef)}
+                            className="flex md:justify-end items-center text-3xl cursor-pointer hover:translate-y-1 transition"
+                        >
+                            ↓
+                        </div>
+
                     </div>
 
-                    {/* TEXT */}
-                    <h2 className="text-2xl sm:text-3xl md:text-[38px] font-light leading-tight">
-                        Unlimited Spatial
-                        <br />
-                        Workspace.
-                    </h2>
-
-                    <p className="mx-auto mt-6 sm:mt-8 max-w-[560px] 
-                                          text-sm sm:text-[15px] 
-                                          leading-relaxed sm:leading-[1.75] 
-                                          text-gray-600">
-                        Break free from the limitations of traditional laptops and flat screens.
-                        This professional spatial computer transforms your workflow into an immersive
-                        3D environment where multiple applications exist around you.
-                    </p>
-
-                    <button className="mt-10 sm:mt-12 lg:mt-14 
-                                               inline-flex items-center justify-center gap-4 
-                                               bg-black 
-                                               px-6 sm:px-8 lg:px-10 
-                                               py-3 sm:py-3.5 lg:py-4 
-                                               text-xs sm:text-[13px] 
-                                               tracking-widest text-white 
-                                               transition hover:bg-gray-900 
-                                               w-full sm:w-auto">
-                        VIEW Antiworld-READY SOFTWARE
-                        <span className="text-base sm:text-lg">→</span>
-                    </button>
                 </div>
+
             </section>
+            {/* HERO */}
 
             {/* FULL VIDEO */}
             <section className="relative w-full h-[60vh] sm:h-[75vh] lg:h-screen overflow-hidden">
@@ -262,48 +171,7 @@ const Product1 = () => {
                 </video>
             </section>
 
-            <section className="w-full bg-white py-16 sm:py-20 lg:py-24">
-                <div className="w-full px-4 sm:px-8 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-start">
 
-                    {/* LEFT CONTENT */}
-                    <div className="max-w-[620px]">
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[38px] leading-tight font-light text-gray-900 mb-4 sm:mb-6">
-                            Spatial Computing: The Future of Work <br />
-
-                        </h2>
-
-                        <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4">
-                            Work is no longer limited to flat screens and crowded desktops.
-                            Spatial computing unlocks a new way to create, collaborate, and
-                            build in immersive digital environments.With an unlimited 3D workspace, professionals
-                            can organize multiple applications around them—coding, designing, testing, and communicating simultaneously.
-                            Complex workflows become clearer, faster, and more intuitive when information exists naturally in space.
-                        </p>
-
-                        <button className="inline-flex items-center gap-3 sm:gap-4 bg-black text-white 
-                        px-6 sm:px-8 lg:px-10 
-                        py-3 sm:py-4 
-                        text-sm sm:text-base font-medium 
-                        hover:opacity-80 transition">
-                            WHY XR?
-                            <span className="text-base sm:text-lg">→</span>
-                        </button>
-                    </div>
-
-                    {/* RIGHT VIDEO */}
-                    <div className="w-full">
-                        <video
-                            src={"/training.mp4"}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="w-full h-[280px] sm:h-[380px] lg:h-[520px] object-cover"
-                        />
-                    </div>
-
-                </div>
-            </section>
             <section className="w-full bg-white py-16 sm:py-24 lg:py-36">
                 <div className="max-w-[1500px] mx-auto px-4 sm:px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-28 items-start">
 
@@ -338,7 +206,7 @@ const Product1 = () => {
                         {/* VIDEO */}
                         <div className="relative w-full aspect-[16/9] min-h-[220px] sm:min-h-[320px] lg:min-h-[520px] overflow-hidden bg-black">
                             <video
-                                src={"/driving-simulator-monitor-center.mp4"}
+                                src={"/homeVideo.mp4"}
                                 controls
                                 preload="metadata"
                                 className="w-full h-full object-cover"
@@ -355,28 +223,126 @@ const Product1 = () => {
                                 BARTEK PANASEWICZ — VP TRAINING SYSTEMS, LAND
                             </p> */}
 
-                            <button className="inline-flex items-center justify-center gap-1 
-                                           bg-black text-white 
-                                           px-6 sm:px-8 
-                                           py-3 sm:py-4 
-                                           text-xs sm:text-sm 
-                                           tracking-wide 
-                                           hover:opacity-90 transition 
-                                           w-full sm:w-auto">
+                            <button onClick={() => navigate("/resources/casestudies")} className="inline-flex items-center justify-center gap-1
+                            bg-black text-white
+                            px-6 sm:px-8
+                            py-3 sm:py-4
+                            text-xs sm:text-sm
+                            tracking-wide
+                            hover:opacity-90 transition 
+                                           w-full sm:w-auto cursor-pointer">
                                 READ CASE STUDY →
                             </button>
                         </div>
 
                     </div>
                 </div>
+            </section >
+            <section ref={dofRef} className="bg-white py-16 sm:py-24 lg:py-[140px]">
+                <div className="mx-auto flex flex-col lg:flex-row max-w-[1400px] items-start gap-10 lg:gap-[100px] px-6 sm:px-10 lg:px-16">
+
+                    {/* IMAGE */}
+                    <div className="w-full lg:w-[58%]">
+                        <img
+                            src={v1Image4}
+                            alt="Comfort and fit"
+                            className="h-[300px] sm:h-[420px] lg:h-[520px] w-full object-cover"
+                        />
+                    </div>
+
+                    {/* TEXT */}
+                    <div className="w-full lg:w-[42%]">
+
+                        <small className="block text-[12px] tracking-widest text-black">
+                            COMFORT & FIT
+                        </small>
+
+                        <h2 className="mt-6 text-3xl sm:text-4xl lg:text-[40px] font-light leading-tight text-black">
+                            Designed for long immersive sessions.
+                        </h2>
+
+                        {/* POINTS */}
+                        <div className="mt-8 space-y-4 text-[15px] text-gray-700">
+
+                            <p> Adjustable IPD for precise alignment with every user’s vision.</p>
+
+                            <p> Ultra-lightweight design with Soft stapless cushion .</p>
+
+
+
+                            <p> Balanced ergonomic design for stability during movement.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
             </section>
-            <section className="relative w-full min-h-[70vh] sm:min-h-[85vh] lg:min-h-screen overflow-hidden">
-                <img
-                    src={heroImg}
-                    alt="XR Headsets"
-                    className="block w-full h-full object-cover"
-                />
+            <section className="relative w-full h-screen overflow-hidden">
+                <video
+                    className="absolute inset-0 w-full h-full object-cover"
+                    muted
+                    autoPlay
+                    loop
+                    playsInline
+                    preload="auto"
+                >
+                    <source src={"/DASVideo.mp4"} type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-black/60" />
+
+                <div className="relative z-10 h-full flex items-end">
+                    <div className="w-full px-6 sm:px-10 lg:px-12 pb-16 sm:pb-20 lg:pb-24">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 max-w-7xl">
+                            <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6">
+                                {/* DAS */}
+                            </h1>
+                        </div>
+                    </div>
+                </div>
             </section>
+
+            <section ref={workspaceRef} className="bg-white py-16 sm:py-24 lg:py-[140px]">
+                <div className="mx-auto flex flex-col lg:flex-row max-w-[1400px] items-start gap-10 lg:gap-[100px] px-6 sm:px-10 lg:px-16">
+
+                    {/* IMAGE */}
+                    <div className="w-full lg:w-[58%]">
+                        <img
+                            src={img}
+                            alt="Spatial computing display"
+                            className="h-[300px] sm:h-[420px] lg:h-[520px] w-full object-cover"
+                        />
+                    </div>
+
+                    {/* TEXT */}
+                    <div className="w-full lg:w-[42%]">
+
+                        <small className="block text-[12px] tracking-widest text-black">
+                            SEE EVERY MISSION DETAIL
+                        </small>
+
+                        <h2 className="mt-6 text-3xl sm:text-4xl lg:text-[40px] font-light leading-tight text-black">
+                            360° immersion in a spatial workspace.
+                        </h2>
+
+                        {/* POINTS */}
+                        <div className="mt-8 space-y-4 text-[15px] text-gray-700">
+
+                            <p> 4K-per-eye mini-LED displays with advanced local dimming.</p>
+
+                            <p>  100–110° field of view for natural immersive vision.</p>
+
+                            {/* <p> 28 million pixels delivering extreme clarity and depth.</p> */}
+
+                            <p> An immersive workspace with multiple floating windows.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+
             <section className="bg-[#efefed] px-4 sm:px-6 py-16 sm:py-24 lg:py-[160px]">
                 <div className="mx-auto max-w-3xl text-center">
 
@@ -387,12 +353,11 @@ const Product1 = () => {
 
                     {/* Subtitle */}
                     <p className="mx-auto mt-4 sm:mt-6 max-w-[520px] text-sm sm:text-[15px] leading-relaxed text-gray-600">
-                        Traditional computers limit how much you can see and interact with at once. This spatial computer removes those limits,
-                        transforming your environment into a fully immersive digital workspace.
+                        DAS isn’t about improving existing computers. We redefine human–computer interaction through spatial computing.
                     </p>
 
                     {/* Variants */}
-                    <div className="mt-10 sm:mt-14 lg:mt-20 space-y-8 sm:space-y-12 lg:space-y-16 text-sm sm:text-[15px] leading-relaxed text-gray-700">
+                    {/* <div className="mt-10 sm:mt-14 lg:mt-20 space-y-8 sm:space-y-12 lg:space-y-16 text-sm sm:text-[15px] leading-relaxed text-gray-700">
 
                         <p>
                             Organize multiple applications around you, interact naturally with your
@@ -409,7 +374,7 @@ const Product1 = () => {
                             Learn more about the technology, architecture, <br /> and capabilities in the full product overview.
                         </p>
 
-                    </div>
+                    </div> */}
 
                     {/* Button */}
                     <button className="mt-12 sm:mt-20 lg:mt-28 
@@ -459,7 +424,7 @@ const Product1 = () => {
 
             <TalkToSalesCTA />
             <Footer />
-        </div>
+        </div >
     )
 }
 

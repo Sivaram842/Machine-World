@@ -2,13 +2,13 @@ import React, { useRef, useState } from "react";
 
 import Footer from "../../../components/NewFooter";
 
-import learn from "../../../assets/immersive-education.jpg";
-import learn1 from "../../../assets/skilldevelopment.jpg";
-import learn2 from "../../../assets/labs.jpg";
-import learn3 from "../../../assets/education.jpg";
-import learn4 from "../../../assets/collab.jpg";
+import learn from "../../../assets/srm1.jpg";
+import learn1 from "../../../assets/rehearsal.jpg";
+import learn2 from "../../../assets/combat.webp";
+import learn3 from "../../../assets/fighterjet.jpg";
+import learn4 from "../../../assets/colab.jpg";
 import learn5 from "../../../assets/mission.webp";
-import learn6 from "../../../assets/XR_Lab.avif";
+import learn6 from "../../../assets/aerial.jpg";
 import learn7 from "../../../assets/training.jpeg";
 import Navbar from "../../../components/NewNavbar";
 
@@ -115,18 +115,15 @@ export default function Aerial() {
                         {/* LEFT */}
                         <div className="md:col-span-6">
                             <h1 className="font-extrabold uppercase leading-[0.9] tracking-tight text-[11vw] md:text-[4.5vw]">
-                                IMMERSIVE <br /> LEARNING <br /> PLATFORMS
+                                IMMERSIVE <br /> AERIAL WARFARE <br /> PLATFORMS
                             </h1>
                         </div>
 
                         {/* RIGHT */}
                         <div className="md:col-span-4 md:col-start-9 flex items-end">
-                            <p className="text-[16px] md:text-[17px] leading-[1.7] max-w-[420px] text-white/90">
-                                Antiworld develops immersive aerial warfare training systems that combine spatial computing,
-                                cockpit simulators, and mission simulation environments. These technologies allow defense
-                                organizations to train pilots, simulate combat scenarios, and prepare for real-world aerial
-                                operations safely and efficiently.
-                            </p>
+                            <ul className="text-[16px] md:text-[17px] leading-[1.7] max-w-[420px] text-white/90 space-y-2">
+                                <li> Immersive aerial warfare training using cockpit simulators and mission simulation environments.</li>
+                            </ul>
                         </div>
 
                     </div>
@@ -141,7 +138,7 @@ export default function Aerial() {
 
                     <div>
                         <p className="uppercase text-[12px] tracking-[0.2em] text-black/60 mb-4">
-                            NEXT-GENERATION EDUCATION
+                            NEXT-GENERATION AERIAL TRAINING
                         </p>
 
                         <h2 className="text-[36px] md:text-[44px] font-extrabold leading-[1.05] mb-6">
@@ -149,23 +146,21 @@ export default function Aerial() {
                             MODERN AERIAL WARFARE
                         </h2>
 
-                        <ul className="space-y-3 text-[16px] text-black/70 leading-[1.7]">
-                            <li>• Train pilots using high-fidelity cockpit simulators</li>
-                            <li>• Simulate aerial combat and emergency flight scenarios</li>
-                            <li>• Practice mission planning and tactical coordination</li>
-                            <li>• Train for UAV and counter-drone defense operations</li>
-                            <li>• Reduce operational costs compared to live aircraft training</li>
-                            <li>• Enable safe training for complex combat situations</li>
+                        <ul className="space-y-2 text-[16px] text-black/70 leading-[1.7]">
+                            <li> High-fidelity simulators for aerial combat, emergency flight scenarios, and pilot training.</li>
+                            <li> Mission planning, UAV defense training, and tactical coordination in safe digital environments.</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
             {/* HORIZONTAL CARDS */}
-            <section className="py-24 overflow-hidden">
-                <div className="px-[6vw] mb-12">
-                    <h2 className="text-[40px] font-extrabold leading-[1.05] uppercase">
+            <section className="py-16 lg:py-24 overflow-hidden">
+
+                <div className="px-[6vw] mb-10 lg:mb-12">
+                    <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-extrabold leading-[1.1] uppercase">
                         AERIAL WARFARE
+                        <br className="sm:hidden" />
                         SIMULATION USE CASES
                     </h2>
                 </div>
@@ -176,36 +171,43 @@ export default function Aerial() {
                     onMouseLeave={handleMouseLeave}
                     onMouseUp={handleMouseUp}
                     onMouseMove={handleMouseMove}
-                    className="flex gap-10 px-[6vw] overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing"
+                    className="flex gap-6 lg:gap-10 px-[6vw] overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing touch-pan-x"
                     style={{ scrollbarWidth: "none" }}
                 >
+
                     {cards.map((card, index) => (
                         <div
                             key={index}
-                            className="min-w-[420px] max-w-[420px] flex flex-col group flex-shrink-0"
+                            className="min-w-[280px] sm:min-w-[320px] lg:min-w-[420px] max-w-[420px] flex flex-col group flex-shrink-0"
                         >
-                            <div className="h-[220px]">
-                                <p className="text-[12px] uppercase tracking-[0.18em] text-gray-500 mb-3">
+
+                            <div className="h-auto lg:h-[220px]">
+
+                                <p className="text-[11px] sm:text-[12px] uppercase tracking-[0.18em] text-gray-500 mb-3">
                                     {card.tag}
                                 </p>
 
-                                <h3 className="text-[22px] font-semibold mb-4">
+                                <h3 className="text-lg sm:text-xl lg:text-[22px] font-semibold mb-3 lg:mb-4">
                                     {card.title}
                                 </h3>
 
-                                <p className="text-gray-600 leading-[1.7] text-[15px]">
+                                <p className="text-gray-600 leading-[1.6] text-sm lg:text-[15px]">
                                     {card.desc}
                                 </p>
+
                             </div>
 
                             <img
                                 src={card.img}
                                 draggable="false"
-                                className="mt-6 h-[420px] object-cover rounded-lg transition-transform duration-500 group-hover:scale-[1.03]"
+                                className="mt-5 lg:mt-6 h-[240px] sm:h-[300px] lg:h-[420px] object-cover rounded-lg transition-transform duration-500 group-hover:scale-[1.03]"
                             />
+
                         </div>
                     ))}
+
                 </div>
+
             </section>
 
             {/* XR ADOPTION */}
@@ -216,11 +218,10 @@ export default function Aerial() {
                     AERIAL TRAINING SYSTEMS
                 </h2>
 
-                <p className="mt-10 max-w-[520px] mx-auto text-[18px] text-black/60 leading-[1.7]">
-                    Antiworld simulation platforms allow defense forces to train pilots, rehearse
-                    missions, and test aerial strategies inside immersive environments. These
-                    systems improve readiness while significantly reducing operational costs and risks.
-                </p>
+                <ul className="mt-10 max-w-[520px] mx-auto text-[18px] text-black/60 leading-[1.7] space-y-2">
+                    <li>Air forces use simulation platforms to rehearse aerial missions and combat strategies.</li>
+                    <li>Digital environments enable safe training for flight operations and coordinated air missions.</li>
+                </ul>
             </section>
 
             {/* VIDEO SECTION */}
@@ -229,16 +230,15 @@ export default function Aerial() {
 
                     <video
                         ref={videoRef}
-                        src="https://www.w3schools.com/html/mov_bbb.mp4"
+                        src="/aerialwarfare.mp4"
                         className="w-full rounded-lg"
                         controls={playing}
                     />
 
                     <div>
                         <p className="text-[28px] italic font-light leading-[1.4] mb-6">
-                            “Immersive simulation environments allow pilots and defense teams to train for
-                            complex aerial missions, improve decision-making, and prepare for real-world
-                            combat scenarios.”
+                            “ Train pilots for complex combat missions and high-risk aerial operations.
+                            Improve coordination between pilots, commanders, and air units.”
                         </p>
 
                         <p className="uppercase text-[12px] tracking-[0.18em] text-black/60">
@@ -272,15 +272,14 @@ export default function Aerial() {
                     </p>
 
                     <h2 className="text-[44px] font-extrabold leading-[1.1] mb-6">
-                        BUILDING THE FUTURE OF IMMERSIVE LEARNING
+                        BUILDING THE FUTURE OF
+                        AERIAL WARFARE TRAINING
                     </h2>
 
-                    <p className="text-[17px] leading-[1.7] text-white/80 mb-8">
-                        Antiworld technologies combine XR simulation, spatial computing,
-                        and immersive environments to transform how knowledge is delivered.
-                        Learners can explore digital worlds and develop practical skills through
-                        interactive training systems.
-                    </p>
+                    <ul className="text-[17px] leading-[1.7] text-white/80 mb-8 space-y-2">
+                        <li> High-fidelity cockpit simulators and mission rehearsal platforms for aerial warfare training.</li>
+                        <li> Collaborative simulation systems that improve pilot readiness and operational coordination.</li>
+                    </ul>
 
                     <button className="bg-white text-black px-8 py-4 uppercase text-[12px] tracking-[0.12em] hover:bg-white/80">
                         Explore Technologies →

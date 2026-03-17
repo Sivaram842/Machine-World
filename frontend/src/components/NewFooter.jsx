@@ -20,9 +20,9 @@ const Footer = () => {
                     {/* LOGIN BUTTON */}
                     <button
                         onClick={() => window.open("/login", "_blank")}
-                        className="border border-white px-4 py-2 flex items-center justify-between w-[200px] text-xs sm:text-sm tracking-[0.15em] uppercase hover:bg-white hover:text-black transition-all duration-300"
+                        className="border border-white px-3 py-1 flex items-center justify-between w-[150px] text-[5px] sm:text-sm tracking-[0.15em] uppercase hover:bg-white hover:text-black transition-all duration-300"
                     >
-                        <span>Antiworld Account Login</span>
+                        <span>  Login</span>
                         <span className="text-lg">→</span>
                     </button>
                 </div>
@@ -82,7 +82,7 @@ const Footer = () => {
                 {/* LEFT */}
                 <div>
                     <p className="text-xs mb-4">
-                        COPYRIGHT © 2026 ANTIWORLD INDUSTRIES
+                        COPYRIGHT © 2026 ANTIWORLD
                     </p>
 
                     <ul className="space-y-1 text-xs text-gray-400">

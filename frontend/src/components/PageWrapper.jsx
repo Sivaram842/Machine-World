@@ -7,7 +7,7 @@ const PageWrapper = ({ children }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
-            style={{ minHeight: "100vh", background: "black" }}
+            style={{ minHeight: "100vh" }}
         >
             {children}
         </motion.div>

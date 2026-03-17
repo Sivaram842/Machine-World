@@ -8,10 +8,10 @@ import learn2 from "../../../assets/labs.jpg";
 import learn3 from "../../../assets/education.jpg";
 import learn4 from "../../../assets/collab.jpg";
 import learn5 from "../../../assets/mission.webp";
-import learn6 from "../../../assets/XR_Lab.avif";
+import learn6 from "../../../assets/groundwarfare.jpg";
 import learn7 from "../../../assets/training.jpeg";
 import Navbar from "../../../components/NewNavbar";
-
+import truck from "../../../assets/download.png"
 const cards = [
     {
         tag: "TACTICAL COMBAT TRAINING",
@@ -103,7 +103,7 @@ const GroundWarfare = () => {
             {/* HERO */}
             <section className="relative h-screen w-full overflow-hidden text-white bg-black">
                 <img
-                    src="https://varjo.com/hs-fs/hubfs/Gaia%20images/1920x1080%20(5)-min.png"
+                    src={truck}
                     className="absolute inset-0 w-full h-full object-cover"
                     alt=""
                 />
@@ -116,18 +116,17 @@ const GroundWarfare = () => {
                         {/* LEFT */}
                         <div className="md:col-span-6">
                             <h1 className="font-extrabold uppercase leading-[0.9] tracking-tight text-[11vw] md:text-[4.5vw]">
-                                IMMERSIVE <br /> LEARNING <br /> PLATFORMS
+                                IMMERSIVE <br /> GROUND WARFARE <br /> PLATFORMS
                             </h1>
                         </div>
 
                         {/* RIGHT */}
                         <div className="md:col-span-4 md:col-start-9 flex items-end">
-                            <p className="text-[16px] md:text-[17px] leading-[1.7] max-w-[420px] text-white/90">
-                                Antiworld develops advanced ground warfare technologies including immersive combat training
-                                platforms, mission simulation environments, and intelligent defense systems. These solutions
-                                allow defense forces to train soldiers, rehearse operations, and prepare for complex battlefield
-                                situations using realistic simulation technologies.
-                            </p>
+                            <ul className="text-[16px] md:text-[17px] leading-[1.7] max-w-[420px] text-white/90 space-y-2">
+                                <li> Immersive combat training systems.</li>
+                                <li> Mission planning and battlefield simulation.</li>
+                                <li> Intelligent technologies for modern ground forces.</li>
+                            </ul>
                         </div>
 
                     </div>
@@ -142,7 +141,7 @@ const GroundWarfare = () => {
 
                     <div>
                         <p className="uppercase text-[12px] tracking-[0.2em] text-black/60 mb-4">
-                            NEXT-GENERATION EDUCATION
+                            NEXT-GENERATION DEFENSE TRAINING
                         </p>
 
                         <h2 className="text-[36px] md:text-[44px] font-extrabold leading-[1.05] mb-6">
@@ -150,23 +149,23 @@ const GroundWarfare = () => {
                             MODERN GROUND WARFARE
                         </h2>
 
-                        <ul className="space-y-3 text-[16px] text-black/70 leading-[1.7]">
-                            <li>• Train soldiers through immersive battlefield simulations</li>
-                            <li>• Practice urban combat and tactical ground operations</li>
-                            <li>• Simulate mission planning and strategic decision making</li>
-                            <li>• Train for counter-drone and surveillance defense</li>
-                            <li>• Reduce the cost of large-scale physical military exercises</li>
-                            <li>• Enable safe training for complex combat environments</li>
+                        <ul className="space-y-2 text-[16px] text-black/70 leading-[1.7]">
+                            <li> Realistic urban combat environments.</li>
+                            <li> Tactical strategy rehearsal tools.</li>
+                            <li> Coordination training for ground units.</li>
+                            <li> Cost-efficient large-scale training.</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
             {/* HORIZONTAL CARDS */}
-            <section className="py-24 overflow-hidden">
-                <div className="px-[6vw] mb-12">
-                    <h2 className="text-[40px] font-extrabold leading-[1.05] uppercase">
+            <section className="py-16 lg:py-24 overflow-hidden">
+
+                <div className="px-[6vw] mb-10 lg:mb-12">
+                    <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-extrabold leading-[1.1] uppercase">
                         GROUND WARFARE
+                        <br className="sm:hidden" />
                         TECHNOLOGY USE CASES
                     </h2>
                 </div>
@@ -177,36 +176,43 @@ const GroundWarfare = () => {
                     onMouseLeave={handleMouseLeave}
                     onMouseUp={handleMouseUp}
                     onMouseMove={handleMouseMove}
-                    className="flex gap-10 px-[6vw] overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing"
+                    className="flex gap-6 lg:gap-10 px-[6vw] overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing"
                     style={{ scrollbarWidth: "none" }}
                 >
+
                     {cards.map((card, index) => (
                         <div
                             key={index}
-                            className="min-w-[420px] max-w-[420px] flex flex-col group flex-shrink-0"
+                            className="min-w-[280px] sm:min-w-[320px] lg:min-w-[420px] max-w-[420px] flex flex-col group flex-shrink-0"
                         >
-                            <div className="h-[220px]">
-                                <p className="text-[12px] uppercase tracking-[0.18em] text-gray-500 mb-3">
+
+                            <div className="h-auto lg:h-[220px]">
+
+                                <p className="text-[11px] sm:text-[12px] uppercase tracking-[0.18em] text-gray-500 mb-3">
                                     {card.tag}
                                 </p>
 
-                                <h3 className="text-[22px] font-semibold mb-4">
+                                <h3 className="text-lg sm:text-xl lg:text-[22px] font-semibold mb-3 lg:mb-4">
                                     {card.title}
                                 </h3>
 
-                                <p className="text-gray-600 leading-[1.7] text-[15px]">
+                                <p className="text-gray-600 leading-[1.6] text-sm lg:text-[15px]">
                                     {card.desc}
                                 </p>
+
                             </div>
 
                             <img
                                 src={card.img}
                                 draggable="false"
-                                className="mt-6 h-[420px] object-cover rounded-lg transition-transform duration-500 group-hover:scale-[1.03]"
+                                className="mt-5 lg:mt-6 h-[240px] sm:h-[300px] lg:h-[420px] object-cover rounded-lg transition-transform duration-500 group-hover:scale-[1.03]"
                             />
+
                         </div>
                     ))}
+
                 </div>
+
             </section>
 
             {/* XR ADOPTION */}
@@ -217,44 +223,44 @@ const GroundWarfare = () => {
                     GROUND WARFARE SYSTEMS
                 </h2>
 
-                <p className="mt-10 max-w-[520px] mx-auto text-[18px] text-black/60 leading-[1.7]">
-                    Antiworld technologies allow defense organizations to simulate battlefield
-                    operations, train soldiers, and develop tactical strategies through immersive
-                    training environments and intelligent defense systems designed for modern ground warfare.
-                </p>
+                <ul className="mt-10 max-w-[520px] mx-auto text-[18px] text-black/60 leading-[1.7] space-y-2">
+                    <li> Safe digital combat scenarios.</li>
+                    <li> Mission readiness preparation.</li>
+                    <li> Operational coordination practice.</li>
+                </ul>
             </section>
 
-            {/* VIDEO SECTION */}
+            {/* VIDEO SECTION
             <section className="py-28 px-[6vw]">
                 <div className="grid md:grid-cols-2 gap-16 items-center">
 
-                    <video
-                        ref={videoRef}
-                        src="https://www.w3schools.com/html/mov_bbb.mp4"
-                        className="w-full rounded-lg"
-                        controls={playing}
-                    />
+                    <div className="w-full lg:w-[58%]">
+                        <img
+                            src={truck}
+                            alt="Ground Vehicle"
+                            className="h-[300px] sm:h-[420px] lg:h-[520px] w-full object-cover"
+                        />
+                    </div>
 
                     <div>
-                        <p className="text-[28px] italic font-light leading-[1.4] mb-6">
-                            “Immersive battlefield simulations allow soldiers and commanders to train for
-                            complex ground operations, improve coordination, and prepare for real combat
-                            situations before deployment.”
-                        </p>
+                        <ul className="text-[20px] italic font-light leading-[1.5] mb-6 space-y-2">
+                            <li>• Train for high-risk battlefield missions.</li>
+                            <li>• Improve command and unit response.</li>
+                        </ul>
 
                         <p className="uppercase text-[12px] tracking-[0.18em] text-black/60">
                             ANTIWORLD DEFENSE SIMULATION SYSTEMS
                         </p>
-
+                     
                         <button
                             onClick={handlePlay}
                             className="mt-8 bg-black text-white px-8 py-4 uppercase text-[12px] tracking-[0.12em] hover:bg-black/80"
                         >
                             Play Video →
-                        </button>
+                        </button> 
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* ADVANTAGE */}
             <section
@@ -277,13 +283,11 @@ const GroundWarfare = () => {
                         GROUND WARFARE SYSTEMS
                     </h2>
 
-                    <p className="text-[17px] leading-[1.7] text-white/80 mb-8">
-                        Antiworld develops advanced ground warfare technologies including immersive
-                        combat training platforms, tactical mission simulators, and intelligent robotic
-                        systems. These technologies allow defense organizations to train soldiers,
-                        simulate battlefield operations, and improve mission readiness through
-                        realistic simulation environments.
-                    </p>
+                    <ul className="text-[17px] leading-[1.7] text-white/80 mb-8 space-y-2">
+                        <li> Tactical mission simulators.</li>
+                        <li> Autonomous battlefield systems.</li>
+                        <li> Advanced combat analytics tools.</li>
+                    </ul>
 
                     <button className="bg-white text-black px-8 py-4 uppercase text-[12px] tracking-[0.12em] hover:bg-white/80">
                         Explore Technologies →

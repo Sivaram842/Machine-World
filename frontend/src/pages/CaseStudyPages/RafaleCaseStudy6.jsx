@@ -1,251 +1,199 @@
 import Rafale6 from "../../assets/Rafale6.jpg";
 import Rafale61 from "../../assets/Rafale6-1.jpg";
 import Rafale62 from "../../assets/Rafale6-2.jpg";
-
+import Navbar from "../../../src/components/NewNavbar"
+import Footer from "../../../src/components/NewFooter"
 export default function RafaleCaseStudy6() {
     return (
-        <div className="bg-[#f3f3f3] text-black">
+        <div>
+            <Navbar />
 
-            {/* ================= HERO ================= */}
-            <section className="py-20 md:py-32 text-center px-6">
+            <div className="bg-black text-white">
 
-                <p className="uppercase text-xs md:text-sm tracking-[3px] text-gray-600">
-                    Case Study
-                </p>
+                {/* ================= HERO ================= */}
+                <section className="py-20 md:py-32 text-center px-6">
 
-                <h1 className="mt-6 md:mt-8 
-        text-[24px] sm:text-[28px] md:text-[36px] lg:text-[44px] 
-        font-extrabold uppercase 
-        leading-[1.2] md:leading-[1.15] 
-        max-w-[760px] mx-auto">
-
-                    Rafale Export Success <br />
-                    and Global Defence <br />
-                    Market
-                </h1>
-
-                <p className="mt-8 md:mt-10 text-[16px] md:text-[18px] leading-[28px] md:leading-[32px] text-gray-700 max-w-[620px] mx-auto">
-                    The Dassault Rafale fighter aircraft has become one of the most
-                    successful defense exports in recent years, gaining international
-                    recognition due to its multirole capability, advanced avionics,
-                    and proven combat performance.
-                </p>
-
-            </section>
-
-
-            {/* ================= HERO IMAGE ================= */}
-            <section className="px-4 md:px-6">
-                <div className="max-w-[1100px] mx-auto">
-
-                    <img
-                        src={Rafale6}
-                        alt="Rafale fighter aircraft export success"
-                        className="w-full h-[300px] sm:h-[400px] md:h-[600px] object-cover"
-                    />
-
-                </div>
-            </section>
-
-
-            {/* ================= BACKGROUND ================= */}
-            <section className="py-16 md:py-24 px-6">
-
-                <div className="max-w-[760px] mx-auto space-y-6 md:space-y-8
-        text-[16px] md:text-[18px] leading-[28px] md:leading-[32px] text-gray-800">
-
-                    <p>
-                        The <strong>Dassault Rafale</strong> has emerged as one of the
-                        most successful fighter aircraft exports in the global defense
-                        market. Developed by <strong>Dassault Aviation</strong>, the
-                        aircraft gained international recognition after demonstrating
-                        strong performance in combat operations and multinational
-                        military exercises.
+                    <p className="uppercase text-xs md:text-sm tracking-[3px] text-gray-500">
+                        Case Study
                     </p>
 
-                    <p>
-                        Several countries selected Rafale due to its
-                        <strong> multirole capability, advanced avionics systems,
-                            and operational reliability</strong>.
+                    <h1 className="mt-6 md:mt-8 
+               text-[26px] sm:text-[32px] md:text-[40px] lg:text-[48px] 
+               font-extrabold uppercase 
+               leading-[1.15] 
+               max-w-[780px] mx-auto">
+
+                        Rafale Export Success <br />
+                        and Global Defence <br />
+                        Market
+                    </h1>
+
+                    <p className="mt-8 md:mt-10 text-[16px] md:text-[18px] leading-[30px] text-gray-400 max-w-[640px] mx-auto">
+                        Rafale has become one of the most successful fighter exports,
+                        recognized globally for its multirole capability and combat performance.
                     </p>
 
-                </div>
+                </section>
 
-            </section>
 
+                {/* ================= HERO IMAGE ================= */}
+                <section className="px-4 md:px-6">
+                    <div className="max-w-[780px] mx-auto">
 
-            {/* ================= SECOND IMAGE ================= */}
-            <section className="px-4 md:px-6">
-                <div className="max-w-[1100px] mx-auto">
+                        <img
+                            src={Rafale6}
+                            alt="Rafale export success"
+                            className="w-full h-[300px] sm:h-[420px] md:h-[600px] object-cover rounded-2xl shadow-lg hover:scale-[1.02] transition duration-500"
+                        />
 
-                    <img
-                        src={Rafale61}
-                        alt="Rafale international operators"
-                        className="w-full h-[260px] sm:h-[360px] md:h-[520px] object-cover"
-                    />
+                    </div>
+                </section>
 
-                </div>
-            </section>
 
+                {/* ================= BACKGROUND ================= */}
+                <section className="py-16 md:py-24 px-6">
 
-            {/* ================= EXPORT CUSTOMERS ================= */}
-            <section className="py-16 md:py-24 px-6">
+                    <div className="max-w-[780px] mx-auto space-y-6 md:space-y-8
+               text-[16px] md:text-[18px] leading-[30px] text-gray-300">
 
-                <div className="max-w-[760px] mx-auto space-y-8
-        text-[16px] md:text-[18px] leading-[30px] text-gray-800">
+                        <p>
+                            The <strong className="text-white">Dassault Rafale</strong>,
+                            developed by <strong className="text-white">Dassault Aviation</strong>,
+                            is one of the most successful fighter exports globally.
+                        </p>
 
-                    <h2 className="text-[24px] font-bold uppercase">
-                        Major Export Customers
-                    </h2>
+                        <p>
+                            Its success is driven by multirole capability, advanced avionics,
+                            and proven combat performance.
+                        </p>
 
-                    <h3 className="font-bold text-[18px]">Egypt</h3>
+                    </div>
 
-                    <ul className="list-disc pl-6 space-y-2">
+                </section>
 
-                        <li>First international Rafale customer in 2015</li>
 
-                        <li>Selected Rafale for its modern multirole capabilities</li>
+                {/* ================= SECOND IMAGE ================= */}
+                <section className="px-4 md:px-6">
+                    <div className="max-w-[780px] mx-auto">
 
-                        <li>Used for air defense, counter-terrorism, and strategic strike missions</li>
+                        <img
+                            src={Rafale61}
+                            alt="Rafale global operators"
+                            className="w-full h-[260px] sm:h-[360px] md:h-[520px] object-cover rounded-2xl shadow-lg hover:scale-[1.02] transition duration-500"
+                        />
 
-                    </ul>
+                    </div>
+                </section>
 
-                    <h3 className="font-bold text-[18px]">Qatar</h3>
 
-                    <ul className="list-disc pl-6 space-y-2">
+                {/* ================= CUSTOMERS ================= */}
+                <section className="py-16 md:py-24 px-6">
 
-                        <li>Purchased Rafale to modernize its air force</li>
+                    <div className="max-w-[780px] mx-auto space-y-8
+               text-[16px] md:text-[18px] leading-[30px] text-gray-300">
 
-                        <li>Strong multirole performance and advanced missile systems</li>
+                        <h2 className="text-[26px] font-bold uppercase text-white">
+                            Major Export Customers
+                        </h2>
 
-                        <li>Interoperability with NATO-compatible systems</li>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>Egypt – First export customer (2015)</li>
+                            <li>Qatar – Air force modernization</li>
+                            <li>Greece – Enhanced regional air defense</li>
+                            <li>India – Strengthened air combat capability</li>
+                        </ul>
 
-                    </ul>
+                    </div>
 
-                    <h3 className="font-bold text-[18px]">Greece</h3>
+                </section>
 
-                    <ul className="list-disc pl-6 space-y-2">
 
-                        <li>Strengthened air defense capability in the Mediterranean region</li>
+                {/* ================= THIRD IMAGE ================= */}
+                <section className="px-4 md:px-6">
 
-                        <li>Enhanced air superiority capability</li>
+                    <div className="max-w-[780px] mx-auto">
 
-                        <li>Equipped with advanced Meteor BVR missile systems</li>
+                        <img
+                            src={Rafale62}
+                            alt="Rafale avionics"
+                            className="w-full object-cover rounded-2xl shadow-lg hover:scale-[1.02] transition duration-500"
+                        />
 
-                    </ul>
+                    </div>
 
-                    <h3 className="font-bold text-[18px]">India</h3>
+                </section>
 
-                    <ul className="list-disc pl-6 space-y-2">
 
-                        <li>Acquired Rafale aircraft to strengthen the Indian Air Force</li>
+                {/* ================= FACTORS ================= */}
+                <section className="py-16 md:py-24 px-6">
 
-                        <li>Addressed shortages in fighter squadrons</li>
+                    <div className="max-w-[780px] mx-auto space-y-8
+               text-[16px] md:text-[18px] leading-[30px] text-gray-300">
 
-                        <li>Improved long-range strike and air combat capability</li>
+                        <h2 className="text-[26px] font-bold uppercase text-white">
+                            Factors Behind Success
+                        </h2>
 
-                    </ul>
+                        <h3 className="font-semibold text-[18px] text-white">
+                            Proven Combat Performance
+                        </h3>
 
-                </div>
+                        <p>
+                            Validated through real-world combat operations.
+                        </p>
 
-            </section>
+                        <h3 className="font-semibold text-[18px] text-white">
+                            Advanced Technology
+                        </h3>
 
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>AESA radar</li>
+                            <li>Electronic warfare systems</li>
+                            <li>Sensor fusion</li>
+                        </ul>
 
-            {/* ================= THIRD IMAGE ================= */}
-            <section className="px-4 md:px-6">
+                        <h3 className="font-semibold text-[18px] text-white">
+                            Multirole Capability
+                        </h3>
 
-                <div className="max-w-[900px] mx-auto">
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>Air superiority</li>
+                            <li>Ground attack</li>
+                            <li>Reconnaissance</li>
+                            <li>Maritime strike</li>
+                        </ul>
 
-                    <img
-                        src={Rafale62}
-                        alt="Rafale advanced avionics systems"
-                        className="w-full object-cover"
-                    />
+                    </div>
 
-                </div>
+                </section>
 
-            </section>
 
+                {/* ================= IMPACT ================= */}
+                <section className="py-16 md:py-24 px-6">
 
-            {/* ================= FACTORS FOR SUCCESS ================= */}
-            <section className="py-16 md:py-24 px-6">
+                    <div className="max-w-[780px] mx-auto space-y-6
+               text-[16px] md:text-[18px] leading-[30px] text-gray-300">
 
-                <div className="max-w-[760px] mx-auto space-y-6
-        text-[16px] md:text-[18px] leading-[30px] text-gray-800">
+                        <h2 className="text-[26px] font-bold uppercase text-white">
+                            Strategic Impact
+                        </h2>
 
-                    <h2 className="text-[24px] font-bold uppercase">
-                        Factors Behind Rafale’s Export Success
-                    </h2>
+                        <ul className="list-disc pl-6 space-y-2">
+                            <li>Boosted French defense industry revenue</li>
+                            <li>Strengthened global defense partnerships</li>
+                            <li>Expanded aerospace influence worldwide</li>
+                        </ul>
 
-                    <h3 className="font-bold text-[18px]">Proven Combat Performance</h3>
+                        <p>
+                            Rafale has become a key symbol of modern multirole fighter success.
+                        </p>
 
-                    <p>
-                        Rafale’s participation in combat missions across the Middle East
-                        and North Africa demonstrated its operational reliability and
-                        effectiveness in real-world combat environments.
-                    </p>
+                    </div>
 
-                    <h3 className="font-bold text-[18px]">Advanced Technology</h3>
+                </section>
 
-                    <ul className="list-disc pl-6 space-y-2">
-
-                        <li>AESA radar systems</li>
-
-                        <li>Advanced electronic warfare capabilities</li>
-
-                        <li>Sensor fusion technology</li>
-
-                    </ul>
-
-                    <h3 className="font-bold text-[18px]">Multirole Flexibility</h3>
-
-                    <ul className="list-disc pl-6 space-y-2">
-
-                        <li>Air superiority missions</li>
-
-                        <li>Ground attack operations</li>
-
-                        <li>Reconnaissance missions</li>
-
-                        <li>Maritime strike capability</li>
-
-                    </ul>
-
-                </div>
-
-            </section>
-
-
-            {/* ================= STRATEGIC IMPACT ================= */}
-            <section className="py-16 md:py-24 px-6">
-
-                <div className="max-w-[760px] mx-auto space-y-6
-        text-[16px] md:text-[18px] leading-[30px] text-gray-800">
-
-                    <h2 className="text-[24px] font-bold uppercase">
-                        Strategic Impact
-                    </h2>
-
-                    <p>
-                        Rafale exports strengthened France’s defense partnerships and
-                        significantly boosted the global presence of the French aerospace
-                        industry.
-                    </p>
-
-                    <ul className="list-disc pl-6 space-y-2">
-
-                        <li>Increased revenue for the French defense sector</li>
-
-                        <li>Stronger military cooperation with partner countries</li>
-
-                        <li>Expansion of French aerospace technology worldwide</li>
-
-                    </ul>
-
-                </div>
-
-            </section>
-
+            </div>
+            <Footer />
         </div>
     );
 }

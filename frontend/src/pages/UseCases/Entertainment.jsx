@@ -9,6 +9,9 @@ import entertainment4 from "../../assets/cinema.jpg"
 import entertainment5 from "../../assets/ienter.webp"
 import entertainment6 from "../../assets/simustream.jpg"
 import entertainment7 from "../../assets/imm3d.jpg"
+import entertainment8 from "../../assets/immerse.png"
+
+import { useNavigate } from "react-router-dom";
 
 const cards = [
     {
@@ -51,18 +54,19 @@ const cards = [
 
 
 const customers = [
-    "AECHELON",
-    "TRU SIMULATION",
-    "FINNISH AIR FORCE",
-    "LUFTHANSA AVIATION TRAINING",
-    "SLOVENIAN ARMED FORCES",
-    "DASSAULT AVIATION",
+    "EPIC GAMES",
+    "UNITY TECHNOLOGIES",
+    "DISNEY IMAGINEERING",
+    "UNIVERSAL CREATIVE",
+    "ILM IMMERSIVE",
+    "NETFLIX XR STUDIOS",
 ];
 
 
 export default function Entertainment() {
 
     const scrollRef = useRef(null);
+    const navigate = useNavigate();
 
     const handleMouseLeave = () => {
         if (!scrollRef.current) return;
@@ -104,15 +108,23 @@ export default function Entertainment() {
         setPlaying(true);
     };
 
+    const videRef = useRef(null);
+
+    const playVideo = () => {
+        if (videRef.current) {
+            videRef.current.play();
+        }
+    };
+
     return (
         <div>
             <Navbar />
-            <section className="relative h-screen w-full overflow-hidden bg-black text-white">
+            <section className="relative min-h-[100svh] w-full overflow-hidden bg-black text-white">
 
                 {/* Background video */}
                 <video
                     className="absolute inset-0 w-full h-full object-cover"
-                    src={"/spatialherovideo.mp4"}
+                    src="/spatialherovideo.mp4"
                     autoPlay
                     loop
                     muted
@@ -122,54 +134,41 @@ export default function Entertainment() {
                 {/* Dark overlay */}
                 <div className="absolute inset-0 bg-black/60" />
 
-
                 {/* Content */}
-                <div className="relative h-full w-full">
+                <div className="relative h-full w-full flex items-end">
 
-                    <div className="absolute bottom-[15vh] left-0 w-full px-6 md:px-[5.5vw]">
+                    <div className="w-full px-6 md:px-[5.5vw] pb-[12vh] md:pb-[15vh]">
 
-                        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
 
                             {/* LEFT HEADING */}
                             <div className="md:col-span-6">
                                 <h1
                                     className="
-          font-extrabold
-          uppercase
-          leading-[0.9]
-          tracking-[-0.015em]
-          text-[12vw] md:text-[4vw]
-          scale-x-105 md:scale-x-110
-          scale-y-95 md:scale-y-90
-        "
+                        font-extrabold
+                        uppercase
+                        leading-[0.9]
+                        tracking-[-0.015em]
+                        text-[10vw] sm:text-[9vw] md:text-[4vw]
+                        scale-x-105 md:scale-x-110
+                        scale-y-95 md:scale-y-90
+                        "
                                 >
                                     THE FUTURE OF<br />
-                                    IMMERSIVE
-                                    ENTERTAINMENT
-
-
+                                    IMMERSIVE ENTERTAINMENT
                                 </h1>
                             </div>
 
-                            {/* RIGHT PARAGRAPH */}
-                            <div className="md:col-span-6">
-                                <p
-                                    className="
-          mt-6 md:mt-[3.5vh]
-          text-[15px] md:text-[16px]
-          leading-[1.6]
-          max-w-full md:max-w-[430px]
-        "
-                                >
-                                    Antiworld technologies enable a new generation of immersive
-                                    entertainment experiences. By combining spatial computing,
-                                    XR environments, and interactive simulations, creators can
-                                    build digital worlds where audiences can explore, play,
-                                    and interact in ways never before possible.
-                                </p>
+                            {/* RIGHT TEXT */}
+                            <div className="md:col-span-6 md:justify-self-end">
+                                <ul className="text-[14px] sm:text-[15px] md:text-[16px] leading-[1.6] max-w-[430px] space-y-2">
+                                    <li>Spatial computing platforms for interactive XR entertainment worlds.</li>
+                                    <li>Enable audiences to explore, play, and interact inside immersive digital environments.</li>
+                                </ul>
                             </div>
 
                         </div>
+
                     </div>
 
                 </div>
@@ -185,7 +184,7 @@ export default function Entertainment() {
                         <div>
                             <img
                                 src={entertainment}
-                                alt="Pilot training simulator"
+                                alt="Immersive entertainment XR experience"
                                 className="w-full h-auto object-cover"
                             />
                         </div>
@@ -213,34 +212,10 @@ export default function Entertainment() {
                             </h2>
 
                             {/* Bullet List */}
-                            <ul className="list-disc list-outside pl-4 space-y-3 text-[14px] md:text-[15px] leading-[1.65] text-[#1a1a1a]">
-                                <li>
-                                    Create immersive gaming environments powered by spatial computing technology
-                                </li>
-
-                                <li>
-                                    Enable interactive XR experiences for theme parks, arcades, and entertainment venues
-                                </li>
-
-                                <li>
-                                    Deliver cinematic storytelling experiences where audiences become part of the narrative
-                                </li>
-
-                                <li>
-                                    Support large-scale multiplayer environments using the REALM immersive platform
-
-                                </li>
-
-                                <li>
-                                    Build high-fidelity simulators for racing, aviation, and adventure entertainment
-                                </li>
-
-                                <li>
-                                    Transform digital entertainment with interactive spatial environments
-                                </li>
-
+                            <ul className="list-disc list-outside pl-4 space-y-2 text-[14px] md:text-[15px] leading-[1.65] text-[#1a1a1a]">
+                                <li> Build immersive gaming worlds, XR theme park attractions, and interactive storytelling experiences.</li>
+                                <li> Support multiplayer environments and high-fidelity simulators for racing, aviation, and adventure entertainment.</li>
                             </ul>
-
                         </div>
 
                     </div>
@@ -248,58 +223,63 @@ export default function Entertainment() {
                 </div>
 
             </section>
-            <section className="bg-[#f3f3f3] py-20 overflow-hidden">
+            <section className="bg-[#f3f3f3] py-16 md:py-20 overflow-hidden">
 
                 {/* Heading */}
-                <div className="px-16 mb-12">
-                    <h2 className="text-[36px] font-extrabold leading-[1.05] tracking-[-0.02em] uppercase">
-                        TRAINING EVERY PHASE
+                <div className="px-6 md:px-16 mb-10 md:mb-12">
+                    <h2 className="text-2xl sm:text-3xl md:text-[36px] font-extrabold leading-[1.1] tracking-[-0.02em] uppercase">
+                        IMMERSIVE ENTERTAINMENT
                         <br />
-                        OF FLIGHT
+                        USE CASES
                     </h2>
                 </div>
 
-                {/* Horizontal Drag Scroll Area */}
+                {/* Horizontal Scroll Area */}
                 <div
                     ref={scrollRef}
                     onMouseDown={handleMouseDown}
                     onMouseLeave={handleMouseLeave}
                     onMouseUp={handleMouseUp}
                     onMouseMove={handleMouseMove}
-                    className="flex gap-6 md:gap-10 px-6 md:px-16 overflow-x-auto md:overflow-hidden cursor-grab active:cursor-grabbing"
+                    className="flex gap-6 md:gap-10 px-6 md:px-16 overflow-x-auto md:overflow-hidden cursor-grab active:cursor-grabbing touch-pan-x"
                 >
                     {cards.map((card, index) => (
                         <div
                             key={index}
-                            className="min-w-[85vw] md:min-w-[420px] max-w-[85vw] md:max-w-[420px] flex-shrink-0 flex flex-col"
+                            className="min-w-[85vw] sm:min-w-[70vw] md:min-w-[420px] max-w-[85vw] sm:max-w-[70vw] md:max-w-[420px] flex-shrink-0 flex flex-col"
                         >
-                            {/* Text Block - fixed height for perfect alignment */}
-                            <div className="h-[260px] flex flex-col">
-                                <p className="uppercase text-[12px] tracking-[0.18em] mb-4 text-gray-500">
+
+                            {/* Text Block */}
+                            <div className="flex flex-col md:h-[260px]">
+
+                                <p className="uppercase text-[11px] md:text-[12px] tracking-[0.18em] mb-3 md:mb-4 text-gray-500">
                                     {card.tag}
                                 </p>
 
-                                <h3 className="text-[22px] font-light mb-6 leading-snug">
+                                <h3 className="text-lg md:text-[22px] font-light mb-4 md:mb-6 leading-snug">
                                     {card.title}
                                 </h3>
 
-                                <p className="text-[15px] text-gray-600 leading-[1.7]">
+                                <p className="text-sm md:text-[15px] text-gray-600 leading-[1.6] md:leading-[1.7]">
                                     {card.desc}
                                 </p>
+
                             </div>
 
-                            {/* Image Block - equal height */}
-                            <div className="mt-5">
+                            {/* Image */}
+                            <div className="mt-4 md:mt-5">
                                 <img
                                     src={card.img}
                                     alt=""
                                     draggable="false"
-                                    className="w-full h-[320px] md:h-[520px] object-cover"
+                                    className="w-full h-[240px] sm:h-[300px] md:h-[520px] object-cover"
                                 />
                             </div>
+
                         </div>
                     ))}
                 </div>
+
             </section>
             <section className="w-full min-h-screen bg-[#f3f3f3] flex items-center justify-center">
                 <div className="w-full max-w-[1100px] mx-auto px-[6vw] text-center">
@@ -312,11 +292,10 @@ export default function Entertainment() {
                         GENERATION OF XR EXPERIENCES
                     </h2>
 
-                    <p className="mt-8 md:mt-12 text-[16px] md:text-[19px] leading-[1.7] text-[#555555] max-w-[520px] mx-auto">
-                        Game developers, creative studios, and entertainment companies
-                        are exploring immersive spatial technologies to create interactive
-                        experiences that blur the boundary between digital and physical worlds.
-                    </p>
+                    <ul className="mt-10 max-w-[520px] mx-auto text-[16px] md:text-[18px] text-black/60 leading-[1.7] space-y-2">
+                        <li> Entertainment studios are adopting spatial XR platforms for interactive digital experiences.</li>
+                        <li> Blending physical and virtual environments to create new forms of audience engagement.</li>
+                    </ul>
 
                 </div>
             </section>
@@ -350,11 +329,10 @@ export default function Entertainment() {
 
                         {/* VIDEO PLAYER */}
                         <div className="relative mb-[30px]">
-                            <video
-                                ref={videoRef}
-                                className="w-full object-cover"
-                                src="https://www.w3schools.com/html/mov_bbb.mp4"
-                                controls={playing}
+                            <img
+                                src={entertainment8}
+                                alt="Immersive entertainment XR experience"
+                                className="w-full h-auto object-cover"
                             />
 
                             {!playing && (
@@ -371,9 +349,8 @@ export default function Entertainment() {
 
                         {/* QUOTE */}
                         <p className="text-[20px] md:text-[27px] leading-[1.4] italic font-light text-black mb-[18px]">
-                            “Antiworld’s immersive XR environments allow audiences to step
-                            inside digital worlds and interact with entertainment experiences
-                            in ways that were previously impossible.”
+                            “XR environments allow audiences to step inside and interact with digital entertainment worlds.
+                            Transform passive viewing into fully immersive experiences.”
                         </p>
 
                         {/* AUTHOR */}
@@ -382,7 +359,7 @@ export default function Entertainment() {
                         </p>
 
                         {/* BUTTON */}
-                        <button className="bg-black text-white px-[30px] py-[14px] uppercase text-[11px] tracking-[0.12em] hover:bg-black/80 transition">
+                        <button onClick={() => navigate("/resources/casestudies")} className="bg-black text-white px-[30px] py-[14px] uppercase text-[11px] tracking-[0.12em] hover:bg-black/80 transition">
                             READ CASE STUDY →
                         </button>
 
@@ -398,26 +375,24 @@ export default function Entertainment() {
 
                         {/* 16:9 Responsive Video */}
                         <div className="relative w-full aspect-video">
-                            <iframe
+                            <video
+                                ref={videRef}
                                 src="/xrimmersive3d.mp4"
-                                title="Military Helicopter Cockpit Training"
-                                className="absolute top-0 left-0 w-full h-full"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
+                                muted
+                                controls
+                                className="absolute top-0 left-0 w-full h-full object-cover"
+                            />
                         </div>
 
                     </div>
 
                     {/* ================= RIGHT SECTION ================= */}
                     <div className="w-full md:w-[45%] flex items-center">
-
                         <div className="max-w-[580px]">
 
                             {/* Eyebrow */}
                             <p className="uppercase text-[11px] tracking-[0.22em] text-black/70 mb-[22px]">
-                                SEAMLESS SYNTHETIC HELICOPTER TRAINING
+                                IMMERSIVE XR ENTERTAINMENT
                             </p>
 
                             {/* Heading */}
@@ -427,25 +402,20 @@ export default function Entertainment() {
                             </h2>
 
                             {/* Paragraph */}
-                            <p className="text-[17px] leading-[1.7] text-black/70 mb-[40px]">
-                                Antiworld immersive platforms enable entertainment creators to
-                                design fully interactive digital environments. Whether it is
-                                simulation-based attractions, multiplayer XR games, or immersive
-                                storytelling experiences, users can explore dynamic worlds that
-                                blend physical interaction with digital content.
+                            <ul className="text-[17px] leading-[1.7] text-black/70 mb-[40px] space-y-2">
+                                <li>Platforms for interactive gaming, XR attractions, and immersive storytelling environments.</li>
+                                <li>Real-time spatial simulations enabling large-scale entertainment experiences.</li>
+                            </ul>
 
-                                Powered by the DAS spatial computer and REALM platform, these
-                                experiences bring new possibilities to gaming, entertainment
-                                venues, and interactive media.
-                            </p>
-
-                            {/* Button */}
-                            <button className="bg-black text-white px-[34px] py-[16px] uppercase text-[12px] tracking-[0.14em] hover:bg-black/80 transition">
-                                READ MORE →
+                            {/* Play Button */}
+                            <button
+                                onClick={playVideo}
+                                className="bg-black text-white px-[34px] py-[16px] uppercase text-[12px] tracking-[0.14em] hover:bg-black/80 transition"
+                            >
+                                PLAY VIDEO ▶
                             </button>
 
                         </div>
-
                     </div>
 
                 </div>
@@ -483,16 +453,10 @@ export default function Entertainment() {
                     </h2>
 
                     {/* Paragraph */}
-                    <p className="text-[15px] md:text-[16px] leading-[1.75] text-white/80 mb-10 max-w-[520px]">
-                        Antiworld technologies combine spatial computing, immersive
-                        XR environments, and interactive simulation systems to enable
-                        new forms of entertainment experiences.
-
-
-                        From XR gaming worlds to simulation-based attractions,
-                        the platform enables creators to design highly interactive
-                        digital environments for audiences worldwide.
-                    </p>
+                    <ul className="text-[15px] md:text-[16px] leading-[1.75] text-white/80 mb-10 max-w-[520px] space-y-2">
+                        <li> Spatial computing systems powering interactive entertainment platforms.</li>
+                        <li> Tools for creators to build immersive digital environments for global audiences.</li>
+                    </ul>
 
                     {/* Button */}
                     <a
@@ -520,21 +484,16 @@ export default function Entertainment() {
 
                             {/* Heading */}
                             <h2 className="uppercase text-[44px] font-extrabold leading-[1.08] mb-[26px]">
-                                DESIGNED FOR TRUE-TO-
-                                <br />
+                                DESIGNED FOR TRUE TO
+
                                 LIFE IMMERSION.
                             </h2>
 
                             {/* Paragraph */}
-                            <p className="text-[16px] leading-[1.7] text-black/70 max-w-[460px]">
-                                Antiworld immersive systems deliver high-fidelity visual
-                                environments and natural interaction systems designed for
-                                long-duration entertainment experiences.
-
-                                Advanced rendering, spatial interaction, and realistic
-                                simulation environments allow audiences to fully immerse
-                                themselves in digital worlds.
-                            </p>
+                            <ul className="text-[16px] leading-[1.7] text-black/70 max-w-[460px] space-y-2">
+                                <li> High-fidelity visuals and natural spatial interaction for long-duration experiences.</li>
+                                <li> Advanced rendering systems designed for realistic immersive environments.</li>
+                            </ul>
 
                         </div>
 

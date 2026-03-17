@@ -139,8 +139,8 @@ export default function TalkToSales() {
                                             className="bg-transparent border-b border-[#cfcfcf] py-3 px-1 text-[15px] outline-none cursor-pointer focus:border-black w-[100px] sm:w-[120px]"
                                         >
                                             <option>India (+91)</option>
-                                            <option>USA (+1)</option>
-                                            <option>UK (+44)</option>
+                                            {/* <option>USA (+1)</option>
+                                            <option>UK (+44)</option> */}
                                         </select>
 
                                         <input
@@ -184,8 +184,8 @@ export default function TalkToSales() {
                                     >
                                         <option>Please Select</option>
                                         <option>India</option>
-                                        <option>United States</option>
-                                        <option>Germany</option>
+                                        {/* <option>United States</option>
+                                        <option>Germany</option> */}
                                     </select>
                                 </div>
                             </div>
@@ -235,7 +235,7 @@ export default function TalkToSales() {
                             {/* TEXTAREA */}
                             <div className="flex flex-col mb-8">
                                 <label className="text-[15px] md:text-[16px] mb-1 text-[#201f1f]">
-                                    Tell us about your needs for XR / VR
+                                    Tell us about your requirements
                                 </label>
                                 <textarea
                                     name="message"
