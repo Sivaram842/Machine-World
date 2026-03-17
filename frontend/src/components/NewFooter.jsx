@@ -100,6 +100,8 @@ const Footer = () => {
                     </p>
 
                     <p className="text-sm break-all">
+                        sreeralluri@gmail.com
+
                         sashank@antiworld.in
                     </p>
                 </div>

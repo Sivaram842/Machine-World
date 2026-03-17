@@ -472,11 +472,12 @@ const Navbar = () => {
 
                             <p className="text-xs text-gray-400">CONTACT</p>
                             <p className="text-lg mt-2">sashank@antiworld.in</p>
-
+                            <p className="text-lg mt-2"> sreeralluri@gmail.com</p>
                             <p className="text-xs text-gray-400 mt-10">MOBILE</p>
 
                             <div className="flex gap-6 mt-3 text-sm">
-                                +91 8184809777
+                                +91 8184809777<br />
+                                +91 98493 23999
                             </div>
 
                         </div>
