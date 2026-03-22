@@ -1,28 +1,61 @@
 <!doctype html>
+
 <html lang="en">
 
 <head>
   <!-- Character Encoding -->
   <meta charset="UTF-8" />
 
-  <!-- Viewport (CRITICAL for responsiveness) -->
+  <!-- Viewport -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Page Title -->
-  <title>Antiworld</title>
+  <!-- Title (SEO Optimized) -->
 
-  <!-- SEO Meta -->
+  <title>Antiworld - XR Simulation Platform</title>
+
+  <!-- Meta Description -->
+
   <meta name="description"
     content="Antiworld - Immersive XR, simulation, and digital experience platform. Explore next-generation virtual environments." />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="/circle.png" />
+  <!-- Favicon / Logo -->
 
-  <!-- Google Font (Inter – Clean & Modern) -->
+  <!-- Place logo.png inside /public folder -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/circle.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/circle.png" />
+  <link rel="shortcut icon" href="/circle.png" />
+  <link rel="apple-touch-icon" href="/circle.png" />
+
+  <!-- Open Graph (for social sharing) -->
+
+  <meta property="og:title" content="Antiworld - XR Simulation Platform" />
+  <meta property="og:description" content="Immersive XR, simulation, and digital experience platform." />
+  <meta property="og:image" content="https://antiworld.in/circle.png" />
+  <meta property="og:url" content="https://antiworld.in" />
+  <meta property="og:type" content="website" />
+
+  <!-- Structured Data (Google logo recognition) -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Antiworld",
+    "url": "https://antiworld.in",
+    "logo": "https://antiworld.in/circle.png"
+  }
+  </script>
+
+  <!-- Google Fonts -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
-  <!-- Improve Font Rendering -->
+
+  <!-- Base Styling -->
+
   <style>
     body {
       margin: 0;
@@ -32,13 +65,16 @@
       background-color: #ffffff;
     }
   </style>
+
 </head>
 
 <body>
   <div id="root"></div>
 
   <!-- React Entry -->
+
   <script type="module" src="/src/main.jsx"></script>
+
 </body>
 
 </html>
