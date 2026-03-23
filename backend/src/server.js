@@ -12,15 +12,18 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 /* ---------------- CORS (FIRST) ---------------- */
-app.use(cors({
-    origin: [
-        "https://antiworld.in",
-        "http://localhost:5173",
-        "https://antiworld.netlify.app",
-    ],
-    credentials: true
-}));
-app.options("*", cors());
+
+app.use(
+    cors({
+        origin: [
+            "https://antiworld.in",
+            "https://www.antiworld.in",
+            "http://localhost:5173"
+        ],
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true
+    })
+);
 /* ---------------- MIDDLEWARE ---------------- */
 app.use(express.json());
 
