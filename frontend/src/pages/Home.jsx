@@ -759,7 +759,7 @@ function TrainingSection() {
                 >
 
                     <video
-                        src="/training.mp4"
+                        src="/training1.mp4"
                         autoPlay
                         loop
                         muted

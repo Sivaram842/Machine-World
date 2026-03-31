@@ -14,14 +14,14 @@ export default function AboutUs() {
             <Navbar />
             <div className="font-varjo text-black overflow-x-hidden">
 
-                <section className="relative h-[70vh] md:h-[85vh] lg:h-screen w-full overflow-hidden bg-black">
+                {/* <section className="relative h-[70vh] md:h-[85vh] lg:h-screen w-full overflow-hidden bg-black">
                     <img
-                        src={img}
+                        src=""
                         alt="Hero"
                         className="absolute inset-0 w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/60"></div>
-                </section>
+                </section> */}
 
                 {/* TRANSFORMING */}
                 <section className="bg-[#D3D3D3] py-20 md:py-32 text-center">
@@ -88,7 +88,7 @@ export default function AboutUs() {
                         </div>
 
                         <div>
-                            <img src={img1} className="w-full object-cover" />
+                            <img src="" className="w-full object-cover" />
                         </div>
                     </div>
                 </section>
@@ -229,7 +229,7 @@ export default function AboutUs() {
 
                         </div>
 
-                        <img src={img2} className="w-full object-cover" />
+                        <img src="" className="w-full object-cover" />
 
                     </div>
                 </section>

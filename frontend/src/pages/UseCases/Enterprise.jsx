@@ -6,9 +6,9 @@ import Footer from "../../components/NewFooter";
 
 import miningImg from "../../assets/mining.jpg";
 import constructionImg from "../../assets/construction.jpeg";
-import defenseImg from "../../assets/defence.jpeg";
+import defenseImg from "../../assets/defence.png";
 import educationImg from "../../assets/MinimalOS3.png";
-import trainingImg from "../../assets/training.jpg";
+import trainingImg from "../../assets/defencetraining.webp";
 
 import TalkToSalesCTA from "../../components/TalkToSalesCTA";
 

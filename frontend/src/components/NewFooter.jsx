@@ -20,10 +20,10 @@ const Footer = () => {
                     {/* LOGIN BUTTON */}
                     <button
                         onClick={() => window.open("/login", "_blank")}
-                        className="border border-white px-3 py-1 flex items-center justify-between w-[150px] text-[5px] sm:text-sm tracking-[0.15em] uppercase hover:bg-white hover:text-black transition-all duration-300"
+                        className="border border-white px-3 py-1 flex items-center justify-between w-[100px] text-[5px] sm:text-sm tracking-[0.15em] uppercase hover:bg-white hover:text-black transition-all duration-300"
                     >
                         <span>  Login</span>
-                        <span className="text-lg">→</span>
+                        <span className="text-lg px-2 py-1">→</span>
                     </button>
                 </div>
 

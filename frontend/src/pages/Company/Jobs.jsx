@@ -4,7 +4,7 @@ import Footer from "../../components/NewFooter";
 import img from "../../assets/military.jpeg"
 import img1 from "../../assets/mrheadset.png"
 import img2 from "../../assets/hardware.png"
-import img3 from "../../assets/vrheadset.jpeg"
+import img3 from "../../assets/simulation.webp"
 import img4 from "../../assets/XR_Lab.avif"
 export default function Jobs() {
     const [active, setActive] = useState("best");
@@ -26,7 +26,7 @@ export default function Jobs() {
                 {/* HERO */}
                 <section className="relative h-[70vh] md:h-[85vh] lg:h-screen flex items-center justify-center text-white">
                     <img
-                        src={img}
+                        src=""
                         className="absolute inset-0 w-full h-full object-cover"
                         alt=""
                     />
@@ -52,7 +52,7 @@ export default function Jobs() {
                 {/* ABOUT COMPANY */}
                 <section className="bg-[#f3f3f3] py-16 md:py-24 lg:py-32">
                     <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 px-6 md:px-16 items-center">
-                        <img src={img3} className="w-full object-cover" />
+                        <img src="" className="w-full object-cover" />
 
                         <div>
                             <h2 className="text-[28px] sm:text-[36px] md:text-[48px] font-extrabold uppercase leading-[1.1]">
@@ -137,15 +137,15 @@ export default function Jobs() {
                     <div className="max-w-[1600px] mx-auto px-6 md:px-16 grid grid-cols-1 lg:grid-cols-2 gap-10">
 
                         <div className="flex flex-col gap-10">
-                            <div className="relative overflow-hidden h-auto md:h-[520px]">
-                                <img src={img1} className="w-full h-full object-cover" />
+                            {/* <div className="relative overflow-hidden h-auto md:h-[520px]">
+                                <img src="" className="w-full h-full object-cover" />
                                 <div className="absolute bottom-6 left-6 text-white">
                                     <h3 className="uppercase font-bold text-[20px]">Software Engineering Team</h3>
                                     <p className="italic mt-4 max-w-[350px]">
                                         “We are building simulation technologies that redefine training and defence systems.”
                                     </p>
                                 </div>
-                            </div>
+                            </div> */}
 
                             <div className="bg-[#f3f3f3] p-6 md:p-12 h-auto md:h-[520px] flex flex-col justify-between">
                                 <h3 className="uppercase font-bold text-[22px]">Design & XR Team</h3>
@@ -157,7 +157,7 @@ export default function Jobs() {
 
                         <div className="flex flex-col gap-10">
                             <div className="relative overflow-hidden h-auto md:h-[400px]">
-                                <img src={img2} className="w-full h-full object-cover" />
+                                <img src={img3} className="w-full h-full object-cover" />
                                 <div className="absolute bottom-6 left-6 text-white">
                                     <h3 className="uppercase font-bold text-[22px]">Hardware Engineering Team</h3>
                                     <p className="italic mt-4 max-w-[350px]">

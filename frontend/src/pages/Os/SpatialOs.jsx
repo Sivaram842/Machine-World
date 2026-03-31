@@ -159,7 +159,7 @@ const SpatialOs = () => {
                     <div className="absolute inset-0 bg-black/60"></div>
 
                     <div className="relative z-10 flex items-center justify-center h-full px-6 text-center">
-                        <div className="max-w-[900px]">
+                        <div className="max-w-[900px] flex flex-col items-center">
 
                             <h1 className="text-white uppercase font-extrabold 
       text-[22px] sm:text-[28px] md:text-[40px] lg:text-[52px]
@@ -168,10 +168,10 @@ const SpatialOs = () => {
                                 For Antiworld XR Systems
                             </h1>
 
-                            <p className="mt-6 text-gray-100 text-[16px] leading-[28px]">
+                            <p className="mt-6 max-w-[610px] text-gray-100 text-[16px] leading-[28px]">
                                 Antiworld Spatial OS runs enterprise and simulation applications inside immersive 3D spatial environments by connecting XR hardware, sensors, and rendering engines.
                             </p>
-                            <p className="mt-6 text-gray-100 text-[16px] leading-[28px]">
+                            <p className="mt-6 max-w-[560px] text-gray-100 text-[16px] leading-[28px]">
                                 Generate world meshes and interact with apps using spatial controls in real spaces.
 
                             </p>

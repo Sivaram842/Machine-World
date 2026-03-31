@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import logoWhite from "../assets/antiworld_white.png"
 import logoBlack from "../assets/logo.png"
 import { useNavigate } from "react-router-dom";
@@ -271,19 +271,51 @@ const Navbar = () => {
     ];
 
     const isDarkNavbar = darkNavbarPages.includes(location.pathname);
+
+    const [showNavbar, setShowNavbar] = useState(true);
+    
+     useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+        const currentScrollY = window.scrollY;
+        const scrollDifference = Math.abs(currentScrollY - lastScrollY);
+
+        // 🧠 ignore tiny scrolls (THIS FIXES JERKINESS)
+        if (scrollDifference < 10) return;
+
+        if (currentScrollY > lastScrollY && currentScrollY > 80) {
+            // scrolling DOWN
+            setShowNavbar(false);
+        } else {
+            // scrolling UP
+            setShowNavbar(true);
+        }
+
+        lastScrollY = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+}, []);
     return (
         <div className="relative">
             {activeMenu && (
                 <div className="fixed inset-0 backdrop-blur-sm bg-white/30 z-40 pointer-events-none"></div>
             )}
-            <nav
-                className={`w-full relative transition-all duration-300 z-50 ${isDarkNavbar
-                    ? "bg-black text-white "
-                    : activeMenu
-                        ? "bg-gray-200 text-black backdrop-blur-md"
-                        : "bg-white text-black "
-                    }`}
-                onMouseLeave={() => setActiveMenu(null)}
+           <nav
+  className={`
+    fixed top-0 left-0 w-full z-50
+    transition-all duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)]
+    ${showNavbar ? "translate-y-0" : "-translate-y-full"}
+    ${isDarkNavbar
+        ? "bg-black text-white"
+        : activeMenu
+            ? "bg-gray-200 text-black backdrop-blur-md"
+            : "bg-white text-black"}
+  `}
+  onMouseLeave={() => setActiveMenu(null)}
             >
 
                 {/* NAVBAR */}
