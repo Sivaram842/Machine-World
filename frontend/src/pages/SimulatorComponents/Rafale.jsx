@@ -51,13 +51,13 @@ const tabs = [
     text: "AI adapts training scenarios in real time, introducing intelligent threats and feedback to enhance performance and realism.",
     img: AIImg,
   },
-  {
-    id: 3,
-    label: "Squadron Labs",
-    title: "MULTI-USER SQUADRON TRAINING ENVIRONMENTS",
-    text: "Coordinated multi-user simulations where pilots, command units and ground teams train together, replicating real mission environments.Enhances communication, decision-making and operational readiness at scale.",
-    img: SquadronImg,
-  },
+  // {
+  //   id: 3,
+  //   label: "Squadron Labs",
+  //   title: "MULTI-USER SQUADRON TRAINING ENVIRONMENTS",
+  //   text: "Coordinated multi-user simulations where pilots, command units and ground teams train together, replicating real mission environments.Enhances communication, decision-making and operational readiness at scale.",
+  //   img: SquadronImg,
+  // },
   {
     id: 4,
     label: "Custom Solutions",
@@ -87,13 +87,13 @@ const tabs = [
     text: "Our high-fidelity simulators deliver immersive pilot training, replicating real aircraft cockpits for authentic flight experience from basic to advanced levels.",
     img: img2,
   },
-  {
-    id: 8,
-    label: "Combined Squadran Training",
-    title: "Integrated Combined Squadron Training",
-    text: "Combined training blends multiple aircraft types, scenarios, or crew roles into integrated sessions to build coordination and adaptability in realistic operations.",
-    img: img3,
-  },
+  // {
+  //   id: 8,
+  //   label: "Combined Squadran Training",
+  //   title: "Integrated Combined Squadron Training",
+  //   text: "Combined training blends multiple aircraft types, scenarios, or crew roles into integrated sessions to build coordination and adaptability in realistic operations.",
+  //   img: img3,
+  // },
   {
     id: 9,
     label: "Indegeous Product Development",
@@ -155,7 +155,29 @@ const Rafale = () => {
   const [open, setOpen] = useState(false);
 
   const gridRef = useRef(null);
+  const scrollRef = useRef(null);
+  const scrollLeft = () => {
+    scrollRef.current.scrollBy({ left: -200, behavior: "smooth" });
+  };
 
+  const scrollRight = () => {
+    scrollRef.current.scrollBy({ left: 200, behavior: "smooth" });
+  };
+  useEffect(() => {
+    const container = scrollRef.current;
+    const activeTab = container?.children[active];
+
+    if (activeTab && container) {
+      const containerWidth = container.offsetWidth;
+      const tabLeft = activeTab.offsetLeft;
+      const tabWidth = activeTab.offsetWidth;
+
+      container.scrollTo({
+        left: tabLeft - containerWidth / 2 + tabWidth / 2,
+        behavior: "smooth",
+      });
+    }
+  }, [active]);
   const scrollToSection = (ref) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -627,35 +649,62 @@ const Rafale = () => {
             OUR ADVANCED COCKPIT SIMULATOR PROVIDES
           </h2>
 
-          {/* TAB MENU */}
-          <div
-            className="
-                              flex
-                              gap-6 sm:gap-10
-                              text-gray-400
-                              border-b border-gray-700
-                              pb-4 sm:pb-6 mb-12 sm:mb-16
-                                                
-                               overflow-x-auto
-                               whitespace-nowrap
-                               [-ms-overflow-style:none]
-                               [scrollbar-width:none]
-                               [&::-webkit-scrollbar]:hidden
-                              "
-          >
-            {tabs.map((tab, index) => (
+          <div className="relative flex items-center">
+            {/* LEFT ARROW */}
+            <div className="w-10 flex justify-start">
               <button
-                key={index}
-                onClick={() => setActive(index)}
-                className={`whitespace-nowrap transition ${
-                  active === index
-                    ? "text-white border-b border-white pb-2"
-                    : ""
-                }`}
+                onClick={scrollLeft}
+                className="text-white text-xl hover:opacity-70 cursor-pointer"
               >
-                {tab.label}
+                ←
               </button>
-            ))}
+            </div>
+
+            {/* CENTER TABS */}
+            <div className="flex-1 overflow-hidden">
+              <div
+                ref={scrollRef}
+                className="
+      flex
+      items-center
+      gap-8 sm:gap-12
+      text-gray-400
+      border-b border-gray-700
+      pb-4 sm:pb-6 mb-12 sm:mb-16
+      overflow-x-auto
+      whitespace-nowrap
+      scroll-smooth
+      px-10   /* 🔥 more breathing space from arrows */
+      [-ms-overflow-style:none]
+      [scrollbar-width:none]
+      [&::-webkit-scrollbar]:hidden
+    "
+              >
+                {tabs.map((tab, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActive(index)}
+                    className={`whitespace-nowrap transition ${
+                      active === index
+                        ? "text-white border-b border-white pb-2"
+                        : ""
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT ARROW */}
+            <div className="w-10 flex justify-end">
+              <button
+                onClick={scrollRight}
+                className="text-white text-xl hover:opacity-70 cursor-pointer"
+              >
+                →
+              </button>
+            </div>
           </div>
 
           {/* CONTENT */}
