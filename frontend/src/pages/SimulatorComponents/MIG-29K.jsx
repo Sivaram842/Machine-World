@@ -62,7 +62,7 @@ const tabs = [
     label: "Custom Solutions",
     title: "MISSION-SPECIFIC XR TRAINING SYSTEMS",
     text: "Customized XR systems tailored to aircraft, terrain and mission-specific defence requirements.Designed to align with real-world operations across air, land and integrated defence systems.",
-    img: CustomImg,
+    img: "",
   },
   {
     id: 5,
