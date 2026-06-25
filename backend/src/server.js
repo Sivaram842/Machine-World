@@ -8,6 +8,7 @@ import investorRoutes from "./routes/investorRoutes.js";
 import talkToSalesRoutes from "./routes/talkToSalesRoutes.js";
 
 import productBookRoutes from "./routes/productBookRoutes.js";
+import testEmailRoutes from "./routes/testEmail.js";
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -40,6 +41,7 @@ app.get("/", (req, res) => {
     res.send("Backend is running 🚀");
 });
 
+app.use("/api/test-email", testEmailRoutes);
 /* ---------------- START ---------------- */
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

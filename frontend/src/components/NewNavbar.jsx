@@ -207,7 +207,6 @@ const Navbar = () => {
   const menuItems = Object.keys(menuData);
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
-  const [expandedItems, setExpandedItems] = useState({});
   const [activeThirdMenu, setActiveThirdMenu] = useState(null);
   const [menuStack, setMenuStack] = useState([]);
   const navigate = useNavigate();
