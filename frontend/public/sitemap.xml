@@ -1,8 +1,256 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+    <!-- Home -->
     <url>
         <loc>https://doomindustries.com/</loc>
+    </url>
+
+    <!-- Sales / Products -->
+    <url>
+        <loc>https://doomindustries.com/talk-to-sales</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/products</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/product1</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/product2</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/product3</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/demo</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/accessories</loc>
+    </url>
+
+    <!-- Operating Systems -->
+    <url>
+        <loc>https://doomindustries.com/minimal-os</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/spatial-os</loc>
+    </url>
+
+    <!-- Resources -->
+    <url>
+        <loc>https://doomindustries.com/resources</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/resources/casestudies</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/resources/productbook</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/company/investors</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/insider</loc>
+    </url>
+
+    <!-- Company -->
+    <url>
+        <loc>https://doomindustries.com/company/jobs</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/company/aboutus</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/newsroom</loc>
+    </url>
+
+    <!-- Use Cases -->
+    <url>
+        <loc>https://doomindustries.com/learning</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/industry</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/usecases/entertainment</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/usecases/defence/air</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/usecases/defence/ground</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/medical</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/usecases/enterprise</loc>
+    </url>
+
+    <!-- Support -->
+    <url>
+        <loc>https://doomindustries.com/contactus</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/accountportal</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/helpcenter</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/systemrequirements</loc>
+    </url>
+
+    <!-- Simulators -->
+    <url>
+        <loc>https://doomindustries.com/air/simulators/defence</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/land/simulators/defence</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/air/simulators/private</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/land/simulators/private</loc>
+    </url>
+
+    <!-- Aircraft / Simulator Components -->
+    <url>
+        <loc>https://doomindustries.com/rafale</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/mig-29</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/mig-29k</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/tejas</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/su-30mki</loc>
+    </url>
+
+    <!-- Su-30 Case Studies -->
+    <url>
+        <loc>https://doomindustries.com/su30-case-study-1</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/su30-case-study-2</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/su30-case-study-3</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/su30-case-study-4</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/su30-case-study-5</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/su30-case-study-6</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/su30-case-study-7</loc>
+    </url>
+
+    <!-- Tejas Case Studies -->
+    <url>
+        <loc>https://doomindustries.com/tejas-case-study-1</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/tejas-case-study-2</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/tejas-case-study-3</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/tejas-case-study-4</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/tejas-case-study-5</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/tejas-case-study-6</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/tejas-case-study-7</loc>
+    </url>
+
+    <!-- Rafale Case Studies -->
+    <url>
+        <loc>https://doomindustries.com/rafale-case-study-1</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/rafale-case-study-2</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/rafale-case-study-3</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/rafale-case-study-4</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/rafale-case-study-5</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/rafale-case-study-6</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/rafale-case-study-7</loc>
+    </url>
+
+    <!-- MIG-29 Case Studies -->
+    <url>
+        <loc>https://doomindustries.com/mig29-case-study-1</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/mig29-case-study-2</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/mig29-case-study-3</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/mig29-case-study-4</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/mig29-case-study-5</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/mig29-case-study-6</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/mig29-case-study-7</loc>
+    </url>
+
+    <!-- MIG-29K Case Studies -->
+    <url>
+        <loc>https://doomindustries.com/mig29k-case-study-1</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/mig29k-case-study-2</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/mig29k-case-study-3</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/mig29k-case-study-4</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/mig29k-case-study-5</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/mig29k-case-study-6</loc>
+    </url>
+    <url>
+        <loc>https://doomindustries.com/mig29k-case-study-7</loc>
+    </url>
+
+    <!-- Why Doom Industries / XR -->
+    <url>
+        <loc>https://doomindustries.com/whyxr</loc>
     </url>
 
 </urlset>

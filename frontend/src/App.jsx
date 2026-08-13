@@ -93,7 +93,6 @@ import Mig29KCaseStudy4 from "./pages/CaseStudyPages/Mig29KCaseStudy4";
 import Mig29KCaseStudy5 from "./pages/CaseStudyPages/Mig29KCaseStudy5";
 import Mig29KCaseStudy6 from "./pages/CaseStudyPages/Mig29KCaseStudy6";
 
-
 import PageTransitionOverlay from "./components/PageTransitionOverlay";
 import Enterprise from "./pages/UseCases/Enterprise";
 import WhyXR from "./pages/WhyXR";
@@ -131,10 +130,11 @@ const App = () => {
           </Route>
 
           <Route path="/signup" element={<SignupLayout />}>
-            <Route index element={<Signup />} />         {/* Email page */}
+            <Route index element={<Signup />} /> {/* Email page */}
             <Route path="paccount/dob" element={<PersonalDOB />} />
             <Route path="caccount" element={<CommercialAccount />} />
-            <Route path="paccount" element={<PersonalAccount />} />  {/* If you still need */}
+            <Route path="paccount" element={<PersonalAccount />} />{" "}
+            {/* If you still need */}
           </Route>
 
           {/* <Route path="/email-verify" element={<VerifyEmail />} /> */}
@@ -158,7 +158,6 @@ const App = () => {
           <Route path="/resources/productbook" element={<ProductBook />} />
           <Route path="/insider" element={<Insider />} />
 
-
           <Route path="/company/jobs" element={<Jobs />} />
           <Route path="/company/aboutus" element={<AboutUs />} />
           <Route path="/newsroom" element={<Newsroom />} />
@@ -174,8 +173,10 @@ const App = () => {
           <Route path="/contactus" element={<ContactSupportPage />} />
           <Route path="/accountportal" element={<HelpCenterPage />} />
           <Route path="/helpcenter" element={<HelpCenter />} />
-          <Route path="/systemrequirements" element={<SystemRequirementsPage />} />
-
+          <Route
+            path="/systemrequirements"
+            element={<SystemRequirementsPage />}
+          />
 
           <Route path="/air/simulators/defence" element={<Aircraft />} />
           <Route path="/land/simulators/defence" element={<GroundVehicle />} />
@@ -186,8 +187,7 @@ const App = () => {
           <Route path="/mig-29" element={<MIG29 />} />
           <Route path="/mig-29k" element={<MIG29K />} />
           <Route path="/tejas" element={<Tejas />} />
-          <Route path="su-30mki" element={<Su30MKI />} />
-
+          <Route path="/su-30mki" element={<Su30MKI />} />
 
           <Route path="/su30-case-study-1" element={<Su30CaseStudy1 />} />
           <Route path="/su30-case-study-2" element={<Su30CaseStudy2 />} />
@@ -197,7 +197,6 @@ const App = () => {
           <Route path="/su30-case-study-6" element={<Su30CaseStudy6 />} />
           <Route path="/su30-case-study-7" element={<Su30CaseStudy7 />} />
 
-
           <Route path="/tejas-case-study-1" element={<TejasCaseStudy1 />} />
           <Route path="/tejas-case-study-2" element={<TejasCaseStudy2 />} />
           <Route path="/tejas-case-study-3" element={<TejasCaseStudy3 />} />
@@ -205,7 +204,6 @@ const App = () => {
           <Route path="/tejas-case-study-5" element={<TejasCaseStudy5 />} />
           <Route path="/tejas-case-study-6" element={<TejasCaseStudy6 />} />
           <Route path="/tejas-case-study-7" element={<TejasCaseStudy7 />} />
-
 
           <Route path="/rafale-case-study-1" element={<RafaleCaseStudy1 />} />
           <Route path="/rafale-case-study-2" element={<RafaleCaseStudy2 />} />
@@ -232,11 +230,10 @@ const App = () => {
           <Route path="/mig29k-case-study-7" element={<Mig29KCaseStudy7 />} />
 
           <Route path="/whyxr" element={<WhyXR />} />
-
         </Routes>
       </AnimatePresence>
       <ScrollToTopButton />
-    </div >
+    </div>
   );
 };
 
