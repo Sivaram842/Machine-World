@@ -312,15 +312,31 @@ const Navbar = () => {
         {/* NAVBAR */}
         <div className="flex justify-between items-center px-4 sm:px-6 lg:px-10 py-4">
           {/* LOGO */}
-          <img
-            src={isDarkNavbar ? logoWhite : logoBlack}
-            alt="Antiworld"
+          <div
             onClick={() => {
               setActiveMenu(null);
               navigate("/");
             }}
-            className="h-6 sm:h-7 md:h-8 lg:h-9 cursor-pointer"
-          />
+            className="
+    cursor-pointer
+    select-none
+    uppercase
+    italic
+    font-black
+    leading-[0.8]
+    tracking-[-0.07em]
+    text-[14px]
+    sm:text-[14px]
+    lg:text-[16px]
+"
+            style={{
+              fontFamily: "'Arial Black', Impact, sans-serif",
+              transform: "skewX(-6deg)",
+            }}
+          >
+            DOOM <br />
+            INDUSTRIES
+          </div>
 
           {/* CENTER MENU (DESKTOP) */}
           <div className="hidden lg:flex gap-10">
