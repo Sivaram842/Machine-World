@@ -8,8 +8,15 @@ export default function LoginEmail() {
   const isValid = email.trim().length > 0;
 
   const handleContinue = () => {
-    setEmail(email.trim().toLowerCase());
-    navigate("password");
+    const normalizedEmail = email.trim().toLowerCase();
+
+    setEmail(normalizedEmail);
+
+    navigate("password", {
+      state: {
+        email: normalizedEmail,
+      },
+    });
   };
 
   return (
