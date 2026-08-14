@@ -8,7 +8,7 @@ router.get("/send", async (req, res) => {
     await sendEmail(
       "sivaram.p8421@gmail.com", // Replace with your Gmail
       "Testing Resend",
-      "<h2>Hello from AntiWorld 🚀</h2><p>Your email setup is working!</p>"
+      "<h2>Hello from Doom Industries 🚀</h2><p>Your email setup is working!</p>"
     );
 
     res.json({ success: true, message: "Email sent successfully" });

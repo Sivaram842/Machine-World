@@ -17,10 +17,10 @@ const PORT = process.env.PORT || 5000;
 app.use(
     cors({
         origin: [
-            "https://antiworld.in",
-            "https://www.antiworld.in",
-            "http://localhost:5173"
-        ],
+    "https://doomindustries.com",
+    "https://www.doomindustries.com",
+    "http://localhost:5173"
+],
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true
     })
