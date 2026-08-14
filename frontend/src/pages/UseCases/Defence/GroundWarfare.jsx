@@ -16,7 +16,7 @@ const cards = [
   {
     tag: "TACTICAL COMBAT TRAINING",
     title: "Battlefield simulation environments",
-    desc: "Antiworld immersive simulation systems allow soldiers to train in realistic battlefield environments including urban combat, mission planning, and coordinated ground operations.",
+    desc: "Doom Industries immersive simulation systems allow soldiers to train in realistic battlefield environments including urban combat, mission planning, and coordinated ground operations.",
     img: learn,
   },
   {
@@ -28,7 +28,7 @@ const cards = [
   {
     tag: "AUTONOMOUS GROUND SYSTEMS",
     title: "Robotics and tactical automation",
-    desc: "Antiworld develops intelligent robotic systems designed for reconnaissance, surveillance, and hazardous operations in complex combat environments.",
+    desc: "Doom Industries develops intelligent robotic systems designed for reconnaissance, surveillance, and hazardous operations in complex combat environments.",
     img: learn3,
   },
   {
@@ -291,7 +291,7 @@ const GroundWarfare = () => {
                         </ul>
 
                         <p className="uppercase text-[12px] tracking-[0.18em] text-black/60">
-                            ANTIWORLD DEFENSE SIMULATION SYSTEMS
+                            Doom Industries DEFENSE SIMULATION SYSTEMS
                         </p>
                      
                         <button
@@ -317,7 +317,7 @@ const GroundWarfare = () => {
 
         <div className="relative max-w-[600px] ml-[6vw]">
           <p className="uppercase text-[12px] tracking-[0.18em] mb-5">
-            THE ANTIWORLD ADVANTAGE
+            THE DOOM INDUSTRIES ADVANTAGE
           </p>
 
           <h2 className="text-[44px] font-extrabold leading-[1.1] mb-6">
@@ -334,7 +334,7 @@ const GroundWarfare = () => {
 "
           >
             From tactical mission simulators to autonomous battlefield systems,
-            Antiworld is redefining how defense forces train, operate and
+            Doom Industries is redefining how defense forces train, operate and
             prepare for complex ground operations.
           </p>
           <button className="bg-white text-black px-8 py-4 uppercase text-[12px] tracking-[0.12em] hover:bg-white/80">

@@ -16,7 +16,7 @@ const cards = [
   {
     tag: "PILOT TRAINING",
     title: "High-fidelity cockpit simulators",
-    desc: "Antiworld cockpit simulators allow pilots to train for real combat missions, emergency situations, and complex flight operations without the cost and risk of live aircraft training.",
+    desc: "Doom Industries cockpit simulators allow pilots to train for real combat missions, emergency situations, and complex flight operations without the cost and risk of live aircraft training.",
     img: learn,
   },
   {
@@ -275,7 +275,7 @@ export default function Aerial() {
             </p>
 
             <p className="uppercase text-[12px] tracking-[0.18em] text-black/60">
-              ANTIWORLD DEFENSE TRAINING SYSTEMS
+              DOOM INDUSTRIES DEFENSE TRAINING SYSTEMS
             </p>
 
             <button
@@ -301,7 +301,7 @@ export default function Aerial() {
 
         <div className="relative max-w-[600px] ml-[6vw]">
           <p className="uppercase text-[12px] tracking-[0.18em] mb-5">
-            THE ANTIWORLD ADVANTAGE
+            THE DOOM INDUSTRIES ADVANTAGE
           </p>
 
           <h2 className="text-[44px] font-extrabold leading-[1.1] mb-6">

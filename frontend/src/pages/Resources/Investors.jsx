@@ -6,14 +6,14 @@ import Footer from "../../components/NewFooter";
 const locationData = {
   India: {
     "Andhra Pradesh": ["Visakhapatnam", "Vijayawada", "Rajahmundry"],
-    "Bihar": ["Patna", "Gaya", "Bhagalpur"],
-    "Delhi": ["Delhi", "Noida", "Ghaziabad"],
-    "Gujarat": ["Ahmedabad", "Surat", "Vadodara"],
-    "Karnataka": ["Bengaluru", "Mysuru", "Hubli"],
-    "Maharashtra": ["Mumbai", "Pune", "Nagpur", "Thane", "Nashik", "Aurangabad"],
-    "Rajasthan": ["Jaipur", "Jodhpur", "Udaipur"],
+    Bihar: ["Patna", "Gaya", "Bhagalpur"],
+    Delhi: ["Delhi", "Noida", "Ghaziabad"],
+    Gujarat: ["Ahmedabad", "Surat", "Vadodara"],
+    Karnataka: ["Bengaluru", "Mysuru", "Hubli"],
+    Maharashtra: ["Mumbai", "Pune", "Nagpur", "Thane", "Nashik", "Aurangabad"],
+    Rajasthan: ["Jaipur", "Jodhpur", "Udaipur"],
     "Tamil Nadu": ["Chennai", "Coimbatore", "Madurai"],
-    "Telangana": ["Hyderabad", "Warangal", "Nizamabad"],
+    Telangana: ["Hyderabad", "Warangal", "Nizamabad"],
     "Uttar Pradesh": ["Lucknow", "Kanpur", "Agra", "Varanasi", "Prayagraj"],
     "West Bengal": ["Kolkata", "Howrah", "Durgapur"],
     // Add other states and their cities here...
@@ -83,8 +83,12 @@ const Investors = () => {
   };
 
   // Helper variables for cleaner JSX
-  const availableStates = form.country ? Object.keys(locationData[form.country] || {}) : [];
-  const availableCities = form.state ? locationData[form.country][form.state] || [] : [];
+  const availableStates = form.country
+    ? Object.keys(locationData[form.country] || {})
+    : [];
+  const availableCities = form.state
+    ? locationData[form.country][form.state] || []
+    : [];
 
   return (
     <div>
@@ -92,29 +96,29 @@ const Investors = () => {
 
       <div className="w-full bg-white px-6 py-20 flex justify-center">
         <div className="w-full max-w-[1100px]">
-
           {/* TOP INFO */}
           <div className="mb-16">
-
             <h1 className="text-4xl md:text-5xl font-semibold mb-6">
               Get In Touch
             </h1>
 
             <p className="text-gray-600 max-w-[600px]">
               We'd love to hear from you. Whether you want to invest,
-              collaborate, or learn more about ANTIWORLD,
-              our team is ready to connect.
+              collaborate, or learn more about DOOM INDUSTRIES, our team is
+              ready to connect.
             </p>
 
             {/* INFO CARDS */}
             <div className="grid md:grid-cols-2 gap-12 mt-10">
-
               <div>
                 <h3 className="font-semibold mb-2">Our Address</h3>
                 <p className="text-gray-600">
-                  Antiworld,Meeras Marvel,<br />
-                  Puppalaguda,Hyderabad,<br />
-                  Telangana 500089<br />
+                  Doom Industries,Meeras Marvel,
+                  <br />
+                  Puppalaguda,Hyderabad,
+                  <br />
+                  Telangana 500089
+                  <br />
                   India
                 </p>
               </div>
@@ -122,11 +126,11 @@ const Investors = () => {
               <div>
                 <h3 className="font-semibold mb-2">Contact Info</h3>
                 <p className="text-gray-600">
-                  +91 8184809777<br />
-                  sashank@antiworld.in
+                  +91 8184809777
+                  <br />
+                  sashank@doomindustries.com
                 </p>
               </div>
-
             </div>
           </div>
 
@@ -141,17 +145,15 @@ const Investors = () => {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-
           </div>
 
           {/* FORM TITLE */}
-          <h2 className="text-4xl md:text-5xl mb-14" >
-            Become an Investor for ANTIWORLD
+          <h2 className="text-4xl md:text-5xl mb-14">
+            Become an Investor for DOOM INDUSTRIES
           </h2>
 
           {/* FORM */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-10">
-
             {/* NAME */}
             <div>
               <label className="text-sm text-gray-500">Your Name *</label>
@@ -193,7 +195,9 @@ const Investors = () => {
 
             {/* INVESTMENT */}
             <div>
-              <label className="text-sm text-gray-500">Investment Value *</label>
+              <label className="text-sm text-gray-500">
+                Investment Value *
+              </label>
               <input
                 type="text"
                 name="investment"
@@ -232,7 +236,9 @@ const Investors = () => {
               >
                 <option value="">Select State</option>
                 {availableStates.map((state) => (
-                  <option key={state} value={state}>{state}</option>
+                  <option key={state} value={state}>
+                    {state}
+                  </option>
                 ))}
               </select>
             </div>
@@ -250,7 +256,9 @@ const Investors = () => {
               >
                 <option value="">Select City</option>
                 {availableCities.map((city) => (
-                  <option key={city} value={city}>{city}</option>
+                  <option key={city} value={city}>
+                    {city}
+                  </option>
                 ))}
               </select>
             </div>
@@ -269,7 +277,6 @@ const Investors = () => {
 
             {/* BUTTONS */}
             <div className="flex gap-6 pt-6">
-
               <button
                 type="button"
                 onClick={handleReset}
@@ -285,11 +292,8 @@ const Investors = () => {
               >
                 {loading ? "Submitting..." : "Submit"}
               </button>
-
             </div>
-
           </form>
-
         </div>
       </div>
       <Footer />

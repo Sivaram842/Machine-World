@@ -61,11 +61,11 @@ const Product2 = () => {
 
             {/* Description */}
             <div className="text-sm text-gray-700 leading-relaxed max-w-[320px]">
-              REALM is Antiworld’s portable spatial computing system combining
-              lightweight XR glasses with a pocket-sized compute pod. It enables
-              immersive workspaces, simulation design, and professional
-              workflows anywhere without bulky hardware or traditional desktop
-              setups.
+              REALM is Doom Industries' portable spatial computing system
+              combining lightweight XR glasses with a pocket-sized compute pod.
+              It enables immersive workspaces, simulation design, and
+              professional workflows anywhere without bulky hardware or
+              traditional desktop setups.
             </div>
 
             {/* Links */}

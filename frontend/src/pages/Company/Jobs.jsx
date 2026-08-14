@@ -11,7 +11,7 @@ export default function Jobs() {
 
   const rightContent = {
     best: "Work alongside skilled engineers, designers, and developers building advanced defence and enterprise technologies. Our small but focused team collaborates closely to build powerful real-world systems.",
-    tech: "Build cutting-edge technologies across VR, AR, MR, and XR. At Antiworld, you won’t just use advanced tools — you’ll help create the next generation of simulation and immersive technology.",
+    tech: "Build cutting-edge technologies across VR, AR, MR, and XR. At Doom Industries, you won’t just use advanced tools — you’ll help create the next generation of simulation and immersive technology.",
     freedom:
       "We maintain a flexible and low-hierarchy work culture where ideas matter more than titles. Team members are trusted to take ownership and drive innovation.",
     salary:
@@ -36,13 +36,13 @@ export default function Jobs() {
 
           <div className="relative z-10 text-center px-6 max-w-[900px]">
             <h1 className="text-[34px] sm:text-[48px] md:text-[64px] lg:text-[72px] font-extrabold uppercase leading-[1.05]">
-              JOIN ANTIWORLD
+              JOIN DOOM INDUSTRIES
             </h1>
 
             <p className="mt-6 text-[15px] sm:text-[17px] md:text-[20px] leading-[28px] md:leading-[34px] max-w-[800px] mx-auto">
               If you want to build the future of defence technology, immersive
-              computing, and advanced simulation systems, Antiworld is the place
-              to do it.
+              computing, and advanced simulation systems, Doom Industries is the
+              place to do it.
             </p>
 
             <p className="mt-6 text-[15px] sm:text-[17px] md:text-[20px] leading-[28px] md:leading-[34px] max-w-[800px] mx-auto">
@@ -65,10 +65,10 @@ export default function Jobs() {
 
               <div className="mt-8 space-y-6 text-[15px] sm:text-[16px] md:text-[17px] leading-[26px] md:leading-[30px] text-gray-700">
                 <p>
-                  Antiworld is a technology company based in Hyderabad, India,
-                  focused on building advanced defence and enterprise solutions.
-                  Our work spans simulation systems, XR technologies, and
-                  immersive training platforms.
+                  Doom Industries is a technology company based in Hyderabad,
+                  India, focused on building advanced defence and enterprise
+                  solutions. Our work spans simulation systems, XR technologies,
+                  and immersive training platforms.
                 </p>
 
                 <p>
@@ -91,15 +91,16 @@ export default function Jobs() {
         <section className="py-20 md:py-32 lg:py-48">
           <div className="max-w-[900px] mx-auto text-center px-6">
             <h2 className="text-[30px] sm:text-[42px] md:text-[56px] font-extrabold uppercase leading-[1.1]">
-              THE ANTIWORLD EXPERIENCE
+              THE DOOM INDUSTRIES EXPERIENCE
             </h2>
 
             <p className="mt-12 text-[16px] sm:text-[18px] md:text-[20px] leading-[28px] md:leading-[38px] text-gray-700">
-              At Antiworld, you will work on real-world simulation systems, XR
-              technologies and defence-focused applications that demand
-              precision and innovation. You’ll take ownership of meaningful
-              problems, collaborate with a focused team and contribute directly
-              to building high-impact technology used in critical environments.
+              At Doom Industries, you will work on real-world simulation
+              systems, XR technologies and defence-focused applications that
+              demand precision and innovation. You’ll take ownership of
+              meaningful problems, collaborate with a focused team and
+              contribute directly to building high-impact technology used in
+              critical environments.
             </p>
           </div>
         </section>
@@ -198,10 +199,10 @@ export default function Jobs() {
               </h2>
 
               <p className="mt-10 text-[15px] sm:text-[17px] md:text-[18px] leading-[26px] md:leading-[34px] text-gray-700">
-                At Antiworld, we believe innovation comes from collaboration.
-                Our team works across multiple disciplines including software,
-                hardware, XR development, and design to build powerful
-                technologies.
+                At Doom Industries, we believe innovation comes from
+                collaboration. Our team works across multiple disciplines
+                including software, hardware, XR development, and design to
+                build powerful technologies.
               </p>
 
               <ul className="mt-10 space-y-4 text-[15px] sm:text-[17px] md:text-[18px] text-gray-700">

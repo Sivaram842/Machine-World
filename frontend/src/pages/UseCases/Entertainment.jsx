@@ -17,7 +17,7 @@ const cards = [
   {
     tag: "IMMERSIVE GAMING",
     title: "Next-generation XR gaming",
-    desc: "Antiworld’s XR technologies enable players to step inside immersive game worlds where physical movement, spatial interaction, and realistic environments create entirely new forms of entertainment.",
+    desc: "Doom Industries' XR technologies enable players to step inside immersive game worlds where physical movement, spatial interaction, and realistic environments create entirely new forms of entertainment.",
     img: entertainment1,
   },
   {
@@ -41,7 +41,7 @@ const cards = [
   {
     tag: "INTERACTIVE ENTERTAINMENT",
     title: "Live XR events and concerts",
-    desc: "Antiworld XR platforms enable virtual concerts, immersive performances, and interactive live entertainment experiences for global audiences.",
+    desc: "Doom Industries XR platforms enable virtual concerts, immersive performances, and interactive live entertainment experiences for global audiences.",
     img: entertainment5,
   },
   {
@@ -410,7 +410,7 @@ export default function Entertainment() {
         <div className="relative ml-[4vw] max-w-[560px]">
           {/* Preheader */}
           <p className="uppercase text-[12px] tracking-[0.18em] font-light mb-6 text-white/80">
-            THE ANTIWORLD ADVANTAGE
+            THE DOOM INDUSTRIES ADVANTAGE
           </p>
 
           {/* Heading */}
@@ -491,7 +491,7 @@ export default function Entertainment() {
 
                     <div className="flex justify-between items-center mb-16">
                         <p className="uppercase text-[12px] tracking-[0.18em]">
-                            INSIGHTS FROM THE ANTIWORLD IMMERSIVE ENTERTAINMENT ECOSYSTEM
+                            INSIGHTS FROM THE DOOM INDUSTRIES IMMERSIVE ENTERTAINMENT ECOSYSTEM
                         </p>
 
                         <a
@@ -520,7 +520,7 @@ export default function Entertainment() {
                                 </h3>
 
                                 <p className="text-[15px] leading-[1.6] text-white/90">
-                                    Discover how Antiworld technologies enable immersive digital worlds
+                                    Discover how Doom Industries technologies enable immersive digital worlds
                                     where audiences can explore interactive environments, simulations,
                                     and XR-powered entertainment experiences.
                                 </p>
@@ -562,7 +562,7 @@ export default function Entertainment() {
 
                             <div className="absolute bottom-12 left-10 right-10 text-white">
                                 <p className="uppercase text-[11px] tracking-[0.15em] mb-5 text-white/80">
-                                    ANTI WORLD TECHNOLOGY
+                                     DOOM INDUSTRIES TECHNOLOGY
                                 </p>
 
                                 <h3 className="uppercase text-[22px] font-bold leading-[1.2] mb-6">

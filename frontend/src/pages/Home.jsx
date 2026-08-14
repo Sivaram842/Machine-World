@@ -220,7 +220,7 @@ function Header() {
                             strokeWidth: 1.5
                         }}
                     >
-                        Antiworld
+                        Doom Industries
                     </text>
                 </svg>
 

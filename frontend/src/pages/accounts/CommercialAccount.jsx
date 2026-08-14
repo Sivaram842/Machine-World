@@ -4,239 +4,258 @@ import axios from "axios";
 
 /* ---------------- COUNTRY LIST ---------------- */
 const countries = [
-    "United States",
-    "United Kingdom",
-    "India",
-    "Canada",
-    "Australia",
-    "Germany",
-    "France",
-    "Japan",
-    "South Korea",
-    "Singapore",
-    "United Arab Emirates"
+  "United States",
+  "United Kingdom",
+  "India",
+  "Canada",
+  "Australia",
+  "Germany",
+  "France",
+  "Japan",
+  "South Korea",
+  "Singapore",
+  "United Arab Emirates",
 ];
 
 export default function CommercialAccount({ setPage }) {
+  const [show, setShow] = useState(false);
+  const navigate = useNavigate();
+  const {
+    firstName,
+    setFirstName,
+    lastName,
+    setLastName,
+    country,
+    setCountry,
+    password,
+    setPassword,
+    dob,
+    email,
+    setEmail,
+  } = useOutletContext();
+  const [loading, setLoading] = useState(false);
+  const handleSignup = async () => {
+    try {
+      setLoading(true); // start loading
 
-    const [show, setShow] = useState(false);
-    const navigate = useNavigate();
-    const {
-        firstName, setFirstName,
-        lastName, setLastName,
-        country, setCountry,
-        password, setPassword,
-        dob, email, setEmail
-    } = useOutletContext();
-    const [loading, setLoading] = useState(false);
-    const handleSignup = async () => {
-        try {
-            setLoading(true); // start loading
+      const { day, month, year } = dob;
+      const dateOfBirth = new Date(`${month} ${day}, ${year}`);
 
-            const { day, month, year } = dob;
-            const dateOfBirth = new Date(`${month} ${day}, ${year}`);
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/users/register`,
+        {
+          firstName,
+          lastName,
+          country,
+          email,
+          password,
+          dateOfBirth,
+          updatesConsent: false,
+          termsAccepted: true,
+        },
+      );
 
-            const response = await axios.post(
-                `${import.meta.env.VITE_API_URL}/api/users/register`,
-                {
-                    firstName,
-                    lastName,
-                    country,
-                    email,
-                    password,
-                    dateOfBirth,
-                    updatesConsent: false,
-                    termsAccepted: true,
-                }
-            );
+      console.log("User registered:", response.data);
 
-            console.log("User registered:", response.data);
+      navigate("/verify-notice", { state: { email } });
+    } catch (error) {
+      console.error("SIGNUP ERROR:", error);
+      alert(error.response?.data?.message || "Signup failed");
+    } finally {
+      setLoading(false);
+    }
+  };
+  const isPasswordStrong = (pwd) =>
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/.test(pwd);
 
-            navigate("/verify-notice", { state: { email } });
+  const isEmailValid = /\S+@\S+\.\S+/.test(email);
 
-        } catch (error) {
-            console.error("SIGNUP ERROR:", error);
-            alert(error.response?.data?.message || "Signup failed");
-        } finally {
-            setLoading(false);
-        }
-    };
-    const isPasswordStrong = (pwd) =>
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/.test(pwd);
+  const isFormValid =
+    firstName.trim() &&
+    lastName.trim() &&
+    country.trim() &&
+    isPasswordStrong(password) &&
+    isEmailValid;
 
-    const isEmailValid = /\S+@\S+\.\S+/.test(email);
+  const inputClass =
+    "w-full h-10 sm:h-11 px-3 text-sm sm:text-base border border-gray-300 rounded-md bg-gray-100 mb-5 sm:mb-6 focus:outline-none focus:ring-1 focus:ring-gray-500 focus:bg-gray-200";
 
-    const isFormValid =
-        firstName.trim() &&
-        lastName.trim() &&
-        country.trim() &&
-        isPasswordStrong(password) &&
-        isEmailValid;
+  return (
+    <div className="max-w-[520px] w-full mx-auto px-4 sm:px-6">
+      {/* HEADING */}
+      <h1 className="text-2xl sm:text-3xl font-medium mb-6 sm:mb-8">Sign up</h1>
 
-    const inputClass =
-        "w-full h-10 sm:h-11 px-3 text-sm sm:text-base border border-gray-300 rounded-md bg-gray-100 mb-5 sm:mb-6 focus:outline-none focus:ring-1 focus:ring-gray-500 focus:bg-gray-200";
+      {/* FIRST NAME */}
+      <Label text="First name" />
+      <input
+        className={inputClass}
+        value={firstName}
+        onChange={(e) => setFirstName(e.target.value)}
+      />
 
-    return (
-        <div className="max-w-[520px] w-full mx-auto px-4 sm:px-6">
+      {/* LAST NAME */}
+      <Label text="Last name" />
+      <input
+        className={inputClass}
+        value={lastName}
+        onChange={(e) => setLastName(e.target.value)}
+      />
 
-            {/* HEADING */}
-            <h1 className="text-2xl sm:text-3xl font-medium mb-6 sm:mb-8">
-                Sign up
-            </h1>
+      {/* COUNTRY */}
+      <Label text="Country" />
+      <div className="relative">
+        <select
+          className={`${inputClass} appearance-none`}
+          value={country}
+          onChange={(e) => setCountry(e.target.value)}
+        >
+          <option value="" disabled>
+            Select country
+          </option>
+          {countries.map((c) => (
+            <option key={c}>{c}</option>
+          ))}
+        </select>
 
-            {/* FIRST NAME */}
-            <Label text="First name" />
-            <input
-                className={inputClass}
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-            />
+        <span className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#555"
+            strokeWidth="2.5"
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </span>
+      </div>
 
-            {/* LAST NAME */}
-            <Label text="Last name" />
-            <input
-                className={inputClass}
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-            />
+      {/* EMAIL */}
+      <Label text="Email address" />
+      <input
+        type="email"
+        className={inputClass}
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
 
-            {/* COUNTRY */}
-            <Label text="Country" />
-            <div className="relative">
-                <select
-                    className={`${inputClass} appearance-none`}
-                    value={country}
-                    onChange={(e) => setCountry(e.target.value)}
-                >
-                    <option value="" disabled>
-                        Select country
-                    </option>
-                    {countries.map((c) => (
-                        <option key={c}>{c}</option>
-                    ))}
-                </select>
+      {/* PASSWORD */}
+      <Label text="Password" />
+      <div className="relative">
+        <input
+          type={show ? "text" : "password"}
+          className={inputClass}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-                <span className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2.5">
-                        <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                </span>
-            </div>
+        <span
+          onClick={() => setShow(!show)}
+          className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
+        >
+          {show ? eyeOpen : eyeClosed}
+        </span>
+      </div>
 
-            {/* EMAIL */}
-            <Label text="Email address" />
-            <input
-                type="email"
-                className={inputClass}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
+      {/* PASSWORD HELP */}
+      <p
+        className={`text-xs sm:text-sm mb-5 sm:mb-6 ${
+          isPasswordStrong(password) ? "text-green-700" : "text-red-600"
+        }`}
+      >
+        Your password must be at least 8 characters long and contain at least
+        one uppercase letter, lowercase letter, number, and special character.
+      </p>
 
-            {/* PASSWORD */}
-            <Label text="Password" />
-            <div className="relative">
-                <input
-                    type={show ? "text" : "password"}
-                    className={inputClass}
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
+      {/* OPTIONAL UPDATES */}
+      <Checkbox>
+        I consent to receiving the latest updates from Doom Industries
+      </Checkbox>
 
-                <span
-                    onClick={() => setShow(!show)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
-                >
-                    {show ? eyeOpen : eyeClosed}
-                </span>
-            </div>
+      {/* REQUIRED TERMS */}
+      <Checkbox>
+        <span className="leading-snug">
+          I accept{" "}
+          <span className="text-blue-600 cursor-pointer">Privacy Policy</span>{" "}
+          and <span className="text-blue-600 cursor-pointer">Terms of Use</span>
+        </span>
+      </Checkbox>
 
-            {/* PASSWORD HELP */}
-            <p
-                className={`text-xs sm:text-sm mb-5 sm:mb-6 ${isPasswordStrong(password)
-                    ? "text-green-700"
-                    : "text-red-600"
-                    }`}
-            >
-                Your password must be at least 8 characters long and contain at least one
-                uppercase letter, lowercase letter, number, and special character.
-            </p>
+      {/* CAPTCHA */}
+      <div className="my-5 sm:my-6 border border-gray-300 rounded-md px-4 py-3 w-full sm:w-[300px] text-sm text-gray-600">
+        I'm not a robot
+      </div>
 
-            {/* OPTIONAL UPDATES */}
-            <Checkbox>
-                I consent to receiving the latest updates from AntiWorld
-            </Checkbox>
-
-            {/* REQUIRED TERMS */}
-            <Checkbox>
-                <span className="leading-snug">
-                    I accept{" "}
-                    <span className="text-blue-600 cursor-pointer">Privacy Policy</span>{" "}
-                    and{" "}
-                    <span className="text-blue-600 cursor-pointer">Terms of Use</span>
-                </span>
-            </Checkbox>
-
-            {/* CAPTCHA */}
-            <div className="my-5 sm:my-6 border border-gray-300 rounded-md px-4 py-3 w-full sm:w-[300px] text-sm text-gray-600">
-                I'm not a robot
-            </div>
-
-            {/* SUBMIT */}
-            <div className="flex justify-end mt-6 sm:mt-8">
-                <button
-                    disabled={!isFormValid || loading}
-                    onClick={handleSignup}
-                    className={`px-6 sm:px-8 py-2 rounded-full text-xs sm:text-sm transition flex items-center gap-2
-        ${isFormValid && !loading
-                            ? "bg-black text-white hover:bg-gray-900"
-                            : "bg-gray-200 text-gray-400 cursor-not-allowed"
-                        }`}
-                >
-                    {loading ? (
-                        <>
-                            <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-                            Creating...
-                        </>
-                    ) : (
-                        "Create an account"
-                    )}
-                </button>
-            </div>
-        </div>
-    );
+      {/* SUBMIT */}
+      <div className="flex justify-end mt-6 sm:mt-8">
+        <button
+          disabled={!isFormValid || loading}
+          onClick={handleSignup}
+          className={`px-6 sm:px-8 py-2 rounded-full text-xs sm:text-sm transition flex items-center gap-2
+        ${
+          isFormValid && !loading
+            ? "bg-black text-white hover:bg-gray-900"
+            : "bg-gray-200 text-gray-400 cursor-not-allowed"
+        }`}
+        >
+          {loading ? (
+            <>
+              <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+              Creating...
+            </>
+          ) : (
+            "Create an account"
+          )}
+        </button>
+      </div>
+    </div>
+  );
 }
 
 /* ---------------- HELPERS ---------------- */
 
 function Label({ text }) {
-    return (
-        <label className="block text-xs sm:text-sm font-medium mb-1">
-            {text}
-        </label>
-    );
+  return (
+    <label className="block text-xs sm:text-sm font-medium mb-1">{text}</label>
+  );
 }
 
 function Checkbox({ children }) {
-    return (
-        <label className="flex items-start gap-3 text-xs sm:text-sm mb-3 cursor-pointer">
-            <input type="checkbox" className="w-4 h-4 mt-1 accent-black" />
-            <span>{children}</span>
-        </label>
-    );
+  return (
+    <label className="flex items-start gap-3 text-xs sm:text-sm mb-3 cursor-pointer">
+      <input type="checkbox" className="w-4 h-4 mt-1 accent-black" />
+      <span>{children}</span>
+    </label>
+  );
 }
 
 /* ---------------- ICONS ---------------- */
 
 const eyeOpen = (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2">
-        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-        <circle cx="12" cy="12" r="3" />
-    </svg>
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#555"
+    strokeWidth="2"
+  >
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+    <circle cx="12" cy="12" r="3" />
+  </svg>
 );
 
 const eyeClosed = (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2">
-        <path d="M1 1l22 22" />
-        <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a21.77 21.77 0 0 1 5.17-6.11" />
-    </svg>
+  <svg
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="#555"
+    strokeWidth="2"
+  >
+    <path d="M1 1l22 22" />
+    <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a21.77 21.77 0 0 1 5.17-6.11" />
+  </svg>
 );

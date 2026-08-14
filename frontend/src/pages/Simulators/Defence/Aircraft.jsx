@@ -76,10 +76,11 @@ const Aircraft = () => {
 
             {/* DESCRIPTION */}
             <div className="text-[13px] sm:text-sm text-gray-700 leading-relaxed max-w-[320px]">
-              Antiworld develops next-generation defence simulation systems,
-              including cockpit simulators, immersive XR environments, and
-              mission rehearsal platforms designed to train pilots and defence
-              personnel for modern combat scenarios.
+              https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.1939791973023!2d78.36245007522116!3d17.402476102370127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb95007a565ec3%3A0x7b2be11210188a86!2sAntiworld!5e0!3m2!1sen!2sin!4v1773742315191!5m2!1sen!2sin
+              develops next-generation defence simulation systems, including
+              cockpit simulators, immersive XR environments, and mission
+              rehearsal platforms designed to train pilots and defence personnel
+              for modern combat scenarios.
             </div>
 
             {/* LINKS */}
@@ -138,8 +139,8 @@ const Aircraft = () => {
             </h2>
 
             <p className="text-white/70 leading-relaxed">
-              Antiworld develops advanced defence technologies including cockpit
-              simulators, immersive XR training platforms, and mission
+              Doom Industries develops advanced defence technologies including
+              cockpit simulators, immersive XR training platforms, and mission
               simulation environments. These systems allow defence forces to
               train pilots, rehearse combat missions, and simulate complex
               operations safely without the risks or costs of real deployments.
@@ -369,7 +370,7 @@ const Aircraft = () => {
           </h2>
 
           <p className="text-white/70 max-w-2xl mx-auto">
-            Antiworld is developing next generation defence simulation
+            Doom Industries is developing next generation defence simulation
             technologies that combine immersive XR systems, advanced cockpit
             simulators, and mission planning environments to transform how
             defence forces train and prepare.
