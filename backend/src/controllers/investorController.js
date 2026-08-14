@@ -8,7 +8,7 @@ export const createInvestor = async (req, res) => {
         // Email failure should not undo a successful form submission
         try {
             await sendEmail(
-                "hr@doomindustries.com",
+                process.env.ADMIN_EMAIL,  // owner's email
                 "New Investor Enquiry",
                 `
                     <h2>New Investor Enquiry</h2>

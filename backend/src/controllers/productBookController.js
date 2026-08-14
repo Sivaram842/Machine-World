@@ -42,7 +42,7 @@ export const submitProductBook = async (req, res) => {
         // Send notification to HR
         try {
             await sendEmail(
-                "hr@doomindustries.com",
+                 process.env.ADMIN_EMAIL,  // owner's email
                 "New Product Book Enquiry",
                 `
                     <h2>New Product Book Enquiry</h2>
